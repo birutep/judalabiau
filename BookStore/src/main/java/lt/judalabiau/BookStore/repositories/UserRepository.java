@@ -1,5 +1,5 @@
 package lt.judalabiau.BookStore.repositories;
 
-public class UserRepository {
+public interface UserRepository {
 
 }
