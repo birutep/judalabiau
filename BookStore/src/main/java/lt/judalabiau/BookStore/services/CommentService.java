@@ -1,5 +1,5 @@
 package lt.judalabiau.BookStore.services;
 
-public class GenreService {
+public class CommentService {
 
 }

@@ -1,5 +1,5 @@
 package lt.judalabiau.BookStore.controllers;
 
-public class GenreController {
+public class OrderBookController {
 
 }

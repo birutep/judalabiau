@@ -1,5 +1,5 @@
 package lt.judalabiau.BookStore.repositories;
 
-public interface DeliveryRepository {
+public interface CommentRepository {
 
 }

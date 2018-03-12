@@ -1,5 +1,5 @@
 package lt.judalabiau.BookStore.models;
 
-public class Genre {
+public class OrderBook {
 
 }
