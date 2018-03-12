@@ -1,12 +1,15 @@
 package lt.judalabiau.BookStore.models;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Author {
@@ -30,16 +33,23 @@ public class Author {
 	@Column
 	private String biography;
 
+	@ManyToMany(mappedBy = "authors")
+	private Set<Book> books = new HashSet<>();
+
 	public Author() {
 		super();
 	}
 
-	public Author(String name, String surname, Date birthDate, Date deathDate, String biography) {
+	public Author(Long id, String name, String surname, Date birthDate, Date deathDate, String biography,
+			Set<Book> books) {
+		super();
+		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;
 		this.deathDate = deathDate;
 		this.biography = biography;
+		this.books = books;
 	}
 
 	public Long getId() {
@@ -89,4 +99,14 @@ public class Author {
 	public void setBiography(String biography) {
 		this.biography = biography;
 	}
+
+	public Set<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(Set<Book> books) {
+		this.books = books;
+	}
+	
+	
 }
