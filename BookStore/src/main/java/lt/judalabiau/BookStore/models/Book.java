@@ -30,20 +30,25 @@ public class Book {
 
 	@Column
 	private String description;
-	
+
 	@Column
 	private String photopath;
-	
+
 	@Column
 	private int count;
-	
-	@Column
-	private double rating; //Count stars
 
 	@Column
-	private double ratingCount; //How many voters voted
+	private double rating; // Count stars
 
-	
+	@Column
+	private int ratingCount; // How many voters voted
+
+	@Column
+	private boolean eAvailable;
+
+	@Column
+	private String category;
+
 	
 	
 }
