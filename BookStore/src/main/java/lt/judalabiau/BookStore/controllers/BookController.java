@@ -13,40 +13,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import lt.judalabiau.BookStore.models.Author;
-import lt.judalabiau.BookStore.services.AuthorService;
+import lt.judalabiau.BookStore.models.Book;
+import lt.judalabiau.BookStore.services.BookService;
 
 @RestController
-@RequestMapping(value = "/author")
-public class AuthorController {
+@RequestMapping(value = "/book")
+public class BookController {
 
 	@Autowired
-	private AuthorService authorService;
+	private BookService bookService;
 
-	public AuthorController(AuthorService authorService) {
+	public BookController(BookService bookService) {
 		super();
-		this.authorService = authorService;
+		this.bookService = bookService;
 	}
-
+	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Author> getAuthor() {
-		return this.authorService.getAuthor();
+	public List<Book> getBook(){
+		return this.bookService.getBook();
 	}
-
+	
 	@RequestMapping(method = RequestMethod.POST)
-	public void createAuthor(@RequestBody @Valid final Author author) {
-		this.authorService.createAuthor(author);
+	@ResponseStatus(HttpStatus.CREATED)
+	public void createBook(@RequestBody @Valid final Book book) {
+		this.bookService.cretaeBook(book);
 	}
-
+	
 	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteAuthor(@PathVariable Long id) {
-		authorService.deleteAuthor(id);
+	public void deleteBook(@PathVariable Long id) {
+		bookService.deleteBook(id);
 	}
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.OK)
-	public void updateAuthor(@PathVariable Long id, @RequestBody Author author) {
-		this.authorService.updateAuthor(id, author);
+	public void updateBook(@PathVariable Long id, @RequestBody Book book) {
+		this.bookService.updateBook(id, book);
 	}
 }
