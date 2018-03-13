@@ -13,8 +13,11 @@ import lt.judalabiau.BookStore.repositories.AuthorRepository;
 @Service
 public class AuthorService {
 
-	@Autowired
 	private AuthorRepository authorRepository;
+
+	public AuthorService(AuthorRepository authorRepository) {
+		this.authorRepository = authorRepository;
+	}
 
 	@Transactional
 	public List<Author> getAuthor() {

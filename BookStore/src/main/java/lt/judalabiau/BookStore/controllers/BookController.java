@@ -20,11 +20,9 @@ import lt.judalabiau.BookStore.services.BookService;
 @RequestMapping(value = "/book")
 public class BookController {
 
-	@Autowired
 	private BookService bookService;
 
 	public BookController(BookService bookService) {
-		super();
 		this.bookService = bookService;
 	}
 	

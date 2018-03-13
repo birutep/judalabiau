@@ -13,10 +13,14 @@ import lt.judalabiau.BookStore.repositories.BookRepository;
 @Service
 public class BookService {
 
-	@Autowired
+
 	private BookRepository bookRepository;
 
-	@Transactional
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    @Transactional
 	public List<Book> getBook() {
 		return bookRepository.findAll();
 	}

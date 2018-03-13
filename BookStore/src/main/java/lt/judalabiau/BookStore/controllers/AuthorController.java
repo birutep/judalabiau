@@ -20,11 +20,9 @@ import lt.judalabiau.BookStore.services.AuthorService;
 @RequestMapping(value = "/author")
 public class AuthorController {
 
-	@Autowired
 	private AuthorService authorService;
 
 	public AuthorController(AuthorService authorService) {
-		super();
 		this.authorService = authorService;
 	}
 
