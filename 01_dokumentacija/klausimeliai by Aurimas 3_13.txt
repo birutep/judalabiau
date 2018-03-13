@@ -1,0 +1,34 @@
+services
+	kaip veikia update?
+	delete reik visur zinot id? tai reik ieskot, rast id ir tada deleting, gal papildomai galima delete zinant pavadinima ar kazka pan
+repositories
+	extends JpaRepository<Book, Long> kuo skiriasi nuo extends CrudRepository<Book, Long>
+models
+	ar butinas @Column jei mes nekeiciam nei stulpelio pav nei nk?
+
+controllers
+	@RequestMapping(method = RequestMethod.GET)
+	public List<Author> getAuthor() {
+		return this.authorService.getAuthor();
+	}
+
+	V.S.
+	
+	@GetMapping("/fakturos")
+    	public @ResponseBody Iterable<Author> getAuthors() {
+        return authorService.getAuthors();
+
+	del metodu pavadinimu, getAuthor cia kaipo vienam autoriui grazinti, bet grazina Lista, vadinas getAuthors,
+	smulkme bet gali reikt getMapo kur ieskosim autoriaus ir pan
+}
+bendras
+	kas tas serviceinitializer?
+
+
+React dalis
+	
+	knygu formos laukai turi sutapt su repositorijos knyga, kad mes galetume jas sukurti is formos?
+	reik ir autoriu, kaip reginsim autorius, prie knygos formos ksiltyje autorius? jei autoriu daugiau nei vienas?
+	ar atskira forma autoriams?
+
+	pridejau wrapperi, paaiskinisu kam jis naudojamas
