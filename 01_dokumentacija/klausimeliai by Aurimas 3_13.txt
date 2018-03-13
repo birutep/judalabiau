@@ -15,8 +15,20 @@ controllers
 	V.S.
 	
 	@GetMapping("/fakturos")
-    	public @ResponseBody Iterable<Author> getAuthor() {
-        return authorService.getAuthor();
+    	public @ResponseBody Iterable<Author> getAuthors() {
+        return authorService.getAuthors();
+
+	del metodu pavadinimu, getAuthor cia kaipo vienam autoriui grazinti, bet grazina Lista, vadinas getAuthors,
+	smulkme bet gali reikt getMapo kur ieskosim autoriaus ir pan
 }
 bendras
 	kas tas serviceinitializer?
+
+
+React dalis
+	
+	knygu formos laukai turi sutapt su repositorijos knyga, kad mes galetume jas sukurti is formos?
+	reik ir autoriu, kaip reginsim autorius, prie knygos formos ksiltyje autorius? jei autoriu daugiau nei vienas?
+	ar atskira forma autoriams?
+
+	pridejau wrapperi, paaiskinisu kam jis naudojamas
