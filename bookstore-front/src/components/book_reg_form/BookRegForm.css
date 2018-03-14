@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+  }
 
 .BookRegForm {
     width: 40%;
@@ -58,3 +61,16 @@ font-size: 15px;
 [type=submit] {
     border-color: darkgray;
 }
+
+form input.error {
+    border-color: red;
+}
+
+
+/* form button:hover {
+    background-color: goldenrod;
+}
+ 
+form button:disabled {
+    background-color: darkgray;
+} */

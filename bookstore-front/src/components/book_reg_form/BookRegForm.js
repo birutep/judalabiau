@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './BookRegForm.css';
 
-class BookRegForm extends React.Component {
+class BookRegForm extends Component {
     constructor(props) {
       super(props);
       this.state = {
         title: '',
+        author: '',
         released: '',
         isbn: '',
         price: '',
@@ -24,7 +25,7 @@ class BookRegForm extends React.Component {
     }
 
     handleSubmit(event) {
-          alert('A book was registered in BookStore: ' + this.state.title);
+      alert('"' + this.state.title + '" užregistruota Knygų parduotuvėje.' );
           event.preventDefault();
           // alert(
           //   `Selected file - ${this.fileInput.files[0].name}`
@@ -43,31 +44,38 @@ class BookRegForm extends React.Component {
           <form className='BookRegForm' onSubmit={this.handleSubmit}>
             <label>
               Knygos pavadinimas:
-              <input name="title" type="text" value={this.state.title} onChange={this.handleChange} />
+              <input name="title" required type="text" value={this.state.title} onChange={this.handleChange} />
+            </label>
+            <br/>
+
+            <label>
+              Autorius:
+              <input name="author"  required type="text" value={this.state.author} onChange={this.handleChange} />
             </label>
             <br/>
 
             <label>
                Leidimo metai:
-               <input name="released" type="text" value={this.state.released} onChange={this.handleChange} />
+               <input name="released" type="text" pattern="[0-9]*" minlength="4" maxlength="4"  value={this.state.released} onChange={this.handleChange} />
             </label> 
             <br/>
 
             <label>
                ISBN:
-               <input name="isbn" type="text" maxlength="13" value={this.state.isbn} onChange={this.handleChange} />
+               <input name="isbn" required type="text" minlength="10" maxlength="13" value={this.state.isbn} onChange={this.handleChange} />
             </label> 
             <br/>
 
             <label>
                Kaina:
-               <input name="price" type="text" value={this.state.price} onChange={this.handleChange} />
+               <input name="price" required type="text" pattern="\d+?\.\d{2}\s*?$" value={this.state.price} onChange={this.handleChange} />
             </label> 
             <br/>
 
             <label>
               Kategorija:
-              <select name="category" value={this.state.category} onChange={this.handleChange}>
+              <select name="category" required value={this.state.category} onChange={this.handleChange}>
+                <option value="" disabled> -- pasirinkite kategoriją -- </option>
                 <option value="apsakymai">Apsakymas</option>
                 <option value="biografinis">Biografija, autobiografija</option>
                 <option value="detektyvinis">Detektyvinis romanas</option>
@@ -87,33 +95,19 @@ class BookRegForm extends React.Component {
 
             <label>
                Likutis sandėlyje:
-               <input name="count" type="text" value={this.state.count} onChange={this.handleChange} />
+               <input name="count" required type="text" value={this.state.count} onChange={this.handleChange} />
             </label> 
             <br/> 
 
             <label>
                Elektroninė knyga:
-               {/* http://react.tips/radio-buttons-in-reactjs/ */}
               <input name="e_available" type="radio" value={this.state.e_available} onChange={this.handleChange} />
             </label> 
             <br/>
-{/* RADIO BUTTON AS BOOLEAN ??? */}             
-{/* 
-          <RadioGroup
-            name="e_available"
-            value={this.state.e_available} onChange={this.handleChange}
-            value={this.props.e_available.size}
-            options={[
-              {label: "yes", value: "yes"},
-              {label: "no", value: "no"},
-            ]}
-            OnChange={this.handleChange}
-          /> */}
+
             <label>
-            {/* https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications */}
                Viršelio nuotrauka:
-               {/* <input name="photopath" type="file" ref={input => {this.fileInput = input;}} value={this.state.photopath} onChange={this.handleChange} /> */}
-                <input name="photopath" type="file" value={this.state.photopath} onChange={this.handleChange} />
+               <input name="photopath" type="file" value={this.state.photopath} onChange={this.handleChange} />
             </label>
             <br/>
 
