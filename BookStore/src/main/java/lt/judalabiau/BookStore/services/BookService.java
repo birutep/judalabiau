@@ -21,7 +21,7 @@ public class BookService {
     }
 
     @Transactional
-	public List<Book> getBook() {
+	public Iterable<Book> getBooks() {
 		return bookRepository.findAll();
 	}
 

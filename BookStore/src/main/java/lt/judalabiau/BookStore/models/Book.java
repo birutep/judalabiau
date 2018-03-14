@@ -13,44 +13,19 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
-	@Column
 	private String title;
-
-	@Column
     @Temporal(TemporalType.DATE)
 	private Date releaseDate;
-
-	@Column
 	private int isbn;
-
-	@Column
 	private BigDecimal price;
-
-	@Column
 	private String description;
-
-	@Column
 	private String photopath;
-
-	@Column
 	private int count;
-
-	@Column
 	private double rating; // Count stars
-
-	@Column
 	private int ratingCount; // How many voters voted
-
-	@Column
 	private boolean eAvailable;
-
-	@Column
 	private String category;
-
-	@ManyToMany
-	@JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
-	private Set<Author> authors = new HashSet<>();
+	private String authors;
 
 	public Book() {
 		super();
@@ -58,8 +33,8 @@ public class Book {
 
 	public Book( String title, Date releaseDate, int isbn, BigDecimal price, String description,
 			String photopath, int count, double rating, int ratingCount, boolean eAvailable, String category,
-			Set<Author> authors) {
-		super();
+			String authors) {
+
 		this.title = title;
 		this.releaseDate = releaseDate;
 		this.isbn = isbn;
@@ -77,7 +52,6 @@ public class Book {
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -85,7 +59,6 @@ public class Book {
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -93,7 +66,6 @@ public class Book {
 	public Date getReleaseDate() {
 		return releaseDate;
 	}
-
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
 	}
@@ -101,7 +73,6 @@ public class Book {
 	public int getIsbn() {
 		return isbn;
 	}
-
 	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
@@ -109,7 +80,6 @@ public class Book {
 	public BigDecimal getPrice() {
 		return price;
 	}
-
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
@@ -117,7 +87,6 @@ public class Book {
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -125,7 +94,6 @@ public class Book {
 	public String getPhotopath() {
 		return photopath;
 	}
-
 	public void setPhotopath(String photopath) {
 		this.photopath = photopath;
 	}
@@ -133,7 +101,6 @@ public class Book {
 	public int getCount() {
 		return count;
 	}
-
 	public void setCount(int count) {
 		this.count = count;
 	}
@@ -141,7 +108,6 @@ public class Book {
 	public double getRating() {
 		return rating;
 	}
-
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
@@ -149,7 +115,6 @@ public class Book {
 	public int getRatingCount() {
 		return ratingCount;
 	}
-
 	public void setRatingCount(int ratingCount) {
 		this.ratingCount = ratingCount;
 	}
@@ -157,7 +122,6 @@ public class Book {
 	public boolean iseAvailable() {
 		return eAvailable;
 	}
-
 	public void seteAvailable(boolean eAvailable) {
 		this.eAvailable = eAvailable;
 	}
@@ -165,19 +129,14 @@ public class Book {
 	public String getCategory() {
 		return category;
 	}
-
 	public void setCategory(String category) {
 		this.category = category;
 	}
 
-	public Set<Author> getAuthors() {
-		return authors;
-	}
-
-	public void setAuthors(Set<Author> authors) {
-		this.authors = authors;
-	}
-	
-	
-
+    public String getAuthors() {
+        return authors;
+    }
+    public void setAuthors(String authors) {
+        this.authors = authors;
+    }
 }
