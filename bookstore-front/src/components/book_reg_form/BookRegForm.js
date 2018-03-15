@@ -42,6 +42,7 @@ class BookRegForm extends Component {
     render() {
         return (
           <form className='BookRegForm' onSubmit={this.handleSubmit}>
+          <h2>Naujos knygos registravimas</h2>
             <label>
               Knygos pavadinimas:
               <input name="title" required type="text" value={this.state.title} onChange={this.handleChange} />
@@ -56,13 +57,13 @@ class BookRegForm extends Component {
 
             <label>
                Leidimo metai:
-               <input name="released" type="text" pattern="[0-9]*" minlength="4" maxlength="4"  value={this.state.released} onChange={this.handleChange} />
+               <input name="released" type="text" pattern="[0-9]*" minLength="4" maxLength="4"  value={this.state.released} onChange={this.handleChange} />
             </label> 
             <br/>
 
             <label>
                ISBN:
-               <input name="isbn" required type="text" minlength="10" maxlength="13" value={this.state.isbn} onChange={this.handleChange} />
+               <input name="isbn" required type="text" minLength="10" maxLength="13" value={this.state.isbn} onChange={this.handleChange} />
             </label> 
             <br/>
 
@@ -101,7 +102,7 @@ class BookRegForm extends Component {
 
             <label>
                Elektroninė knyga:
-              <input name="e_available" type="radio" value={this.state.e_available} onChange={this.handleChange} />
+              <input name="e_available" type="checkbox" value={this.state.e_available} onChange={this.handleChange} />
             </label> 
             <br/>
 
