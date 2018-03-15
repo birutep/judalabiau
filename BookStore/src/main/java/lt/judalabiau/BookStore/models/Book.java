@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Book {
@@ -13,30 +14,44 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
+    @NotNull
 	private String title;
-    @Temporal(TemporalType.DATE)
-	private Date releaseDate;
-	private int isbn;
+
+	private int releaseYear;
+
+    @NotNull
+	private String isbn;
+
+    @NotNull
 	private BigDecimal price;
+
 	private String description;
 	private String photopath;
+
+    @NotNull
 	private int count;
+
 	private double rating; // Count stars
 	private int ratingCount; // How many voters voted
 	private boolean eAvailable;
+
+	@NotNull
 	private String category;
+
+    @NotNull
 	private String authors;
 
 	public Book() {
 		super();
 	}
 
-	public Book( String title, Date releaseDate, int isbn, BigDecimal price, String description,
+	public Book( String title, int releaseYear, String isbn, BigDecimal price, String description,
 			String photopath, int count, double rating, int ratingCount, boolean eAvailable, String category,
 			String authors) {
 
 		this.title = title;
-		this.releaseDate = releaseDate;
+		this.releaseYear = releaseYear;
 		this.isbn = isbn;
 		this.price = price;
 		this.description = description;
@@ -63,17 +78,17 @@ public class Book {
 		this.title = title;
 	}
 
-	public Date getReleaseDate() {
-		return releaseDate;
+	public int getreleaseYear() {
+		return releaseYear;
 	}
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
+	public void setreleaseYear(int releaseYear) {
+		this.releaseYear = releaseYear;
 	}
 
-	public int getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
