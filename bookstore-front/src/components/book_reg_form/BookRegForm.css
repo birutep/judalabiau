@@ -9,41 +9,41 @@
     padding: 50px;
 }
 
-
 input, select {
     margin-left: 10px;
 }
 
 input, textarea, select {
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-shadow: 1px 0.5px 3px gray;
-	padding: 4px 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 0.5px 3px gray;
+    padding: 4px 7px;
     outline: 0;
     margin-top: 10px;
 }
 
 input:focus {
-	border: 1px solid gray;
-  }
+    border: 1px solid gray;
+}
 
 [type=radio], [type=file] {
-        border: none;
-        box-shadow: none;
+    border: none;
+    box-shadow: none;
 }
+
 [type=file]:focus {
     border: none;
 }
 
 textarea {
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100px;
-    max-width: 100%; 
+    max-width: 100%;
     max-height: 100%;
 }
 
 label {
- 
+
     width: 100%;
     font-weight: bold;
     display: inline-block;
@@ -51,8 +51,8 @@ label {
 }
 
 label, input, select, textarea {
-font-family: Arial, serif;
-font-size: 15px;
+    font-family: Arial, serif;
+    font-size: 15px;
 }
 
 [type=submit] {
