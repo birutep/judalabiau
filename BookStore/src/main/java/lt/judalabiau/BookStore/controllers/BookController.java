@@ -21,19 +21,19 @@ public class BookController {
     }
 
     //prideti knyga i lista
-    @PostMapping("/addbook")
+    @PostMapping("/books")
     public @ResponseBody void addBook(@RequestBody Book book){
         bookService.cretaeBook(book);
     }
 
     //pasalinti knygai is listo
-    @DeleteMapping("/removebook/{id}")
+    @DeleteMapping("/books/{id}")
     public @ResponseBody void deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
     }
 
 	//knygos updeitas
-    @PutMapping("/updatebook/{id}")
+    @PutMapping("/books/{id}")
     public @ResponseBody void updateBook(@PathVariable Long id, @RequestBody Book book){
 	    bookService.updateBook(id, book);
     }
