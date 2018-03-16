@@ -1,7 +1,5 @@
-package lt.judalabiau.BookStore.controllers;
+package lt.judalabiau.BookStore.books;
 
-import lt.judalabiau.BookStore.models.Book;
-import lt.judalabiau.BookStore.services.BookService;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
