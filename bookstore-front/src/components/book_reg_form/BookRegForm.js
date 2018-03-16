@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './BookRegForm.css';
+import css from './BookRegForm.css';
 import axios from "axios/index";
 
 class BookRegForm extends Component {
@@ -49,37 +49,37 @@ class BookRegForm extends Component {
      
     render() {
         return (
-        <div  className={BookRegFormCss.book_reg_form}>
+        <div  className={css.book_reg_form}>
           <h4><i className="fa fa-book"/> &nbsp; Knygų parduotuvė</h4>
         <form onSubmit={this.handleSubmit}>
           <h3>Naujos knygos registravimas</h3>
            <label>
               Knygos pavadinimas:
-              <input name="title" placeholder="Įveskite knygos pavadinimą" className={BookRegFormCss.placeholder} required type="text" value={this.state.title} onChange={this.handleChange} />
+              <input name="title" placeholder="Įveskite knygos pavadinimą" className={css.placeholder} required type="text" value={this.state.title} onChange={this.handleChange} />
             </label>
             <br/>
 
             <label>
               Autorius:
-              <input name="author" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį" className={BookRegFormCss.placeholder} required type="text" value={this.state.author} onChange={this.handleChange} />
+              <input name="author" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį" className={css.placeholder} required type="text" value={this.state.author} onChange={this.handleChange} />
             </label>
             <br/>
 
             <label>
                Leidimo metai:
-               <input name="released" placeholder="Įveskite knygos leidimo metus" className={BookRegFormCss.placeholder} type="text" pattern="[0-9]*" minLength="4" maxLength="4"  value={this.state.released} onChange={this.handleChange} />
+               <input name="released" placeholder="Įveskite knygos leidimo metus" className={css.placeholder} type="text" pattern="[0-9]*" minLength="4" maxLength="4"  value={this.state.released} onChange={this.handleChange} />
             </label> 
             <br/>
 
             <label>
                ISBN:
-               <input name="isbn" placeholder="Įveskite ISBN" className={BookRegFormCss.placeholder} required type="text" minLength="10" maxLength="13" value={this.state.isbn} onChange={this.handleChange} />
+               <input name="isbn" placeholder="Įveskite ISBN" className={css.placeholder} required type="text" minLength="10" maxLength="13" value={this.state.isbn} onChange={this.handleChange} />
             </label> 
             <br/>
 
             <label>
                Kaina:
-               <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder} required type="text" pattern="\d+?\.\d{2}\s*?$|0" value={this.state.price} onChange={this.handleChange} />
+               <input name="price" placeholder="Įveskite kainą" className={css.placeholder} required type="text" pattern="\d+?\.\d{2}\s*?$|0" value={this.state.price} onChange={this.handleChange} />
             </label> 
             <br/>
 
@@ -106,7 +106,7 @@ class BookRegForm extends Component {
 
             <label>
                Likutis sandėlyje:
-               <input name="count" placeholder="Įveskite kiekį" className={BookRegFormCss.placeholder} required pattern="[0-9]*" type="text" value={this.state.count} onChange={this.handleChange} />
+               <input name="count" placeholder="Įveskite kiekį" className={css.placeholder} required pattern="[0-9]*" type="text" value={this.state.count} onChange={this.handleChange} />
             </label> 
             <br/> 
 
