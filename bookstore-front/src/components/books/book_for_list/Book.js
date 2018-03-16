@@ -5,7 +5,7 @@ import './Book.css';
 class Book extends Component {
 
     deleteBook = () => {
-        axios.delete("http://localhost:8080/removebook/" + this.props.myBook.id)
+        axios.delete("http://localhost:8080/books/" + this.props.myBook.id)
             .then(console.log("SIUNČIAM SIGNALĄ PER REDUX (AR KITĄ VELNIĄ), KAD ATNAUJINTŲ LISTĄ"));
     };
 

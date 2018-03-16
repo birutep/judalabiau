@@ -43,7 +43,18 @@ public class Book {
 	private String authors;
 
 	public Book() {
-		super();
+        this.title = "title";
+        this.releaseYear = 2018;
+        this.isbn = "isbn----------------------";
+        this.price = new BigDecimal(69.69);
+        this.description = "description";
+        this.photopath = "photopath";
+        this.count = 69;
+        this.rating = 0;
+        this.ratingCount = 0;
+        this.eAvailable = false;
+        this.category = "category";
+        this.authors = "authors";
 	}
 
 	public Book( String title, int releaseYear, String isbn, BigDecimal price, String description,

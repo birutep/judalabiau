@@ -47,7 +47,7 @@ class BookRegForm extends Component {
     }
 
     saveBook() {
-        axios.post('http://localhost:8080/addbook', {
+        axios.post('http://localhost:8080/books', {
             title: this.state.title,
             released: this.state.released,
             isbn: this.state.isbn,
@@ -171,7 +171,7 @@ class BookRegForm extends Component {
                     </label>
                     <br/>
 
-                    <input type="submit" value="Registruoti"/>
+                    <input type="submit" value="Registruoti" onClick={this.saveBook}/>
                 </form>
             </div>
         );
