@@ -1,34 +1,55 @@
-
-.BookRegForm {
-    width: 40%;
-    border: 1.5px solid darkgray;
-    box-shadow: 1px 2px 3px gray;
+.book_reg_form {
+    font-family: Arial, serif;
+    margin: auto;
+    width: 50%;
+    border: 1px solid lightgray;
     border-radius: 5px;
+    background: whitesmoke;
+
+
+}
+
+form {
+    margin: auto;
+    width: 80%;
+    /* background: whitesmoke; */
+    background: white;
+
+    border: 1px solid lightgray;
+    border-radius: 3px;
     text-align: justify;
-    margin-left: 20%;
     padding: 50px;
+    padding-top: 20px;
+    box-sizing : border-box;
 }
 
-input, select {
-    margin-left: 10px;
+
+h4 {
+    color: #444c63;
 }
 
-input, textarea, select {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 1px 0.5px 3px gray;
-    padding: 4px 7px;
-    outline: 0;
-    margin-top: 10px;
+h3, h4 {
+    text-align: center;
 }
+
+input, textarea, select, option {
+    width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 4px 7px 4px 7px;
+    margin-top: 5px;
+    box-sizing : border-box;
+}
+
 
 input:focus {
     border: 1px solid gray;
 }
 
-[type=radio], [type=file] {
-    border: none;
-    box-shadow: none;
+[type=checkbox], [type=file] {
+        border: none;
+        width: auto;
+        margin-left: 10px;
 }
 
 [type=file]:focus {
@@ -43,18 +64,23 @@ textarea {
 }
 
 label {
-
+    text-align: left;
     width: 100%;
     font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-label, input, select, textarea {
-    font-family: Arial, serif;
     font-size: 15px;
+    display: inline-block;
+    margin-top: 15px;
 }
 
 [type=submit] {
-    border-color: darkgray;
+    font-weight: bold;
+    width: 100%;
+    padding: 5px 5px;
+    margin-top: 20px;
+    border: 1px solid #888;
+    border-radius: 3px;
 }
+
+.placeholder:focus::-webkit-input-placeholder  {color:transparent;}
+.placeholder:focus::-moz-placeholder   {color:transparent;}
+.placeholder:-moz-placeholder   {color:transparent;}
