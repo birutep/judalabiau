@@ -1,31 +1,38 @@
-import React, { Component } from 'react';
-import BookRegFormCss from './BookRegForm.css';
-
+import React, {Component} from 'react';
+import './BookRegForm.css';
+import axios from "axios/index";
 
 class BookRegForm extends Component {
     constructor(props) {
-      super(props);
-      this.state = {
-        title: '',
-        author: '',
-        released: '',
-        isbn: '',
-        price: '',
-        category: '',
-        count: '',
-        e_available: '',
-        photopath: '',
-        description: ''
-      };   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+        super(props);
+        this.state = {
+            title: '',
+            released: '',
+            isbn: '',
+            price: '',
+            category: '',
+            count: '',
+            e_available: false,
+            photopath: '',
+            description: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCheckbox = this.handleCheckbox.bind(this);
+        this.saveBook = this.saveBook.bind(this);
+
     }
-  
+
     handleChange(event) {
-      this.setState({ [event.target.name]: event.target.value });
+        this.setState({[event.target.name]: event.target.value});
+    }
+
+    handleCheckbox() {
+        this.setState({e_available: !this.state.e_available});
     }
 
     handleSubmit(event) {
+
       alert('"' + this.state.title + '" užregistruota Knygų parduotuvėje.' );
           event.preventDefault();
           // alert(
@@ -125,7 +132,7 @@ class BookRegForm extends Component {
           </form>
         </div>
         );
-      }
+    }
 
 }
 
