@@ -1,4 +1,4 @@
-package lt.judalabiau.BookStore.models;
+package lt.judalabiau.BookStore.books;
 
 import java.math.BigDecimal;
 import java.util.Date;

@@ -1,14 +1,8 @@
-package lt.judalabiau.BookStore.services;
+package lt.judalabiau.BookStore.books;
 
-import java.util.List;
-
-import javax.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lt.judalabiau.BookStore.models.Book;
-import lt.judalabiau.BookStore.repositories.BookRepository;
+import javax.transaction.Transactional;
 
 @Service
 public class BookService {
