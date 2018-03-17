@@ -1,6 +1,3 @@
-1)leidimo metai, pakeiciau is datos i int tipa, nes rei ktik metu, kaip validuot? 
-Patikrint ar ivesti metai ne maziau nei kiek tikrint ar ivesti metai ne didesni nei esami metai?
-ar gali but neigiami metai, muziejionis ten kazkas parasytas pries kristu, juokinga bet?
-2)kaip darom su kaina, nes skaiciukus reiktu laikyt kaip big decimal,\
-as siulau tiesiog anonsus vest kaip -1 ir suagot kaip bigD,
-o reaktui isvedant kaina, tiesiog jei kaina neigiama isvest "anonsas"
+1)aprasyma i db keliauja be arba ne visur su lietuviskomis raidemis, galima taip ir saugot bet padaryt enumsa o reakte isvedinet lietuviskomis?
+2)ar lenteles kur isvedamas knygu sarasiukas virsus turi but kaip atskiras elementas, nepradesim painiotis? as jau pradedu.
+3)ar adminas gali redaguot knygu reitinga, ten ir balsu kieki? butu neteisinga, bet toks gyvenimas
