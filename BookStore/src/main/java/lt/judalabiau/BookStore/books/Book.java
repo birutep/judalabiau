@@ -1,5 +1,7 @@
 package lt.judalabiau.BookStore.books;
 
+import org.hibernate.validator.constraints.Range;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
@@ -18,6 +20,7 @@ public class Book {
     @NotNull
 	private String title;
 
+    @Range(min=1, max=9999)
 	private int releaseYear;
 
     @NotNull
@@ -46,10 +49,10 @@ public class Book {
         this.title = "title";
         this.releaseYear = 2018;
         this.isbn = "isbn----------------------";
-        this.price = new BigDecimal(69.69);
+        this.price = new BigDecimal(-1);
         this.description = "description";
         this.photopath = "photopath";
-        this.count = 69;
+        this.count = 0;
         this.rating = 0;
         this.ratingCount = 0;
         this.eAvailable = false;

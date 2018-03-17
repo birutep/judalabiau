@@ -14,7 +14,8 @@ class BookRegForm extends Component {
             count: '',
             e_available: false,
             photopath: '',
-            description: ''
+            description: '',
+            authors: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,7 +57,8 @@ class BookRegForm extends Component {
             count: this.state.count,
             e_available: this.state.e_available,
             photopath: this.state.photopath,
-            description: this.state.description
+            description: this.state.description,
+            authors: this.state.authors
         })
             .then(() => {
                 console.log("SIUNČIAM SIGNALĄ PER REDUX (AR KITĄ VELNIĄ), KAD ATNAUJINTŲ LISTĄ");
@@ -69,11 +71,12 @@ class BookRegForm extends Component {
                     count: '',
                     e_available: this.state.e_available,
                     photopath: '',
-                    description: ''
+                    description: '',
+                    authors: ''
                 });
             })
             .catch(function (error) {
-                console.log(error);
+                console.log("Klaida įvedant knygą"+error);
             });
     };
 
@@ -94,7 +97,7 @@ class BookRegForm extends Component {
 
                     <label>
                         Autorius:
-                        <input name="author" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
+                        <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
                                className={BookRegFormCss.placeholder} required type="text" value={this.state.author}
                                onChange={this.handleChange}/>
                     </label>
