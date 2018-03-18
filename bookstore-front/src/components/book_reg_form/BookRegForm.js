@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import BookRegFormCss from './BookRegForm.css';
 import axios from "axios/index";
+import {BOOKS} from "../../server_links/ServerLinks";
+import {inject} from "mobx-react";
 
+@inject('BookStore')
 class BookRegForm extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             title: '',
+            author: '',
             released: '',
             isbn: '',
             price: '',
@@ -35,6 +40,7 @@ class BookRegForm extends Component {
 
         alert('"' + this.state.title + '" užregistruota Knygų parduotuvėje.');
         event.preventDefault();
+
         // alert(
         //   `Selected file - ${this.fileInput.files[0].name}`
         // );
@@ -46,9 +52,11 @@ class BookRegForm extends Component {
         // });
     }
 
-    saveBook() {
-        axios.post('http://localhost:8080/books', {
+    saveBook(e) {
+        e.preventDefault();
+        axios.post(BOOKS, {
             title: this.state.title,
+            authors: this.state.author,
             released: this.state.released,
             isbn: this.state.isbn,
             price: this.state.price,
@@ -59,9 +67,10 @@ class BookRegForm extends Component {
             description: this.state.description
         })
             .then(() => {
-                console.log("SIUNČIAM SIGNALĄ PER REDUX (AR KITĄ VELNIĄ), KAD ATNAUJINTŲ LISTĄ");
+                this.props.BookStore.changeState();
                 this.setState({
                     title: '',
+                    author: '',
                     released: '',
                     isbn: '',
                     price: '',

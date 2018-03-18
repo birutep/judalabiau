@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './Book.css';
+import {BOOKS} from "../../../server_links/ServerLinks";
+import {inject} from "mobx-react";
 
+@inject('BookStore')
 class Book extends Component {
 
-    deleteBook = () => {
-        axios.delete("http://localhost:8080/books/" + this.props.myBook.id)
-            .then(console.log("SIUNČIAM SIGNALĄ PER REDUX (AR KITĄ VELNIĄ), KAD ATNAUJINTŲ LISTĄ"));
+    deleteBook = (e) => {
+        e.preventDefault();
+        axios.delete(BOOKS + this.props.myBook.id)
+            .then(() => {
+                this.props.BookStore.changeState();
+            });
     };
 
     render() {
