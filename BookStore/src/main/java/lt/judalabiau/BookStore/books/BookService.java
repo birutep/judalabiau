@@ -31,6 +31,10 @@ public class BookService {
 
 	@Transactional
 	public void updateBook(Long id, Book book) {
-		bookRepository.save(book);
+		Book original = bookRepository.findById(id).orElse(null);
+		if(original!=null){
+		    book.setId(id);
+		    bookRepository.save(book);
+        }
 	}
 }
