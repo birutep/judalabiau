@@ -24,7 +24,7 @@ class BookRegForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCheckbox = this.handleCheckbox.bind(this);
-        // this.saveBook = this.saveBook.bind(this);
+        this.saveBook = this.saveBook.bind(this);
 
     }
 
@@ -40,51 +40,41 @@ class BookRegForm extends Component {
 
         alert('"' + this.state.title + '" užregistruota Knygų parduotuvėje.');
         event.preventDefault();
-
-        // alert(
-        //   `Selected file - ${this.fileInput.files[0].name}`
-        // );
-
-        // const data = new FormData(event.target);
-        // fetch('/api/book-reg-form-submit-url', {
-        //   method: 'POST',
-        //   body: data,
-        // });
     }
 
-    // saveBook(e) {
-    //     e.preventDefault();
-    //     axios.post(BOOKS, {
-    //         title: this.state.title,
-    //         authors: this.state.author,
-    //         releaseYear: this.state.released,
-    //         isbn: this.state.isbn,
-    //         price: this.state.price,
-    //         category: this.state.category,
-    //         count: this.state.count,
-    //         e_available: this.state.e_available,
-    //         photopath: this.state.photopath,
-    //         description: this.state.description
-    //     })
-    //         .then(() => {
-    //             this.props.BookStore.changeState();
-    //             this.setState({
-    //                 title: '',
-    //                 author: '',
-    //                 released: '',
-    //                 isbn: '',
-    //                 price: '',
-    //                 category: '',
-    //                 count: '',
-    //                 e_available: this.state.e_available,
-    //                 photopath: '',
-    //                 description: ''
-    //             });
-    //         })
-    //         .catch(function (error) {
-    //             console.log("Klaida įvedant knygą"+error);
-    //         });
-    // };
+    saveBook(e) {
+        e.preventDefault();
+        axios.post(BOOKS, {
+            title: this.state.title,
+            authors: this.state.author,
+            releaseYear: this.state.released,
+            isbn: this.state.isbn,
+            price: this.state.price,
+            category: this.state.category,
+            count: this.state.count,
+            e_available: this.state.e_available,
+            photopath: this.state.photopath,
+            description: this.state.description
+        })
+            .then(() => {
+                this.props.BookStore.changeState();
+                this.setState({
+                    title: '',
+                    author: '',
+                    released: '',
+                    isbn: '',
+                    price: '',
+                    category: '',
+                    count: '',
+                    e_available: this.state.e_available,
+                    photopath: '',
+                    description: ''
+                });
+            })
+            .catch(function (error) {
+                console.log("Klaida įvedant knygą"+error);
+            });
+    };
 
 
     render() {
