@@ -1,0 +1,7 @@
+//sita faila persivadinam is .txt i .json ir persikraunam visual studio code
+
+{
+    "compilerOptions": {
+        "experimentalDecorators": true
+    }
+  }
