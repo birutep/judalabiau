@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import BookRegFormCss from './BookEditForm.css';
 import axios from "axios/index";
+import {inject} from "mobx-react";
+import {BOOKS} from "../../../server_links/ServerLinks";
 
+@inject('BookStore')
 class BookRegForm extends Component {
     constructor(props) {
         super(props);
@@ -51,9 +54,9 @@ class BookRegForm extends Component {
     updateBook() {
         console.log("siunciam updeitui "+this.state)
         console.log('adresu http://localhost:8080/books/'+this.state.id)
-        axios.put('http://localhost:8080/books/'+this.state.id, {
+        axios.put(BOOKS + this.state.id, {
             title: this.state.title,
-            released: this.state.released,
+            releaseYear: this.state.released,
             isbn: this.state.isbn,
             price: this.state.price,
             category: this.state.category,
@@ -65,7 +68,7 @@ class BookRegForm extends Component {
             id: this.state.id
         })
             .then(() => {
-                console.log("SIUNČIAM SIGNALĄ PER REDUX (AR KITĄ VELNIĄ), KAD ATNAUJINTŲ LISTĄ");
+                this.props.BookStore.changeState();
                 this.setState({
                     title: '',
                     released: '',

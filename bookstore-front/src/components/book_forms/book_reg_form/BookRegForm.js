@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import BookRegFormCss from './BookRegForm.css';
 import axios from "axios/index";
+import {inject} from "mobx-react";
+import {BOOKS} from "../../../server_links/ServerLinks";
 
+@inject('BookStore')
 class BookRegForm extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             title: '',
+            author: '',
             released: '',
             isbn: '',
             price: '',
@@ -14,8 +19,7 @@ class BookRegForm extends Component {
             count: '',
             e_available: false,
             photopath: '',
-            description: '',
-            authors: ''
+            description: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,6 +40,7 @@ class BookRegForm extends Component {
 
         alert('"' + this.state.title + '" užregistruota Knygų parduotuvėje.');
         event.preventDefault();
+
         // alert(
         //   `Selected file - ${this.fileInput.files[0].name}`
         // );
@@ -47,23 +52,25 @@ class BookRegForm extends Component {
         // });
     }
 
-    saveBook() {
-        axios.post('http://localhost:8080/books', {
+    saveBook(e) {
+        e.preventDefault();
+        axios.post(BOOKS, {
             title: this.state.title,
-            released: this.state.released,
+            authors: this.state.author,
+            releaseYear: this.state.released,
             isbn: this.state.isbn,
             price: this.state.price,
             category: this.state.category,
             count: this.state.count,
             e_available: this.state.e_available,
             photopath: this.state.photopath,
-            description: this.state.description,
-            authors: this.state.authors
+            description: this.state.description
         })
             .then(() => {
-                console.log("SIUNČIAM SIGNALĄ PER REDUX (AR KITĄ VELNIĄ), KAD ATNAUJINTŲ LISTĄ");
+                this.props.BookStore.changeState();
                 this.setState({
                     title: '',
+                    author: '',
                     released: '',
                     isbn: '',
                     price: '',
@@ -71,8 +78,7 @@ class BookRegForm extends Component {
                     count: '',
                     e_available: this.state.e_available,
                     photopath: '',
-                    description: '',
-                    authors: ''
+                    description: ''
                 });
             })
             .catch(function (error) {
@@ -97,7 +103,7 @@ class BookRegForm extends Component {
 
                     <label>
                         Autorius:
-                        <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
+                        <input name="author" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
                                className={BookRegFormCss.placeholder} required type="text" value={this.state.author}
                                onChange={this.handleChange}/>
                     </label>

@@ -1,0 +1,1 @@
+export const BOOKS = 'http://localhost:8080/books/';

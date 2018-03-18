@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './BookList.css';
-import axios from 'axios';
 import Book from "../book_for_list/Book";
+import {BOOKS} from "../../../server_links/ServerLinks";
+import axios from 'axios';
+import {inject, observer} from "mobx-react";
 
+@inject('BookStore')
+@observer
 class BookList extends Component {
 
     constructor(props) {
@@ -16,10 +20,14 @@ class BookList extends Component {
         this.getAllBooks();
     }
 
-    getAllBooks() {
-        axios.get("http://localhost:8080/books").then(response => this.setState({books: response.data}));
+    componentWillReceiveProps() {
+        this.getAllBooks();
     }
-     
+
+    getAllBooks() {
+        axios.get(BOOKS).then(response => this.setState({books: response.data}));
+    }
+
     render() {
         const booksAsComponents = this.state.books.map(book => {
             return <Book key={book.id} myBook={book}/>;
@@ -54,7 +62,7 @@ class BookList extends Component {
                 </table>
             </div>
         )
-      }
+    }
 }
 
 export default BookList;
