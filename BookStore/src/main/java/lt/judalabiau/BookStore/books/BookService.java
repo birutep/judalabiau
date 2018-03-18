@@ -20,7 +20,7 @@ public class BookService {
 	}
 
 	@Transactional
-	public void cretaeBook(Book book) {
+	public void createBook(Book book) {
 		bookRepository.save(book);
 	}
 
