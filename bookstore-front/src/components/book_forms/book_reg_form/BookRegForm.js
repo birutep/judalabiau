@@ -40,16 +40,6 @@ class BookRegForm extends Component {
 
         alert('"' + this.state.title + '" užregistruota Knygų parduotuvėje.');
         event.preventDefault();
-
-        // alert(
-        //   `Selected file - ${this.fileInput.files[0].name}`
-        // );
-
-        // const data = new FormData(event.target);
-        // fetch('/api/book-reg-form-submit-url', {
-        //   method: 'POST',
-        //   body: data,
-        // });
     }
 
     saveBook(e) {
@@ -112,8 +102,8 @@ class BookRegForm extends Component {
                     <label>
                         Leidimo metai:
                         <input name="released" placeholder="Įveskite knygos leidimo metus"
-                               className={BookRegFormCss.placeholder} type="text" pattern="[0-9]*" minLength="4"
-                               maxLength="4" value={this.state.released} onChange={this.handleChange}/>
+                               className={BookRegFormCss.placeholder} type="text" pattern="^\d{4}$"
+                               value={this.state.released} onChange={this.handleChange}/>
                     </label>
                     <br/>
 
@@ -127,8 +117,8 @@ class BookRegForm extends Component {
 
                     <label>
                         Kaina:
-                        <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder} required
-                               type="text" pattern="\d+?\.\d{2}\s*?$|0" value={this.state.price}
+                        <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder}
+                               type="text" pattern="\d+?\.\d{1,2}\s*?$|^[1-9]\d*$" value={this.state.price}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -162,15 +152,15 @@ class BookRegForm extends Component {
                     <br/>
 
                     <label>
-                        Elektroninė knyga:
-                        <input name="e_available" type="checkbox" value={this.state.e_available}
-                               onChange={this.handleChange}/>
+                        Viršelio nuotrauka:
+                        <input name="photopath" placeholder="Nurodykite kelią iki nuotraukos" type="text" value={this.state.photopath} onChange={this.handleChange}/>
                     </label>
                     <br/>
 
                     <label>
-                        Viršelio nuotrauka:
-                        <input name="photopath" type="file" value={this.state.photopath} onChange={this.handleChange}/>
+                        Elektroninė knyga:
+                        <input name="e_available" type="checkbox" value={this.state.e_available}
+                               onChange={this.handleChange}/>
                     </label>
                     <br/>
 
