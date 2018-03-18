@@ -21,7 +21,7 @@ public class BookController {
     //prideti knyga i lista
     @PostMapping("/books")
     public @ResponseBody void addBook(@RequestBody Book book){
-        bookService.cretaeBook(book);
+        bookService.createBook(book);
     }
 
     //pasalinti knygai is listo
