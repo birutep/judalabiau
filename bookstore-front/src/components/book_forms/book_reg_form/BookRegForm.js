@@ -24,7 +24,7 @@ class BookRegForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCheckbox = this.handleCheckbox.bind(this);
-        this.saveBook = this.saveBook.bind(this);
+        // this.saveBook = this.saveBook.bind(this);
 
     }
 
@@ -52,39 +52,39 @@ class BookRegForm extends Component {
         // });
     }
 
-    saveBook(e) {
-        e.preventDefault();
-        axios.post(BOOKS, {
-            title: this.state.title,
-            authors: this.state.author,
-            releaseYear: this.state.released,
-            isbn: this.state.isbn,
-            price: this.state.price,
-            category: this.state.category,
-            count: this.state.count,
-            e_available: this.state.e_available,
-            photopath: this.state.photopath,
-            description: this.state.description
-        })
-            .then(() => {
-                this.props.BookStore.changeState();
-                this.setState({
-                    title: '',
-                    author: '',
-                    released: '',
-                    isbn: '',
-                    price: '',
-                    category: '',
-                    count: '',
-                    e_available: this.state.e_available,
-                    photopath: '',
-                    description: ''
-                });
-            })
-            .catch(function (error) {
-                console.log("Klaida įvedant knygą"+error);
-            });
-    };
+    // saveBook(e) {
+    //     e.preventDefault();
+    //     axios.post(BOOKS, {
+    //         title: this.state.title,
+    //         authors: this.state.author,
+    //         releaseYear: this.state.released,
+    //         isbn: this.state.isbn,
+    //         price: this.state.price,
+    //         category: this.state.category,
+    //         count: this.state.count,
+    //         e_available: this.state.e_available,
+    //         photopath: this.state.photopath,
+    //         description: this.state.description
+    //     })
+    //         .then(() => {
+    //             this.props.BookStore.changeState();
+    //             this.setState({
+    //                 title: '',
+    //                 author: '',
+    //                 released: '',
+    //                 isbn: '',
+    //                 price: '',
+    //                 category: '',
+    //                 count: '',
+    //                 e_available: this.state.e_available,
+    //                 photopath: '',
+    //                 description: ''
+    //             });
+    //         })
+    //         .catch(function (error) {
+    //             console.log("Klaida įvedant knygą"+error);
+    //         });
+    // };
 
 
     render() {
@@ -112,8 +112,8 @@ class BookRegForm extends Component {
                     <label>
                         Leidimo metai:
                         <input name="released" placeholder="Įveskite knygos leidimo metus"
-                               className={BookRegFormCss.placeholder} type="text" pattern="[0-9]*" minLength="4"
-                               maxLength="4" value={this.state.released} onChange={this.handleChange}/>
+                               className={BookRegFormCss.placeholder} type="text" pattern="^\d{4}$"
+                               value={this.state.released} onChange={this.handleChange}/>
                     </label>
                     <br/>
 
@@ -127,8 +127,8 @@ class BookRegForm extends Component {
 
                     <label>
                         Kaina:
-                        <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder} required
-                               type="text" pattern="\d+?\.\d{2}\s*?$|0" value={this.state.price}
+                        <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder}
+                               type="text" pattern="\d+?\.\d{1,2}\s*?$|^[1-9]\d*$" value={this.state.price}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -162,15 +162,15 @@ class BookRegForm extends Component {
                     <br/>
 
                     <label>
-                        Elektroninė knyga:
-                        <input name="e_available" type="checkbox" value={this.state.e_available}
-                               onChange={this.handleChange}/>
+                        Viršelio nuotrauka:
+                        <input name="photopath" placeholder="Nurodykite kelią iki nuotraukos" type="text" value={this.state.photopath} onChange={this.handleChange}/>
                     </label>
                     <br/>
 
                     <label>
-                        Viršelio nuotrauka:
-                        <input name="photopath" type="file" value={this.state.photopath} onChange={this.handleChange}/>
+                        Elektroninė knyga:
+                        <input name="e_available" type="checkbox" value={this.state.e_available}
+                               onChange={this.handleChange}/>
                     </label>
                     <br/>
 
