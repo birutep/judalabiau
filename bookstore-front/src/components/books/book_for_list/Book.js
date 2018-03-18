@@ -29,7 +29,7 @@ class Book extends Component {
                 <td>{this.props.myBook.count}</td>
                 <td>{this.props.myBook.rating}</td>
                 <td>{this.props.myBook.ratingCount}</td>
-                <td>{this.props.myBook.eAvailable}</td>
+                <td>{this.props.myBook.eAvailable ? 'taip' : 'ne'}</td>
                 <td>{this.props.myBook.category}</td>
                 <td><img src="./img/edit.png" alt="edit" /></td>
                 <td><img src="./img/delete.png" alt="delete" onClick={this.deleteBook} /></td>

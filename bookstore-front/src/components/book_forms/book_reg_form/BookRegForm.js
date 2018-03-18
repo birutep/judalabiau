@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import BookRegFormCss from './BookRegForm.css';
 import axios from "axios/index";
-import {BOOKS} from "../../server_links/ServerLinks";
 import {inject} from "mobx-react";
+import {BOOKS} from "../../../server_links/ServerLinks";
 
 @inject('BookStore')
 class BookRegForm extends Component {
@@ -19,8 +19,7 @@ class BookRegForm extends Component {
             count: '',
             e_available: false,
             photopath: '',
-            description: '',
-            authors: ''
+            description: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,15 +57,14 @@ class BookRegForm extends Component {
         axios.post(BOOKS, {
             title: this.state.title,
             authors: this.state.author,
-            released: this.state.released,
+            releaseYear: this.state.released,
             isbn: this.state.isbn,
             price: this.state.price,
             category: this.state.category,
             count: this.state.count,
             e_available: this.state.e_available,
             photopath: this.state.photopath,
-            description: this.state.description,
-            authors: this.state.authors
+            description: this.state.description
         })
             .then(() => {
                 this.props.BookStore.changeState();
@@ -80,8 +78,7 @@ class BookRegForm extends Component {
                     count: '',
                     e_available: this.state.e_available,
                     photopath: '',
-                    description: '',
-                    authors: ''
+                    description: ''
                 });
             })
             .catch(function (error) {
@@ -106,7 +103,7 @@ class BookRegForm extends Component {
 
                     <label>
                         Autorius:
-                        <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
+                        <input name="author" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
                                className={BookRegFormCss.placeholder} required type="text" value={this.state.author}
                                onChange={this.handleChange}/>
                     </label>
