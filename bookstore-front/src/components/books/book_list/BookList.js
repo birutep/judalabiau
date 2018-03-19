@@ -18,7 +18,6 @@ class BookList extends Component {
     }
 
     componentWillReceiveProps() {
-        console.log("listas gavo propsus");
         this.getAllBooks();
     }
 

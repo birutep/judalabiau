@@ -10,17 +10,17 @@ class BookRegForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: props.book.title,
-            released: props.book.released,
-            isbn: props.book.isbn,
-            price: props.book.price,
-            category: props.book.category,
-            count: props.book.count,
-            e_available: props.book.e_available,
-            photopath: props.book.photopath,
-            description: props.book.description,
-            authors: props.book.authors,
-            id: props.book.id
+            title: '',
+            released: '',
+            isbn: '',
+            price: '',
+            category: '',
+            count: '',
+            e_available: false,
+            photopath: '',
+            description: '',
+            authors: '',
+            id: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +30,6 @@ class BookRegForm extends Component {
     }
 
     componentWillReceiveProps() {
-        console.log("gavo propsus");
         this.setState({
             title: this.props.book.title,
             released: this.props.book.released,

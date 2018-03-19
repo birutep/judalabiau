@@ -1,0 +1,6 @@
+#FileLock
+#Mon Mar 19 20:21:01 EET 2018
+hostName=192.168.1.132
+id=1623f7e3872f0e1385e6203a95df6078dd78bcbbacc
+method=file
+server=192.168.1.132\:52765
