@@ -16,7 +16,7 @@ class App extends Component {
             <Wrap>
                 <BookRegForm/>
                 <BookList bookStatus={book} changed={BookStore.changed}/>
-                <BookEditForm book="hm"/>
+                <BookEditForm book={BookStore.bookToEdit} changed={BookStore.changed}/>
             </Wrap>
         );
     }

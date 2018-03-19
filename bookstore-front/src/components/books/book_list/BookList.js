@@ -3,10 +3,7 @@ import './BookList.css';
 import Book from "../book_for_list/Book";
 import {BOOKS} from "../../../server_links/ServerLinks";
 import axios from 'axios';
-import {inject, observer} from "mobx-react";
 
-@inject('BookStore')
-@observer
 class BookList extends Component {
 
     constructor(props) {
