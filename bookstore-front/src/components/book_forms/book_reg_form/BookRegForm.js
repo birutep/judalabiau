@@ -49,7 +49,7 @@ class BookRegForm extends Component {
             authors: this.state.author,
             releaseYear: this.state.released,
             isbn: this.state.isbn,
-            price: this.state.price,
+            price: this.state.price===''? -1:this.state.price,
             category: this.state.category,
             count: this.state.count,
             e_available: this.state.e_available,
