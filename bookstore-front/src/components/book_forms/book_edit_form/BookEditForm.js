@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import BookRegFormCss from './BookEditForm.css';
 import axios from "axios/index";
-import {inject} from "mobx-react";
+import {inject, observer} from "mobx-react";
 import {BOOKS} from "../../../server_links/ServerLinks";
 
 @inject('BookStore')
+@observer
 class BookRegForm extends Component {
     constructor(props) {
         super(props);
@@ -26,6 +27,23 @@ class BookRegForm extends Component {
         this.handleCheckbox = this.handleCheckbox.bind(this);
         this.updateBook = this.updateBook.bind(this);
 
+    }
+
+    componentWillReceiveProps() {
+        console.log("gavo propsus");
+        this.setState({
+            title: this.props.book.title,
+            released: this.props.book.released,
+            isbn: this.props.book.isbn,
+            price: this.props.book.price,
+            category: this.props.book.category,
+            count: this.props.book.count,
+            e_available: this.props.book.e_available,
+            photopath: this.props.book.photopath,
+            description: this.props.book.description,
+            authors: this.props.book.authors,
+            id: this.props.book.id
+        })
     }
 
     handleChange(event) {
@@ -52,8 +70,8 @@ class BookRegForm extends Component {
     }
 
     updateBook() {
-        console.log("siunciam updeitui "+this.state)
-        console.log('adresu http://localhost:8080/books/'+this.state.id)
+        console.log("siunciam updeitui " + this.state)
+        console.log('adresu http://localhost:8080/books/' + this.state.id)
         axios.put(BOOKS + this.state.id, {
             title: this.state.title,
             releaseYear: this.state.released,
@@ -83,7 +101,7 @@ class BookRegForm extends Component {
                 });
             })
             .catch(function (error) {
-                console.log("Klaida redaguojant knygą"+error);
+                console.log("Klaida redaguojant knygą" + error);
             });
     };
 
@@ -112,7 +130,7 @@ class BookRegForm extends Component {
                     <label>
                         Autorius:
                         <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.author}
+                               className={BookRegFormCss.placeholder} required type="text" value={this.state.authors}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -171,10 +189,11 @@ class BookRegForm extends Component {
 
                     <label>
                         Viršelio nuotrauka:
-                        <input name="photopath" placeholder="Nurodykite kelią iki nuotraukos" type="text" value={this.state.photopath} onChange={this.handleChange}/>
+                        <input name="photopath" placeholder="Nurodykite kelią iki nuotraukos" type="text"
+                               value={this.state.photopath} onChange={this.handleChange}/>
                     </label>
                     <br/>
-                    
+
                     <label>
                         Elektroninė knyga:
                         <input name="e_available" type="checkbox" value={this.state.e_available}
