@@ -11,7 +11,7 @@ class BookRegForm extends Component {
         super(props);
         this.state = {
             title: '',
-            author: '',
+            authors: '',
             released: '',
             isbn: '',
             price: '',
@@ -46,7 +46,7 @@ class BookRegForm extends Component {
         e.preventDefault();
         axios.post(BOOKS, {
             title: this.state.title,
-            authors: this.state.author,
+            authors: this.state.authors,
             releaseYear: this.state.released,
             isbn: this.state.isbn,
             price: this.state.price===''? -1:this.state.price,
@@ -60,7 +60,7 @@ class BookRegForm extends Component {
                 this.props.BookStore.changeState();
                 this.setState({
                     title: '',
-                    author: '',
+                    authors: '',
                     released: '',
                     isbn: '',
                     price: '',
@@ -93,8 +93,8 @@ class BookRegForm extends Component {
 
                     <label>
                         Autorius:
-                        <input name="author" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.author}
+                        <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
+                               className={BookRegFormCss.placeholder} required type="text" value={this.state.authors}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
