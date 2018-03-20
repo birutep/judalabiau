@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './BookList.css';
-import Book from "../book_for_list/Book";
+import Book from "./one_book/Book";
 import {BOOKS} from "../../../server_links/ServerLinks";
 import axios from 'axios';
 

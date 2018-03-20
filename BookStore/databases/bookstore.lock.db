@@ -1,6 +1,6 @@
 #FileLock
-#Tue Mar 20 21:59:21 EET 2018
-hostName=192.168.1.132
-id=16244fe9913329c5af2aef31cc3c4a786091ff94f72
+#Tue Mar 20 23:24:09 EET 2018
+hostName=DESKTOP-7JFLQ8K
+id=162454c2bc82f9ace9c2702ab39ccd6097ac8dd9ed8
 method=file
-server=192.168.1.132\:52646
+server=192.168.56.1\:65408

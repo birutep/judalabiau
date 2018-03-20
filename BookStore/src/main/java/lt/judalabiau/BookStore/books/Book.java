@@ -32,7 +32,7 @@ public class Book {
 	private String photopath;		//guru keliui naudoja Byte[]
 
 	@NotNull
-    private Integer count;
+    private Long count;
 
 	private Double rating; // Count stars
 	private Integer ratingCount; // How many voters voted
@@ -48,8 +48,7 @@ public class Book {
         this.title = "title";
         this.isbn = "default isbn";
         this.price = new BigDecimal(-1);
-        this.count = 0;
-        this.category = "default category";
+        this.count = 0L;
         this.authors = "default author";
 	}
 
@@ -102,10 +101,10 @@ public class Book {
 		this.photopath = photopath;
 	}
 
-	public Integer getCount() {
+	public Long getCount() {
 		return count;
 	}
-	public void setCount(Integer count) {
+	public void setCount(Long count) {
 		this.count = count;
 	}
 
