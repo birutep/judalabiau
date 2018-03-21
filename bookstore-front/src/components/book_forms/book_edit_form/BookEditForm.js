@@ -10,11 +10,24 @@ class BookRegForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            emptyBook: {
+                title: '',
+                released: '',
+                isbn: '',
+                price: '',
+                category: 'Apsakymas',
+                count: '',
+                e_available: false,
+                photopath: '',
+                description: '',
+                authors: '',
+                id: ''
+            },
             title: '',
             released: '',
             isbn: '',
             price: '',
-            category: '',
+            category: 'Apsakymas',
             count: '',
             e_available: false,
             photopath: '',
@@ -86,18 +99,7 @@ class BookRegForm extends Component {
         })
             .then(() => {
                 this.props.BookStore.changeState();
-                this.setState({
-                    title: '',
-                    released: '',
-                    isbn: '',
-                    price: '',
-                    category: '',
-                    count: '',
-                    e_available: this.state.e_available,
-                    photopath: '',
-                    description: '',
-                    authors: ''
-                });
+                this.props.BookStore.editBook(this.state.emptyBook);
             })
             .catch(function (error) {
                 console.log("Klaida redaguojant knygą" + error);
@@ -161,7 +163,6 @@ class BookRegForm extends Component {
                     <label>
                         Kategorija:
                         <select name="category" required value={this.state.category} onChange={this.handleChange}>
-                            <option value="" disabled> -- pasirinkite kategoriją --</option>
                             <option value="apsakymai">Apsakymas</option>
                             <option value="biografinis">Biografija, autobiografija</option>
                             <option value="detektyvinis">Detektyvinis romanas</option>
