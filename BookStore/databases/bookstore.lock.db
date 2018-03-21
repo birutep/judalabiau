@@ -1,6 +1,6 @@
 #FileLock
-#Wed Mar 21 13:16:58 EET 2018
-hostName=localhost
-id=1624846b5dafc31cc5efedc28f330aa78d9706b3291
+#Wed Mar 21 13:30:12 EET 2018
+hostName=DESKTOP-SQH3DHP
+id=1624852d955d6c4b8b38057616aba2feb4a874c3aa0
 method=file
-server=localhost\:53425
+server=192.168.43.38\:53736

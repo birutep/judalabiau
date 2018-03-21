@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import css from'./Book.css';
-import {BOOKS} from "../../../server_links/ServerLinks";
+import {BOOKS} from "../../../../server_links/ServerLinks";
 import {inject} from "mobx-react";
 
 @inject('BookStore')

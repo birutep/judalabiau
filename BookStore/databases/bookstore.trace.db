@@ -908,3 +908,6 @@ select book0_.id as id1_0_, book0_.author as author2_0_, book0_.category as cate
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2018-03-20 23:01:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "111111111111111111"; SQL statement:
+insert into book (authors, category, count, description, e_available, isbn, photopath, price, rating, rating_count, release_year, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13) [22003-196]
