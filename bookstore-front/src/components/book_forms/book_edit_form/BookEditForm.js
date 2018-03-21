@@ -112,14 +112,7 @@ class BookRegForm extends Component {
             <div className={BookRegFormCss.book_reg_form}>
                 <h4><i className="fa fa-book"/> &nbsp; Knygų parduotuvė</h4>
                 <form onSubmit={this.handleSubmit}>
-                    <h3>Knygos {this.state.title} redagavimas</h3>
-                    <label>
-                        Knygos id:
-                        <input name="id" placeholder="Įveskite knygos id"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.id}
-                               onChange={this.handleChange}/>
-                    </label>
-                    <br/>
+                    <h3>Knygos kurios id {this.state.id} redagavimas</h3>
                     <label>
                         Knygos pavadinimas:
                         <input name="title" placeholder="Įveskite knygos pavadinimą"
@@ -166,7 +159,7 @@ class BookRegForm extends Component {
                             <option value="apsakymai">Apsakymas</option>
                             <option value="biografinis">Biografija, autobiografija</option>
                             <option value="detektyvinis">Detektyvinis romanas</option>
-                            <option value="ese">Esė, publicistika</option>
+                            <option value="esė">Esė, publicistika</option>
                             <option value="dienorasciai">Dienoraščiai, laiškai ir memuarai</option>
                             <option value="fantastika">Fantastika</option>
                             <option value="istorinis">Istorinis romanas</option>

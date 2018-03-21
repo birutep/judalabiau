@@ -130,11 +130,11 @@ class BookRegForm extends Component {
                             <option value="biografinis">Biografija, autobiografija</option>
                             <option value="detektyvinis">Detektyvinis romanas</option>
                             <option value="ese">Esė, publicistika</option>
-                            <option value="dienorasciai">Dienoraščiai, laiškai ir memuarai</option>
+                            <option value="dienoraščiai">Dienoraščiai, laiškai ir memuarai</option>
                             <option value="fantastika">Fantastika</option>
                             <option value="istorinis">Istorinis romanas</option>
                             <option value="klasika">Klasika</option>
-                            <option value="meiles">Meilės romanas</option>
+                            <option value="meilės">Meilės romanas</option>
                             <option value="modernas">Modernioji literatūra</option>
                             <option value="poezija">Poezija</option>
                             <option value="siaubo">Siaubo romanas</option>
