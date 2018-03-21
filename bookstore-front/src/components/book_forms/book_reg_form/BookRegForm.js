@@ -15,7 +15,7 @@ class BookRegForm extends Component {
             released: '',
             isbn: '',
             price: '',
-            category: '',
+            category: 'Apsakymas',
             count: '',
             e_available: false,
             photopath: '',
@@ -64,7 +64,7 @@ class BookRegForm extends Component {
                     released: '',
                     isbn: '',
                     price: '',
-                    category: '',
+                    category: 'Apsakymas',
                     count: '',
                     e_available: this.state.e_available,
                     photopath: '',
@@ -126,7 +126,6 @@ class BookRegForm extends Component {
                     <label>
                         Kategorija:
                         <select name="category" required value={this.state.category} onChange={this.handleChange}>
-                            <option value="" disabled> -- pasirinkite kategoriją --</option>
                             <option value="apsakymai">Apsakymas</option>
                             <option value="biografinis">Biografija, autobiografija</option>
                             <option value="detektyvinis">Detektyvinis romanas</option>

@@ -3,17 +3,17 @@ import {observable, action, computed} from 'mobx'
 class BookStore {
     @observable changed = false;
     @observable bookToEdit = {
-        title: 'asd',
+        title: '',
         released: '',
-        isbn: 'sad',
-        price: 'dsa',
-        category: '',
+        isbn: '',
+        price: '',
+        category: 'Apsakymas',
         count: '',
-        e_available: '',
+        e_available: false,
         photopath: '',
         description: '',
-        authors: 'wjniwrvjoiw',
-        id: '456'
+        authors: '',
+        id: ''
     };
 
     @action changeState = () => {
