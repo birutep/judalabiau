@@ -15,7 +15,7 @@ class BookRegForm extends Component {
             released: '',
             isbn: '',
             price: '',
-            category: '',
+            category: 'Apsakymas',
             count: '',
             e_available: false,
             photopath: '',
@@ -64,7 +64,7 @@ class BookRegForm extends Component {
                     released: '',
                     isbn: '',
                     price: '',
-                    category: '',
+                    category: 'Apsakymas',
                     count: '',
                     e_available: this.state.e_available,
                     photopath: '',
@@ -126,16 +126,15 @@ class BookRegForm extends Component {
                     <label>
                         Kategorija:
                         <select name="category" required value={this.state.category} onChange={this.handleChange}>
-                            <option value="" disabled> -- pasirinkite kategoriją --</option>
                             <option value="apsakymai">Apsakymas</option>
                             <option value="biografinis">Biografija, autobiografija</option>
                             <option value="detektyvinis">Detektyvinis romanas</option>
                             <option value="ese">Esė, publicistika</option>
-                            <option value="dienorasciai">Dienoraščiai, laiškai ir memuarai</option>
+                            <option value="dienoraščiai">Dienoraščiai, laiškai ir memuarai</option>
                             <option value="fantastika">Fantastika</option>
                             <option value="istorinis">Istorinis romanas</option>
                             <option value="klasika">Klasika</option>
-                            <option value="meiles">Meilės romanas</option>
+                            <option value="meilės">Meilės romanas</option>
                             <option value="modernas">Modernioji literatūra</option>
                             <option value="poezija">Poezija</option>
                             <option value="siaubo">Siaubo romanas</option>
