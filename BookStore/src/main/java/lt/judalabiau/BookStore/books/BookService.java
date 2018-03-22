@@ -37,4 +37,9 @@ public class BookService {
 		    bookRepository.save(book);
         }
 	}
+
+	@Transactional
+    public void saveAll(Iterable<Book> books){
+        bookRepository.saveAll(books);
+    }
 }
