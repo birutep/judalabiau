@@ -3,9 +3,6 @@ package lt.judalabiau.BookStore.books;
 import org.hibernate.validator.constraints.Range;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,8 +17,8 @@ public class Book {
     @NotNull
 	private String title;
 
-    @Range(min=1, max=9999)
-	private int releaseYear;
+	@Range(min = 1, max = 9999)
+    private Integer releaseYear;
 
     @NotNull
 	private String isbn;
@@ -29,15 +26,17 @@ public class Book {
     @NotNull
 	private BigDecimal price;
 
+    @Lob
 	private String description;
-	private String photopath;
+    @Lob
+	private String photopath;		//guru keliui naudoja Byte[]
 
-    @NotNull
-	private int count;
+	@NotNull
+    private Long count;
 
-	private double rating; // Count stars
-	private int ratingCount; // How many voters voted
-	private boolean eAvailable;
+	private Double rating; // Count stars
+	private Integer ratingCount; // How many voters voted
+	private Boolean eAvailable;
 
 	@NotNull
 	private String category;
@@ -47,35 +46,10 @@ public class Book {
 
 	public Book() {
         this.title = "title";
-        this.releaseYear = 2018;
-        this.isbn = "isbn----------------------";
+        this.isbn = "default isbn";
         this.price = new BigDecimal(-1);
-        this.description = "description";
-        this.photopath = "photopath";
-        this.count = 0;
-        this.rating = 0;
-        this.ratingCount = 0;
-        this.eAvailable = false;
-        this.category = "category";
-        this.authors = "authors";
-	}
-
-	public Book( String title, int releaseYear, String isbn, BigDecimal price, String description,
-			String photopath, int count, double rating, int ratingCount, boolean eAvailable, String category,
-			String authors) {
-
-		this.title = title;
-		this.releaseYear = releaseYear;
-		this.isbn = isbn;
-		this.price = price;
-		this.description = description;
-		this.photopath = photopath;
-		this.count = count;
-		this.rating = rating;
-		this.ratingCount = ratingCount;
-		this.eAvailable = eAvailable;
-		this.category = category;
-		this.authors = authors;
+        this.count = 0L;
+        this.authors = "default author";
 	}
 
 	public Long getId() {
@@ -92,10 +66,10 @@ public class Book {
 		this.title = title;
 	}
 
-	public int getreleaseYear() {
+	public Integer getReleaseYear() {
 		return releaseYear;
 	}
-	public void setreleaseYear(int releaseYear) {
+	public void setReleaseYear(Integer releaseYear) {
 		this.releaseYear = releaseYear;
 	}
 
@@ -127,31 +101,31 @@ public class Book {
 		this.photopath = photopath;
 	}
 
-	public int getCount() {
+	public Long getCount() {
 		return count;
 	}
-	public void setCount(int count) {
+	public void setCount(Long count) {
 		this.count = count;
 	}
 
-	public double getRating() {
+	public Double getRating() {
 		return rating;
 	}
-	public void setRating(double rating) {
+	public void setRating(Double rating) {
 		this.rating = rating;
 	}
 
-	public int getRatingCount() {
+	public Integer getRatingCount() {
 		return ratingCount;
 	}
-	public void setRatingCount(int ratingCount) {
+	public void setRatingCount(Integer ratingCount) {
 		this.ratingCount = ratingCount;
 	}
 
-	public boolean iseAvailable() {
+	public Boolean geteAvailable() {
 		return eAvailable;
 	}
-	public void seteAvailable(boolean eAvailable) {
+	public void seteAvailable(Boolean eAvailable) {
 		this.eAvailable = eAvailable;
 	}
 
@@ -162,10 +136,10 @@ public class Book {
 		this.category = category;
 	}
 
-    public String getAuthors() {
-        return authors;
-    }
-    public void setAuthors(String authors) {
-        this.authors = authors;
-    }
+	public String getAuthors() {
+		return authors;
+	}
+	public void setAuthors(String authors) {
+		this.authors = authors;
+	}
 }

@@ -11,11 +11,11 @@ class BookRegForm extends Component {
         super(props);
         this.state = {
             title: '',
-            author: '',
+            authors: '',
             released: '',
             isbn: '',
             price: '',
-            category: '',
+            category: 'Apsakymas',
             count: '',
             e_available: false,
             photopath: '',
@@ -40,26 +40,16 @@ class BookRegForm extends Component {
 
         alert('"' + this.state.title + '" užregistruota Knygų parduotuvėje.');
         event.preventDefault();
-
-        // alert(
-        //   `Selected file - ${this.fileInput.files[0].name}`
-        // );
-
-        // const data = new FormData(event.target);
-        // fetch('/api/book-reg-form-submit-url', {
-        //   method: 'POST',
-        //   body: data,
-        // });
     }
 
     saveBook(e) {
         e.preventDefault();
         axios.post(BOOKS, {
             title: this.state.title,
-            authors: this.state.author,
+            authors: this.state.authors,
             releaseYear: this.state.released,
             isbn: this.state.isbn,
-            price: this.state.price,
+            price: this.state.price===''? -1:this.state.price,
             category: this.state.category,
             count: this.state.count,
             e_available: this.state.e_available,
@@ -70,11 +60,11 @@ class BookRegForm extends Component {
                 this.props.BookStore.changeState();
                 this.setState({
                     title: '',
-                    author: '',
+                    authors: '',
                     released: '',
                     isbn: '',
                     price: '',
-                    category: '',
+                    category: 'Apsakymas',
                     count: '',
                     e_available: this.state.e_available,
                     photopath: '',
@@ -103,8 +93,8 @@ class BookRegForm extends Component {
 
                     <label>
                         Autorius:
-                        <input name="author" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.author}
+                        <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
+                               className={BookRegFormCss.placeholder} required type="text" value={this.state.authors}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -112,8 +102,8 @@ class BookRegForm extends Component {
                     <label>
                         Leidimo metai:
                         <input name="released" placeholder="Įveskite knygos leidimo metus"
-                               className={BookRegFormCss.placeholder} type="text" pattern="[0-9]*" minLength="4"
-                               maxLength="4" value={this.state.released} onChange={this.handleChange}/>
+                               className={BookRegFormCss.placeholder} type="text" pattern="^\d{4}$"
+                               value={this.state.released} onChange={this.handleChange}/>
                     </label>
                     <br/>
 
@@ -127,8 +117,8 @@ class BookRegForm extends Component {
 
                     <label>
                         Kaina:
-                        <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder} required
-                               type="text" pattern="\d+?\.\d{2}\s*?$|0" value={this.state.price}
+                        <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder}
+                               type="text" pattern="\d+?\.\d{1,2}\s*?$|^[1-9]\d*$" value={this.state.price}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -136,16 +126,15 @@ class BookRegForm extends Component {
                     <label>
                         Kategorija:
                         <select name="category" required value={this.state.category} onChange={this.handleChange}>
-                            <option value="" disabled> -- pasirinkite kategoriją --</option>
                             <option value="apsakymai">Apsakymas</option>
                             <option value="biografinis">Biografija, autobiografija</option>
                             <option value="detektyvinis">Detektyvinis romanas</option>
                             <option value="ese">Esė, publicistika</option>
-                            <option value="dienorasciai">Dienoraščiai, laiškai ir memuarai</option>
+                            <option value="dienoraščiai">Dienoraščiai, laiškai ir memuarai</option>
                             <option value="fantastika">Fantastika</option>
                             <option value="istorinis">Istorinis romanas</option>
                             <option value="klasika">Klasika</option>
-                            <option value="meiles">Meilės romanas</option>
+                            <option value="meilės">Meilės romanas</option>
                             <option value="modernas">Modernioji literatūra</option>
                             <option value="poezija">Poezija</option>
                             <option value="siaubo">Siaubo romanas</option>
@@ -162,15 +151,15 @@ class BookRegForm extends Component {
                     <br/>
 
                     <label>
-                        Elektroninė knyga:
-                        <input name="e_available" type="checkbox" value={this.state.e_available}
-                               onChange={this.handleChange}/>
+                        Viršelio nuotrauka:
+                        <input name="photopath" placeholder="Nurodykite kelią iki nuotraukos" type="text" value={this.state.photopath} onChange={this.handleChange}/>
                     </label>
                     <br/>
 
                     <label>
-                        Viršelio nuotrauka:
-                        <input name="photopath" type="file" value={this.state.photopath} onChange={this.handleChange}/>
+                        Elektroninė knyga:
+                        <input name="e_available" type="checkbox" value={this.state.e_available}
+                               onChange={this.handleChange}/>
                     </label>
                     <br/>
 
