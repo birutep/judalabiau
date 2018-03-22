@@ -54,7 +54,7 @@ public abstract class User {
     private boolean active;
 
     @NotEmpty
-    //@ValidPassword Atkomentavus prašo prideti maven dependency. Palieku Birutei.
+//    @ValidPassword Atkomentavus prašo prideti maven dependency. Palieku Birutei.
     private String password;
 
     @NotEmpty
