@@ -1,31 +1,61 @@
 import React, {Component} from 'react';
 import BookRegFormCss from './BookEditForm.css';
 import axios from "axios/index";
-import {inject} from "mobx-react";
+import {inject, observer} from "mobx-react";
 import {BOOKS} from "../../../server_links/ServerLinks";
 
 @inject('BookStore')
+@observer
 class BookRegForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: props.book.title,
-            released: props.book.released,
-            isbn: props.book.isbn,
-            price: props.book.price,
-            category: props.book.category,
-            count: props.book.count,
-            e_available: props.book.e_available,
-            photopath: props.book.photopath,
-            description: props.book.description,
-            authors: props.book.authors,
-            id: props.book.id
+            emptyBook: {
+                title: '',
+                released: '',
+                isbn: '',
+                price: '',
+                category: 'Apsakymas',
+                count: '',
+                e_available: false,
+                photopath: '',
+                description: '',
+                authors: '',
+                id: ''
+            },
+            title: '',
+            released: '',
+            isbn: '',
+            price: '',
+            category: 'Apsakymas',
+            count: '',
+            e_available: false,
+            photopath: '',
+            description: '',
+            authors: '',
+            id: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCheckbox = this.handleCheckbox.bind(this);
         this.updateBook = this.updateBook.bind(this);
 
+    }
+
+    componentWillReceiveProps() {
+        this.setState({
+            title: this.props.book.title,
+            released: this.props.book.released,
+            isbn: this.props.book.isbn,
+            price: this.props.book.price,
+            category: this.props.book.category,
+            count: this.props.book.count,
+            e_available: this.props.book.e_available,
+            photopath: this.props.book.photopath,
+            description: this.props.book.description,
+            authors: this.props.book.authors,
+            id: this.props.book.id
+        })
     }
 
     handleChange(event) {
@@ -52,8 +82,8 @@ class BookRegForm extends Component {
     }
 
     updateBook() {
-        console.log("siunciam updeitui "+this.state)
-        console.log('adresu http://localhost:8080/books/'+this.state.id)
+        console.log("siunciam updeitui " + this.state)
+        console.log('adresu http://localhost:8080/books/' + this.state.id)
         axios.put(BOOKS + this.state.id, {
             title: this.state.title,
             releaseYear: this.state.released,
@@ -69,21 +99,10 @@ class BookRegForm extends Component {
         })
             .then(() => {
                 this.props.BookStore.changeState();
-                this.setState({
-                    title: '',
-                    released: '',
-                    isbn: '',
-                    price: '',
-                    category: '',
-                    count: '',
-                    e_available: this.state.e_available,
-                    photopath: '',
-                    description: '',
-                    authors: ''
-                });
+                this.props.BookStore.editBook(this.state.emptyBook);
             })
             .catch(function (error) {
-                console.log("Klaida redaguojant knygą"+error);
+                console.log("Klaida redaguojant knygą" + error);
             });
     };
 
@@ -93,14 +112,7 @@ class BookRegForm extends Component {
             <div className={BookRegFormCss.book_reg_form}>
                 <h4><i className="fa fa-book"/> &nbsp; Knygų parduotuvė</h4>
                 <form onSubmit={this.handleSubmit}>
-                    <h3>Knygos {this.state.title} redagavimas</h3>
-                    <label>
-                        Knygos id:
-                        <input name="id" placeholder="Įveskite knygos id"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.id}
-                               onChange={this.handleChange}/>
-                    </label>
-                    <br/>
+                    <h3>Knygos kurios id {this.state.id} redagavimas</h3>
                     <label>
                         Knygos pavadinimas:
                         <input name="title" placeholder="Įveskite knygos pavadinimą"
@@ -112,7 +124,7 @@ class BookRegForm extends Component {
                     <label>
                         Autorius:
                         <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.author}
+                               className={BookRegFormCss.placeholder} required type="text" value={this.state.authors}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -144,11 +156,10 @@ class BookRegForm extends Component {
                     <label>
                         Kategorija:
                         <select name="category" required value={this.state.category} onChange={this.handleChange}>
-                            <option value="" disabled> -- pasirinkite kategoriją --</option>
                             <option value="apsakymai">Apsakymas</option>
                             <option value="biografinis">Biografija, autobiografija</option>
                             <option value="detektyvinis">Detektyvinis romanas</option>
-                            <option value="ese">Esė, publicistika</option>
+                            <option value="esė">Esė, publicistika</option>
                             <option value="dienorasciai">Dienoraščiai, laiškai ir memuarai</option>
                             <option value="fantastika">Fantastika</option>
                             <option value="istorinis">Istorinis romanas</option>
@@ -171,10 +182,11 @@ class BookRegForm extends Component {
 
                     <label>
                         Viršelio nuotrauka:
-                        <input name="photopath" placeholder="Nurodykite kelią iki nuotraukos" type="text" value={this.state.photopath} onChange={this.handleChange}/>
+                        <input name="photopath" placeholder="Nurodykite kelią iki nuotraukos" type="text"
+                               value={this.state.photopath} onChange={this.handleChange}/>
                     </label>
                     <br/>
-                    
+
                     <label>
                         Elektroninė knyga:
                         <input name="e_available" type="checkbox" value={this.state.e_available}
