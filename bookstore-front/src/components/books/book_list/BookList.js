@@ -38,19 +38,19 @@ class BookList extends Component {
                 <table>
                     <thead>
                     <tr>
-                        <th>id</th>
-                        <th>title</th>
-                        <th>authors</th>
-                        <th>releaseDate</th>
-                        <th>isbn</th>
-                        <th>price</th>
-                        <th>description</th>
-                        <th>photopath</th>
-                        <th>count</th>
-                        <th>rating</th>
-                        <th>ratingCount</th>
-                        <th>eAvailable</th>
-                        <th>category</th>
+                        <th>ID</th>
+                        <th>Pavadinimas</th>
+                        <th>Autorius</th>
+                        <th>Leidimo metai</th>
+                        <th>ISBN</th>
+                        <th>Kaina</th>
+                        <th>Aprašymas</th>
+                        <th>Nuotrauka</th>
+                        <th>Likutis</th>
+                        <th>Reitingas</th>
+                        <th>Balsų skaičius</th>
+                        <th>Elektorinins formatas</th>
+                        <th>Kategorija</th>
                         <th />
                         <th />
                     </tr>
