@@ -3,6 +3,7 @@ import BookRegFormCss from './BookEditForm.css';
 import axios from "axios/index";
 import {inject, observer} from "mobx-react";
 import {BOOKS} from "../../../server_links/ServerLinks";
+import { isNull } from 'util';
 
 @inject('BookStore')
 @observer
@@ -82,13 +83,13 @@ class BookRegForm extends Component {
     }
 
     updateBook() {
-        console.log("siunciam updeitui " + this.state)
+        console.log("siunciam updeitui " + this.state.price+ " tipas "+typeof this.state.price)
         console.log('adresu http://localhost:8080/books/' + this.state.id)
         axios.put(BOOKS + this.state.id, {
             title: this.state.title,
             releaseYear: this.state.released,
             isbn: this.state.isbn,
-            price: this.state.price,
+            price: (this.state.price ==='') ? '-1' : this.state.price,
             category: this.state.category,
             count: this.state.count,
             e_available: this.state.e_available,
@@ -148,7 +149,7 @@ class BookRegForm extends Component {
                     <label>
                         Kaina:
                         <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder}
-                               type="text" pattern="\d+?\.\d{1,2}\s*?$|^[1-9]\d*$" value={this.state.price}
+                               type="text" pattern="\d+?\.\d{1,2}\s*?$|^[1-9]\d*$" value={this.state.price>=0 ? this.state.price:null}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
