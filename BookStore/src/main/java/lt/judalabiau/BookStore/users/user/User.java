@@ -1,4 +1,6 @@
-package lt.judalabiau.BookStore.users;
+package lt.judalabiau.BookStore.users.user;
+
+import lt.judalabiau.BookStore.users.Role;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

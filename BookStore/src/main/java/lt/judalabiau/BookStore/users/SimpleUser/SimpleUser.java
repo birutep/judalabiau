@@ -1,6 +1,6 @@
 package lt.judalabiau.BookStore.users.SimpleUser;
 
-import lt.judalabiau.BookStore.users.User;
+import lt.judalabiau.BookStore.users.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

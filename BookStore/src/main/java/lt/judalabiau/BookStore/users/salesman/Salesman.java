@@ -1,6 +1,6 @@
 package lt.judalabiau.BookStore.users.salesman;
 
-import lt.judalabiau.BookStore.users.User;
+import lt.judalabiau.BookStore.users.user.User;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
