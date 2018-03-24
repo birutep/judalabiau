@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 public class AdministratorController {
     private AdministratorService administratorService;
 
-    public AdministratorController(AdministratorService administratorService) {
+    public AdministratorController(AdministratorService administratorService)
+    {
         this.administratorService = administratorService;
     }
 
