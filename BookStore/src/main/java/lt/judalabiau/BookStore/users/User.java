@@ -70,25 +70,15 @@ public abstract class User {
         return role;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
+    public void setRole(Role role) { this.role = role; }
 
-    public String getfName() {
-        return fName;
-    }
+    public String getfName() { return fName; }
 
-    public void setfName(String fName) {
-        this.fName = fName;
-    }
+    public void setfName(String fName) { this.fName = fName; }
 
-    public String getlName() {
-        return lName;
-    }
+    public String getlName() { return lName; }
 
-    public void setlName(String lName) {
-        this.lName = lName;
-    }
+    public void setlName(String lName) { this.lName = lName; }
 
     public String getCompanyName() {
         return companyName;

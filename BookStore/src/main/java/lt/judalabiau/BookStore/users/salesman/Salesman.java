@@ -1,4 +1,6 @@
-package lt.judalabiau.BookStore.users;
+package lt.judalabiau.BookStore.users.salesman;
+
+import lt.judalabiau.BookStore.users.User;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,8 +9,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Administrator extends User
-{
+public class Salesman extends User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,7 +17,7 @@ public class Administrator extends User
     @NotNull
     private String phone;
 
-    public Administrator() {
+    public Salesman() {
     }
 
     @Override
