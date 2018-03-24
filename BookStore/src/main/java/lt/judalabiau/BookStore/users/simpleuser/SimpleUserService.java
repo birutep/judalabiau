@@ -1,4 +1,4 @@
-package lt.judalabiau.BookStore.users.SimpleUser;
+package lt.judalabiau.BookStore.users.simpleuser;
 
 import org.springframework.stereotype.Service;
 

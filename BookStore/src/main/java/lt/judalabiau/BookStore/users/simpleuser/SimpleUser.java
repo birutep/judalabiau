@@ -1,4 +1,4 @@
-package lt.judalabiau.BookStore.users.SimpleUser;
+package lt.judalabiau.BookStore.users.simpleuser;
 
 import lt.judalabiau.BookStore.users.user.User;
 
