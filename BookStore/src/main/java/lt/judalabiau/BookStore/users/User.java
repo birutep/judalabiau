@@ -1,8 +1,13 @@
 package lt.judalabiau.BookStore.users;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public abstract class User {
@@ -11,28 +16,12 @@ public abstract class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
-    private String username;
-    @NotEmpty
-    private String firstName;
-    @NotEmpty
-    private String lastName;
-
-    /**
-     * Gimtadienio laukas yra komentuojamas naudojant "@Past" apribojimą,
-     * kuris užtikrina, kad gimtadienio data turi būti praeityje.
-     */
-    @Temporal(value = TemporalType.DATE)
-    @Past
-    private Date birthday;
-
-    private String companyName;
-    private int companyNo;
-    private int vatNo;
-
-    private String branchName;
-    private String address;
-    private String registeredAddress;
+    @NotNull
+    private String fName;
+    @NotNull
+    private String lName;
+    @NotNull
+    private Role role;
 
     /**
      * Validacija neleis įvesti neteisingą adresą.
@@ -48,20 +37,22 @@ public abstract class User {
             message = "{invalid.email}")
     private String email;
 
-    private String mobilePhone;
+    private String companyName;
+    private int companyNo;
+    private int vatNo;
+
+    private String branchName;
+    private String registeredAddress;
 
     @AssertTrue
     private boolean active;
 
     @NotEmpty
-//    @ValidPassword Atkomentavus prašo prideti maven dependency. Palieku Birutei.
+    //@ValidPassword Atkomentavus prašo prideti maven dependency. Palieku Birutei.
     private String password;
 
     @NotEmpty
     private String passwordHash;
-
-    @NotNull
-    private int roleId;
 
 
     public User() {
@@ -75,36 +66,28 @@ public abstract class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public Role getRole() {
+        return role;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public String getCompanyName() {
@@ -139,14 +122,6 @@ public abstract class User {
         this.branchName = branchName;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getRegisteredAddress() {
         return registeredAddress;
     }
@@ -161,14 +136,6 @@ public abstract class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
     }
 
     public boolean isActive() {
@@ -195,12 +162,6 @@ public abstract class User {
         this.passwordHash = passwordHash;
     }
 
-    public int getRoleId() {
-        return roleId;
-    }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
 }
     
