@@ -1,7 +1,10 @@
 package lt.judalabiau.BookStore.users.salesman;
 
+import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
 
+@Service
 public class SalesmanService
 {
     private SalesmanRepository salesmanRepository;
@@ -12,17 +15,17 @@ public class SalesmanService
     }
 
     @Transactional
-    public Iterable<Salesman> getSalesmans() {
+    public Iterable<Salesman> getSellers() {
         return this.salesmanRepository.findAll();
     }
 
     @Transactional
-    public void createAdministrator(Salesman salesman) {
+    public void createSalesman(Salesman salesman) {
         this.salesmanRepository.save(salesman);
     }
 
     @Transactional
-    public void deletSalesman(Long id) {
+    public void deleteSalesman(Long id) {
         this.salesmanRepository.deleteById(id);
     }
 
@@ -36,7 +39,7 @@ public class SalesmanService
     }
 
     @Transactional
-    public void saveAllSalesmans(Iterable<Salesman> salesman) {
+    public void saveAllSellers(Iterable<Salesman> salesman) {
         this.salesmanRepository.saveAll(salesman);
     }
 }
