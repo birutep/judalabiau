@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import BookRegFormCss from './BookRegForm.css';
 import axios from "axios/index";
 import {inject} from "mobx-react";
 import {BOOKS} from "../../../server_links/ServerLinks";
+//custom elements
+import BookRegFormCss from './BookRegForm.css';
 
 @inject('BookStore')
 class BookRegForm extends Component {
