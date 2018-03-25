@@ -1,11 +1,9 @@
 package lt.judalabiau.BookStore.datainit;
 
 import lt.judalabiau.BookStore.books.Book;
-import lt.judalabiau.BookStore.books.BookRepository;
 import lt.judalabiau.BookStore.books.BookService;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
