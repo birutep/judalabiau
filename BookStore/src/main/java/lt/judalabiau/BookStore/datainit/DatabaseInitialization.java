@@ -4,12 +4,14 @@ import lt.judalabiau.BookStore.books.Book;
 import lt.judalabiau.BookStore.books.BookService;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Component      //jei norit uzpildyt duombaze pasitestavimui atsikomentuojat, bet po paleidimo uzkomentuojat vel, nes kaskart paleidus jis prideda sitas knygas i duombaze
+//@Component
+//jei norit uzpildyt duombaze pasitestavimui atsikomentuojat, bet po paleidimo uzkomentuojat vel, nes kaskart paleidus jis prideda sitas knygas i duombaze
 public class DatabaseInitialization implements ApplicationListener<ContextRefreshedEvent> {
     private final BookService bookService;
     private final List<Book> knygos = new ArrayList<>();
@@ -29,11 +31,11 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         knygos.add(b1);
         Book b2 = new Book();
         b2.setAuthors("Jurgis Šidlauskis");
-        b2.setTitle("Iš pirmos į antrą");
+        b2.setTitle("Chain of Responsibility paskutinė stotelė");
         b2.setPrice(new BigDecimal(9.99));
         b2.setIsbn("123456");
         b2.setCount(2L);
-        b2.setCategory("istorinis");
+        b2.setCategory("nuotykių");
         knygos.add(b2);
         Book b3 = new Book();
         b3.setAuthors("Daniel Razov");
@@ -68,7 +70,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b6.setCategory("socialinis");
         knygos.add(b6);
         Book b7 = new Book();
-        b7.setAuthors("Ernesta Pirmglas, Jurgis Antrauskis");
+        b7.setAuthors("Ernesta Duglas");
         b7.setTitle("Autoritarinė Demokratija");
         b7.setPrice(new BigDecimal(3.25));
         b7.setIsbn("123456");
@@ -77,7 +79,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         knygos.add(b7);
         Book b8 = new Book();
         b8.setAuthors("Mykolas Bautrėnas");
-        b8.setTitle("Susiliejimas su aplinka");
+        b8.setTitle("Windows pradžiamokslis");
         b8.setPrice(new BigDecimal(31.45));
         b8.setIsbn("123456");
         b8.setCount(4L);
