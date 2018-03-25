@@ -31,7 +31,6 @@ class BookList extends Component {
         });
 
         return (
-            <div>
                 <table>
                     <thead>
                     <tr>
@@ -57,7 +56,6 @@ class BookList extends Component {
                     {booksAsComponents}
                     </tbody>
                 </table>
-            </div>
         )
     }
 }

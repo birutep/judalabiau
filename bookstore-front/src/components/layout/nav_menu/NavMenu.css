@@ -1,0 +1,22 @@
+.leftMenu {
+    width: 300px;
+    background-color: black;
+    height: 900px;
+    float: left;
+}
+button{
+    background-color: black;
+    color: white;
+    height: 80px;
+    display:block;
+    width: 300px;
+    border: none;
+    text-decoration: none; 
+    font-size: 2em;
+}
+button:hover{
+    cursor: pointer;
+    background-color: darkgray;
+    color: whitesmoke;
+}
+
