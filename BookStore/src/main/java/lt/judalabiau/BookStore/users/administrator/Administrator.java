@@ -9,13 +9,13 @@ import javax.validation.constraints.NotNull;
 public class Administrator extends User
 {
     @NotNull
-    private String phone;
+    private Integer phone;
 
     public Administrator() { }
 
-    public String getPhone() { return phone; }
+    public Integer getPhone() { return phone; }
 
-    public void setPhone(String phone) { this.phone = phone; }
+    public void setPhone(Integer phone) { this.phone = phone; }
 
 
 }
