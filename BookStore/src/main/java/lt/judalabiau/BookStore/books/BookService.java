@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 @Service
 public class BookService {
 
-
 	private final BookRepository bookRepository;
 
     public BookService(BookRepository bookRepository) {
@@ -37,4 +36,9 @@ public class BookService {
 		    bookRepository.save(book);
         }
 	}
+
+	@Transactional
+    public void saveAll(Iterable<Book> books){
+        bookRepository.saveAll(books);
+    }
 }

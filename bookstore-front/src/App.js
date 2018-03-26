@@ -1,25 +1,41 @@
-import React, {Component} from 'react';
-import BookRegForm from './components/book_forms/book_reg_form/BookRegForm';
-import Wrap from './components/wrap/wrap'
+import React, { Component, Fragment } from "react";
+import { inject, observer } from "mobx-react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+//custom elementai
+import BookEditForm from "./components/book_forms/book_edit_form/BookEditForm";
+import book from "./components/books/book_list_for_admin/one_book/Book";
+import BookRegForm from "./components/book_forms/book_reg_form/BookRegForm";
 import BookList from "./components/books/book_list_for_admin/BookList";
-import book from './components/books/book_list_for_admin/one_book/Book';
-import {inject, observer} from "mobx-react";
-import BookEditForm from './components/book_forms/book_edit_form/BookEditForm'
+//tempiniai
+import Main from "./components/layout/main/Main";
+import NotFound from "./components/layout/not_found/NotFound"
+import NavMenu from "./components/layout/nav_menu/NavMenu";
 
-@inject('BookStore')
+@inject("BookStore")
 @observer
 class App extends Component {
     render() {
-        const {BookStore} = this.props;
+        const { BookStore } = this.props;
 
         return (
-            <Wrap>
-                <BookRegForm/>
-                <BookList bookStatus={book} changed={BookStore.changed}/>
-                <BookEditForm book={BookStore.bookToEdit} changed={BookStore.changed}/>
-            </Wrap>
+            <Fragment>
+                <BrowserRouter>
+                    <Fragment>
+                        <Route path="/" component={NavMenu} />
+                        <Switch>
+                            <Route exact path="/" component={Main} />
+                            <Route path="/books/register" component={BookRegForm} />
+                            <Route path="/books/edit" render={()=><BookEditForm book={BookStore.bookToEdit} changed={BookStore.changed}/>} />
+                            <Route path="/books" render={()=><BookList bookStatus={book} changed={BookStore.changed}/>} />            
+                            <Route component={NotFound} />
+                        </Switch>
+                    </Fragment>
+                </BrowserRouter>
+            </Fragment>
         );
     }
 }
 
 export default App;
+
+
