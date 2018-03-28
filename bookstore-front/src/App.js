@@ -10,6 +10,8 @@ import BookList from "./components/books/book_list_for_admin/BookList";
 import Main from "./components/layout/main/Main";
 import NotFound from "./components/layout/not_found/NotFound"
 import NavMenu from "./components/layout/nav_menu/NavMenu";
+import Header from "./components/layout/Header";
+
 
 @inject("BookStore")
 @observer
@@ -21,6 +23,7 @@ class App extends Component {
             <Fragment>
                 <BrowserRouter>
                     <Fragment>
+                        <Route path="/" component={Header} />                      
                         <Route path="/" component={NavMenu} />
                         <Switch>
                             <Route exact path="/" component={Main} />
@@ -28,7 +31,10 @@ class App extends Component {
                             <Route path="/books/edit" render={()=><BookEditForm book={BookStore.bookToEdit} changed={BookStore.changed}/>} />
                             <Route path="/books" render={()=><BookList bookStatus={book} changed={BookStore.changed}/>} />            
                             <Route component={NotFound} />
+                            {/* <Login /> */}
+                            {/* <Register /> */}
                         </Switch>
+                        {/* <Footer /> */}
                     </Fragment>
                 </BrowserRouter>
             </Fragment>
