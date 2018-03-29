@@ -2,10 +2,9 @@ package lt.judalabiau.BookStore.books;
 
 import org.hibernate.validator.constraints.Range;
 
-import java.math.BigDecimal;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Entity
 public class Book {
