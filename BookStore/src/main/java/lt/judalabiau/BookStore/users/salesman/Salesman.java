@@ -1,25 +1,21 @@
 package lt.judalabiau.BookStore.users.salesman;
 
-import lt.judalabiau.BookStore.users.user.User;
+import lt.judalabiau.BookStore.users.User;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Salesman extends User {
+public class Salesman extends User{
 
     @NotNull
-    private String phone;
+    private Integer phone;
 
-    public Salesman() {
-    }
-
-    public String getPhone() {
+    public Integer getPhone() {
         return phone;
     }
-
-    public void setPhone(String phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
 }
-    
+
