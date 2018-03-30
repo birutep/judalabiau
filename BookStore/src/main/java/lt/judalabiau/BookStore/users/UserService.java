@@ -1,9 +1,6 @@
 package lt.judalabiau.BookStore.users;
 
-import lt.judalabiau.BookStore.users.create.CreateAdminCommand;
-import lt.judalabiau.BookStore.users.create.CreateCustomerCommand;
-import lt.judalabiau.BookStore.users.create.CreateSalesmanCommand;
-import lt.judalabiau.BookStore.users.create.CreateUserCommand;
+import lt.judalabiau.BookStore.books.Book;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -22,15 +19,16 @@ public class UserService {
             //veliau mesim exception
             System.out.println("Toks useris jau yra----------------");
         }else{
-            switch (createUserCommand.getRole().getRoleName()){
-                case "ADMIN":
-                    userRepository.save( new Administrator((CreateAdminCommand) createUserCommand));
+            int role = Math.toIntExact(createUserCommand.getRole().getId());
+            switch (role){
+                case 1:
+                    userRepository.save( new Administrator(createUserCommand));
                     break;
-                case "SALESMAN":
-                    userRepository.save( new Salesman((CreateSalesmanCommand) createUserCommand));
+                case 2:
+                    userRepository.save( new Salesman( createUserCommand));
                     break;
-                case "CUSTOMER":
-                    userRepository.save( new Customer((CreateCustomerCommand) createUserCommand));
+                case 3:
+                    userRepository.save( new Customer(createUserCommand));
                     break;
                 default:
                     //gal mesim exceptiona
@@ -38,6 +36,16 @@ public class UserService {
                      break;
             }
         }
+    }
+
+    @Transactional
+    public Iterable<User> getAll(){
+        return userRepository.findAll();
+    }
+
+    @Transactional
+    public void saveAll(Iterable<User> users){
+        userRepository.saveAll(users);
     }
 
 }

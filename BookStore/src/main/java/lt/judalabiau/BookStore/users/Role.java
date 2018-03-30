@@ -2,6 +2,8 @@ package lt.judalabiau.BookStore.users;
 
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Role {
@@ -10,8 +12,8 @@ public class Role {
 
     private String roleName;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "role")
-    private User user;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "role")
+    private Set<User> users = new HashSet<>();
 
     public Long getId() {
         return id;

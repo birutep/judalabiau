@@ -1,0 +1,18 @@
+﻿validacija vyksta createUserCommand, ten paziurimi laukai, ilgiai, regexpai, not null ir pan
+bet kadangi adminas ir paravejas turi privaloma tel, o useris neprivaloma, o lauaks yra tas pats phone
+tai reiktu validuot atskirai, nedarant atkiru creatcommandu gal metoda koki pasirasyt kuris
+tarkim jei pirkejas arba adminas o phone null tai mestu exceptiona ar kakza pan
+daba del phono, vaclawas sake geriausia laikyt Longe, bet tai kaip validuot? daugiau uz 8 milijardus, tipo 8 ir 9 skaitmenys?
+man stringas butu daug patogiau, o jei kitu valstybiu, siaip gal dvirati iosradinejam susiigooglint ir pasiimt norm varianta?
+
+daba padaryta kad kuriant useri koks jis bebutu patikrina ar toks emailas neuzregistruotas, daugiau jokiu
+nedejau, paswordu jokiu nekodavau kai desim security pridesim tuos lauku kokiu reiks.
+
+kolkas padaryta galimybe prideti useri arba pamatyt visus kelias /users
+atsiradus poreikiui pridesim daugiau, kolkas owneris nori ti kregistruot, tai edito ar delete nedariau
+ziurejau kitus darbus ten ir taip nesicackinta, editu retai kur buna
+
+jei turit kokiu minciu pasiulymu tai parasykit, nes tris pavyzdzius lyginu vis kaip anie ta realizavo anie ta, tai
+budai skirtingi.
+
+

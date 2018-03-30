@@ -1,15 +1,9 @@
 package lt.judalabiau.BookStore.users;
 
-import lt.judalabiau.BookStore.users.User;
-import lt.judalabiau.BookStore.users.create.CreateCustomerCommand;
-import lt.judalabiau.BookStore.users.create.CreateUserCommand;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import java.util.Date;
 
 @Entity
@@ -23,11 +17,11 @@ public class Customer extends User {
     public Customer() {
     }
 
-    public Customer(CreateCustomerCommand createCustomerCommand) {
-        super(createCustomerCommand);
-        this.setPhone(createCustomerCommand.getPhone());
-        this.setBirthday(createCustomerCommand.getBirthday());
-        this.setAddress(createCustomerCommand.getAddress());
+    public Customer(CreateUserCommand cmd) {
+        super(cmd);
+        this.setPhone(cmd.getPhone());
+        this.setBirthday(cmd.getBirthday());
+        this.setAddress(cmd.getAddress());
     }
 
     public Date getBirthday() {
