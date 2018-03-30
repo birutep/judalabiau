@@ -1,7 +1,8 @@
-package lt.judalabiau.BookStore.users.simpleuser;
+package lt.judalabiau.BookStore.users;
 
 import lt.judalabiau.BookStore.users.User;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -10,6 +11,7 @@ import javax.validation.constraints.Past;
 import java.util.Date;
 
 @Entity
+@DiscriminatorValue("USER")
 public class SimpleUser extends User {
 
     @Temporal(value = TemporalType.DATE)
@@ -18,7 +20,7 @@ public class SimpleUser extends User {
     private Date birthday;
 
     private String address;
-    private String phone;
+    private Long phone;
 
     public Date getBirthday() {
         return birthday;
@@ -34,10 +36,10 @@ public class SimpleUser extends User {
         this.address = address;
     }
 
-    public String getPhone() {
+    public Long getPhone() {
         return phone;
     }
-    public void setPhone(String phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 }

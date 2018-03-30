@@ -8,11 +8,12 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "USER_TYPE", discriminatorType = DiscriminatorType.STRING)
 public abstract class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -43,26 +44,6 @@ public abstract class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
-
-//------------------------------------PAKlaus pas danieliu kas cia, kodel apbtractus useris turi konkretaus pardavejo laukus ir pan-------------------------------
-//    private String companyName;
-//    private int companyNo;
-//    private int vatNo;
-//
-//    private String branchName;
-//    private String registeredAddress;
-//
-//    @AssertTrue
-//    private boolean active;
-
-
-
-//    @NotEmpty
-//    private String passwordHash;
-
-
-    public User() {
-    }
 
     public Long getId() {
         return id;
