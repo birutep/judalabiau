@@ -1,38 +1,25 @@
 package lt.judalabiau.BookStore.users;
 
+
+
 import javax.persistence.*;
-import javax.validation.constraints.*;
-import java.util.Date;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @NotEmpty
-    private String username;
-    @NotEmpty
-    private String firstName;
-    @NotEmpty
-    private String lastName;
+    @NotNull
+    private String fName;
 
-    /**
-     * Gimtadienio laukas yra komentuojamas naudojant "@Past" apribojimą,
-     * kuris užtikrina, kad gimtadienio data turi būti praeityje.
-     */
-    @Temporal(value = TemporalType.DATE)
-    @Past
-    private Date birthday;
-
-    private String companyName;
-    private int companyNo;
-    private int vatNo;
-
-    private String branchName;
-    private String address;
-    private String registeredAddress;
+    @NotNull
+    private String lName;
 
     /**
      * Validacija neleis įvesti neteisingą adresą.
@@ -48,20 +35,30 @@ public abstract class User {
             message = "{invalid.email}")
     private String email;
 
-    private String mobilePhone;
-
-    @AssertTrue
-    private boolean active;
-
     @NotEmpty
-//    @ValidPassword Atkomentavus prašo prideti maven dependency. Palieku Birutei.
+    //@ValidPassword Atkomentavus prašo prideti maven dependency. Palieku Birutei.
     private String password;
 
-    @NotEmpty
-    private String passwordHash;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private Role role;
 
-    @NotNull
-    private int roleId;
+
+//------------------------------------PAKlaus pas danieliu kas cia, kodel apbtractus useris turi konkretaus pardavejo laukus ir pan-------------------------------
+//    private String companyName;
+//    private int companyNo;
+//    private int vatNo;
+//
+//    private String branchName;
+//    private String registeredAddress;
+//
+//    @AssertTrue
+//    private boolean active;
+
+
+
+//    @NotEmpty
+//    private String passwordHash;
 
 
     public User() {
@@ -70,137 +67,43 @@ public abstract class User {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getfName() {
+        return fName;
+    }
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getlName() {
+        return lName;
     }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public int getCompanyNo() {
-        return companyNo;
-    }
-
-    public void setCompanyNo(int companyNo) {
-        this.companyNo = companyNo;
-    }
-
-    public int getVatNo() {
-        return vatNo;
-    }
-
-    public void setVatNo(int vatNo) {
-        this.vatNo = vatNo;
-    }
-
-    public String getBranchName() {
-        return branchName;
-    }
-
-    public void setBranchName(String branchName) {
-        this.branchName = branchName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getRegisteredAddress() {
-        return registeredAddress;
-    }
-
-    public void setRegisteredAddress(String registeredAddress) {
-        this.registeredAddress = registeredAddress;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
     }
 
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public Role getRole() {
+        return role;
     }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
     
