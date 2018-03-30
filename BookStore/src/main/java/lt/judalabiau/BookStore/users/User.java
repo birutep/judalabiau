@@ -2,48 +2,40 @@ package lt.judalabiau.BookStore.users;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "USER_TYPE", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "USER", discriminatorType = DiscriminatorType.STRING)
 public abstract class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     private String fName;
-
-    @NotNull
     private String lName;
-
-    /**
-     * Validacija neleis įvesti neteisingą adresą.
-     * El. Pašto lauke yra @Pattern apribojimas su sudėtinga reguliaraus išraiškos,
-     * atitinkančios galiojančius el. Pašto adresus.
-     * Jei el. Pašto reikšmė neatitinka šios įprastinės išraiškos,
-     * bus išduota patvirtinimo klaida.
-     * Nuoroda čia: https://docs.oracle.com/cd/E19798-01/821-1841/gkahq/index.html
-     */
-    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."
-            + "[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
-            + "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
-            message = "{invalid.email}")
     private String email;
-
-    @NotEmpty
-    //@ValidPassword Atkomentavus prašo prideti maven dependency. Palieku Birutei.
     private String password;
+    private Long phone;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id")
     private Role role;
 
+    public User() {
+    }
+
+    public User(CreateUserCommand createUserCommand) {
+        this.fName = createUserCommand.getfName();
+        this.lName = createUserCommand.getlName();
+        this.email = createUserCommand.getEmail();
+        this.password = createUserCommand.getPassword();
+        this.role = createUserCommand.getRole();
+    }
 
     public Long getId() {
         return id;
@@ -85,6 +77,13 @@ public abstract class User {
     }
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Long getPhone() {
+        return phone;
+    }
+    public void setPhone(Long phone) {
+        this.phone = phone;
     }
 }
     

@@ -1,23 +1,17 @@
 package lt.judalabiau.BookStore.users;
 
-import lt.judalabiau.BookStore.users.User;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @DiscriminatorValue(value = "ADMINISTRATOR")
 public class Administrator extends User{
 
-    @NotNull
-    private Long phone;
-
-    public Long getPhone() {
-        return phone;
+    public Administrator() {
     }
-    public void setPhone(Long phone) {
-        this.phone = phone;
+    public Administrator(CreateUserCommand cmd) {
+        super(cmd);
+        this.setPhone(cmd.getPhone());
     }
 }
     
