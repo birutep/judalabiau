@@ -10,14 +10,5 @@ import javax.validation.constraints.NotNull;
 @DiscriminatorValue("SALESMAN")
 public class Salesman extends User{
 
-    @NotNull
-    private Long phone;
-
-    public Long getPhone() {
-        return phone;
-    }
-    public void setPhone(Long phone) {
-        this.phone = phone;
-    }
 }
 

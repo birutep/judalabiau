@@ -11,16 +11,13 @@ import javax.validation.constraints.Past;
 import java.util.Date;
 
 @Entity
-@DiscriminatorValue("USER")
-public class SimpleUser extends User {
+@DiscriminatorValue("CUSTOMER")
+public class Customer extends User {
 
     @Temporal(value = TemporalType.DATE)
-    @Past
-    @NotNull
     private Date birthday;
-
     private String address;
-    private Long phone;
+
 
     public Date getBirthday() {
         return birthday;
@@ -36,11 +33,5 @@ public class SimpleUser extends User {
         this.address = address;
     }
 
-    public Long getPhone() {
-        return phone;
-    }
-    public void setPhone(Long phone) {
-        this.phone = phone;
-    }
 }
     
