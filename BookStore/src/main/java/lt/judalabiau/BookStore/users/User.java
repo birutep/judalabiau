@@ -2,6 +2,8 @@ package lt.judalabiau.BookStore.users;
 
 
 
+import lt.judalabiau.BookStore.users.create.CreateUserCommand;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -26,6 +28,16 @@ public abstract class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    public User() {
+    }
+
+    public User(CreateUserCommand createUserCommand) {
+        this.fName = createUserCommand.getfName();
+        this.lName = createUserCommand.getlName();
+        this.email = createUserCommand.getEmail();
+        this.password = createUserCommand.getPassword();
+        this.role = createUserCommand.getRole();
+    }
 
     public Long getId() {
         return id;

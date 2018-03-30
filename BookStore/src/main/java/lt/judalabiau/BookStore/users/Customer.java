@@ -1,6 +1,8 @@
 package lt.judalabiau.BookStore.users;
 
 import lt.judalabiau.BookStore.users.User;
+import lt.judalabiau.BookStore.users.create.CreateCustomerCommand;
+import lt.judalabiau.BookStore.users.create.CreateUserCommand;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -18,6 +20,15 @@ public class Customer extends User {
     private Date birthday;
     private String address;
 
+    public Customer() {
+    }
+
+    public Customer(CreateCustomerCommand createCustomerCommand) {
+        super(createCustomerCommand);
+        this.setPhone(createCustomerCommand.getPhone());
+        this.setBirthday(createCustomerCommand.getBirthday());
+        this.setAddress(createCustomerCommand.getAddress());
+    }
 
     public Date getBirthday() {
         return birthday;

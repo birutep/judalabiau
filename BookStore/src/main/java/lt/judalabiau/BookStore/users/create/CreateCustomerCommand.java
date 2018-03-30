@@ -10,6 +10,7 @@ public class CreateCustomerCommand extends CreateUserCommand{
     private Date birthday;
 
     private String address;
+    private Long phone;
 
     public Date getBirthday() {
         return birthday;
@@ -23,5 +24,12 @@ public class CreateCustomerCommand extends CreateUserCommand{
     }
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Long getPhone() {
+        return phone;
+    }
+    public void setPhone(Long phone) {
+        this.phone = phone;
     }
 }
