@@ -10,6 +10,7 @@ import BookList from "./components/books/book_list_for_admin/BookList";
 import Main from "./components/layout/main/Main";
 import NotFound from "./components/layout/not_found/NotFound"
 import NavMenu from "./components/layout/nav_menu/NavMenu";
+import { CustomerRegForm } from "./components/user_reg_form/CustomerRegForm";
 
 @inject("BookStore")
 @observer
@@ -27,6 +28,8 @@ class App extends Component {
                             <Route path="/books/register" component={BookRegForm} />
                             <Route path="/books/edit" render={()=><BookEditForm book={BookStore.bookToEdit} changed={BookStore.changed}/>} />
                             <Route path="/books" render={()=><BookList bookStatus={book} changed={BookStore.changed}/>} />            
+                            {/* Danieliaus */}
+                            <Route path="/user_reg_form" component={CustomerRegForm}/>
                             <Route component={NotFound} />
                         </Switch>
                     </Fragment>
