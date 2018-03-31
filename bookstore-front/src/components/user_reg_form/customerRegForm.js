@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { InputText } from '../../../node_modules/primereact/components/inputtext';
+import { InputText } from "../../../node_modules/primereact/components/inputtext/InputText";
 import 'primereact/resources/primereact.min.css';
-import { Button } from '../../../node_modules/primereact/components/button';
+import { Button } from "../../../node_modules/primereact/components/button/Button";
 
 export class CustomerRegForm extends Component {
     constructor(){
@@ -19,10 +19,11 @@ export class CustomerRegForm extends Component {
 
     handleChange(event){
         this.setState({ [event.target.name]: event.target.value });
-        consile.log(event.target.value);
+        console.log(event.target.value);
     }
 
     render() {
+        return(
         <div>
             <div className="content-section">
                 <div className="feature-info">
@@ -30,6 +31,7 @@ export class CustomerRegForm extends Component {
                 </div>
             </div>
         </div>
+        )
     }
 }
 
