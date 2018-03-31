@@ -15,6 +15,10 @@ const NavMenu = () => {
             <Link to="/books/register" style={{ textDecoration: 'none' }}>
                 <button>Register</button>
             </Link>
+            {/* Danieliaus */}
+            <Link to="/books/user_register" style={{ textDecoration: 'none' }}>
+                <button>User Register Form</button>
+            </Link>
         </div>
     );
 };
