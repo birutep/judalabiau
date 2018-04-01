@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { InputText } from "../../../node_modules/primereact/components/inputtext/InputText";
+//primeract
 import 'primereact/resources/primereact.min.css';
-import { Button } from "../../../node_modules/primereact/components/button/Button";
-import { Link } from "react-router-dom";
-import RegForm from './CustomerRegForm.css';
+//custom
+import './CustomerRegForm.css'
+
 
 export class CustomerRegForm extends Component {
     constructor(){
