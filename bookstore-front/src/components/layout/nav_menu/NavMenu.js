@@ -16,7 +16,7 @@ const NavMenu = () => {
                 <button>Register</button>
             </Link>
             {/* Danieliaus */}
-            <Link to="/user_register" style={{ textDecoration: 'none' }}>
+            <Link to="/user_reg_form" style={{ textDecoration: 'none' }}>
                 <button>User Register Form</button>
             </Link>
         </div>

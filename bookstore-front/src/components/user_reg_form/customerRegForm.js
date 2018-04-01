@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { InputText } from "../../../node_modules/primereact/components/inputtext/InputText";
 import 'primereact/resources/primereact.min.css';
 import { Button } from "../../../node_modules/primereact/components/button/Button";
+import { Link } from "react-router-dom";
 
 export class CustomerRegForm extends Component {
     constructor(){
