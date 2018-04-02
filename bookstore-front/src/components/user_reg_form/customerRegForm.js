@@ -3,7 +3,6 @@ import { InputText } from "../../../node_modules/primereact/components/inputtext
 import 'primereact/resources/primereact.min.css';
 import { Button } from "../../../node_modules/primereact/components/button/Button";
 import { Link } from "react-router-dom";
-import RegForm from './CustomerRegForm.css';
 
 export class CustomerRegForm extends Component {
     constructor(){
@@ -16,6 +15,7 @@ export class CustomerRegForm extends Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -24,16 +24,71 @@ export class CustomerRegForm extends Component {
         console.log(event.target.value);
     }
 
+    handleSubmit(event) {
+        alert('"' + this.state.title + '" užregistruotas administratorius.');
+        event.preventDefault();
+    }
+
     render() {
         return(
-        <div className="RegForm">
+            <div style={{margin: "20px", width: "auto", float: "left"}} >
             <div className="content-section">
-                <div className="feature-info">
-                    <h1>Pirkėjo registracijos forma</h1>
-                </div>
+              <div className="feature-intro">
+                <h1>Administratoriaus registracijos forma</h1>
+              </div>
             </div>
-        </div>
-        )
+            <div className="content-section implementation">
+            <h3>Vardas</h3>
+            <span className="ui-float-label">
+            <InputText
+                name="vardas"
+                id="float-input"
+                type="text"
+                size="30"
+                onChange={this.handleChange}
+            />
+            <label htmlFor="float-input">Vardas</label>
+            </span>
+
+             <h3>Pavardė</h3>
+          <span className="ui-float-label">
+            <InputText
+              name="pavarde"
+              id="float-input"
+              type="text"
+              size="30"
+              onChange={this.handleChange}
+            />
+            <label htmlFor="float-input">Pavardė</label>
+          </span>
+
+            <h3>Elektroninio pašto adresas</h3>
+          <span className="ui-float-label">
+            <InputText
+              id="float-input"
+              name="ePastas"
+              type="text"
+              size="30"
+              onChange={this.handleChange}
+            />
+            <label htmlFor="float-input">elektroninis@adresas.lt</label>
+          </span>
+
+           <h3>Telefono numeris</h3>
+          <span className="ui-float-label">
+            <InputText
+              name="telNumeris"
+              id="float-input"
+              type="text"
+              size="30"
+              onChange={this.handleChange}
+            />
+            <label htmlFor="float-input">telefono numeris</label>
+          </span>
+          <Button label="Save" className="ui-button-danger" onClick={this.handleSubmit} />
+            </div>
+          </div>
+        );
     }
 }
 
