@@ -22,7 +22,10 @@ public abstract class User {
     private Long phone;
 
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    //buvo pries tai FetchType.LAZY. Pakeiciau i EAGER, nes autentifikacijos
+    //metu mesdavo su lazy iniciacija susijusia klaida (nes role User lenteleje yra tik kaip skaiciukas,
+    //todel prie LAZY nesusieja to skaiciuko su realia role.
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id")
     private Role role;
 
@@ -37,7 +40,15 @@ public abstract class User {
         this.role = createUserCommand.getRole();
     }
 
-    public Long getId() {
+    //BP: idejau tik du authentification reikalingus laukus (email,pass,role).
+    //Jei kas nors neveikia su atpazinimu, vienas is zingsniu - pilnai uzpildyti ikrentancio userio laukus.
+    public User(User user) {
+		this.email=user.getEmail();
+		this.password=user.getPassword();
+		this.role=user.getRole();
+	}
+
+	public Long getId() {
         return id;
     }
     public void setId(Long id) {
