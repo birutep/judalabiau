@@ -11,7 +11,7 @@ import NotFound from "./components/layout/not_found/NotFound"
 import NavMenu from "./components/layout/nav_menu/NavMenu";
 import { CustomerRegForm } from "./components/forms/user_forms/user_reg_form/CustomerRegForm";
 //primereact
-import '../node_modules/primereact/resources/primereact.min.css';
+import 'primereact/resources/primereact.min.css';
 
 @inject("BookStore")
 @observer

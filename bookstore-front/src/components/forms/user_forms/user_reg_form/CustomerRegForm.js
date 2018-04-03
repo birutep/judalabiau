@@ -98,6 +98,30 @@ export class CustomerRegForm extends Component {
             />{" "}
             <label htmlFor="float-input"> telefono numeris </label>{" "}
           </span>{" "}
+
+           <h3>Slaptažodis</h3>{" "}
+          <span className="ui-float-label">
+            <InputText
+              name="telNumeris"
+              id="float-input"
+              type="text"
+              size="30"
+              onChange={this.handleChange}
+            />{" "}
+            <label htmlFor="float-input">Slaptažodis</label>{" "}
+          </span>{" "}
+
+           <h3>Pakartokite slaptažodį</h3>{" "}
+          <span className="ui-float-label">
+            <InputText
+              name="telNumeris"
+              id="float-input"
+              type="text"
+              size="30"
+              onChange={this.handleChange}
+            />{" "}
+            <label htmlFor="float-input">Pakartokite slaptažodį</label>{" "}
+          </span>{" "}
           <Button
             label="Save"
             className="ui-button-danger"
