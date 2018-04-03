@@ -13,11 +13,10 @@ const NavMenu = () => {
                 <button>All books</button>
             </Link>
             <Link to="/books/register" style={{ textDecoration: 'none' }}>
-                <button>Register</button>
+                <button>Add book</button>
             </Link>
-            {/* Danieliaus */}
-            <Link to="/user_reg_form" style={{ textDecoration: 'none' }}>
-                <button>User Register Form</button>
+            <Link to="/users/register" style={{ textDecoration: 'none' }}>
+                <button>Add user</button>
             </Link>
         </div>
     );

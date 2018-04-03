@@ -1,3 +1,4 @@
+<<<<<<< HEAD:bookstore-front/src/components/user_reg_form/customerRegForm.js
 import React, { Component } from "react";
 import { InputText } from "../../../node_modules/primereact/components/inputtext/InputText";
 import "../../../node_modules/primereact/resources/primereact.min.css";
@@ -5,6 +6,14 @@ import { Button } from "../../../node_modules/primereact/components/button/Butto
 import "../../../node_modules/primereact/components/message/Message";
 import "../../../node_modules/primereact/components/messages/Messages";
 //import { Link } from "react-router-dom";
+=======
+import React, { Component } from 'react';
+//primeract
+import 'primereact/resources/primereact.min.css';
+//custom
+import './CustomerRegForm.css'
+
+>>>>>>> c2c8c972da0bbcbb46891429a121a5567bc0bff3:bookstore-front/src/components/forms/user_forms/user_reg_form/CustomerRegForm.js
 
 export class CustomerRegForm extends Component {
   constructor() {
