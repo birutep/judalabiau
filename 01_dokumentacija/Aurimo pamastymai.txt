@@ -7,10 +7,13 @@ man stringas butu daug patogiau, o jei kitu valstybiu, siaip gal dvirati iosradi
 
 daba padaryta kad kuriant useri koks jis bebutu patikrina ar toks emailas neuzregistruotas, daugiau jokiu
 nedejau, paswordu jokiu nekodavau kai desim security pridesim tuos lauku kokiu reiks.
+> BP: Encodery dadėsim po to, kai Security normaliai veiks be encoderio. Kai jau dėsim, tai prikabinsim 
+Bcrypt userio registracijos metode ir userio prisijungimo authentification metode.
 
 kolkas padaryta galimybe prideti useri arba pamatyt visus kelias /users
 atsiradus poreikiui pridesim daugiau, kolkas owneris nori ti kregistruot, tai edito ar delete nedariau
 ziurejau kitus darbus ten ir taip nesicackinta, editu retai kur buna
+> BP: Bet useriu nesimato fronte, ane? 
 
 jei turit kokiu minciu pasiulymu tai parasykit, nes tris pavyzdzius lyginu vis kaip anie ta realizavo anie ta, tai
 budai skirtingi.
