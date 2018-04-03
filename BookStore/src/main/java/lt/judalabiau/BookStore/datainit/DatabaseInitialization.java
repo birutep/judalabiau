@@ -2,25 +2,31 @@ package lt.judalabiau.BookStore.datainit;
 
 import lt.judalabiau.BookStore.books.Book;
 import lt.judalabiau.BookStore.books.BookService;
+import lt.judalabiau.BookStore.users.*;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 //@Component
 //jei norit uzpildyt duombaze pasitestavimui atsikomentuojat, bet po paleidimo uzkomentuojat vel, nes kaskart paleidus jis prideda sitas knygas i duombaze
 public class DatabaseInitialization implements ApplicationListener<ContextRefreshedEvent> {
     private final BookService bookService;
+    private final UserService userService;
     private final List<Book> knygos = new ArrayList<>();
+    private final List<User> useriai = new ArrayList<>();
 
-    public DatabaseInitialization(BookService bookService) {
+    public DatabaseInitialization(BookService bookService, UserService userService) {
         this.bookService = bookService;
+        this.userService = userService;
     }
 
-    private Iterable<Book> initAll(){
+    private Iterable<Book> initBooks(){
         Book b1 = new Book();
         b1.setAuthors("Aurimas Činčikas");
         b1.setTitle("Motyvaciniai pokalbiai arba kaip išlipti sausam");
@@ -104,9 +110,62 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
 
         return  knygos;
     }
+    private Iterable<User> initUsers(){
+        Role adm = new Role();
+        adm.setId(1L);
+        adm.setRoleName("ADMINISTRATOR");
+        Role sls = new Role();
+        sls.setId(2L);
+        sls.setRoleName("SALESMAN");
+        Role ctm = new Role();
+        ctm.setId(3L);
+        ctm.setRoleName("CUSTOMER");
+
+
+        Administrator u1  = new Administrator();
+        u1.setfName("Konstantinas");
+        u1.setlName("Didysis");
+        u1.setEmail("kostia@gmail.com");
+        u1.setPassword("abc123");
+        u1.setPhone(862211111L);
+        u1.setRole(adm);
+        useriai.add(u1);
+
+        Salesman u2  = new Salesman();
+        u2.setfName("Kamilė");
+        u2.setlName("Petkute");
+        u2.setEmail("tigriuke@gmail.com");
+        u2.setPassword("abc123");
+        u2.setPhone(862211111L);
+        u2.setRole(sls);
+        useriai.add(u2);
+
+        Customer u3  = new Customer();
+        u3.setfName("Žilvinas");
+        u3.setlName("Greitutavičius");
+        u3.setEmail("zilva@gmail.com");
+        u3.setPassword("abc123");
+        u3.setPhone(862211111L);
+        u3.setRole(ctm);
+        u3.setBirthday(new Date());
+        useriai.add(u3);
+
+        Customer u4  = new Customer();
+        u4.setfName("Lukas");
+        u4.setlName("Kilkus");
+        u4.setEmail("garazas@gmail.com");
+        u4.setPassword("abc123");
+        u4.setPhone(862211111L);
+        u4.setRole(ctm);
+        u4.setBirthday(new Date());
+        useriai.add(u4);
+
+        return useriai;
+    }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        bookService.saveAll(initAll());
+        bookService.saveAll(initBooks());
+        userService.saveAll(initUsers());
     }
 }

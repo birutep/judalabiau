@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios/index";
 import { inject, observer } from "mobx-react";
-import { BOOKS } from "../../../server_links/ServerLinks";
+import { BOOKS } from "../../../../server_links/ServerLinks";
 //custom elements
 import BookRegFormCss from "./BookEditForm.css";
 
