@@ -6,6 +6,9 @@ import BookStore from "./stores/BookStore";
 import App from "./App";
 import "./index.css";
 
+//primereact
+import 'primereact/resources/primereact.min.css';
+
 const Root = (
     <Provider BookStore={BookStore}>
         <App />

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "primereact/resources/primereact.min.css";
-import "primereact/resources/themes/voclain/theme.css";
+//custom imports
+import css from "./NavMenu.css";
+//primereact
+import 'primereact/resources/primereact.min.css';
 import { Button } from "primereact/components/button/Button";
-// import "font-awesome/css/font-awesome.css";
 import nav_css from "./NavMenu.css";
-import "primereact/resources/primereact.min.css";
 
 const NavMenu = () => {
     return (
