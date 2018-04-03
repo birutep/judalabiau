@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 //custom imports
 import css from "./NavMenu.css";
+//primereact
+import 'primereact/resources/primereact.min.css';
 
 const NavMenu = () => {
     return (
