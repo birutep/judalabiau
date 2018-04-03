@@ -29,7 +29,7 @@ public class CreateUserCommand{
     private String email;
 
     @NotNull
-    private Role role;
+    private Integer role;
 //atskiri laukai
     private Long phone;//privalomi tik adminui ir pardavejui
     private Date birthday;//privalomas tik pirkejui
@@ -63,10 +63,10 @@ public class CreateUserCommand{
         this.email = email;
     }
 
-    public Role getRole() {
+    public Integer getRole() {
         return role;
     }
-    public void setRole(Role role) {
+    public void setRole(Integer role) {
         this.role = role;
     }
 

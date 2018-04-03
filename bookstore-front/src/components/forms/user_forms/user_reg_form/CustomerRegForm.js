@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-//primereact
+import React, { Component } from 'react';
 import { InputText } from "../../../../../node_modules/primereact/components/inputtext/InputText";
-import "../../../../../node_modules/primereact/resources/primereact.min.css";
-import { Button } from "../../../../../node_modules/primereact/components/button/Button";
+import { Button } from '../../../../../node_modules/primereact/components/button/Button';
 import "../../../../../node_modules/primereact/components/message/Message";
 import "../../../../../node_modules/primereact/components/messages/Messages";
+//primeract
+import 'primereact/resources/primereact.min.css';
+//custom
+import './CustomerRegForm.css'
 
 
 export class CustomerRegForm extends Component {
   constructor() {
     super();
-
-    this.showInfo = this.showInfo.bind(this);
 
     this.state = {
       vardas: "",
@@ -22,19 +22,10 @@ export class CustomerRegForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+   
   }
 
-  showInfo() {
-    this.messages.show({
-      severity: "info",
-      summary: "Info Message",
-      detail: "PrimeReact rocks"
-    });
-  }
-
-  clear() {
-    this.messages.clear();
-  }
+ 
 
   handleChange(event) {
     this.setState({
@@ -107,6 +98,30 @@ export class CustomerRegForm extends Component {
             />{" "}
             <label htmlFor="float-input"> telefono numeris </label>{" "}
           </span>{" "}
+
+           <h3>Slaptažodis</h3>{" "}
+          <span className="ui-float-label">
+            <InputText
+              name="telNumeris"
+              id="float-input"
+              type="text"
+              size="30"
+              onChange={this.handleChange}
+            />{" "}
+            <label htmlFor="float-input">Slaptažodis</label>{" "}
+          </span>{" "}
+
+           <h3>Pakartokite slaptažodį</h3>{" "}
+          <span className="ui-float-label">
+            <InputText
+              name="telNumeris"
+              id="float-input"
+              type="text"
+              size="30"
+              onChange={this.handleChange}
+            />{" "}
+            <label htmlFor="float-input">Pakartokite slaptažodį</label>{" "}
+          </span>{" "}
           <Button
             label="Save"
             className="ui-button-danger"
@@ -114,15 +129,7 @@ export class CustomerRegForm extends Component {
           />
 
           
-          <div className="ui-g ui-fluid">
-            <div className="ui-g-12 ui-md-3">
-              <Button
-                onClick={this.showInfo}
-                label="Info"
-                className="ui-button-info"
-              />
-            </div>
-          </div>{" "}
+         
         </div>{" "}
       </div>
     );
