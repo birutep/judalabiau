@@ -1,25 +1,17 @@
-<<<<<<< HEAD:bookstore-front/src/components/user_reg_form/customerRegForm.js
-import React, { Component } from "react";
-import { InputText } from "../../../node_modules/primereact/components/inputtext/InputText";
-import "../../../node_modules/primereact/resources/primereact.min.css";
-import { Button } from "../../../node_modules/primereact/components/button/Button";
-import "../../../node_modules/primereact/components/message/Message";
-import "../../../node_modules/primereact/components/messages/Messages";
-//import { Link } from "react-router-dom";
-=======
 import React, { Component } from 'react';
+import { InputText } from "../../../../../node_modules/primereact/components/inputtext/InputText";
+import { Button } from '../../../../../node_modules/primereact/components/button/Button';
+import "../../../../../node_modules/primereact/components/message/Message";
+import "../../../../../node_modules/primereact/components/messages/Messages";
 //primeract
 import 'primereact/resources/primereact.min.css';
 //custom
 import './CustomerRegForm.css'
 
->>>>>>> c2c8c972da0bbcbb46891429a121a5567bc0bff3:bookstore-front/src/components/forms/user_forms/user_reg_form/CustomerRegForm.js
 
 export class CustomerRegForm extends Component {
   constructor() {
     super();
-
-    this.showInfo = this.showInfo.bind(this);
 
     this.state = {
       vardas: "",
@@ -30,19 +22,10 @@ export class CustomerRegForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+   
   }
 
-  showInfo() {
-    this.messages.show({
-      severity: "info",
-      summary: "Info Message",
-      detail: "PrimeReact rocks"
-    });
-  }
-
-  clear() {
-    this.messages.clear();
-  }
+ 
 
   handleChange(event) {
     this.setState({
@@ -122,15 +105,7 @@ export class CustomerRegForm extends Component {
           />
 
           
-          <div className="ui-g ui-fluid">
-            <div className="ui-g-12 ui-md-3">
-              <Button
-                onClick={this.showInfo}
-                label="Info"
-                className="ui-button-info"
-              />
-            </div>
-          </div>{" "}
+         
         </div>{" "}
       </div>
     );
