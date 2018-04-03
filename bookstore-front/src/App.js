@@ -7,8 +7,10 @@ import book from "./components/books/book_list_for_admin/one_book/Book";
 import BookRegForm from "./components/forms/book_forms/book_reg_form/BookRegForm";
 import BookList from "./components/books/book_list_for_admin/BookList";
 import Main from "./components/layout/main/Main";
-import NotFound from "./components/layout/not_found/NotFound"
+import NotFound from "./components/layout/not_found/NotFound";
 import NavMenu from "./components/layout/nav_menu/NavMenu";
+import Header from "./components/layout/header/Header";
+import Footer from "./components/layout/footer/Footer";
 import { CustomerRegForm } from "./components/forms/user_forms/user_reg_form/CustomerRegForm";
 
 @inject("BookStore")
@@ -21,15 +23,43 @@ class App extends Component {
             <Fragment>
                 <BrowserRouter>
                     <Fragment>
+                        {/* <div className="ui-g"> */}
+                        <Header />
+                        {/* <div className="ui-g"> */}
                         <Route path="/" component={NavMenu} />
                         <Switch>
                             <Route exact path="/" component={Main} />
-                            <Route path="/books/register" component={BookRegForm} />
-                            <Route path="/books/edit" render={()=><BookEditForm book={BookStore.bookToEdit} changed={BookStore.changed}/>} />
-                            <Route path="/books" render={()=><BookList bookStatus={book} changed={BookStore.changed}/>} />            
-                            <Route path="/users/register" component={CustomerRegForm}/>
+                            <Route
+                                path="/books/register"
+                                component={BookRegForm}
+                            />
+                            <Route
+                                path="/books/edit"
+                                render={() => (
+                                    <BookEditForm
+                                        book={BookStore.bookToEdit}
+                                        changed={BookStore.changed}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/books"
+                                render={() => (
+                                    <BookList
+                                        bookStatus={book}
+                                        changed={BookStore.changed}
+                                    />
+                                )}
+                            />
+                            <Route
+                                path="/users/register"
+                                component={CustomerRegForm}
+                            />
                             <Route component={NotFound} />
                         </Switch>
+                        {/* </div> */}
+                        <Footer />
+                        {/* </div> */}
                     </Fragment>
                 </BrowserRouter>
             </Fragment>
@@ -38,5 +68,3 @@ class App extends Component {
 }
 
 export default App;
-
-

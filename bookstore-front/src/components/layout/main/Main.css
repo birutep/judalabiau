@@ -4,3 +4,8 @@
     background-color: whitesmoke;
     height: 900px;
 }
+
+main button {
+    float: right;
+    width: 100px;
+}
