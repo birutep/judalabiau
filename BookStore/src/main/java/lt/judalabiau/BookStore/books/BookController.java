@@ -12,26 +12,22 @@ public class BookController {
 		this.bookService = bookService;
 	}
 
-	//visu knygu listui grazinti
-    @GetMapping("/books")
+    @GetMapping("/books")//visu knygu listui grazinti
     public @ResponseBody Iterable<Book> getBooks () {
         return bookService.getBooks();
     }
 
-    //prideti knyga i lista
-    @PostMapping("/books")
+    @PostMapping("/books")//prideti knyga i lista
     public @ResponseBody void addBook(@RequestBody Book book){
         bookService.createBook(book);
     }
 
-    //pasalinti knygai is listo
-    @DeleteMapping("/books/{id}")
+    @DeleteMapping("/books/{id}")    //pasalinti knygai is listo
     public @ResponseBody void deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
     }
 
-	//knygos updeitas
-    @PutMapping("/books/{id}")
+    @PutMapping("/books/{id}")	//knygos updeitas
     public @ResponseBody void updateBook(@PathVariable Long id, @RequestBody Book book){
 	    bookService.updateBook(id, book);
     }

@@ -13,7 +13,10 @@ const NavMenu = () => {
                 <button>All books</button>
             </Link>
             <Link to="/books/register" style={{ textDecoration: 'none' }}>
-                <button>Register</button>
+                <button>Add book</button>
+            </Link>
+            <Link to="/users/register" style={{ textDecoration: 'none' }}>
+                <button>Add user</button>
             </Link>
         </div>
     );
