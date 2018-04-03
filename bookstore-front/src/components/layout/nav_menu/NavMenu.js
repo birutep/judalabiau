@@ -20,6 +20,9 @@ const NavMenu = () => {
             <Link to="/users/register" style={{ textDecoration: 'none' }}>
                 <button>Add user</button>
             </Link>
+            <Link to="/users/dropbutton" style={{ textDecoration: 'none' }}>
+                <button>Select user</button>
+            </Link>
         </div>
     );
 };
