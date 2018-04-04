@@ -14,30 +14,30 @@ class SubSubHeader extends Component {
                     label="Visos knygos"
                     style={{ marginLeft: 4 }}
                     className={css_subsubheader.filter_button}
-                    onClick={this.props.onAllBooks}
+                    // onClick={this.props.onAllBooks}
                 />
                 <Button
                     label="Neseniai peržiūrėtos"
                     style={{ marginLeft: 4 }}
                     className={css_subsubheader.filter_button}
-                    onClick={this.props.onMostRecent}
+                    // onClick={this.props.onMostRecent}
                 />
                 <Button
                     label="Populiariausios"
                     style={{ marginLeft: 4 }}
                     className={css_subsubheader.filter_button}
-                    onClick={this.props.onMostPopular}
+                    // onClick={this.props.onMostPopular}
                 />
                 <Button
                     label="Nemokamos"
                     style={{ marginLeft: 4 }}
                     className={css_subsubheader.filter_button}
-                    onClick={this.props.onFreeBooks}
+                    // onClick={this.props.onFreeBooks}
                 />
                 <InputText
                     placeholder="paieška..."
                     type="text"
-                    onClick={this.props.onSearched}
+                    // onClick={this.props.onSearched}
                     className={css_subsubheader.search}
                 />
                 <Button
@@ -45,29 +45,29 @@ class SubSubHeader extends Component {
                     iconPos="left"
                     className={css_subsubheader.search_button}
                 />
-            </div> // onClick iškviečia tam tikrą dispatch
+            </div>
         );
     }
 }
 
-const mapStateToProps = state => {
-    // funkcija kuri perkopijuoja state iš bendros saugyklos į vietinį props
-    // (galima prie "fltr: state.filter" pridėt daugiau kintamųjų, jeigu jų būtų reducer.js)
-    return {
-        fltr: state.filter
-    };
-};
+// const mapStateToProps = state => {
+//     // funkcija kuri perkopijuoja state iš bendros saugyklos į vietinį props
+//     // (galima prie "fltr: state.filter" pridėt daugiau kintamųjų, jeigu jų būtų reducer.js)
+//     return {
+//         fltr: state.filter
+//     };
+// };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onAllBooks: () => dispatch({ type: enums.ALL_BOOKS }), // dispatch yra funkcija iškviesti reducer.js, kad pakeistų state.
-        // galima po "type: enums.ALL_BOOKS" po kablelio perduot reikšmių, jeigu reikia. Ir reducer.js atitinkamai apdoroti. Pvz išsaugot į masyvą kažką.
-        onMostRecent: () => dispatch({ type: enums.MOST_RECENT }),
-        onMostPopular: () => dispatch({ type: enums.MOST_POPULAR }),
-        onFreeBooks: () => dispatch({ type: enums.FREE_BOOKS }),
-        onSearched: () => dispatch({ type: enums.SEARCHED_BOOKS })
-    };
-};
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         onAllBooks: () => dispatch({ type: enums.ALL_BOOKS }), // dispatch yra funkcija iškviesti reducer.js, kad pakeistų state.
+//         // galima po "type: enums.ALL_BOOKS" po kablelio perduot reikšmių, jeigu reikia. Ir reducer.js atitinkamai apdoroti. Pvz išsaugot į masyvą kažką.
+//         onMostRecent: () => dispatch({ type: enums.MOST_RECENT }),
+//         onMostPopular: () => dispatch({ type: enums.MOST_POPULAR }),
+//         onFreeBooks: () => dispatch({ type: enums.FREE_BOOKS }),
+//         onSearched: () => dispatch({ type: enums.SEARCHED_BOOKS })
+//     };
+// };
 
 // export default connect(mapStateToProps, mapDispatchToProps)(SubSubHeader); // prijungia funkcijas (mapStateToProps, mapDispatchToProps) prie komponento
 export default SubSubHeader;

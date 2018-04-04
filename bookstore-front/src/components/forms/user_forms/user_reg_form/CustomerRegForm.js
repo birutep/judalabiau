@@ -23,15 +23,16 @@ export class CustomerRegForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    clear() {
-        this.messages.clear();
-    }
-
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         });
         console.log(event.target.value);
+    }
+
+    handleSubmit(event) {
+        alert('"' + this.state.title + '" užregistruotas administratorius.');
+        event.preventDefault();
     }
 
     render() {
