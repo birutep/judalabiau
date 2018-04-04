@@ -1,0 +1,14 @@
+.sub_header {
+    width: 100%;
+    height: 80px;
+    background-color: #eaeef2;
+    /* border-bottom: 1px #95a7c1 solid; */
+    box-shadow: 0 2px 4px -2px gray;
+}
+
+.sub_header_p {
+    float: left;
+    padding: 13px;
+    color: #52617a;
+    font-size: 17px;
+}

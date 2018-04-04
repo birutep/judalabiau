@@ -1,17 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from 'mobx-react';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "mobx-react";
 //custom elements
 import BookStore from "./stores/BookStore";
-import App from './App';
-
+import App from "./App";
 //primereact
-import 'primereact/resources/primereact.min.css';
+import "primereact/resources/primereact.min.css";
 
 const Root = (
     <Provider BookStore={BookStore}>
-        <App/>
+        <App />
     </Provider>
 );
 
-ReactDOM.render(Root, document.getElementById('root'));
+ReactDOM.render(Root, document.getElementById("root"));
