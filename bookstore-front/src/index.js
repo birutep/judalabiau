@@ -4,10 +4,8 @@ import { Provider } from "mobx-react";
 //custom elements
 import BookStore from "./stores/BookStore";
 import App from "./App";
-import "./index.css";
-
 //primereact
-import 'primereact/resources/primereact.min.css';
+import "primereact/resources/primereact.min.css";
 
 const Root = (
     <Provider BookStore={BookStore}>

@@ -7,21 +7,19 @@ header {
     display: flex;
 }
 
-.header_bookStore {
-    background-color: inherit;
-    border: none;
+header .header_bookStore {
     margin: auto;
     color: #78819c;
-    text-align: center;
     font-size: 11.5px;
     font-weight: bold;
-    padding-left: 170px;
-    /* padding-left: 210px; */
+    position: relative;
+    left: 80px;
 }
 
 .help_support,
-.login {
-    border: inherit;
+.login,
+.header_bookStore {
+    border: none;
     border-radius: inherit;
     background-color: inherit;
     font-family: inherit;
@@ -50,6 +48,4 @@ header {
     color: #78819c;
 }
 
-header button:focus {
-        outline: none;
-}
+
