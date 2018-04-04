@@ -1,0 +1,18 @@
+.apps {
+    width: 1320px;
+    margin: auto;
+    background-color: whitesmoke;
+    font-family: Arial, serif;
+}
+
+body {
+    margin: auto;
+    padding: 0;
+}
+
+button:focus {
+    outline: none;
+}
+button:hover {
+    cursor: pointer;
+}

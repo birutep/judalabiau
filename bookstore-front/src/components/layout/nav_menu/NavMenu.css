@@ -1,22 +1,30 @@
-.leftMenu {
-    width: 300px;
-    background-color: black;
-    height: 900px;
+.nav {
     float: left;
-}
-button{
-    background-color: black;
-    color: white;
-    height: 80px;
-    display:block;
-    width: 300px;
-    border: none;
-    text-decoration: none; 
-    font-size: 2em;
-}
-button:hover{
-    cursor: pointer;
-    background-color: darkgray;
-    color: whitesmoke;
+    width: 210px;
+    height: 900px;
+    background-color: #1f2637;
 }
 
+nav button {
+    width: 210px;
+    height: 40px;
+    background-color: inherit;
+    border: none;
+    color: #78829d;
+    text-decoration: none;
+    /* font-weight: bold; */
+    font-size: 13px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+nav button:hover {
+    background-color: #15a4fa;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+nav button:focus {
+    color: #ffffff;
+    background-color: #15a4fa;
+}
