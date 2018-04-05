@@ -1,0 +1,15 @@
+2018-04-03 12:38:34 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS" not found; SQL statement:
+select * from users [42102-196]
+2018-04-03 12:38:34 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLES" not found; SQL statement:
+select * from roles [42102-196]
+2018-04-03 12:38:34 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "BOOKS" not found; SQL statement:
+select * from books [42102-196]
+2018-04-03 13:18:05 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "BOOKS" not found; SQL statement:
+select * from books [42102-196]
+2018-04-03 13:37:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "BOOKS" not found; SQL statement:
+select * from books [42102-196]

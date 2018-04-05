@@ -3,6 +3,8 @@ package lt.judalabiau.BookStore.users;
 import lt.judalabiau.BookStore.books.Book;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 @Service
@@ -47,4 +49,9 @@ public class UserService {
         userRepository.saveAll(users);
     }
 
+    //BP: pridejau, kad prisijungimo metu info apie prisiloginusi useri trauktu ne tiesiai is Rep
+    @Transactional
+    public Optional<User> findByEmail(String email){
+    	return userRepository.findByEmail(email);
+    }
 }
