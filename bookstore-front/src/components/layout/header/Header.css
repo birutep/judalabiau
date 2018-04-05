@@ -1,0 +1,51 @@
+header {
+    width: 100%;
+    height: 45px;
+    background-color: #2f364a;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+}
+
+header .header_bookStore {
+    margin: auto;
+    color: #78819c;
+    font-size: 11.5px;
+    font-weight: bold;
+    position: relative;
+    left: 80px;
+}
+
+.help_support,
+.login,
+.header_bookStore {
+    border: none;
+    border-radius: inherit;
+    background-color: inherit;
+    font-family: inherit;
+    color: #c3c8db;
+    cursor: pointer;
+}
+
+.help_support:hover {
+    color: #78819c;
+}
+
+.helpas:before {
+    float: left;
+    content: "●";
+    color: #1f2637;
+    padding-right: 10px;
+}
+
+.login {
+    color: #ffffff;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.login:hover {
+    color: #78819c;
+}
+
+
