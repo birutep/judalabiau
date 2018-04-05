@@ -33,6 +33,7 @@ const Main = () => {
                     <Danieliui rol={1} />
                     <Danieliui rol={2} />
                     <Danieliui rol={3} />
+                    <Danieliui rol={4} />
                 </div>
             </div>
         </main>
