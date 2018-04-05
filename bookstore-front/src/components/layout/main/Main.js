@@ -1,11 +1,11 @@
 import React from "react";
+//prime
+import "primereact/resources/primereact.min.css";
+//custom elementai
+import "./Main.css";
 import SubHeader from "../sub_header/SubHeader";
 import SubSubHeader from "../sub_header/sub_sub_header/SubSubHeader";
-import "./Main.css";
-import "primereact/resources/primereact.min.css";
-// import { Menubar } from "primereact/components/menubar/Menubar";
-// import { Button } from "primereact/components/button/Button";
-// import { InputText } from "primereact/components/inputtext/InputText";
+import Danieliui from "../../temp/RegComponentoPvzDanieliui/Griauciai";
 
 const Main = () => {
     return (
@@ -30,6 +30,9 @@ const Main = () => {
                     <h1>Bookstore pagal juda labiau</h1>
                     <h2>Pagrindinis puslapis</h2>
                     <h3>Cia kazkas bus</h3>
+                    <Danieliui rol={1} />
+                    <Danieliui rol={2} />
+                    <Danieliui rol={3} />
                 </div>
             </div>
         </main>
