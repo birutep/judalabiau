@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 //custom elementai
-import "./BookList.css";
 import Book from "./one_book/Book";
 import { BOOKS } from "../../../server_links/ServerLinks";
 
@@ -32,24 +31,22 @@ class BookList extends Component {
             return <Book key={book.id} myBook={book} />;
         });
 
-        return (
-            <table>
-                <thead>
-                    <tr>
-                        <th>ISBN</th>
-                        <th>Pavadinimas</th>
-                        <th>Autorius</th>
-                        <th>Kaina</th>
-                        <th>Likutis</th>
-                        <th>Kategorija</th>
-                        <th />
-                        <th />
-                    </tr>
-                </thead>
+        return <div className="books"><table>
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Pavadinimas</th>
+                <th>Autorius</th>
+                <th>Kaina</th>
+                <th>Likutis</th>
+                <th>Kategorija</th>
+                <th />
+                <th />
+            </tr>
+        </thead>
 
-                <tbody>{booksAsComponents}</tbody>
-            </table>
-        );
+        <tbody>{booksAsComponents}</tbody>
+    </table></div>;
     }
 }
 

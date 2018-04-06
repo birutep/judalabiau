@@ -1,3 +1,5 @@
+/* --------------------------------------------App----------------------------------------------*/
+
 .apps {
     width: 1320px;
     margin: auto;
@@ -15,4 +17,337 @@ button:focus {
 }
 button:hover {
     cursor: pointer;
+}
+/*---------------------------------------------Footer-------------------------------------------*/
+footer {
+    clear: both;
+    width: 100%;
+    height: 45px;
+    background-color: #181e2c;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+footer i {
+    color: #ffffff;
+}
+
+footer a {
+    height: 100%;
+    width: 55px;
+}
+
+.footer_help {
+    background-color: #1f2637;
+}
+
+.footer_help i {
+    padding-top: 15px;
+}
+
+.footer_settings {
+    width: 55px;
+    padding-top: 15px;
+    border-bottom-right-radius: 5px;
+}
+/*--------------------------------Header---------------------------------------------*/
+header {
+    width: 100%;
+    height: 45px;
+    background-color: #2f364a;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+}
+
+header .header_bookStore {
+    margin: auto;
+    color: #78819c;
+    font-size: 11.5px;
+    font-weight: bold;
+    position: relative;
+    left: 80px;
+}
+
+.help_support,
+.login,
+.header_bookStore {
+    border: none;
+    border-radius: inherit;
+    background-color: inherit;
+    font-family: inherit;
+    color: #c3c8db;
+    cursor: pointer;
+}
+
+.help_support:hover {
+    color: #78819c;
+}
+
+.helpas:before {
+    float: left;
+    content: "●";
+    color: #1f2637;
+    padding-right: 10px;
+}
+
+.login {
+    color: #ffffff;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.login:hover {
+    color: #78819c;
+}
+/*------------------------------Nav---------------------------------------*/
+.nav {
+    float: left;
+    width: 210px;
+    height: 900px;
+    background-color: #1f2637;
+}
+
+nav button {
+    width: 210px;
+    height: 40px;
+    background-color: inherit;
+    border: none;
+    color: #78829d;
+    text-decoration: none;
+    /* font-weight: bold; */
+    font-size: 13px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+nav button:hover {
+    background-color: #15a4fa;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+nav button:focus {
+    color: #ffffff;
+    background-color: #15a4fa;
+}
+/*---------------------------------Subheader------------------------------------------*/
+.sub_header {
+    width: 100%;
+    height: 80px;
+    background-color: #eaeef2;
+    /* border-bottom: 1px #95a7c1 solid; */
+    box-shadow: 0 2px 4px -2px gray;
+}
+
+.sub_header_p {
+    float: left;
+    padding: 13px;
+    color: #52617a;
+    font-size: 17px;
+}
+/*---------------------------------SubSubHeader-------------------------------------------*/
+.sub_sub_header {
+    width: 100%;
+    height: 70px;
+    background-color: #eaeef2;
+    box-shadow: 0 2px 4px -2px gray;
+    /* position: relative; */
+    top: 1.5px;
+}
+
+.filter_button,
+.search_button {
+    border: none;
+    background-color: inherit;
+    margin-top: 22px;
+    float: left;
+    display: block;
+    color: #95a7c1;
+    text-align: center;
+    padding: 6px 18px;
+    font-size: 14px;
+}
+
+.filter_button:hover {
+    background-color: #95a7c1;
+    color: white;
+    border-radius: 32px 32px 32px 32px;
+    cursor: pointer;
+}
+.sub_sub_header .filter_button:focus {
+    background-color: #eebc01;
+    color: white;
+    border-radius: 32px 32px 32px 32px;
+    box-shadow: 0px 0px 1px 0.5px goldenrod;
+}
+
+.search {
+    height: 30px;
+    width: 350px;
+    padding: 0;
+    padding-left: 20px;
+    margin-top: 22px;
+    border-radius: 16px 16px 16px 16px;
+    border: none;
+    color: gray;
+    text-align: left;
+    /* position: absolute;
+    z-index: 9999999; */
+    position: relative;
+    left: 65px;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-right: whitesmoke;
+    box-shadow: 0px 0px 1px 0.5px goldenrod;
+}
+
+.search_button {
+    background-color: white;
+    border-radius: 16px 16px 16px 16px;
+    width: 40px;
+    height: 30px;
+    padding: 0;
+    padding-left: 10px;
+    margin-top: 22px;
+    text-align: left;
+    border: none;
+    border-left: none;
+    position: relative;
+    left: 502px;
+    /* position: absolute; */
+    /* z-index: 1; */
+    /* left: 1303px;
+    top: 125px; */
+}
+
+.sub_sub_header .search_button:active {
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 1px 0.5px lightgray;
+}
+/*----------------------Book reg form ir Book edit form, kadangi jos analogiskos ----------------------------*/
+.book_reg_form {
+    font-family: Arial, serif;
+    margin: auto;
+    width: 50%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background: whitesmoke;
+}
+
+form {
+    margin: auto;
+    width: 80%;
+    /* background: whitesmoke; */
+    background: white;
+
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    text-align: justify;
+    padding: 50px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+h4 {
+    color: #444c63;
+}
+
+h3,
+h4 {
+    text-align: center;
+}
+
+input,
+textarea,
+select,
+option {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 7px 4px 7px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border: 1px solid gray;
+}
+
+[type="checkbox"],
+[type="file"] {
+    border: none;
+    width: auto;
+    margin-left: 10px;
+}
+
+[type="file"]:focus {
+    border: none;
+}
+
+textarea {
+    min-width: 100%;
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+label {
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+[type="submit"] {
+    font-weight: bold;
+    width: 100%;
+    padding: 5px 5px;
+    margin-top: 20px;
+    border: 1px solid #888;
+    border-radius: 3px;
+}
+
+.placeholder:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.placeholder:focus::-moz-placeholder {
+    color: transparent;
+}
+.placeholder:-moz-placeholder {
+    color: transparent;
+}
+/*----------------books / book list for admin minimal------------------------------------*/
+table {
+    width: 1110px;
+    border-collapse: collapse;
+}
+th {
+    background-color: lightgray;
+}
+/*--------------------books/ book list for admin ...---------------------*/
+img {
+    height: 20px;
+}
+td {
+    padding: 10px 5px;
+    width: 100px;
+}
+td.mini {
+    width: 20px;
+}
+td:nth-child(2n + 1) {
+    background-color: whitesmoke;
+}
+.books{
+    width: 1110px;
+    margin-left: 210px;
 }
