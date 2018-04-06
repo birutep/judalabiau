@@ -1,8 +1,6 @@
 import React from "react";
 //prime
-import "primereact/resources/primereact.min.css";
 //custom elementai
-import "./Main.css";
 import SubHeader from "../sub_header/SubHeader";
 import SubSubHeader from "../sub_header/sub_sub_header/SubSubHeader";
 import Danieliui from "../../temp/RegComponentoPvzDanieliui/Griauciai";
@@ -16,15 +14,6 @@ const Main = () => {
                 </div>
                 <div className="ui-g-12">
                     <SubSubHeader />
-                    {/* <Menubar>
-                        <InputText placeholder="ieškoti..." type="text" />
-                        <Button
-                            icon="fa fa-search"
-                            style={{ marginLeft: 4 }}
-                        />
-                    </Menubar> */}
-                    {/* <InputText placeholder="Search" type="text" />
-                <Button icon="fa-search" /> */}
                 </div>
                 <div>
                     <h1>Bookstore pagal juda labiau</h1>
