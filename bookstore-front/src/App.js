@@ -11,7 +11,10 @@ import "./App.css";
 import BookEditForm from "./components/forms/book_forms/book_edit_form/BookEditForm";
 import book from "./components/books/book_list_for_admin_minimal/one_book/Book";
 import BookRegForm from "./components/forms/book_forms/book_reg_form/BookRegForm";
-import BookList from "./components/books/book_list_for_user_minimal/BookList";
+
+// import BookList from "./components/books/book_list_for_user_minimal/BookList";
+import BookList from "./components/books/book_list_universal/BookListUniversal";
+
 import Main from "./components/layout/main/Main";
 import NotFound from "./components/layout/not_found/NotFound";
 import NavMenu from "./components/layout/nav_menu/NavMenu";
@@ -51,6 +54,7 @@ class App extends Component {
                                     path="/books"
                                     render={() => (
                                         <BookList
+                                            rol={3}
                                             bookStatus={book}
                                             changed={BookStore.changed}
                                         />
