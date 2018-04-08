@@ -20,7 +20,7 @@ import NotFound from "./components/layout/not_found/NotFound";
 import NavMenu from "./components/layout/nav_menu/NavMenu";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
-import { CustomerRegForm } from "./components/forms/user_forms/user_reg_form/CustomerRegForm";
+import { UserRegForm } from "./components/forms/user_forms/user_reg_form/UserRegForm";
 
 @inject("BookStore")
 @observer
@@ -62,7 +62,7 @@ class App extends Component {
                                 />
                                 <Route
                                     path="/users/register"
-                                    component={CustomerRegForm}
+                                    component={UserRegForm}
                                 />
                                 <Route component={NotFound} />
                             </Switch>

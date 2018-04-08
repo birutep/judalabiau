@@ -5,7 +5,7 @@ import { Button } from "primereact/components/button/Button";
 
 
 
-export class CustomerRegForm extends Component {
+export class UserRegForm extends Component {
     constructor() {
         super();
 
@@ -129,4 +129,4 @@ export class CustomerRegForm extends Component {
     }
 }
 
-export default CustomerRegForm;
+export default UserRegForm;
