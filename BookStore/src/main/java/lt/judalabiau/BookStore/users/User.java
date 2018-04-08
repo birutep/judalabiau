@@ -34,7 +34,6 @@ public abstract class User {
         this.lName = createUserCommand.getlName();
         this.email = createUserCommand.getEmail();
         this.password = createUserCommand.getPassword();
-        this.role = createUserCommand.getRole();
     }
 
     public Long getId() {
