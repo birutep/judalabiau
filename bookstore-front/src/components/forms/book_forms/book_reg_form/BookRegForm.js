@@ -217,7 +217,7 @@ class BookRegForm extends Component {
                         <input
                             name="e_available"
                             type="checkbox"
-                            className="check"
+                            className="checkbox"
                             value={this.state.e_available}
                             onChange={this.handleChange}
                         />
