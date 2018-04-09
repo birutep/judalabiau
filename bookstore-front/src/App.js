@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 //primereact style
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/omega/theme.scss";
-import "font-awesome/css/font-awesome.css";
+// import "font-awesome/css/font-awesome.css";
 //custom style
 import "./App.css";
 //custom elementai
@@ -20,7 +20,9 @@ import NotFound from "./components/layout/not_found/NotFound";
 import NavMenu from "./components/layout/nav_menu/NavMenu";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
-import { CustomerRegForm } from "./components/forms/user_forms/user_reg_form/CustomerRegForm";
+import { UserRegForm } from "./components/forms/user_forms/user_reg_form/UserRegForm";
+//laikinai
+import Griauciai from "./components/temp/RegComponentoPvzDanieliui/Griauciai";
 
 @inject("BookStore")
 @observer
@@ -62,7 +64,13 @@ class App extends Component {
                                 />
                                 <Route
                                     path="/users/register"
-                                    component={CustomerRegForm}
+                                    component={UserRegForm}
+                                />
+
+                                {/* laikinai */}
+                                <Route
+                                    path="/griauciai/:number"
+                                    component={Griauciai}
                                 />
                                 <Route component={NotFound} />
                             </Switch>
@@ -74,5 +82,6 @@ class App extends Component {
         );
     }
 }
+
 
 export default App;
