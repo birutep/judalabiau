@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 //primereact style
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/omega/theme.scss";
-import "font-awesome/css/font-awesome.css";
+// import "font-awesome/css/font-awesome.css";
 //custom style
 import "./App.css";
 //custom elementai
@@ -56,7 +56,7 @@ class App extends Component {
                                     path="/books"
                                     render={() => (
                                         <BookList
-                                            rol={3}
+                                            rol={1}
                                             bookStatus={book}
                                             changed={BookStore.changed}
                                         />
@@ -70,7 +70,7 @@ class App extends Component {
                                 {/* laikinai */}
                                 <Route
                                     path="/griauciai"
-                                    render={() => <Griauciai rol={3}/>}
+                                    render={() => <Griauciai rol={3} />}
                                 />
                                 <Route component={NotFound} />
                             </Switch>

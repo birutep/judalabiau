@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios/index";
 import { inject, observer } from "mobx-react";
 import { BOOKS } from "../../../../server_links/ServerLinks";
-
+import { Button } from "primereact/components/button/Button";
 
 @inject("BookStore")
 @observer
@@ -113,9 +113,6 @@ class BookRegForm extends Component {
     render() {
         return (
             <div className="book_reg_form">
-                <h4>
-                    <i className="fa fa-book" /> &nbsp; Knygų parduotuvė
-                </h4>
                 <form onSubmit={this.handleSubmit}>
                     <h3>Knygos kurios id {this.state.id} redagavimas</h3>
                     <label>
@@ -257,6 +254,7 @@ class BookRegForm extends Component {
                         <input
                             name="e_available"
                             type="checkbox"
+                            className="checkbox"
                             value={this.state.e_available}
                             onChange={this.handleChange}
                         />
@@ -272,12 +270,7 @@ class BookRegForm extends Component {
                         />
                     </label>
                     <br />
-
-                    <input
-                        type="submit"
-                        value="Pakeisti"
-                        onClick={this.updateBook}
-                    />
+                    <Button label="Pakeisti" onClick={this.updateBook} />
                 </form>
             </div>
         );
