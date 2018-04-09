@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios/index";
 import {inject} from "mobx-react";
 import {BOOKS} from "../../../../server_links/ServerLinks";
-//custom elements
-import BookRegFormCss from './BookRegForm.css';
+
 
 @inject('BookStore')
 class BookRegForm extends Component {
@@ -80,14 +79,14 @@ class BookRegForm extends Component {
 
     render() {
         return (
-            <div className={BookRegFormCss.book_reg_form}>
+            <div className="book_reg_form">
                 <h4><i className="fa fa-book"/> &nbsp; Knygų parduotuvė</h4>
                 <form onSubmit={this.handleSubmit}>
                     <h3>Naujos knygos registravimas</h3>
                     <label>
                         Knygos pavadinimas:
                         <input name="title" placeholder="Įveskite knygos pavadinimą"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.title}
+                               className="placeholder" required type="text" value={this.state.title}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -95,7 +94,7 @@ class BookRegForm extends Component {
                     <label>
                         Autorius:
                         <input name="authors" placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
-                               className={BookRegFormCss.placeholder} required type="text" value={this.state.authors}
+                               className="placeholder" required type="text" value={this.state.authors}
                                onChange={this.handleChange}/>
                     </label>
                     <br/>
@@ -103,14 +102,14 @@ class BookRegForm extends Component {
                     <label>
                         Leidimo metai:
                         <input name="released" placeholder="Įveskite knygos leidimo metus"
-                               className={BookRegFormCss.placeholder} type="text" pattern="^\d{4}$"
+                               className="placeholder" type="text" pattern="^\d{4}$"
                                value={this.state.released} onChange={this.handleChange}/>
                     </label>
                     <br/>
 
                     <label>
                         ISBN:
-                        <input name="isbn" placeholder="Įveskite ISBN" className={BookRegFormCss.placeholder} required
+                        <input name="isbn" placeholder="Įveskite ISBN" className="placeholder" required
                                type="text" minLength="10" maxLength="13" value={this.state.isbn}
                                onChange={this.handleChange}/>
                     </label>
@@ -118,7 +117,7 @@ class BookRegForm extends Component {
 
                     <label>
                         Kaina:
-                        <input name="price" placeholder="Įveskite kainą" className={BookRegFormCss.placeholder}
+                        <input name="price" placeholder="Įveskite kainą" className="placeholder"
                                type="text" pattern="\d+?\.\d{1,2}\s*?$|^[1-9]\d*$" value={this.state.price}
                                onChange={this.handleChange}/>
                     </label>
@@ -146,7 +145,7 @@ class BookRegForm extends Component {
 
                     <label>
                         Likutis sandėlyje:
-                        <input name="count" placeholder="Įveskite kiekį" className={BookRegFormCss.placeholder} required
+                        <input name="count" placeholder="Įveskite kiekį" className="placeholder" required
                                pattern="[0-9]*" type="text" value={this.state.count} onChange={this.handleChange}/>
                     </label>
                     <br/>
