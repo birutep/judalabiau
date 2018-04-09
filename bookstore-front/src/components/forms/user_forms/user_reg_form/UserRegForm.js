@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { InputText } from "primereact/components/inputtext/InputText";
 import { Button } from "primereact/components/button/Button";
 
-
-
-
 export class UserRegForm extends Component {
     constructor() {
         super();
@@ -43,8 +40,10 @@ export class UserRegForm extends Component {
             >
                 <div className="content-section">
                     <div className="feature-intro">
-                        <h1>Administratoriaus registracijos forma </h1>
+                        <h1>Vartotojo registracija</h1>
                     </div>
+
+                    
                 </div>{" "}
                 <div className="content-section implementation">
                     <h3> Vardas </h3>
@@ -80,7 +79,7 @@ export class UserRegForm extends Component {
                         />{" "}
                         <label htmlFor="float-input">
                             {" "}
-                            elektroninis @adresas.lt{" "}
+                            elektroninio.pašto@adresas.lt{" "}
                         </label>{" "}
                     </span>
                     <h3> Telefono numeris </h3>{" "}

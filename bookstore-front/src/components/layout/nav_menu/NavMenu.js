@@ -37,6 +37,13 @@ const NavMenu = () => {
                     icon="fa fa-user"
                 />
             </Link>
+            {/* laikinai */}
+            <Link to="/griauciai" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Vartotojo registracija/griauciai"
+                    icon="fa fa-user"
+                />
+            </Link>
         </nav>
     );
 };

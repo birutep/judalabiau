@@ -1,4 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
+
+
 
 const Griauciai = props => {
     return (
