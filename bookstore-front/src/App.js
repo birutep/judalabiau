@@ -69,8 +69,8 @@ class App extends Component {
 
                                 {/* laikinai */}
                                 <Route
-                                    path="/griauciai"
-                                    render={() => <Griauciai rol={3} />}
+                                    path="/griauciai/:number"
+                                    component={Griauciai}
                                 />
                                 <Route component={NotFound} />
                             </Switch>
@@ -82,5 +82,6 @@ class App extends Component {
         );
     }
 }
+
 
 export default App;

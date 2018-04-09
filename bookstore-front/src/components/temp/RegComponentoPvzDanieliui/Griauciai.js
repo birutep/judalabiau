@@ -4,6 +4,9 @@ import { InputText } from "primereact/components/inputtext/InputText";
 import { Button } from "primereact/components/button/Button";
 
 const Griauciai = props => {
+     let rol =parseInt(props.match.params.number, 10)
+
+
     return (
         <div
             className="content-section implementation"
@@ -13,7 +16,7 @@ const Griauciai = props => {
                 float: "left"
             }}
         >
-            {topHook(props.rol)}
+            {topHook(rol)}
             <h3> Vardas </h3>
             <span className="ui-float-label">
                 <InputText
@@ -64,7 +67,7 @@ const Griauciai = props => {
                 <label htmlFor="float-input"> telefono numeris </label>
             </span>
 
-            {botomHook(props.rol)}
+            {botomHook(rol)}
         </div>
     );
 };

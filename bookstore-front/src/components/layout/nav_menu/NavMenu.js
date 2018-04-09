@@ -41,9 +41,21 @@ const NavMenu = () => {
                 />
             </Link>
             {/* laikinai */}
-            <Link to="/griauciai" style={{ textDecoration: "none" }}>
+            <Link to="/griauciai/3" style={{ textDecoration: "none" }}>
                 <Button
-                    label="&ensp;Vartotojo registracija/griauciai"
+                    label="&ensp;Vartotojo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            <Link to="/griauciai/2" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Pirkėjo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            <Link to="/griauciai/1" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Administratoriaus registracija"
                     icon="fa fa-user"
                 />
             </Link>
