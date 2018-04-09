@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 //prime
 import { Button } from "primereact/components/button/Button";
 import { InputText } from "primereact/components/inputtext/InputText";
@@ -11,12 +13,14 @@ class SubSubHeader extends Component {
     render() {
         return (
             <div className="sub_sub_header">
-                <Button
-                    label="Visos knygos"
-                    style={{ marginLeft: 4 }}
-                    className="filter_button"
-                    // onClick={this.props.onAllBooks}
-                />
+                <Link to="/books">
+                    <Button
+                        label="Visos knygos"
+                        style={{ marginLeft: 4 }}
+                        className="filter_button"
+                        // onClick={this.props.onAllBooks}
+                    />{" "}
+                </Link>
                 <Button
                     label="Neseniai peržiūrėtos"
                     style={{ marginLeft: 4 }}

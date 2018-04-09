@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { InputText } from "primereact/components/inputtext/InputText";
 import { Button } from "primereact/components/button/Button";
 
-
-
-
 export class CustomerRegForm extends Component {
     constructor() {
         super();
@@ -34,96 +31,95 @@ export class CustomerRegForm extends Component {
 
     render() {
         return (
-            <div
-                style={{
-                    margin: "20px",
-                    width: "auto",
-                    float: "left"
-                }}
-            >
-                <div className="content-section">
-                    <div className="feature-intro">
-                        <h1>Administratoriaus registracijos forma </h1>
-                    </div>
-                </div>{" "}
-                <div className="content-section implementation">
-                    <h3> Vardas </h3>
-                    <span className="ui-float-label">
-                        <InputText
-                            name="vardas"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor="float-input"> Vardas </label>
-                    </span>
-                    <h3> Pavardė </h3>
-                    <span className="ui-float-label">
-                        <InputText
-                            name="pavarde"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input"> Pavardė </label>{" "}
-                    </span>
-                    <h3> Elektroninio pašto adresas </h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            id="float-input"
-                            name="ePastas"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input">
-                            {" "}
-                            elektroninis @adresas.lt{" "}
-                        </label>{" "}
-                    </span>
-                    <h3> Telefono numeris </h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            name="telNumeris"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input"> telefono numeris </label>{" "}
-                    </span>{" "}
-                    <h3>Slaptažodis</h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            name="telNumeris"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input">Slaptažodis</label>{" "}
-                    </span>{" "}
-                    <h3>Pakartokite slaptažodį</h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            name="telNumeris"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input">
-                            Pakartokite slaptažodį
-                        </label>{" "}
-                    </span>{" "}
-                    <Button
-                        label="Save"
-                        className="ui-button-danger"
-                        onClick={this.handleSubmit}
-                    />
-                </div>{" "}
+            <div className="customer_reg_form">
+                <form>
+                    <h3>Naujo administratoriaus registravimas </h3>
+                    <label>
+                        Vardas
+                        <span className="ui-float-label">
+                            <InputText
+                                name="vardas"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input"> Vardas </label>
+                        </span>
+                    </label>
+                    <label>
+                        Pavardė
+                        <span className="ui-float-label">
+                            <InputText
+                                name="pavarde"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input"> Pavardė </label>
+                        </span>
+                    </label>
+                    <label>
+                        Elektroninio pašto adresas
+                        <span className="ui-float-label">
+                            <InputText
+                                id="float-input"
+                                name="ePastas"
+                                type="text"
+                                size="30"
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input">
+                                elektroninis @adresas.lt
+                            </label>
+                        </span>
+                    </label>
+                    <label>
+                        Telefono numeris
+                        <span className="ui-float-label">
+                            <InputText
+                                name="telNumeris"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input">
+                                telefono numeris
+                            </label>
+                        </span>
+                    </label>
+                    <label>
+                        Slaptažodis
+                        <span className="ui-float-label">
+                            <InputText
+                                name="telNumeris"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input">Slaptažodis</label>
+                        </span>
+                    </label>
+                    <label>
+                        Pakartokite slaptažodį
+                        <span className="ui-float-label">
+                            <InputText
+                                name="telNumeris"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input">
+                                Pakartokite slaptažodį
+                            </label>
+                        </span>
+                    </label>
+                    <Button label="Registruoti" onClick={this.handleSubmit} />
+                </form>
             </div>
         );
     }

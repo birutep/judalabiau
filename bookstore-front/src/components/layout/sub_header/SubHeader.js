@@ -4,7 +4,9 @@ const sub = props => {
     return (
         <div className="sub_header">
             <div>
-                <p className="sub_header_p">{props.name}</p>
+                <p className="sub_header_p">
+                    cia turi buti propsas {props.label}
+                </p>
             </div>
         </div>
     );
