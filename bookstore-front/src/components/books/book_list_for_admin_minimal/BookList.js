@@ -7,6 +7,7 @@ import SubHeader from "../../layout/sub_header/SubHeader";
 // import SubSubHeader from "../../layout/sub_header/sub_sub_header/SubSubHeader";
 // import { DataTable } from "primereact/components/datatable/DataTable";
 // import { Column } from "primereact/components/column/Column";
+// import "../../../../node_modules/primereact/resources/themes/voclain/theme.css";
 
 class BookList extends Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class BookList extends Component {
 
         return (
             <div className="books">
-                <SubHeader label="ALL BOOKS" />
+                <SubHeader label="ALL BOOKS FOR ADMIN" />
                 {/* <SubSubHeader /> */}
 
                 {/* <DataTable value={this.state.books}>

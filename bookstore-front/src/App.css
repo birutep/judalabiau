@@ -353,7 +353,16 @@ table {
     border-collapse: collapse;
 }
 th {
-    background-color: lightgray;
+    padding: 10px;
+    text-align: left;
+    /* background-color: #c8c8c8; */
+    background-color: #dbdfe2;
+    /* background-color: lightgray; */
+    border-block-start: 1px solid #c3c7ca;
+    border-block-end: 1px solid #c3c7ca;
+}
+.mini i {
+    color: black;
 }
 /*--------------------books/ book list for admin ...---------------------*/
 img {
@@ -366,12 +375,16 @@ td {
 td.mini {
     width: 20px;
 }
-td:nth-child(2n + 1) {
+/* td:nth-child(2n + 1) {
     background-color: whitesmoke;
+} */
+tr:nth-child(even) {
+    background-color: #ededed;
 }
 .books {
     width: 1110px;
     margin-left: 210px;
+    font-size: 14px;
 }
 /*-------------------------------books/ book list for user-----------------------*/
 /*--------------one book---------------------*/

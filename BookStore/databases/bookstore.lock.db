@@ -1,6 +1,6 @@
 #FileLock
-#Mon Apr 09 10:53:44 EEST 2018
+#Mon Apr 09 15:35:10 EEST 2018
 hostName=Dainius-PC
-id=162a9657796f8d57fa7169d92c9c0fdbe0cc75c2746
+id=162aa672073fc810affe39a3449afca17dc2ff63c79
 method=file
-server=192.168.8.104\:49929
+server=192.168.8.104\:56380
