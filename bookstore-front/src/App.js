@@ -20,8 +20,9 @@ import NotFound from "./components/layout/not_found/NotFound";
 import NavMenu from "./components/layout/nav_menu/NavMenu";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
-
-import { CustomerRegForm } from "./components/forms/user_forms/user_reg_form/CustomerRegForm";
+import { UserRegForm } from "./components/forms/user_forms/user_reg_form/UserRegForm";
+//laikinai
+import Griauciai from "./components/temp/RegComponentoPvzDanieliui/Griauciai";
 
 @inject("BookStore")
 @observer
@@ -63,7 +64,13 @@ class App extends Component {
                                 />
                                 <Route
                                     path="/users/register"
-                                    component={CustomerRegForm}
+                                    component={UserRegForm}
+                                />
+
+                                {/* laikinai */}
+                                <Route
+                                    path="/griauciai"
+                                    render={() => <Griauciai rol={3} />}
                                 />
                                 <Route component={NotFound} />
                             </Switch>
