@@ -20,9 +20,7 @@ import NotFound from "./components/layout/not_found/NotFound";
 import NavMenu from "./components/layout/nav_menu/NavMenu";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
-import { UserRegForm } from "./components/forms/user_forms/user_reg_form/UserRegForm";
-//laikinai
-import Griauciai from "./components/temp/RegComponentoPvzDanieliui/Griauciai";
+import UserRegForm from "./components/forms/user_forms/user_reg_form/UserRegForm";
 
 @inject("BookStore")
 @observer
@@ -62,15 +60,20 @@ class App extends Component {
                                         />
                                     )}
                                 />
-                                <Route
-                                    path="/users/register"
-                                    component={UserRegForm}
-                                />
 
-                                {/* laikinai */}
                                 <Route
-                                    path="/griauciai"
-                                    render={() => <Griauciai rol={3}/>}
+                                    path="/user/register_1"
+                                    render={() => <UserRegForm rol={1} />}
+                                />
+                                
+                                <Route
+                                    path="/user/register_2"
+                                    render={() => <UserRegForm rol={2} />}
+                                />
+                            
+                                <Route
+                                    path="/user/register_3"
+                                    render={() => <UserRegForm rol={3} />}
                                 />
                                 <Route component={NotFound} />
                             </Switch>

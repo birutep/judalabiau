@@ -1,131 +1,226 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
+//custom
 import { InputText } from "primereact/components/inputtext/InputText";
 import { Button } from "primereact/components/button/Button";
 
-export class UserRegForm extends Component {
-    constructor() {
-        super();
+const UserRegForm = props => {
+    return (
+        <div
+            className="content-section implementation"
+            style={{
+                margin: "20px",
+                width: "auto",
+                float: "left"
+            }}
+        >
+            {topHook(props.rol)}
+            <h3> Vardas </h3>
+            <span className="ui-float-label">
+                <InputText
+                    name="vardas"
+                    id="float-input"
+                    type="text"
+                    size="30"
+                    // onChange={this.handleChange}
+                />
+                <label htmlFor="float-input"> Vardas </label>
+            </span>
+            <h3> Pavardė </h3>
+            <span className="ui-float-label">
+                <InputText
+                    name="vardas"
+                    id="float-input"
+                    type="text"
+                    size="30"
+                    // onChange={this.handleChange}
+                />
+                <label htmlFor="float-input"> Pavardė </label>
+            </span>
 
-        this.state = {
-            vardas: "",
-            pavrde: "",
-            ePastas: "",
-            password: ""
-        };
+            <h3> Elektroninio pašto adresas </h3>
+            <span className="ui-float-label">
+                <InputText
+                    name="vardas"
+                    id="float-input"
+                    type="text"
+                    size="30"
+                    // onChange={this.handleChange}
+                />
+                <label htmlFor="float-input">
+                    {" "}
+                    elektroninio.pašto@adresas{" "}
+                </label>
+            </span>
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+            <h3> Slaptažodis </h3>
+            <span className="ui-float-label">
+                <InputText
+                    name="vardas"
+                    id="float-input"
+                    type="text"
+                    size="30"
+                    // onChange={this.handleChange}
+                />
+                <label htmlFor="float-input"> slaptažodis </label>
+            </span>
+            <h3> Slaptažodžio patvirtinimas </h3>
+            <span className="ui-float-label">
+                <InputText
+                    name="vardas"
+                    id="float-input"
+                    type="text"
+                    size="30"
+                    // onChange={this.handleChange}
+                />
+                <label htmlFor="float-input">
+                    {" "}
+                    slaptažodžio patvirtinimas{" "}
+                </label>
+            </span>
+            {botomHook(props.rol)}
+        </div>
+    );
+};
+const topHook = role => {
+    switch (role) {
+        case 1:
+            return <h2>Administratoriaus registracija</h2>;
+        case 2:
+            return <h2>Pardavejo registracija</h2>;
+        case 3:
+            return <h2>Vartotojo registracija</h2>;
+        default:
+            break;
     }
-
-    handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-        console.log(event.target.value);
-    }
-
-    handleSubmit(event) {
-        alert('"' + this.state.title + '" užregistruotas vartotojas.');
-        event.preventDefault();
-    }
-
-    render() {
-        return (
-            <div
-                style={{
-                    margin: "20px",
-                    width: "auto",
-                    float: "left"
-                }}
-            >
-                <div className="content-section">
-                    <div className="feature-intro">
-                        <h1>Vartotojo registracija</h1>
+};
+const botomHook = role => {
+    switch (role) {
+        //<==Admin==>
+        case 1:
+            return (
+                <Fragment>
+                    <div
+                        className="content-section implementation"
+                        style={{
+                            margin: "20px",
+                            width: "auto",
+                            float: "left"
+                        }}
+                    >
+                        <h3> Telefono numeris </h3>
+                        <span className="ui-float-label">
+                            <InputText
+                                name="vardas"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                // onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input">
+                                {" "}
+                                telefono numeris{" "}
+                            </label>
+                        </span>
+                        <Button
+                            label="Patvirtinti"
+                            className="ui-button-danger"
+                            // onClick={this.handleSubmit}
+                        />
                     </div>
+                </Fragment>
+            );
 
-                    
-                </div>{" "}
-                <div className="content-section implementation">
-                    <h3> Vardas </h3>
+        //<==Salesman==>
+        case 2:
+            return (
+                <Fragment>
+                     <div
+                        className="content-section implementation"
+                        style={{
+                            margin: "20px",
+                            width: "auto",
+                            float: "left"
+                        }}
+                    >
+                    <h3> Telefono numeris </h3>
                     <span className="ui-float-label">
                         <InputText
                             name="vardas"
                             id="float-input"
                             type="text"
                             size="30"
-                            onChange={this.handleChange}
+                            // onChange={this.handleChange}
                         />
-                        <label htmlFor="float-input"> Vardas </label>
+                        <label htmlFor="float-input"> telefono numeris </label>
                     </span>
-                    <h3> Pavardė </h3>
-                    <span className="ui-float-label">
-                        <InputText
-                            name="pavarde"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input"> Pavardė </label>{" "}
-                    </span>
-                    <h3> Elektroninio pašto adresas </h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            id="float-input"
-                            name="ePastas"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input">
-                            {" "}
-                            elektroninio.pašto@adresas.lt{" "}
-                        </label>{" "}
-                    </span>
-                    <h3> Telefono numeris </h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            name="telNumeris"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input"> telefono numeris </label>{" "}
-                    </span>{" "}
-                    <h3>Slaptažodis</h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            name="telNumeris"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input">Slaptažodis</label>{" "}
-                    </span>{" "}
-                    <h3>Pakartokite slaptažodį</h3>{" "}
-                    <span className="ui-float-label">
-                        <InputText
-                            name="telNumeris"
-                            id="float-input"
-                            type="text"
-                            size="30"
-                            onChange={this.handleChange}
-                        />{" "}
-                        <label htmlFor="float-input">
-                            Pakartokite slaptažodį
-                        </label>{" "}
-                    </span>{" "}
                     <Button
-                        label="Patvirtinti"
-                        className="ui-button-danger"
-                        onClick={this.handleSubmit}
-                    />
-                </div>{" "}
-            </div>
-        );
+                            label="Patvirtinti"
+                            className="ui-button-danger"
+                            // onClick={this.handleSubmit}
+                        />
+                    </div>
+                </Fragment>
+            );
+        // <==Customer==>
+        case 3:
+            return (
+                <Fragment>
+                    <div
+                        className="content-section implementation"
+                        style={{
+                            margin: "20px",
+                            width: "auto",
+                            float: "left"
+                        }}
+                    >
+                        <h3> Gimimo data </h3>
+                        <span className="ui-float-label">
+                            <InputText
+                                name="vardas"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                // onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input"> gimimo data </label>
+                        </span>
+                        <h3> Adresas </h3>
+                        <span className="ui-float-label">
+                            <InputText
+                                name="vardas"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                // onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input"> adresas </label>
+                        </span>
+                        <h3> Telefono numeris </h3>
+                        <span className="ui-float-label">
+                            <InputText
+                                name="vardas"
+                                id="float-input"
+                                type="text"
+                                size="30"
+                                // onChange={this.handleChange}
+                            />
+                            <label htmlFor="float-input">
+                                {" "}
+                                telefono numeris{" "}
+                            </label>
+                        </span>
+
+                        <Button
+                            label="Patvirtinti"
+                            className="ui-button-danger"
+                            // onClick={this.handleSubmit}
+                        />
+                    </div>
+                </Fragment>
+            );
+        default:
+            break;
     }
-}
+};
 
 export default UserRegForm;

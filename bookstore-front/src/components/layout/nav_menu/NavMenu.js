@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 //primereact
 import { Button } from "primereact/components/button/Button";
 
-
 const NavMenu = () => {
     return (
         <nav className="nav">
@@ -31,16 +30,24 @@ const NavMenu = () => {
             <Link to="/books/register" style={{ textDecoration: "none" }}>
                 <Button label="&ensp;Knygos registracija" icon="fa fa-book" />
             </Link>
-            <Link to="/users/register" style={{ textDecoration: "none" }}>
+
+            <Link to="/user/register_1" style={{ textDecoration: "none" }}>
                 <Button
-                    label="&ensp;Vartotojo registracija"
+                    label="&ensp;Administratoriaus registracija"
                     icon="fa fa-user"
                 />
             </Link>
-            {/* laikinai */}
-            <Link to="/griauciai" style={{ textDecoration: "none" }}>
+
+            <Link to="/user/register_2" style={{ textDecoration: "none" }}>
                 <Button
-                    label="&ensp;Vartotojo registracija/griauciai"
+                    label="&ensp;Pardavėjo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+
+            <Link to="/user/register_3" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Vartotojo registracija"
                     icon="fa fa-user"
                 />
             </Link>
