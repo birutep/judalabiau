@@ -59,6 +59,12 @@ const NavMenu = () => {
                     icon="fa fa-user"
                 />
             </Link>
+            <Link to="/users" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Visi vartotojai"
+                    icon="fa fa-user"
+                />
+            </Link>
         </nav>
     );
 };

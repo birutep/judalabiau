@@ -3,7 +3,7 @@ import axios from "axios";
 import { BOOKS } from "../../../../server_links/ServerLinks";
 import { inject } from "mobx-react";
 import { Link } from "react-router-dom";
-// import "../../../../node_modules/font-awesome/css/font-awesome.min.css";
+
 import "font-awesome/css/font-awesome.min.css";
 
 @inject("BookStore")
@@ -56,7 +56,7 @@ class Book extends Component {
                 <td className="mini">
                     <Link to="/books/edit">
                         <i
-                            class="fa fa-pencil fa-fw"
+                            className="fa fa-pencil fa-fw"
                             onClick={() => this.editBook(this.props.myBook)}
                         />
                         {/* <img
@@ -67,7 +67,7 @@ class Book extends Component {
                     </Link>
                 </td>
                 <td className="mini">
-                    <i class="fa fa-trash-o fa-fw" onClick={this.deleteBook} />
+                    <i className="fa fa-trash-o fa-fw" onClick={this.deleteBook} />
                     {/* <img
                         src="./img/delete.png"
                         alt="delete"
