@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { InputText } from "../../../../../node_modules/primereact/components/inputtext/InputText";
-import { Button } from "../../../../../node_modules/primereact/components/button/Button";
-import "../../../../../node_modules/primereact/components/message/Message";
-import "../../../../../node_modules/primereact/components/messages/Messages";
-//primeract
-import "primereact/resources/primereact.min.css";
-//custom
-import "./CustomerRegForm.css";
+import { InputText } from "primereact/components/inputtext/InputText";
+import { Button } from "primereact/components/button/Button";
+
+
+
 
 export class CustomerRegForm extends Component {
     constructor() {

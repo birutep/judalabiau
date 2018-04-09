@@ -31,22 +31,17 @@ class BookList extends Component {
             return <Book key={book.id} myBook={book} />;
         });
 
-        return <div className="books"><table>
-        <thead>
-            <tr>
-                <th>ISBN</th>
-                <th>Pavadinimas</th>
-                <th>Autorius</th>
-                <th>Kaina</th>
-                <th>Likutis</th>
-                <th>Kategorija</th>
-                <th />
-                <th />
-            </tr>
-        </thead>
-
-        <tbody>{booksAsComponents}</tbody>
-    </table></div>;
+        return (
+            <div className="books">
+                <div className="all_books_for_user">
+                    <div className="all_books_for_user_area">
+                        <div className="all_books_for_user_girdarea">
+                            {booksAsComponents}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
     }
 }
 

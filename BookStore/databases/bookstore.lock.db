@@ -1,6 +1,5 @@
-#FileLock
-#Tue Apr 03 15:01:42 EEST 2018
-hostName=Tomas
-id=1628b6256cca50ba06074221cf938d30a6ab913d7a1
+#Sat Apr 07 16:32:43 EEST 2018
+hostName=DESKTOP-7JFLQ8K
+id=162a04f08b316e2e47e9bfef406b6706444fc7c6c5f
 method=file
-server=192.168.1.102\:57656
+server=192.168.56.1\:55717

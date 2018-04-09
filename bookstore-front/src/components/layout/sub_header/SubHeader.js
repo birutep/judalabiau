@@ -1,11 +1,10 @@
 import React from "react";
-import css_subheader from "./SubHeader.css";
 
 const sub = props => {
     return (
-        <div className={css_subheader.sub_header}>
+        <div className="sub_header">
             <div>
-                <p className={css_subheader.sub_header_p}>{props.name}</p>
+                <p className="sub_header_p">{props.name}</p>
             </div>
         </div>
     );
