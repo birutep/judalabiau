@@ -25,7 +25,7 @@ export class UserRegForm extends Component {
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.title + '" užregistruotas administratorius.');
+        alert('"' + this.state.title + '" užregistruotas vartotojas.');
         event.preventDefault();
     }
 
@@ -118,7 +118,7 @@ export class UserRegForm extends Component {
                         </label>{" "}
                     </span>{" "}
                     <Button
-                        label="Save"
+                        label="Patvirtinti"
                         className="ui-button-danger"
                         onClick={this.handleSubmit}
                     />

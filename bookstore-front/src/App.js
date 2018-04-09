@@ -22,7 +22,7 @@ import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
 import { UserRegForm } from "./components/forms/user_forms/user_reg_form/UserRegForm";
 //laikinai
-import Griauciai from './components/temp/RegComponentoPvzDanieliui/Griauciai'
+import Griauciai from "./components/temp/RegComponentoPvzDanieliui/Griauciai";
 
 @inject("BookStore")
 @observer
@@ -66,11 +66,11 @@ class App extends Component {
                                     path="/users/register"
                                     component={UserRegForm}
                                 />
-                                <Route component={NotFound} />
+
                                 {/* laikinai */}
                                 <Route
                                     path="/griauciai"
-                                    component={Griauciai}
+                                    render={() => <Griauciai rol={3}/>}
                                 />
                                 <Route component={NotFound} />
                             </Switch>
