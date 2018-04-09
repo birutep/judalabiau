@@ -20,7 +20,8 @@ import NotFound from "./components/layout/not_found/NotFound";
 import NavMenu from "./components/layout/nav_menu/NavMenu";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
-import { UserRegForm } from "./components/forms/user_forms/user_reg_form/UserRegForm";
+import UserRegForm from "./components/forms/user_forms/user_reg_form/UserRegForm";
+import UserList from "./components/users/user_list/UserList";
 //laikinai
 import Griauciai from "./components/temp/RegComponentoPvzDanieliui/Griauciai";
 
@@ -66,6 +67,10 @@ class App extends Component {
                                     path="/users/register"
                                     component={UserRegForm}
                                 />
+                                <Route
+                                    path="/users"
+                                    component={UserList}
+                                />
 
                                 {/* laikinai */}
                                 <Route
@@ -82,6 +87,5 @@ class App extends Component {
         );
     }
 }
-
 
 export default App;
