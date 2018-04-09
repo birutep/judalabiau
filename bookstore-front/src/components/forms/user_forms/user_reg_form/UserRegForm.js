@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import { InputText } from "primereact/components/inputtext/InputText";
 import { Button } from "primereact/components/button/Button";
 
-
-
-
-export class CustomerRegForm extends Component {
+export class UserRegForm extends Component {
     constructor() {
         super();
 
@@ -28,7 +25,7 @@ export class CustomerRegForm extends Component {
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.title + '" užregistruotas administratorius.');
+        alert('"' + this.state.title + '" užregistruotas vartotojas.');
         event.preventDefault();
     }
 
@@ -43,8 +40,10 @@ export class CustomerRegForm extends Component {
             >
                 <div className="content-section">
                     <div className="feature-intro">
-                        <h1>Administratoriaus registracijos forma </h1>
+                        <h1>Vartotojo registracija</h1>
                     </div>
+
+                    
                 </div>{" "}
                 <div className="content-section implementation">
                     <h3> Vardas </h3>
@@ -80,7 +79,7 @@ export class CustomerRegForm extends Component {
                         />{" "}
                         <label htmlFor="float-input">
                             {" "}
-                            elektroninis @adresas.lt{" "}
+                            elektroninio.pašto@adresas.lt{" "}
                         </label>{" "}
                     </span>
                     <h3> Telefono numeris </h3>{" "}
@@ -119,7 +118,7 @@ export class CustomerRegForm extends Component {
                         </label>{" "}
                     </span>{" "}
                     <Button
-                        label="Save"
+                        label="Patvirtinti"
                         className="ui-button-danger"
                         onClick={this.handleSubmit}
                     />
@@ -129,4 +128,4 @@ export class CustomerRegForm extends Component {
     }
 }
 
-export default CustomerRegForm;
+export default UserRegForm;
