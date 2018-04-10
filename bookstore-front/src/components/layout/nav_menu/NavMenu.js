@@ -3,37 +3,65 @@ import { Link } from "react-router-dom";
 //primereact
 import { Button } from "primereact/components/button/Button";
 
-
 const NavMenu = () => {
     return (
         <nav className="nav">
-            <Link to="/" style={{ textDecoration: "none" }}>
-                <Button label="&ensp;Pradinis puslapis" icon="fa fa-home" />
+            <Link to="/">
+                <Button
+                    label="&ensp;Pradinis puslapis"
+                    icon="fa fa-home"
+                    name="Pradinis puslapis"
+                />
             </Link>
-            <Link to="/books" style={{ textDecoration: "none" }}>
+            <Link to="/books">
                 <Button label="&ensp;Visos knygos" icon="fa fa-globe" />
             </Link>
-            <Link to="/cart" style={{ textDecoration: "none" }}>
+            {/* <Link to="/cart">
                 <Button
                     label="&ensp;Pirkinių krepšelis"
                     icon="fa fa-shopping-cart"
                 />
             </Link>
-            <Link to="/favourite" style={{ textDecoration: "none" }}>
+            <Link to="/favourite">
                 <Button
                     label="&ensp;Populiariausios knygos"
                     icon="fa fa-star"
                 />
             </Link>
-            <Link to="/whishlist" style={{ textDecoration: "none" }}>
+            <Link to="/whishlist">
                 <Button label="&ensp;Mano pageidavimai" icon="fa fa-heart" />
-            </Link>
-            <Link to="/books/register" style={{ textDecoration: "none" }}>
+            </Link> */}
+            <Link to="/books/register">
                 <Button label="&ensp;Knygos registracija" icon="fa fa-book" />
             </Link>
-            <Link to="/users/register" style={{ textDecoration: "none" }}>
+            <Link to="/users/register">
                 <Button
                     label="&ensp;Vartotojo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            {/* laikinai */}
+            <Link to="/griauciai/3" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Vartotojo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            <Link to="/griauciai/2" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Pirkėjo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            <Link to="/griauciai/1" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Administratoriaus registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            <Link to="/users" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Visi vartotojai"
                     icon="fa fa-user"
                 />
             </Link>

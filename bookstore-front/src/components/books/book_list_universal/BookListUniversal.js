@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import BookForAdmins from '../book_list_for_admin_minimal/BookList'
 import BookForUsers from '../book_list_for_user_minimal/BookList'
 
