@@ -34,24 +34,28 @@ const NavMenu = () => {
             <Link to="/books/register">
                 <Button label="&ensp;Knygos registracija" icon="fa fa-book" />
             </Link>
-
-            <Link to="/user/register_1" style={{ textDecoration: "none" }}>
-                <Button
-                    label="&ensp;Administratoriaus registracija"
-                    icon="fa fa-user"
-                />
-            </Link>
-
-            <Link to="/user/register_2" style={{ textDecoration: "none" }}>
-                <Button
-                    label="&ensp;Pardavėjo registracija"
-                    icon="fa fa-user"
-                />
-            </Link>
-
-            <Link to="/user/register_3" style={{ textDecoration: "none" }}>
+            <Link to="/users/register">
                 <Button
                     label="&ensp;Vartotojo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            {/* laikinai */}
+            <Link to="/griauciai/3" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Vartotojo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            <Link to="/griauciai/2" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Pirkėjo registracija"
+                    icon="fa fa-user"
+                />
+            </Link>
+            <Link to="/griauciai/1" style={{ textDecoration: "none" }}>
+                <Button
+                    label="&ensp;Administratoriaus registracija"
                     icon="fa fa-user"
                 />
             </Link>

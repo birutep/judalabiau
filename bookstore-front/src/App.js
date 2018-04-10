@@ -63,10 +63,9 @@ class App extends Component {
                                         />
                                     )}
                                 />
-
                                 <Route
-                                    path="/user/register_1"
-                                    render={() => <UserRegForm rol={1} />}
+                                    path="/users/register"
+                                    component={UserRegForm}
                                 />
                                 <Route
                                     path="/users"
@@ -75,8 +74,8 @@ class App extends Component {
 
                                 {/* laikinai */}
                                 <Route
-                                    path="/user/register_3"
-                                    render={() => <UserRegForm rol={3} />}
+                                    path="/griauciai/:number"
+                                    component={Griauciai}
                                 />
                                 <Route component={NotFound} />
                             </Switch>
