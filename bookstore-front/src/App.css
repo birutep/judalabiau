@@ -450,3 +450,8 @@ tr:nth-child(even) {
 .all_books_for_user_girdarea::-webkit-scrollbar-track {
     background-color: whitesmoke;
 }
+
+.showhidebutt{
+    height: 15px;
+    font-size: 10pt
+}
