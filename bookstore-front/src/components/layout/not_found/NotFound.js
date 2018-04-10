@@ -5,7 +5,7 @@ const NotFound = () => {
     return (
         <div>
             Puslapis nerastas,             
-            <Link to="/" style={{ textDecoration: 'none' }}>
+            <Link to="/">
                 <button>Pradinis</button>
             </Link>
         </div>
