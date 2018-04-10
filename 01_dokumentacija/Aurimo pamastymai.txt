@@ -1,16 +1,11 @@
 ﻿kaik uriuose failuose pvz knygu liste adminui minimal, Book.js faile yra ccso importai is
 font awesome, ar netycia lyke ar? Jei Tycia negeriau importint i app, ir vaikai jau matys, nereiks kiekvienam atskirai
 
-get metodas vartotojam grazinti backe, grazina jsona be roles,
- ir mes kolkas neturim kaip atskirti kuris yra kuris, tiesiog drebiam visa sarasa
-siulau 
-a) grazinti ir role ir ten pagal tai tiesiog papildoams stulpelis isvedime ar skirtinga fono spalva kad iskirt admina pardaveja
-b) padaryti 4 geterius useriam, kur vienas drebia visus, kiti trys pagal role, ir paspaudus visi useriai
-adminas turi 4 linkucius pasiziuret useriam
+class naudojimas, kadangi registruot vartotojo forma siekia buti maksimalai panasi stiliumi i
+knygos fromas, tai naudoja tas pacias css ,klases, pvz user registre naudojama klase bookReg, kuri anksciau buvo naudojama
+tik registruot knygai. Realiai nemaiso, bet mokslininkusk urie nagrinesm usu projekta gali suconfusint
 
-siulau kolkas pasalint subheaderi
-
-vartotojo registracijos forma, man asmeniskai stilius atrodo labiau tinkantis
- tas kur panasus is musu ano projekto, ir man nepatinka prime reakto dvigubi uzrasai
+telefono numerio ir email priekyje validaciju nedaro, o gale anotacijos sudetos, bet ant kontrolerio det Čvalid man buvo naujiena
+reisk paklibint kai bus laiko sutvarkyt
 
 
