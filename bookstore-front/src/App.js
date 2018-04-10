@@ -21,6 +21,9 @@ import NavMenu from "./components/layout/nav_menu/NavMenu";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
 import UserRegForm from "./components/forms/user_forms/user_reg_form/UserRegForm";
+import UserList from "./components/users/user_list/UserList";
+//laikinai
+import Griauciai from "./components/temp/RegComponentoPvzDanieliui/Griauciai";
 
 @inject("BookStore")
 @observer
@@ -65,12 +68,12 @@ class App extends Component {
                                     path="/user/register_1"
                                     render={() => <UserRegForm rol={1} />}
                                 />
-                                
                                 <Route
-                                    path="/user/register_2"
-                                    render={() => <UserRegForm rol={2} />}
+                                    path="/users"
+                                    component={UserList}
                                 />
-                            
+
+                                {/* laikinai */}
                                 <Route
                                     path="/user/register_3"
                                     render={() => <UserRegForm rol={3} />}
@@ -85,6 +88,5 @@ class App extends Component {
         );
     }
 }
-
 
 export default App;
