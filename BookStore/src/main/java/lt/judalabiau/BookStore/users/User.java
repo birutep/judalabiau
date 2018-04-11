@@ -5,6 +5,10 @@ package lt.judalabiau.BookStore.users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -15,10 +19,30 @@ public abstract class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @NotEmpty
+    @Size (max=20)
     private String fName;
+    
+    @NotNull
+    @NotEmpty
+    @Size (max=20)
     private String lName;
+    
+    @NotNull
+    @NotEmpty
+    @Email
     private String email;
+    
+    @NotNull
+    @NotEmpty
+    //uzdetos ribos, kad nebutu per trumpas, per ilgas.
+    //BET kai reikes jau encryptinti passworda, turi column ilgis but atitinkamai pagal
+    // encoderi. BCrypt berods naudoja 60 ilgio stringa. Tai encryptinant reik nepamirst!
+    @Size (min=6, max=15)
     private String password;
+    
+    @NotNull
     private Long phone;
 
     @JsonIgnore

@@ -1,9 +1,13 @@
 package lt.judalabiau.BookStore.books;
 
+import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.Range;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
@@ -14,12 +18,14 @@ public class Book {
 	private Long id;
 
     @NotNull
+    @NotEmpty
 	private String title;
 
-	@Range(min = 1, max = 9999)
+	@Range (min=1000, max=9999)
     private Integer releaseYear;
 
     @NotNull
+    @Size (min=10, max=13)
 	private String isbn;
 
     @NotNull
