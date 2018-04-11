@@ -2,22 +2,23 @@ import React, { Fragment, Component } from "react";
 //custom
 import { InputText } from "primereact/components/inputtext/InputText";
 import { Button } from "primereact/components/button/Button";
+import { Password } from "primereact/components/password/Password";
 
-const Griauciai = props => {
-     let rol =parseInt(props.match.params.number, 10)
-
+const UserRegForm = props => {
+    let rol = parseInt(props.match.params.number, 10);
 
     return (
         <div
             className="content-section implementation"
             style={{
-                margin: "20px",
+                margin: "40px",
                 width: "auto",
-                float: "left"
+                float: "left",
+                padding: "40px"
             }}
         >
             {topHook(rol)}
-            <h3> Vardas </h3>
+
             <span className="ui-float-label">
                 <InputText
                     name="vardas"
@@ -28,7 +29,7 @@ const Griauciai = props => {
                 />
                 <label htmlFor="float-input"> Vardas </label>
             </span>
-            <h3> Pavardė </h3>
+
             <span className="ui-float-label">
                 <InputText
                     name="vardas"
@@ -40,7 +41,6 @@ const Griauciai = props => {
                 <label htmlFor="float-input"> Pavardė </label>
             </span>
 
-            <h3> Elektroninio pašto adresas </h3>
             <span className="ui-float-label">
                 <InputText
                     name="vardas"
@@ -55,7 +55,6 @@ const Griauciai = props => {
                 </label>
             </span>
 
-            <h3> Telefono numeris </h3>
             <span className="ui-float-label">
                 <InputText
                     name="vardas"
@@ -85,6 +84,7 @@ const topHook = role => {
 };
 const botomHook = role => {
     switch (role) {
+        //<==Admin==>
         case 1:
             return (
                 <Fragment>
@@ -92,24 +92,21 @@ const botomHook = role => {
                     <p>Admino laukas(jei reikia)</p>
                 </Fragment>
             );
+        //<==Salesman==>
         case 2:
             return (
                 <Fragment>
                     <p>Pardavejo laukas(jei reikia)</p>
                 </Fragment>
             );
+        //<==Customer==>
         case 3:
             return (
                 <Fragment>
                     <div
                         className="content-section implementation"
-                        style={{
-                            margin: "20px",
-                            width: "auto",
-                            float: "left"
-                        }}
+                    
                     >
-                        <h3> Gimimo data </h3>
                         <span className="ui-float-label">
                             <InputText
                                 name="vardas"
@@ -120,7 +117,7 @@ const botomHook = role => {
                             />
                             <label htmlFor="float-input"> gimimo data </label>
                         </span>
-                        <h3> Adresas </h3>
+
                         <span className="ui-float-label">
                             <InputText
                                 name="vardas"
@@ -131,7 +128,7 @@ const botomHook = role => {
                             />
                             <label htmlFor="float-input"> adresas </label>
                         </span>
-                        <h3> Slaptažodis </h3>
+
                         <span className="ui-float-label">
                             <InputText
                                 name="vardas"
@@ -140,16 +137,15 @@ const botomHook = role => {
                                 size="30"
                                 // onChange={this.handleChange}
                             />
-                            <label htmlFor="float-input">
-                                {" "}
-                                slaptažodis{" "}
-                            </label>
+                            <label htmlFor="float-input"> slaptažodis </label>
                         </span>
+
                         <Button
-                        label="Patvirtinti"
-                        className="ui-button-danger"
-                        // onClick={this.handleSubmit}
-                    />
+                            label="Patvirtinti"
+                            className="ui-button-danger"
+
+                            // onClick={this.handleSubmit}
+                        />
                     </div>
                 </Fragment>
             );
@@ -158,4 +154,4 @@ const botomHook = role => {
     }
 };
 
-export default Griauciai;
+export default UserRegForm;
