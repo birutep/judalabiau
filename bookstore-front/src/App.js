@@ -63,16 +63,13 @@ class App extends Component {
                                         />
                                     )}
                                 />
-                                {/* <Route
-                                    path="/users/register"
-                                    component={UserRegForm}
-                                /> */}
+                              
                                 <Route
                                     path="/users"
                                     component={UserList}
                                 />
 
-                                {/* laikinai */}
+                                {/* <===User Register===> */}
                                 <Route
                                     path="/user/register/1"
                                     component={UserRegForm1}
