@@ -30,15 +30,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(userDetailsService)
 			.passwordEncoder(new PasswordEncoder() {
-			//cia paimtas a la passencoderis, kuris is tikruju nieko nedaro. 
-				//norint galima apsirasyti savo passencoderi
-				//ir dar galima juos issikelti i 2 isorinius atskirus metodus
-				//mums jauciu reikesn audoti BCrypt pass encoderi
 				@Override
 				public String encode(CharSequence charSequence) {
 					return charSequence.toString();
 				}
-				
 				@Override
 				public boolean matches(CharSequence arg0, String arg1) {
 					// TODO Auto-generated method stub
@@ -49,30 +44,34 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure (HttpSecurity http) throws Exception{
-		http.csrf().disable()
+		http.formLogin()
+			.usernameParameter("username")
+			.passwordParameter("password")
+			.loginPage("/login")
+			.and()
 			.authorizeRequests()
-				.antMatchers("/", "/swagger-ui.html").permitAll()	
-				.antMatchers("/books/**").authenticated()
+				.antMatchers("/", "/swagger-ui.html").permitAll()
+				.antMatchers("/login").permitAll()
+				.antMatchers("/books/**").permitAll() //buvo butinai authentiated, bet testavimui padariau, kad books.GET veiktu visiems
 				.antMatchers("/users/**").authenticated()
 				.anyRequest().permitAll()
 			.and()
-			.httpBasic().authenticationEntryPoint(getBasicAuthEntryPoint())
-			.and()
-			. sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-			.and()
-			//zemiau: turetu aprasyti, ka veikti su logoutu. Dar neaisku, ar veikia.
-			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
-		
-								//		CIA PVZ, kaip turetu atrodyti login aprasymas. Dar musiau reiks prideti permitAll kazkurioj vietoj
-								//		.formLogin()
-								//        	.usernameParameter("username") // default is username
-								//        	.passwordParameter("password") // default is password
-								//        	.loginPage("/authentication/login") // default is /login with an HTTP get
-								//        	.failureUrl("/authentication/login?failed") // default is /login?error
-								//        	.loginProcessingUrl("/authentication/login/process")
+			.httpBasic().authenticationEntryPoint(getBasicAuthEntryPoint());
+//			.and()
+//			. sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//			.and()
+//			//zemiau: turetu aprasyti, ka veikti su logoutu. Dar neaisku, ar veikia.
+//			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
+//		
+//								//		CIA PVZ, kaip turetu atrodyti login aprasymas. Dar musiau reiks prideti permitAll kazkurioj vietoj
+//								//		.formLogin()
+//								//        	.usernameParameter("username") // default is username
+//								//        	.passwordParameter("password") // default is password
+//								//        	.loginPage("/authentication/login") // default is /login with an HTTP get
+//								//        	.failureUrl("/authentication/login?failed") // default is /login?error
+//								//        	.loginProcessingUrl("/authentication/login/process")
 		http.headers().frameOptions().disable();
-		
-		//P.S. Neuzmirsk pt nueit i kontroleri ir sudet @PreAuthorize 
+		http.csrf().disable();
 	}
 	
 	public AuthenticationEntryPointImpl getBasicAuthEntryPoint() {

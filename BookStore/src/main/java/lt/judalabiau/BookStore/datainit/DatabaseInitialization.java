@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-//Component
+//@Component
 //jei norit uzpildyt duombaze pasitestavimui atsikomentuojat, bet po paleidimo uzkomentuojat vel, nes kaskart paleidus jis prideda sitas knygas i duombaze
 public class DatabaseInitialization implements ApplicationListener<ContextRefreshedEvent> {
     private final BookService bookService;

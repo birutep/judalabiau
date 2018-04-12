@@ -13,7 +13,7 @@ public class BookController {
 		this.bookService = bookService;
 	}
 
-	@PreAuthorize("hasAnyRole('ADMINISTRATOR', 'SALESMAN','CUSTOMER')")
+//	@PreAuthorize("hasAnyRole('ADMINISTRATOR', 'SALESMAN','CUSTOMER')")
     @GetMapping("/books")//visu knygu listui grazinti
     public @ResponseBody Iterable<Book> getBooks () {
         return bookService.getBooks();
