@@ -34,13 +34,8 @@ const NavMenu = () => {
             <Link to="/books/register">
                 <Button label="&ensp;Knygos registracija" icon="fa fa-book" />
             </Link>
-            {/* <Link to="/users/register">
-                <Button
-                    label="&ensp;Vartotojo registracija"
-                    icon="fa fa-user"
-                />
-            </Link> */}
-            {/* laikinai */}
+            
+           {/* <===User Register===> */}
             <Link to="/user/register/3" style={{ textDecoration: "none" }}>
                 <Button
                     label="&ensp;Vartotojo registracija"
