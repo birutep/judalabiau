@@ -30,10 +30,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(userDetailsService)
 			.passwordEncoder(new PasswordEncoder() {
-			//cia paimtas a la passencoderis, kuris is tikruju nieko nedaro. 
-				//norint galima apsirasyti savo passencoderi
-				//ir dar galima juos issikelti i 2 isorinius atskirus metodus
-				//mums jauciu reikesn audoti BCrypt pass encoderi
 				@Override
 				public String encode(CharSequence charSequence) {
 					return charSequence.toString();

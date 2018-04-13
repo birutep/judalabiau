@@ -24,12 +24,12 @@ const Header = () => {
                 cornerStyleClass="help_support"
             />
             <Button label="Susisiekite" cornerStyleClass="help_support" />
-            <Button
+            {/* <Button
                 label="Prisijungti &nbsp;"
                 icon="fa fa-check-circle"
                 iconPos="right"
                 className="login"
-            />
+            /> */}
         </header>
         // </div>
     );

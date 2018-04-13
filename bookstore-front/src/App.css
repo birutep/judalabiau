@@ -454,3 +454,10 @@ tr:nth-child(even) {
     height: 15px;
     font-size: 10pt;
 }
+
+/*------------------login area------------------*/
+/*BP: itas laukelis yra prisijungimo erdve pirmame puslapyje,
+paslepus prisijungmo mygtuka headeryje*/
+.login_area {
+    margin-left: 250px;
+}
