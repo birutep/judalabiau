@@ -1,0 +1,11 @@
+﻿kaik uriuose failuose pvz knygu liste adminui minimal, Book.js faile yra ccso importai is
+font awesome, ar netycia lyke ar? Jei Tycia negeriau importint i app, ir vaikai jau matys, nereiks kiekvienam atskirai
+
+class naudojimas, kadangi registruot vartotojo forma siekia buti maksimalai panasi stiliumi i
+knygos fromas, tai naudoja tas pacias css ,klases, pvz user registre naudojama klase bookReg, kuri anksciau buvo naudojama
+tik registruot knygai. Realiai nemaiso, bet mokslininkusk urie nagrinesm usu projekta gali suconfusint
+
+telefono numerio ir email priekyje validaciju nedaro, o gale anotacijos sudetos, bet ant kontrolerio det Čvalid man buvo naujiena
+reisk paklibint kai bus laiko sutvarkyt
+
+

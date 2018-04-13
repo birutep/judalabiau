@@ -1,5 +1,7 @@
 package lt.judalabiau.BookStore.books;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
@@ -12,27 +14,23 @@ public class BookController {
 		this.bookService = bookService;
 	}
 
-	//visu knygu listui grazinti
-    @GetMapping("/books")
+    @GetMapping("/books")//visu knygu listui grazinti
     public @ResponseBody Iterable<Book> getBooks () {
         return bookService.getBooks();
     }
 
-    //prideti knyga i lista
-    @PostMapping("/books")
-    public @ResponseBody void addBook(@RequestBody Book book){
+    @PostMapping("/books")//prideti knyga i lista
+    public @ResponseBody void addBook(@Valid @RequestBody Book book){
         bookService.createBook(book);
     }
 
-    //pasalinti knygai is listo
-    @DeleteMapping("/books/{id}")
+    @DeleteMapping("/books/{id}")    //pasalinti knygai is listo
     public @ResponseBody void deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
     }
 
-	//knygos updeitas
-    @PutMapping("/books/{id}")
-    public @ResponseBody void updateBook(@PathVariable Long id, @RequestBody Book book){
+    @PutMapping("/books/{id}")	//knygos updeitas
+    public @ResponseBody void updateBook(@PathVariable Long id, @Valid @RequestBody Book book){
 	    bookService.updateBook(id, book);
     }
 }

@@ -1,0 +1,456 @@
+/* --------------------------------------------App----------------------------------------------*/
+
+.apps {
+    width: 1320px;
+    margin: auto;
+    background-color: whitesmoke;
+    font-family: Arial, serif;
+}
+
+body {
+    margin: auto;
+    padding: 0;
+}
+
+button:focus {
+    outline: none;
+}
+button:hover {
+    cursor: pointer;
+}
+
+link {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+    border-right: whitesmoke;
+    box-shadow: 0px 0px 1px 0.5px goldenrod;
+}
+/*---------------------------------------------Footer-------------------------------------------*/
+footer {
+    clear: both;
+    width: 100%;
+    height: 45px;
+    background-color: #181e2c;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+footer i {
+    color: #ffffff;
+}
+
+footer a {
+    height: 100%;
+    width: 55px;
+}
+
+.footer_help {
+    background-color: #1f2637;
+}
+
+.footer_help i {
+    padding-top: 15px;
+}
+
+.footer_settings {
+    width: 55px;
+    padding-top: 15px;
+    border-bottom-right-radius: 5px;
+}
+/*--------------------------------Header---------------------------------------------*/
+header {
+    width: 100%;
+    height: 45px;
+    font-size: 13px;
+    background-color: #2f364a;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+}
+
+header .header_bookStore {
+    margin: auto;
+    color: #78819c;
+    font-size: 11.5px;
+    font-weight: bold;
+    position: relative;
+    left: 80px;
+}
+
+.help_support,
+.login,
+.header_bookStore {
+    border: none;
+    border-radius: inherit;
+    background-color: inherit;
+    font-family: inherit;
+    color: #c3c8db;
+}
+
+.help_support:hover {
+    color: #78819c;
+}
+
+.helpas:before {
+    float: left;
+    content: "●";
+    color: #1f2637;
+    padding-right: 10px;
+}
+
+.login {
+    color: #ffffff;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.login:hover {
+    color: #78819c;
+}
+/*------------------------------Nav---------------------------------------*/
+.nav {
+    float: left;
+    width: 210px;
+    height: 920px;
+    background-color: #1f2637;
+}
+
+.nav button {
+    width: 210px;
+    height: 40px;
+    background-color: inherit;
+    border: none;
+    color: #78829d;
+    text-decoration: none;
+    font-size: 13px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+nav button:hover {
+    background-color: #15a4fa;
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+nav button:focus {
+    color: #ffffff;
+    background-color: #15a4fa;
+}
+/*---------------------------------Subheader------------------------------------------*/
+.sub_header {
+    width: 100%;
+    height: 80px;
+    background-color: #eaeef2;
+    box-shadow: 0 2px 4px -2px gray;
+}
+
+.sub_header_p {
+    float: left;
+    padding: 13px;
+    color: #52617a;
+    font-size: 17px;
+}
+
+/*---------------------------------Main-------------------------------------------*/
+
+main {
+    width: 1110px;
+    height: 920px;
+    margin-left: 210px;
+    text-align: center;
+}
+
+/*---------------------------------SubSubHeader-------------------------------------------*/
+.sub_sub_header {
+    width: 100%;
+    height: 70px;
+    background-color: #eaeef2;
+    box-shadow: 0 2px 4px -2px gray;
+    position: relative;
+    top: 1.5px;
+}
+
+.filter_button,
+.search_button {
+    border: none;
+    background-color: inherit;
+    margin-top: 22px;
+    float: left;
+    display: block;
+    color: #95a7c1;
+    text-align: center;
+    padding: 6px 18px;
+    font-size: 14px;
+}
+
+.filter_button:hover {
+    background-color: #95a7c1;
+    color: white;
+    border-radius: 32px 32px 32px 32px;
+}
+
+.sub_sub_header .filter_button:focus {
+    background-color: #eebc01;
+    color: white;
+    border-radius: 32px 32px 32px 32px;
+    box-shadow: 0px 0px 1px 0.5px goldenrod;
+}
+
+.sub_sub_header .search {
+    height: 30px;
+    width: 350px;
+    padding: 0;
+    padding-left: 20px;
+    margin-top: 22px;
+    border-radius: 16px 16px 16px 16px;
+    border: none;
+    color: gray;
+    text-align: left;
+    position: relative;
+    left: 55px;
+}
+
+.search_button {
+    background-color: white;
+    border-radius: 16px 16px 16px 16px;
+    width: 40px;
+    height: 28px;
+    padding: 0;
+    padding-left: 10px;
+    margin-top: 23px;
+    text-align: left;
+    border: none;
+    border-left: none;
+    position: relative;
+    left: 487px;
+}
+
+.sub_sub_header .search_button:active {
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 1px 0.5px lightgray;
+}
+
+/*----------------------Book reg form ir Book edit form, kadangi jos analogiskos ----------------------------*/
+.book_reg_form,
+.customer_reg_form {
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 435px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background: white;
+}
+
+.book_reg_form form,
+.customer_reg_form form {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    text-align: justify;
+    padding: 50px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.book_reg_form h3,
+.customer_reg_form h3 {
+    text-align: center;
+}
+
+input,
+textarea,
+select,
+option,
+.ui-inputtext {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 7px 4px 7px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.book_reg_form .checkbox {
+    width: auto;
+    margin-left: 10px;
+}
+/* -----------Ant checkbox paspaudus remelis atsiranda! Kodel ?!?!?!?!?!? ----------------*/
+/* .book_reg_form .checkbox:checked {
+    border: green;
+    color: red;
+} */
+
+textarea {
+    min-width: 100%;
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 0.5px goldenrod;
+}
+
+label {
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.book_reg_form button,
+.customer_reg_form button {
+    font-weight: bold;
+    width: 100%;
+    padding: 5px 5px;
+    margin-top: 20px;
+    border: 1px solid #888;
+    border-radius: 3px;
+}
+
+.book_reg_form button:hover,
+.customer_reg_form button:hover {
+    background-color: lightgray;
+}
+.book_reg_form button:active,
+.customer_reg_form button:active {
+    background-color: #c8c8c8;
+}
+
+.book_reg_form button:focus,
+.customer_reg_form button:focus {
+    background-color: goldenrod;
+    box-shadow: 0px 0px 1px 0.5px goldenrod;
+}
+
+.placeholder:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.placeholder:focus::-moz-placeholder {
+    color: transparent;
+}
+.placeholder:-moz-placeholder {
+    color: transparent;
+}
+
+/*----------------books / book list for admin minimal------------------------------------*/
+table {
+    margin-top: 10px;
+    margin-left: 4px;
+    width: 1100px;
+    border-collapse: collapse;
+    border: 1px solid darkgray;
+    box-shadow: 0px 1px 2px 1px lightgray;
+}
+th {
+    padding: 10px;
+    text-align: left;
+    /* background-color: #dbdfe2; */
+    /* Subheaderio spalva: 
+    background-color: #eaeef2;*/
+    background-color: #e3e8ee;
+    border-block-start: 1px solid #c3c7ca;
+    border-block-end: 1px solid #c3c7ca;
+}
+.mini i {
+    color: black;
+}
+/*--------------------books/ book list for admin ...---------------------*/
+img {
+    height: 20px;
+}
+td {
+    padding: 10px;
+    /* width: 100px; */
+}
+td.mini {
+    width: 20px;
+}
+tr:nth-child(even) {
+    background-color: #ededed;
+}
+.books {
+    width: 1110px;
+    margin-left: 210px;
+    font-size: 14px;
+}
+/*-------------------------------books/ book list for user-----------------------*/
+/*--------------one book---------------------*/
+.one_book_for_user {
+    color: #ffab00;
+}
+
+.one_book_for_user img {
+    width: 200px; /* reikai konkretaus dydzio arba 100proc gride kuriam jis atsidurs, bet testinat jien esideda i grida ir reik speliot matmenis, ilgi auksti veliau pakeist procentais*/
+    height: 280px;
+    background-size: contain;
+    border-radius: 6px;
+}
+
+.one_book_for_user h3 {
+    padding-top: 13px;
+    margin: 0;
+    color: #444c63;
+    /*bp:parinkta su color droperiu ir color pickeriu*/
+}
+
+.one_book_for_user p {
+    padding-top: 7px;
+    padding-bottom: 2px;
+    margin: 0;
+    color: #6f7d95;
+}
+/*------------------all books------------------*/
+.all_books_for_user {
+    /* clear: both; */
+    width: 100%;
+    height: 700px;
+}
+
+.all_books_for_user_area {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.all_books_for_user_girdarea {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 370px;
+    grid-gap: 15px;
+    font-size: 14px;
+    overflow-y: scroll;
+    max-height: 700px;
+}
+
+.all_books_for_user_girdarea::-webkit-scrollbar {
+    width: 10px;
+    background-color: whitesmoke;
+}
+
+.all_books_for_user_girdarea::-webkit-scrollbar-thumb {
+    /*bp:parinkta su color droperiu ir color pickeriu*/
+    background-color: #ccd5e4;
+    border-radius: 4px;
+}
+
+.all_books_for_user_girdarea::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+}
+
+.showhidebutt {
+    height: 15px;
+    font-size: 10pt;
+}
