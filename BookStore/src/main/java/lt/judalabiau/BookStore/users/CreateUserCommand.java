@@ -24,7 +24,7 @@ public class CreateUserCommand{
     private String password;
 
     @NotNull
-    @Size(min = 3, max = 254, message = "Vartotojo elektroninis pa6tas privalo būti nuo {min} iki {max} simbolių ilgio.")
+    @Size(min = 3, max = 254, message = "Vartotojo elektroninis paštas privalo būti nuo {min} iki {max} simbolių ilgio.")
     @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "toks elektroninis pa6tas negalimas")
     private String email;
 

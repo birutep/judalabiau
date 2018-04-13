@@ -3,7 +3,7 @@ import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
 //kitu moduliu komponentai
-import PasswordMask from "react-password-mask";
+// import PasswordMask from "react-password-mask";
 
 class UserRegForm extends Component {
     constructor(props) {
@@ -46,19 +46,23 @@ class UserRegForm extends Component {
                 console.log(error);
             });
     }
+
     render() {
         return (
             <div className="book_reg_form">
                 <form onSubmit={this.handleSubmit}>
                     <h3>Registruoti administratorių</h3>
                     <label>
-                        El paštas
+                        El. paštas
                         <input
+                            id="emailas"
                             name="email"
                             placeholder="Įveskite el paštą"
                             className="placeholder"
+                            type="email"
+                            pattern="^.{3,254}$"
                             required
-                            type="text"
+                            oninvalid="setCustomValidity('Plz enter on Alphabets ')"
                             value={this.state.email}
                             onChange={this.handleChange}
                         />
@@ -66,17 +70,20 @@ class UserRegForm extends Component {
                     <br />
                     <label>
                         Slaptažodis
-                        <PasswordMask
+                        {/* <PasswordMask */}
+                        <input
                             name="password"
                             placeholder="Įveskite slaptažodį"
                             className="placeholder"
                             required
-                            type="text"
+                            type="password"
+                            // Neveikia passwordo validacija Fronte, kai naudojamas tagas <PasswordMask>
+                            pattern="^.{6,254}$"
                             value={this.state.password}
                             onChange={this.handleChange}
-                            buttonClassName="showhidebutt"
-                            showButtonContent="Rodyti"
-                            hideButtonContent="Slėpti"
+                            // buttonClassName="showhidebutt"
+                            // showButtonContent="Rodyti"
+                            // hideButtonContent="Slėpti"
                         />
                     </label>
                     <br />
@@ -88,6 +95,7 @@ class UserRegForm extends Component {
                             className="placeholder"
                             required
                             type="text"
+                            pattern="^[a-zA-Z]+$"
                             value={this.state.fName}
                             onChange={this.handleChange}
                         />
@@ -101,6 +109,7 @@ class UserRegForm extends Component {
                             className="placeholder"
                             required
                             type="text"
+                            pattern="^[a-zA-Z]+$"
                             value={this.state.lName}
                             onChange={this.handleChange}
                         />
@@ -112,6 +121,7 @@ class UserRegForm extends Component {
                             name="phone"
                             placeholder="Įveskite telefono numerį"
                             type="text"
+                            pattern="^(8|370|\+370)\d{8}$"
                             required
                             value={this.state.phone}
                             onChange={this.handleChange}
