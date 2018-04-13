@@ -62,7 +62,7 @@ class UserRegForm extends Component {
                             type="email"
                             pattern="^.{3,254}$"
                             required
-                            oninvalid="setCustomValidity('Plz enter on Alphabets ')"
+                            onInvalid="setCustomValidity('Plz enter on Alphabets ')"
                             value={this.state.email}
                             onChange={this.handleChange}
                         />

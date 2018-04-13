@@ -5,7 +5,7 @@ const sub = props => {
         <div className="sub_header">
             <div>
                 <p className="sub_header_p">
-                    cia turi buti propsas {props.label}
+                   {props.label}
                 </p>
             </div>
         </div>
