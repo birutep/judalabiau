@@ -67,6 +67,7 @@ footer a {
 header {
     width: 100%;
     height: 45px;
+    font-size: 13px;
     background-color: #2f364a;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -116,7 +117,7 @@ header .header_bookStore {
 .nav {
     float: left;
     width: 210px;
-    height: 900px;
+    height: 920px;
     background-color: #1f2637;
 }
 
@@ -161,6 +162,7 @@ nav button:focus {
 
 main {
     width: 1110px;
+    height: 920px;
     margin-left: 210px;
     text-align: center;
 }
@@ -239,7 +241,6 @@ main {
 .book_reg_form,
 .customer_reg_form {
     width: 50%;
-    /* margin: auto; */
     margin-top: 20px;
     margin-left: 435px;
     border: 1px solid lightgray;
@@ -277,11 +278,10 @@ option,
 }
 
 .book_reg_form .checkbox {
-    /* border: none; */
     width: auto;
     margin-left: 10px;
 }
-
+/* -----------Ant checkbox paspaudus remelis atsiranda! Kodel ?!?!?!?!?!? ----------------*/
 /* .book_reg_form .checkbox:checked {
     border: green;
     color: red;
@@ -297,7 +297,6 @@ textarea {
 textarea:focus,
 select:focus {
     outline: none;
-    /* border: none; */
     box-shadow: 0px 0px 1px 0.5px goldenrod;
 }
 
@@ -332,7 +331,6 @@ label {
 .book_reg_form button:focus,
 .customer_reg_form button:focus {
     background-color: goldenrod;
-    /* color: white; */
     box-shadow: 0px 0px 1px 0.5px goldenrod;
 }
 
@@ -349,15 +347,19 @@ label {
 /*----------------books / book list for admin minimal------------------------------------*/
 table {
     margin-top: 10px;
-    width: 1110px;
+    margin-left: 4px;
+    width: 1100px;
     border-collapse: collapse;
+    border: 1px solid darkgray;
+    box-shadow: 0px 1px 2px 1px lightgray;
 }
 th {
     padding: 10px;
     text-align: left;
-    /* background-color: #c8c8c8; */
-    background-color: #dbdfe2;
-    /* background-color: lightgray; */
+    /* background-color: #dbdfe2; */
+    /* Subheaderio spalva: 
+    background-color: #eaeef2;*/
+    background-color: #e3e8ee;
     border-block-start: 1px solid #c3c7ca;
     border-block-end: 1px solid #c3c7ca;
 }
@@ -369,15 +371,12 @@ img {
     height: 20px;
 }
 td {
-    padding: 10px 5px;
-    width: 100px;
+    padding: 10px;
+    /* width: 100px; */
 }
 td.mini {
     width: 20px;
 }
-/* td:nth-child(2n + 1) {
-    background-color: whitesmoke;
-} */
 tr:nth-child(even) {
     background-color: #ededed;
 }
@@ -451,7 +450,7 @@ tr:nth-child(even) {
     background-color: whitesmoke;
 }
 
-.showhidebutt{
+.showhidebutt {
     height: 15px;
-    font-size: 10pt
+    font-size: 10pt;
 }
