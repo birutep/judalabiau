@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from "axios/index";
 import { inject, observer } from "mobx-react";
 import { BOOKS } from "../../../../server_links/ServerLinks";
-//custom elements
-import BookRegFormCss from "./BookEditForm.css";
+import { Button } from "primereact/components/button/Button";
 
 @inject("BookStore")
 @observer
@@ -113,10 +112,7 @@ class BookRegForm extends Component {
 
     render() {
         return (
-            <div className={BookRegFormCss.book_reg_form}>
-                <h4>
-                    <i className="fa fa-book" /> &nbsp; Knygų parduotuvė
-                </h4>
+            <div className="book_reg_form">
                 <form onSubmit={this.handleSubmit}>
                     <h3>Knygos kurios id {this.state.id} redagavimas</h3>
                     <label>
@@ -124,7 +120,7 @@ class BookRegForm extends Component {
                         <input
                             name="title"
                             placeholder="Įveskite knygos pavadinimą"
-                            className={BookRegFormCss.placeholder}
+                            className="placeholder"
                             required
                             type="text"
                             value={this.state.title}
@@ -138,7 +134,7 @@ class BookRegForm extends Component {
                         <input
                             name="authors"
                             placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
-                            className={BookRegFormCss.placeholder}
+                            className="placeholder"
                             required
                             type="text"
                             value={this.state.authors}
@@ -152,7 +148,7 @@ class BookRegForm extends Component {
                         <input
                             name="released"
                             placeholder="Įveskite knygos leidimo metus"
-                            className={BookRegFormCss.placeholder}
+                            className="placeholder"
                             type="text"
                             pattern="^\d{4}$"
                             value={this.state.released}
@@ -166,7 +162,7 @@ class BookRegForm extends Component {
                         <input
                             name="isbn"
                             placeholder="Įveskite ISBN"
-                            className={BookRegFormCss.placeholder}
+                            className="placeholder"
                             required
                             type="text"
                             minLength="10"
@@ -182,7 +178,7 @@ class BookRegForm extends Component {
                         <input
                             name="price"
                             placeholder="Įveskite kainą"
-                            className={BookRegFormCss.placeholder}
+                            className="placeholder"
                             type="text"
                             pattern="\d+?\.\d{1,2}\s*?$|^[1-9]\d*$"
                             value={
@@ -231,7 +227,7 @@ class BookRegForm extends Component {
                         <input
                             name="count"
                             placeholder="Įveskite kiekį"
-                            className={BookRegFormCss.placeholder}
+                            className="placeholder"
                             required
                             pattern="[0-9]*"
                             type="text"
@@ -258,6 +254,7 @@ class BookRegForm extends Component {
                         <input
                             name="e_available"
                             type="checkbox"
+                            className="checkbox"
                             value={this.state.e_available}
                             onChange={this.handleChange}
                         />
@@ -273,12 +270,7 @@ class BookRegForm extends Component {
                         />
                     </label>
                     <br />
-
-                    <input
-                        type="submit"
-                        value="Pakeisti"
-                        onClick={this.updateBook}
-                    />
+                    <Button label="Pakeisti" onClick={this.updateBook} />
                 </form>
             </div>
         );

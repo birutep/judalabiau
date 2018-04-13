@@ -1,6 +1,8 @@
 package lt.judalabiau.BookStore.books;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
@@ -21,7 +23,7 @@ public class BookController {
 
 	@PreAuthorize("hasRole('ADMINISTRATOR')")
     @PostMapping("/books")//prideti knyga i lista
-    public @ResponseBody void addBook(@RequestBody Book book){
+    public @ResponseBody void addBook(@Valid @RequestBody Book book){
         bookService.createBook(book);
     }
 
@@ -33,7 +35,7 @@ public class BookController {
 
 	@PreAuthorize("hasRole('ADMINISTRATOR')")
     @PutMapping("/books/{id}")	//knygos updeitas
-    public @ResponseBody void updateBook(@PathVariable Long id, @RequestBody Book book){
+    public @ResponseBody void updateBook(@PathVariable Long id, @Valid @RequestBody Book book){
 	    bookService.updateBook(id, book);
     }
 }

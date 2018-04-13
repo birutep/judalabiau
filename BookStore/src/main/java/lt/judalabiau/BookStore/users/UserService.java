@@ -21,8 +21,7 @@ public class UserService {
             //veliau mesim exception
             System.out.println("Toks useris jau yra----------------");
         }else{
-            int role = Math.toIntExact(createUserCommand.getRole().getId());
-            switch (role){
+            switch (createUserCommand.getRole()){
                 case 1:
                     userRepository.save( new Administrator(createUserCommand));
                     break;

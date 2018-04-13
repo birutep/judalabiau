@@ -24,12 +24,12 @@ public class CreateUserCommand{
     private String password;
 
     @NotNull
-    @Size(min = 3, max = 254, message = "Vartotojo elektroninis pa6tas privalo būti nuo {min} iki {max} simbolių ilgio.")
+    @Size(min = 3, max = 254, message = "Vartotojo elektroninis paštas privalo būti nuo {min} iki {max} simbolių ilgio.")
     @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "toks elektroninis pa6tas negalimas")
     private String email;
 
     @NotNull
-    private Role role;
+    private Integer role;
 //atskiri laukai
     private Long phone;//privalomi tik adminui ir pardavejui
     private Date birthday;//privalomas tik pirkejui
@@ -63,10 +63,10 @@ public class CreateUserCommand{
         this.email = email;
     }
 
-    public Role getRole() {
+    public Integer getRole() {
         return role;
     }
-    public void setRole(Role role) {
+    public void setRole(Integer role) {
         this.role = role;
     }
 

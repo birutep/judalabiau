@@ -1,9 +1,6 @@
-﻿validacija vyksta createUserCommand, ten paziurimi laukai, ilgiai, regexpai, not null ir pan
-bet kadangi adminas ir paravejas turi privaloma tel, o useris neprivaloma, o lauaks yra tas pats phone
-tai reiktu validuot atskirai, nedarant atkiru creatcommandu gal metoda koki pasirasyt kuris
-tarkim jei pirkejas arba adminas o phone null tai mestu exceptiona ar kakza pan
-daba del phono, vaclawas sake geriausia laikyt Longe, bet tai kaip validuot? daugiau uz 8 milijardus, tipo 8 ir 9 skaitmenys?
-man stringas butu daug patogiau, o jei kitu valstybiu, siaip gal dvirati iosradinejam susiigooglint ir pasiimt norm varianta?
+﻿kaik uriuose failuose pvz knygu liste adminui minimal, Book.js faile yra ccso importai is
+font awesome, ar netycia lyke ar? Jei Tycia negeriau importint i app, ir vaikai jau matys, nereiks kiekvienam atskirai
+
 
 daba padaryta kad kuriant useri koks jis bebutu patikrina ar toks emailas neuzregistruotas, daugiau jokiu
 nedejau, paswordu jokiu nekodavau kai desim security pridesim tuos lauku kokiu reiks.
@@ -15,7 +12,17 @@ atsiradus poreikiui pridesim daugiau, kolkas owneris nori ti kregistruot, tai ed
 ziurejau kitus darbus ten ir taip nesicackinta, editu retai kur buna
 > BP: Bet useriu nesimato fronte, ane? 
 
-jei turit kokiu minciu pasiulymu tai parasykit, nes tris pavyzdzius lyginu vis kaip anie ta realizavo anie ta, tai
-budai skirtingi.
+get metodas vartotojam grazinti backe, grazina jsona be roles,
+ ir mes kolkas neturim kaip atskirti kuris yra kuris, tiesiog drebiam visa sarasa
+siulau 
+a) grazinti ir role ir ten pagal tai tiesiog papildoams stulpelis isvedime ar skirtinga fono spalva kad iskirt admina pardaveja
+b) padaryti 4 geterius useriam, kur vienas drebia visus, kiti trys pagal role, ir paspaudus visi useriai
+adminas turi 4 linkucius pasiziuret useriam
+
+siulau kolkas pasalint subheaderi
+
+
+vartotojo registracijos forma, man asmeniskai stilius atrodo labiau tinkantis
+ tas kur panasus is musu ano projekto, ir man nepatinka prime reakto dvigubi uzrasai
 
 
