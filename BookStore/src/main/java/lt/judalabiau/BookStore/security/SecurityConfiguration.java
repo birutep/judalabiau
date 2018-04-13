@@ -47,7 +47,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure (HttpSecurity http) throws Exception{
-		http.csrf().disable()
+		http.cors()
+			.and()
+			.formLogin()
+				.usernameParameter("username")
+				.passwordParameter("password")
+			.and()
 			.authorizeRequests()
 				.antMatchers("/", "/swagger-ui.html").permitAll()	
 				.antMatchers("/books/**").authenticated()
@@ -56,21 +61,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.and()
 			.httpBasic().authenticationEntryPoint(getBasicAuthEntryPoint())
 			.and()
-			. sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-			.and()
-			//zemiau: turetu aprasyti, ka veikti su logoutu. Dar neaisku, ar veikia.
-			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
+			. sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
-								//		CIA PVZ, kaip turetu atrodyti login aprasymas. Dar musiau reiks prideti permitAll kazkurioj vietoj
-								//		.formLogin()
-								//        	.usernameParameter("username") // default is username
-								//        	.passwordParameter("password") // default is password
-								//        	.loginPage("/authentication/login") // default is /login with an HTTP get
-								//        	.failureUrl("/authentication/login?failed") // default is /login?error
-								//        	.loginProcessingUrl("/authentication/login/process")
 		http.headers().frameOptions().disable();
-		
-		//P.S. Neuzmirsk pt nueit i kontroleri ir sudet @PreAuthorize 
+		http.csrf().disable();
 	}
 	
 	public AuthenticationEntryPointImpl getBasicAuthEntryPoint() {

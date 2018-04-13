@@ -7,7 +7,7 @@ class LoginForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            username: '',
             password: ''
         };
         this.handleChange = this.handleChange.bind(this);
@@ -26,22 +26,26 @@ class LoginForm extends Component {
     loginTo(e) {
         e.preventDefault();
         
-        // let userData = new URLSearchParams();
-        // userData.append('username', this.state.email);
-        // userData.append('password', this.state.pass);
         let userData = new FormData();
-        userData.set('username', this.state.email);
+        userData.set('username', this.state.username);
         userData.set('password', this.state.pass);
 
-        axios.post('http://localhost:8080/login', userData,
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
+        axios.post(proxyurl+'http://localhost:8080/login', userData,
         {headers:{'Content-type':'application/x-www-form-urlencoded'}})
             .then((response) => {
                 if (response.status === 200){
                     alert('Prisijungimas pavyko');
                 }
+                else if (response.status === 401){
+                    alert('401 klaida');
+                }
             })
-            .catch((e) => {console.log(e);
-                alert('Kazkas nepavyko');
+            // .catch((e) => {console.log(e);
+            //     alert('Kazkas nepavyko');
+            .catch(function  (e) {
+                alert('Nepavyko prisijungti');         
             });
     }
 
@@ -53,12 +57,12 @@ class LoginForm extends Component {
                     <label>
                         Elektroninis paštas:
                         <input
-                            name="email"
+                            name="username"
                             placeholder="Įveskite el. paštą, kuriuo užsiregistravote"
                             className="placeholder"
                             required
                             type="email"
-                            value={this.state.email}
+                            value={this.state.username}
                             onChange={this.handleChange}
                         />
                     </label>
