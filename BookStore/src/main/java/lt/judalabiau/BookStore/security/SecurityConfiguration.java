@@ -40,9 +40,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 				}
 				
 				@Override
-				public boolean matches(CharSequence arg0, String arg1) {
-					// TODO Auto-generated method stub
-					return true;
+				public boolean matches(CharSequence incomingPassword, String storedPassword) {
+					if (incomingPassword.equals(storedPassword)) {
+						return true;
+					}
+					return false;
 				}
 			});
 	}
