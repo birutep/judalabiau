@@ -57,7 +57,7 @@ class App extends Component {
                                     path="/books"
                                     render={() => (
                                         <BookList
-                                            rol={1}
+                                            rol={3}
                                             bookStatus={book}
                                             changed={BookStore.changed}
                                         />

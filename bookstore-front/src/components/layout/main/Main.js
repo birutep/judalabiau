@@ -7,7 +7,7 @@ import SubSubHeader from "../sub_header/sub_sub_header/SubSubHeader";
 const Main = props => {
     return (
         <main>
-            <SubHeader label="BROWSE" />
+            <SubHeader label="Pagrindinis puslapis" />
             <SubSubHeader />
             <div>
                 <h1>Bookstore pagal juda labiau</h1>

@@ -53,7 +53,7 @@ class BookList extends Component {
 
         return (
             <div className="books">
-                <SubHeader label="ALL BOOKS FOR ADMIN" />
+                <SubHeader label="Visos knygos" />
                 {/* <SubSubHeader /> */}
 
                 {/* <DataTable value={this.state.books}>

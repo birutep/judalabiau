@@ -4,7 +4,7 @@ import axios from "axios";
 import Book from "./one_book/Book";
 import { BOOKS } from "../../../server_links/ServerLinks";
 import SubHeader from "../../layout/sub_header/SubHeader";
-import SubSubHeader from "../../layout/sub_header/sub_sub_header/SubSubHeader";
+// import SubSubHeader from "../../layout/sub_header/sub_sub_header/SubSubHeader";
 
 class BookList extends Component {
     constructor(props) {
@@ -35,8 +35,8 @@ class BookList extends Component {
 
         return (
             <div>
-                <SubHeader label="ALL BOOKS" />
-                <SubSubHeader />
+                <SubHeader label="Visos knygos" />
+                {/* <SubSubHeader /> */}
                 <div className="books">
                     <div className="all_books_for_user">
                         <div className="all_books_for_user_area">

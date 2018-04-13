@@ -41,7 +41,7 @@ class BookRegForm extends Component {
 
     saveBook(e) {
         // Kažkodėl šitas preventDefault sugriauna Front validaciją :(
-        // e.preventDefault();
+        e.preventDefault();
         axios
             .post(BOOKS, {
                 title: this.state.title,
@@ -76,13 +76,13 @@ class BookRegForm extends Component {
     }
 
     render() {
-        const { title, authors, isbn, category, count } = this.state;
-        const isEnabled =
-            authors.length > 0 &&
-            title.length > 0 &&
-            isbn > 0 &&
-            category > 0 &&
-            count > 0;
+        // const { title, authors, isbn, category, count } = this.state;
+        // const isEnabled =
+        //     authors.length > 0 &&
+        //     title.length > 0 &&
+        //     isbn > 0 &&
+        //     category > 0 &&
+        //     count > 0;
         return (
             <div className="book_reg_form">
                 <form onSubmit={this.handleSubmit}>
@@ -242,7 +242,7 @@ class BookRegForm extends Component {
                     <br />
                     <Button
                         title="Užpildykite privalomus laukus"
-                        disabled={!isEnabled}
+                        // disabled={!isEnabled}
                         label="Registruoti"
                         onClick={this.saveBook}
                     />
