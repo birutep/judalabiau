@@ -21,6 +21,7 @@ public class Book {
     @NotEmpty
 	private String title;
 
+    @NotNull
 	@Range (min=1000, max=9999)
     private Integer releaseYear;
 
@@ -50,14 +51,9 @@ public class Book {
 	private String authors;
 
 	public Book() {
-        this.title = "title";
-        this.isbn = "default isbn";
-        this.price = new BigDecimal(-1);
-        this.count = 0L;
-        this.authors = "default author";
 	}
 
-	public Long getId() {
+    public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
