@@ -5,7 +5,11 @@ class naudojimas, kadangi registruot vartotojo forma siekia buti maksimalai pana
 knygos fromas, tai naudoja tas pacias css ,klases, pvz user registre naudojama klase bookReg, kuri anksciau buvo naudojama
 tik registruot knygai. Realiai nemaiso, bet mokslininkusk urie nagrinesm usu projekta gali suconfusint
 
-telefono numerio ir email priekyje validaciju nedaro, o gale anotacijos sudetos, bet ant kontrolerio det Čvalid man buvo naujiena
-reisk paklibint kai bus laiko sutvarkyt
+Ka mano useris jei iveda netaip kaip reikia? Pasimeginti isvest pranesimus prasitestuojant i konsole o paskui
+i elementus kaipo primeReact Messages ar pan alternatyvu.
+
+book put ir delete ar relias turetu buti su path variable?
+
+apsitvarkyt katalogus?
 
 
