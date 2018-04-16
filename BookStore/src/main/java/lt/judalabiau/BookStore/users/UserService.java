@@ -1,6 +1,6 @@
 package lt.judalabiau.BookStore.users;
 
-import lt.judalabiau.BookStore.books.Book;
+import lt.judalabiau.BookStore.users.dto.UserDTO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,20 +14,20 @@ public class UserService {
     }
 
     @Transactional
-    public void createUser(CreateUserCommand createUserCommand){
-        if(userRepository.existsByEmail(createUserCommand.getEmail())){
+    public void createUser(UserDTO userDTO){
+        if(userRepository.existsByEmail(userDTO.getEmail())){
             //veliau mesim exception
             System.out.println("Toks useris jau yra----------------");
         }else{
-            switch (createUserCommand.getRole()){
+            switch (userDTO.getRole()){
                 case 1:
-                    userRepository.save( new Administrator(createUserCommand));
+                    userRepository.save( new Administrator(userDTO));
                     break;
                 case 2:
-                    userRepository.save( new Salesman( createUserCommand));
+                    userRepository.save( new Salesman(userDTO));
                     break;
                 case 3:
-                    userRepository.save( new Customer(createUserCommand));
+                    userRepository.save( new Customer(userDTO));
                     break;
                 default:
                     //gal mesim exceptiona

@@ -1,4 +1,4 @@
-package lt.judalabiau.BookStore.users;
+package lt.judalabiau.BookStore.users.dto;
 
 import lt.judalabiau.BookStore.users.Role;
 
@@ -7,7 +7,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-public class CreateUserCommand{
+public class UserDTO {
     //bendri laukai
     @NotNull
     @Size(min = 1, max = 254, message = "Vartotojo vardas privalo būti nuo {min} iki {max} simbolių ilgio.")

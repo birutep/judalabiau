@@ -3,6 +3,7 @@ package lt.judalabiau.BookStore.users;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lt.judalabiau.BookStore.users.dto.UserDTO;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -41,9 +42,6 @@ public abstract class User {
     // encoderi. BCrypt berods naudoja 60 ilgio stringa. Tai encryptinant reik nepamirst!
     @Size (min=6, max=15)
     private String password;
-    
-    @NotNull
-    private Long phone;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -51,13 +49,6 @@ public abstract class User {
     private Role role;
 
     public User() {
-    }
-
-    public User(CreateUserCommand createUserCommand) {
-        this.fName = createUserCommand.getfName();
-        this.lName = createUserCommand.getlName();
-        this.email = createUserCommand.getEmail();
-        this.password = createUserCommand.getPassword();
     }
 
     public Long getId() {
@@ -102,11 +93,5 @@ public abstract class User {
         this.role = role;
     }
 
-    public Long getPhone() {
-        return phone;
-    }
-    public void setPhone(Long phone) {
-        this.phone = phone;
-    }
 }
     

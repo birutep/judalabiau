@@ -2,6 +2,7 @@ package lt.judalabiau.BookStore.users;
 
 import javax.validation.Valid;
 
+import lt.judalabiau.BookStore.users.dto.UserDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public class UserController {
 //-------------------POST-------------------------
     @PostMapping("/users")    //registruoti useri
     @ResponseBody
-    public void createUser(@Valid @RequestBody CreateUserCommand cmd){
+    public void createUser(@Valid @RequestBody UserDTO cmd){
          userService.createUser(cmd);
     }
 }
