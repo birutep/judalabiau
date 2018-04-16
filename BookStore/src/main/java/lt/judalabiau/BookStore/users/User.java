@@ -43,8 +43,7 @@ public abstract class User {
     @Size (min=6, max=15)
     private String password;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
 

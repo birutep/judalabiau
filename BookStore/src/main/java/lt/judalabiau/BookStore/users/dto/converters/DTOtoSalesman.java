@@ -1,6 +1,7 @@
 package lt.judalabiau.BookStore.users.dto.converters;
 
 import lt.judalabiau.BookStore.users.Administrator;
+import lt.judalabiau.BookStore.users.Role;
 import lt.judalabiau.BookStore.users.Salesman;
 import lt.judalabiau.BookStore.users.dto.UserDTO;
 import org.springframework.core.convert.converter.Converter;
@@ -20,6 +21,12 @@ public class DTOtoSalesman implements Converter<UserDTO, Salesman> {
         salesman.setEmail(dto.getEmail());
         salesman.setPassword(dto.getPassword());
         salesman.setPhone(dto.getPhone());
+
+        Role role = new Role();
+        role.setId(dto.getRole().longValue());
+        role.setRoleName("SALESMAN");
+        salesman.setRole(role);
+
         return salesman;
     }
 }

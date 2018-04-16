@@ -16,8 +16,10 @@ public class Customer extends User {
     @NotNull
     @Temporal(value = TemporalType.DATE)
     private Date birthday;
+
     private String address;
-    private long phone;
+
+    private Long phone;
 
     public Customer() {
     }

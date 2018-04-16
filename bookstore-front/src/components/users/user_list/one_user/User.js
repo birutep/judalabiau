@@ -8,7 +8,7 @@ const User = props => {
             <td>{props.singleUser.fName}</td>
             <td>{props.singleUser.lName}</td>
             <td>{props.singleUser.email}</td>
-            <td>{props.singleUser.phone}</td>
+            <td>{props.singleUser.phone!=0?props.singleUser.phone:'-'}</td>
         </tr>
     );
 };

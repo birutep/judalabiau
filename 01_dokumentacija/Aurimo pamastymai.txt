@@ -1,15 +1,35 @@
 ﻿kaik uriuose failuose pvz knygu liste adminui minimal, Book.js faile yra ccso importai is
-font awesome, ar netycia lyke ar? Jei Tycia negeriau importint i app, ir vaikai jau matys, nereiks kiekvienam atskirai
+font awesome, ar netycia lyike ar? Jei Tycia negeriau importint i app, ir vaikai jau matys, nereiks kiekvienam atskirai
 
 class naudojimas, kadangi registruot vartotojo forma siekia buti maksimalai panasi stiliumi i
 knygos fromas, tai naudoja tas pacias css ,klases, pvz user registre naudojama klase bookReg, kuri anksciau buvo naudojama
 tik registruot knygai. Realiai nemaiso, bet mokslininkusk urie nagrinesm usu projekta gali suconfusint
 
-Ka mano useris jei iveda netaip kaip reikia? Pasimeginti isvest pranesimus prasitestuojant i konsole o paskui
-i elementus kaipo primeReact Messages ar pan alternatyvu.
-
-book put ir delete ar relias turetu buti su path variable?
-
 apsitvarkyt katalogus?
+
+roles, dabar kai ivedinejam useri, i dto ateina intas, kaip roles numeris,
+tada mes?
+	 a)servise sukuriam nauja role pagal ta id, priskiriam ja vartotojui, 
+	kad neirasinet i roliu lenteles tos naujos roles
+	reikia kur rysis userio su role, nuimt cascade.all, 
+	nes kitaip spjaudysis bandydama irasyt sukurta role, nes tokia role jau yra duombazeje
+	b)roles saugomos lenteleje, sukurt repositorija, kuri paima role pagal id, 
+	ir ta gauta role [priskirt vartotojui
+	c)rolems naudot enumsa
+	d)jusu pasiulymai
+
+tikrinant ar yra toks emailas mes darom uzklausa i repositorija ar tokiu emailu kakzas uzsiregines,
+ jei ne tai leidziam. Gal galima tai daryt per validacija, ar ten su kazkokia anotacija kuri neleidzia irasyt
+pasikartojanciu reiksmiu ten at lauko, kai pvz primary key daro.
+
+kuriant useri, mes i sysout isvedam atsakyma jei emailas jau uzimtas ar role ne 1,2,3 ir grazinam null,
+o ka reiketu daryt, gal mest exceptiona ar kazka su responsu, ir kaip priekis tai pagaus. Del roles galima uzdet
+validacija su range min 1, max 3, o ant email unikaluma, gal springas pats tada mes ka reikia kur reikia
+
+
+
+
+
+
 
 

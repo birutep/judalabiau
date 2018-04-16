@@ -23,7 +23,7 @@ public class UserController {
 //-------------------POST-------------------------
     @PostMapping("/users")    //registruoti useri
     @ResponseBody
-    public void createUser(@Valid @RequestBody UserDTO cmd){
-         userService.createUser(cmd);
+    public void createUser(@Valid @RequestBody UserDTO dto){
+         userService.createUser(dto);
     }
 }
