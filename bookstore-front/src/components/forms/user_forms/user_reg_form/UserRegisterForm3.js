@@ -142,7 +142,7 @@ class UserRegForm extends Component {
                             name="address"
                             placeholder="Įveskite adresą"
                             type="text"
-                            value={this.state.phone}
+                            value={this.state.address}
                             onChange={this.handleChange}
                         />
                     </label>
