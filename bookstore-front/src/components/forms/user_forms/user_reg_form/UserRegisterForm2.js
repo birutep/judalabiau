@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
+import { Messages } from "primereact/components/messages/Messages";
 //kitu moduliu komponentai
-// import PasswordMask from "react-password-mask";
-// import { FormWithConstraints } from "../../../../../node_modules/react-form-with-constraints/";
 import {
     FormWithConstraints,
     FieldFeedback
@@ -31,11 +30,8 @@ class UserRegForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.showSuccess = this.showSuccess.bind(this);
     }
-
-    // handleChange(event) {
-    //     this.setState({ [event.target.name]: event.target.value });
-    // }
 
     handleChange(e) {
         const target = e.currentTarget;
@@ -51,14 +47,17 @@ class UserRegForm extends Component {
         this.handleChange(e);
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.form.validateFields();
-    //     this.setState({ submitButtonDisabled: !this.form.isValid() });
-    //     if (this.form.isValid()) {
-    //       alert(`Valid form\n\nthis.state =\n${JSON.stringify(this.state, null, 2)}`);
-    //     }
-    //   }
+    showSuccess() {
+        this.messages.show({
+            severity: "success",
+            summary: "Success Message",
+            detail: "Order submitted"
+        });
+    }
+
+    clear() {
+        this.messages.clear();
+    }
 
     handleSubmit(e) {
         // if (this.state.password !== this.state.passwordrepeat) {
@@ -284,90 +283,15 @@ class UserRegForm extends Component {
                         label="Registruoti"
                         disabled={this.state.submitButtonDisabled}
                         className="btn btn-primary"
+                        onClick={this.showSuccess}
+                    />
+                    <Messages
+                        ref={el => {
+                            this.messages = el;
+                        }}
                     />
                 </FormWithConstraints>
             </div>
-            // <div className="reg_form">
-            //     <form onSubmit={this.handleSubmit}>
-            //         <h3>Registruoti pardavėją</h3>
-            //         <label>
-            //             El. paštas
-            //             <input
-            //                 // className={errors.email ? "error" : ""}
-            //                 name="email"
-            //                 placeholder="Įveskite el paštą"
-            //                 className="placeholder"
-            //                 required
-            //                 type="email"
-            //                 pattern="^.{3,254}$"
-            //                 value={this.state.email}
-            //                 onChange={this.handleChange}
-            //             />
-            //         </label>
-            //         <br />
-            //         <label>
-            //             Slaptažodis
-            //             {/* <PasswordMask */}
-            //             <input
-            //                 name="password"
-            //                 placeholder="Įveskite slaptažodį"
-            //                 className="placeholder"
-            //                 required
-            //                 type="password"
-            //                 // Neveikia jokia passwordo validacija Fronte, kai naudojamas tagas <PasswordMask>
-            //                 pattern="^.{6,254}$"
-            //                 value={this.state.password}
-            //                 onChange={this.handleChange}
-            //                 // buttonClassName="showhidebutt"
-            //                 // showButtonContent="Rodyti"
-            //                 // hideButtonContent="Slėpti"
-            //             />
-            //         </label>
-            //         <br />
-            //         <label>
-            //             Vardas
-            //             <input
-            //                 name="fname"
-            //                 placeholder="Įveskite vardą"
-            //                 className="placeholder"
-            //                 required
-            //                 type="text"
-            //                 pattern="^[a-zA-Z]+$"
-            //                 value={this.state.fName}
-            //                 onChange={this.handleChange}
-            //             />
-            //         </label>
-            //         <br />
-            //         <label>
-            //             Pavardė
-            //             <input
-            //                 name="lname"
-            //                 placeholder="Įveskite pavardę"
-            //                 className="placeholder"
-            //                 required
-            //                 type="text"
-            //                 pattern="^[a-zA-Z]+$"
-            //                 value={this.state.lName}
-            //                 onChange={this.handleChange}
-            //             />
-            //         </label>
-            //         <br />
-            //         <label>
-            //             Telefono numeris
-            //             <input
-            //                 name="phone"
-            //                 placeholder="Įveskite telefono numerį"
-            //                 type="text"
-            //                 required
-            //                 pattern="^(8|370|\+370)\d{8}$"
-            //                 value={this.state.phone}
-            //                 onChange={this.handleChange}
-            //             />
-            //         </label>
-            //         <br />
-            //         <Button label="Registruoti" />
-            //     </form>
-            // </div>
         );
     }
 }
