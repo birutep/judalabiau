@@ -4,9 +4,12 @@ import lt.judalabiau.BookStore.users.dto.UserDTO;
 import lt.judalabiau.BookStore.users.dto.converters.DTOtoAdmin;
 import lt.judalabiau.BookStore.users.dto.converters.DTOtoCustomer;
 import lt.judalabiau.BookStore.users.dto.converters.DTOtoSalesman;
+import lt.judalabiau.BookStore.users.dto.converters.UserToDTO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -14,12 +17,14 @@ public class UserService {
     private final DTOtoAdmin converterToAdmin;
     private final DTOtoSalesman converterToSalesman;
     private final DTOtoCustomer converterToCustomer;
+    private final UserToDTO converterToDTO;
 
-    public UserService(UserRepository userRepository, DTOtoAdmin converterToAdmin, DTOtoSalesman converterToSalesman, DTOtoCustomer converterToCustomer) {
+    public UserService(UserRepository userRepository, DTOtoAdmin converterToAdmin, DTOtoSalesman converterToSalesman, DTOtoCustomer converterToCustomer, UserToDTO converterToDTO) {
         this.userRepository = userRepository;
         this.converterToAdmin = converterToAdmin;
         this.converterToSalesman = converterToSalesman;
         this.converterToCustomer = converterToCustomer;
+        this.converterToDTO = converterToDTO;
     }
 
     @Transactional
@@ -47,8 +52,12 @@ public class UserService {
     }
 
     @Transactional
-    public Iterable<User> getAll(){
-        return userRepository.findAll();
+    public Iterable<UserDTO> getAll(){
+        List<UserDTO> users = new ArrayList<>();
+        userRepository.findAll().iterator().forEachRemaining(
+                user->users.add(converterToDTO.convert(user))
+        );
+        return  users;
     }
 
     @Transactional

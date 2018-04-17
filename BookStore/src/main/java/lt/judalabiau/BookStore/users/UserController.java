@@ -17,7 +17,7 @@ public class UserController {
 //-------------------GET--------------------------
     @GetMapping("/users")//grazina visus userius
     @ResponseBody
-    public Iterable<User> getAll(){
+    public Iterable<UserDTO> getAll(){
         return userService.getAll();
     }
 //-------------------POST-------------------------
