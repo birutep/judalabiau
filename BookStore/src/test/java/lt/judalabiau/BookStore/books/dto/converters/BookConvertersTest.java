@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 import static org.junit.Assert.*;
 
-public class ConvertersTest {
+public class BookConvertersTest {
     private final String TITLE="Test title";
     private final Integer YEAR=2018;
     private final String ISBN="1245698741236";

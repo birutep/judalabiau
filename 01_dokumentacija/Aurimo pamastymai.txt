@@ -26,6 +26,24 @@ kuriant useri, mes i sysout isvedam atsakyma jei emailas jau uzimtas ar role ne 
 o ka reiketu daryt, gal mest exceptiona ar kazka su responsu, ir kaip priekis tai pagaus. Del roles galima uzdet
 validacija su range min 1, max 3, o ant email unikaluma, gal springas pats tada mes ka reikia kur reikia
 
+knygos isbn reginamas jei ilgis tarp 10 ir 13, t.y. 11, 12 skaitmenu irgi leistinas isbn?
+
+ar mes validuosim ir pranesinesim vartotojui tik registruojant knygas/userius
+ar ir editinant?
+
+pakartokite slaptazodi validacija priekyje. Darom, planuojam, nedarom, jau padaryta?
+
+siuo metu userDto kuris grizta i fronta atsinesa slaptazodi null, t.y.
+mes kai duodam is priekio pvz reginant, konvertuojant DTO i useri, tas slaptazodis keliauja, ji isaugom ir taip toliau
+bet grazinant i prieki, t.y. paimant is repositorijos useri, ji konvertuojant i dto mes slaptazodzio neperduodam
+ar vistik reiktu perdavinet? Nes ten validuojant prisijungima juk viskas vyksta gale, kam priekiui slaptazodziai?
+tik mano nuomone. 
+
+patvarkyt UMLus, ty useriu phone ne string o Longai, knygos isleidimo metai neprivalomas (nuimt*),
+ar dzin tos uml, jau klases parasytos, nelabai ju ir reiks
+
+gal papildom kazkokiom normaliom knygom su normaliais paveiksliukais
+
 
 
 
