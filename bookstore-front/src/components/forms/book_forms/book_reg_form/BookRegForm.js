@@ -84,7 +84,7 @@ class BookRegForm extends Component {
         //     category > 0 &&
         //     count > 0;
         return (
-            <div className="book_reg_form">
+            <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
                     <h3>Naujos knygos registravimas</h3>
                     <label>

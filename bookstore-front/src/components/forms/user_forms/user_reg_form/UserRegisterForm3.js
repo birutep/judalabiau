@@ -50,7 +50,7 @@ class UserRegForm extends Component {
     }
     render() {
         return (
-            <div className="book_reg_form">
+            <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
                     <h3>Registruoti vartotoją</h3>
                     <label>
