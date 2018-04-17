@@ -29,7 +29,7 @@ public class UserDTO {
     private String email;
 
     @NotNull
-    private Integer role;
+    private Long role;
 //atskiri laukai
     private Long phone;//privalomi tik adminui ir pardavejui
     private Date birthday;//privalomas tik pirkejui
@@ -63,10 +63,10 @@ public class UserDTO {
         this.email = email;
     }
 
-    public Integer getRole() {
+    public Long getRole() {
         return role;
     }
-    public void setRole(Integer role) {
+    public void setRole(Long role) {
         this.role = role;
     }
 

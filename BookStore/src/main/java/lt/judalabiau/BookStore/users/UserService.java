@@ -33,7 +33,7 @@ public class UserService {
             //veliau mesim exception
             System.out.println("Toks useris jau yra----------------");
         }else{
-            switch (userDTO.getRole()){
+            switch (userDTO.getRole().intValue()){
                 case 1:
                     userRepository.save( converterToAdmin.convert(userDTO));
                     break;
