@@ -14,24 +14,27 @@ public class BookController {
 	public BookController(BookService bookService) {
 		this.bookService = bookService;
 	}
-
+//------------------------GET----------------------
     @GetMapping("/books")//visu knygu listui grazinti
-    public @ResponseBody Iterable<BookDTO> getBooks () {
+    @ResponseBody
+    public Iterable<BookDTO> getBooks () {
         return bookService.getBooks();
     }
-
+//----------------------POST------------------------
     @PostMapping("/books")//prideti knyga i repo
-    public @ResponseBody BookDTO addBook(@Valid @RequestBody BookDTO dto){
+    @ResponseBody
+    public BookDTO addBook(@Valid @RequestBody BookDTO dto){
         return bookService.createBook(dto);
     }
-
+//---------------------DELETE-----------------------
     @DeleteMapping("/books/{id}")    //pasalinti knygai is listo
-    public @ResponseBody void deleteBook(@PathVariable Long id) {
+    public void deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
     }
-
+//-------------------PUT------------------------------
     @PutMapping("/books/{id}")	//knygos updeitas
-    public @ResponseBody BookDTO updateBook(@PathVariable Long id, @Valid @RequestBody BookDTO dto){
+    @ResponseBody
+    public  BookDTO updateBook(@PathVariable Long id, @Valid @RequestBody BookDTO dto){
 	    return bookService.updateBook(id, dto);
     }
 }

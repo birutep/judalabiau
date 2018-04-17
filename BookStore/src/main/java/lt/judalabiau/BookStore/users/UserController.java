@@ -22,8 +22,18 @@ public class UserController {
     }
 //-------------------POST-------------------------
     @PostMapping("/users")    //registruoti useri
-    @ResponseBody
     public void createUser(@Valid @RequestBody UserDTO dto){
          userService.createUser(dto);
+    }
+//------------------DELETE-----------------------
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable long id){
+        userService.deleteUser(id);
+    }
+//------------------------PUT------------------
+    @PutMapping("/users/{id}")
+    @ResponseBody
+    public UserDTO updateUser(@PathVariable Long id, @RequestBody UserDTO dto){
+        return userService.updateUser(id, dto);
     }
 }

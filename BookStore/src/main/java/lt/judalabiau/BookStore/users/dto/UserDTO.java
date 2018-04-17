@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class UserDTO {
+    private Long id;
     //bendri laukai
     @NotNull
     @Size(min = 1, max = 254, message = "Vartotojo vardas privalo būti nuo {min} iki {max} simbolių ilgio.")
@@ -34,6 +35,13 @@ public class UserDTO {
     private Long phone;//privalomi tik adminui ir pardavejui
     private Date birthday;//privalomas tik pirkejui
     private String address;
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getfName() {
         return fName;

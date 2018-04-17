@@ -23,6 +23,7 @@ public class UserToDTO implements Converter<User, UserDTO> {
         dto.setfName(user.getfName());
         dto.setlName(user.getlName());
         dto.setRole(user.getRole().getId());
+        dto.setId(user.getId());
         //del passwordo, ar reikia juos perduoti priekiui per DTO objekta
 
         if(user.getRole().getRoleName().equals("ADMINISTRATOR")){
