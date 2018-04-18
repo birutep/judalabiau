@@ -5,11 +5,14 @@ import lt.judalabiau.BookStore.users.Role;
 import lt.judalabiau.BookStore.users.Salesman;
 import lt.judalabiau.BookStore.users.dto.UserDTO;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 
 @Component
 public class DTOtoSalesman implements Converter<UserDTO, Salesman> {
+
+    @Nullable
     @Override
     public Salesman convert(UserDTO dto) {
         if(dto==null || dto.getRole()!=2) {   //jei DTO role ne 1, ty, jei dto savyje laiko ne admina

@@ -237,8 +237,9 @@ main {
     box-shadow: 0px 0px 1px 0.5px lightgray;
 }
 
-/*----------------------Book reg form ir Book edit form, kadangi jos analogiskos ----------------------------*/
-.book_reg_form,
+/*----------------------Reg form ir edit form, kadangi jos analogiskos ----------------------------*/
+/* .book_reg_form, */
+.reg_form,
 .customer_reg_form {
     width: 50%;
     margin-top: 20px;
@@ -248,7 +249,7 @@ main {
     background: white;
 }
 
-.book_reg_form form,
+.reg_form form,
 .customer_reg_form form {
     width: 80%;
     margin: auto;
@@ -259,7 +260,7 @@ main {
     box-sizing: border-box;
 }
 
-.book_reg_form h3,
+.reg_form h3,
 .customer_reg_form h3 {
     text-align: center;
 }
@@ -277,12 +278,12 @@ option,
     box-sizing: border-box;
 }
 
-.book_reg_form .checkbox {
+.reg_form .checkbox {
     width: auto;
     margin-left: 10px;
 }
 /* -----------Ant checkbox paspaudus remelis atsiranda! Kodel ?!?!?!?!?!? ----------------*/
-/* .book_reg_form .checkbox:checked {
+/* .reg_form .checkbox:checked {
     border: green;
     color: red;
 } */
@@ -309,7 +310,7 @@ label {
     margin-top: 15px;
 }
 
-.book_reg_form button,
+.reg_form button,
 .customer_reg_form button {
     font-weight: bold;
     width: 100%;
@@ -319,16 +320,16 @@ label {
     border-radius: 3px;
 }
 
-.book_reg_form button:hover,
+.reg_form button:hover,
 .customer_reg_form button:hover {
     background-color: lightgray;
 }
-.book_reg_form button:active,
+.reg_form button:active,
 .customer_reg_form button:active {
     background-color: #c8c8c8;
 }
 
-.book_reg_form button:focus,
+.reg_form button:focus,
 .customer_reg_form button:focus {
     background-color: goldenrod;
     box-shadow: 0px 0px 1px 0.5px goldenrod;
@@ -342,6 +343,21 @@ label {
 }
 .placeholder:-moz-placeholder {
     color: transparent;
+}
+
+/* form_with_constraints */
+.required {
+    font-size: 13px;
+    color: red;
+}
+/* FieldFeedbacks */
+form > div > div > div.error {
+    font-size: 13px;
+    color: red;
+}
+form > div > div > div.warning {
+    font-size: 13px;
+    color: orange;
 }
 
 /*----------------books / book list for admin minimal------------------------------------*/
