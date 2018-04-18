@@ -5,7 +5,6 @@ import lt.judalabiau.BookStore.books.BookService;
 import lt.judalabiau.BookStore.users.*;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -36,6 +35,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b1.setCategory("patarimų rinkinys");
         b1.setRating(5.0);
         b1.setPhotopath("notfound.png");
+        b1.setReleaseYear(2018);
         knygos.add(b1);
         Book b2 = new Book();
         b2.setAuthors("Jurgis Šidlauskis");
@@ -46,6 +46,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b2.setCategory("nuotykių");
         b2.setRating(4.5);
         b2.setPhotopath("notfound.png");
+        b2.setReleaseYear(2018);
         knygos.add(b2);
         Book b3 = new Book();
         b3.setAuthors("Daniel Razov");
@@ -56,6 +57,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b3.setCategory("romanas");
         b3.setRating(4.0);
         b3.setPhotopath("notfound.png");
+        b3.setReleaseYear(2018);
         knygos.add(b3);
         Book b4 = new Book();
         b4.setAuthors("Birutė Polkienė");
@@ -66,6 +68,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b4.setCategory("socialpsichologiopatinis");
         b4.setRating(3.5);
         b4.setPhotopath("notfound.png");
+        b4.setReleaseYear(2018);
         knygos.add(b4);
         Book b5 = new Book();
         b5.setAuthors("Vilma Laimužė");
@@ -76,6 +79,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b5.setCategory("ese");
         b5.setRating(3.5);
         b5.setPhotopath("notfound.png");
+        b5.setReleaseYear(2018);
         knygos.add(b5);
         Book b6 = new Book();
         b6.setAuthors("Vincas Mykolaitis Maldeikis");
@@ -86,6 +90,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b6.setCategory("socialinis");
         b6.setRating(2.5);
         b6.setPhotopath("notfound.png");
+        b6.setReleaseYear(2018);
         knygos.add(b6);
         Book b7 = new Book();
         b7.setAuthors("Ernesta Duglas");
@@ -96,6 +101,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b7.setCategory("socialinis");
         b7.setRating(1.5);
         b7.setPhotopath("notfound.png");
+        b7.setReleaseYear(2018);
         knygos.add(b7);
         Book b8 = new Book();
         b8.setAuthors("Mykolas Bautrėnas");
@@ -106,6 +112,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b8.setCategory("anime");
         b8.setRating(1.0);
         b8.setPhotopath("notfound.png");
+        b8.setReleaseYear(2018);
         knygos.add(b8);
         Book b9 = new Book();
         b9.setAuthors("Mantas Pauliukonis 3");
@@ -116,6 +123,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b9.setCategory("mokslinis");
         b9.setRating(0.5);
         b9.setPhotopath("notfound.png");
+        b9.setReleaseYear(2018);
         knygos.add(b9);
         Book b10 = new Book();
         b10.setAuthors("Redas Peškaitis");
@@ -126,6 +134,7 @@ public class DatabaseInitialization implements ApplicationListener<ContextRefres
         b10.setCategory("pasakėčios");
         b10.setRating(0.0);
         b10.setPhotopath("notfound.png");
+        b10.setReleaseYear(2018);
         knygos.add(b10);
 
         return  knygos;

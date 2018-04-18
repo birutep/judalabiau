@@ -3,7 +3,8 @@ import axios from "axios";
 //custom elementai
 import { USERS } from "../../../server_links/ServerLinks";
 import User from "./one_user/User";
-
+// <======>
+import SubHeader from "../../layout/sub_header/SubHeader";
 
 class UserList extends Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class UserList extends Component {
 
         return (
             <div className="books">
+                <SubHeader label="Visi vartotojai" />
                 <table>
                     <thead>
                         <tr>
@@ -41,6 +43,8 @@ class UserList extends Component {
                             <th>Pavardė</th>
                             <th>El paštas</th>
                             <th>telefono numeris</th>
+                            <th />
+                            <th />
                         </tr>
                     </thead>
 
