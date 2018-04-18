@@ -360,6 +360,12 @@ form > div > div > div.warning {
     color: orange;
 }
 
+.ui-messages {
+    background-color: #15a4fa;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
 /*----------------books / book list for admin minimal------------------------------------*/
 table {
     margin-top: 10px;

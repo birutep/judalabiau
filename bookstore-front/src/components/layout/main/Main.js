@@ -20,7 +20,7 @@ const Main = props => {
                 <h3>Cia kazkas bus</h3>
             </div>
             {/* <====laikinai iki linkų įgyvendinimo===> */}
-            {/* <UserRegForm1 /> */}
+            <UserRegForm1 />
             {/* <UserRegForm2 /> */}
             {/* <UserRegForm3 /> */}
         </main>
