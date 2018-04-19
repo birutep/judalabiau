@@ -5,23 +5,13 @@ import lt.judalabiau.BookStore.books.dto.BookDTO;
 import org.junit.Before;
 import org.junit.Test;
 
+import static lt.judalabiau.BookStore.constants.BookConstants.*;
+
 import java.math.BigDecimal;
 
 import static org.junit.Assert.*;
 
 public class BookConvertersTest {
-    private final String TITLE="Test title";
-    private final Integer YEAR=2018;
-    private final String ISBN="1245698741236";
-    private final BigDecimal PRICE=new BigDecimal(10.25);
-    private final String DESCRIPTION="Test description";
-    private final String PHOTO = "notfound.png";
-    private final Long COUNT = 15L;
-    private final Double RATING = 4.2;
-    private final Integer RATING_COUNT=45;
-    private final Boolean E_AVAILABLE = true;
-    private final String CATEGORY = "Test";
-    private final String AUTHORS = "aurimas Činčikas";
 
     private BookToDTO converterToDto;
     private DTOtoBook converterTobook;
