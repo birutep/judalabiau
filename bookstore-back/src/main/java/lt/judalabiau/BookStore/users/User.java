@@ -17,7 +17,10 @@ import javax.validation.constraints.Size;
 public abstract class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "id_for_user")
+    //kadangi pirmu 7 useriai ateina is import.sql kad negavineti erroro PRIMARY key uniq, nes pradeda generuot nuo 1, o irasas su tokiu id ateina is import sql,
+    //kai paleistas produqtione, tu 100 knygu nebus, galima atstatyt i 1
+    @TableGenerator(name="id_for_user", initialValue= 8)
     private Long id;
 
     @NotNull

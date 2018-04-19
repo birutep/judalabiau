@@ -14,7 +14,10 @@ import java.math.BigDecimal;
 public class Book {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "id_for_book")
+    //kadangi pirmu 100 knygu ateina is import.sql kad negavineti erroro PRIMARY key uniq, nes pradeda generuot nuo 1, o irasas su tokiu id ateina is import sql,
+    //kai paleistas produqtione, tu 100 knygu nebus, galima atstatyt i 1
+	@TableGenerator(name="id_for_book", initialValue= 101)
 	private Long id;
 
     @NotNull
