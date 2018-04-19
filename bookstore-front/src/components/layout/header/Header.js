@@ -5,7 +5,6 @@ import { Button } from "primereact/components/button/Button";
 
 const Header = () => {
     return (
-        // <div className="ui-g">
         <header>
             <Link
                 to="/"
@@ -31,7 +30,6 @@ const Header = () => {
                 className="login"
             />
         </header>
-        // </div>
     );
 };
 
