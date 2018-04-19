@@ -1,0 +1,97 @@
+import React, { Fragment, Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+//mobx
+import { inject, observer } from "mobx-react";
+//custom elementai
+import BookEditForm from "../components/forms/book_forms/book_edit_form/BookEditForm";
+import book from "../components/books/book_list_for_admin_minimal/one_book/Book";
+import BookRegForm from "../components/forms/book_forms/book_reg_form/BookRegForm";
+import BookList from "../components/books/book_list_universal/BookListUniversal";
+import NotFound from "../components/layout/not_found/NotFound";
+import NavMenu from "../components/layout/nav_menu/NavMenu";
+import Header from "../components/layout/header/Header";
+import Footer from "../components/layout/footer/Footer";
+import UserRegForm3 from "../components/forms/user_forms/user_reg_form/UserRegisterForm3";
+import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegisterForm2";
+import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
+import UserList from "../components/users/user_list/UserList";
+
+@inject("BookStore")
+@observer
+class Routes extends Component {
+    render() {
+        const { BookStore } = this.props;
+        return (
+            <BrowserRouter>
+                <Fragment>
+                    <Header />
+
+                    <Route path="/" component={NavMenu} />
+                    <Switch>
+                        <Route
+                            exact
+                            path="/"
+                            render={() => (
+                                <BookList
+                                    rol={3}
+                                    bookStatus={book}
+                                    changed={BookStore.changed}
+                                />
+                            )}
+                        />
+                        <Route path="/books/register" component={BookRegForm} />
+                        <Route
+                            path="/books/edit"
+                            render={() => (
+                                <BookEditForm
+                                    book={BookStore.bookToEdit}
+                                    changed={BookStore.changed}
+                                />
+                            )}
+                        />
+                        <Route
+                            path="/books/3"
+                            render={() => (
+                                <BookList
+                                    rol={3}
+                                    bookStatus={book}
+                                    changed={BookStore.changed}
+                                />
+                            )}
+                        />
+                        <Route
+                            path="/books/1"
+                            render={() => (
+                                <BookList
+                                    rol={1}
+                                    bookStatus={book}
+                                    changed={BookStore.changed}
+                                />
+                            )}
+                        />
+
+                        <Route path="/users" component={UserList} />
+
+                        {/* <===User Register===> */}
+                        <Route
+                            path="/user/register/1"
+                            component={UserRegForm1}
+                        />
+                        <Route
+                            path="/user/register/2"
+                            component={UserRegForm2}
+                        />
+                        <Route
+                            path="/user/register/3"
+                            component={UserRegForm3}
+                        />
+                        <Route component={NotFound} />
+                    </Switch>
+                    <Footer />
+                </Fragment>
+            </BrowserRouter>
+        );
+    }
+}
+
+export default Routes;
