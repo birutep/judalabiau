@@ -28,6 +28,7 @@ public class BookController {
     }
 //---------------------DELETE-----------------------
     @DeleteMapping("/books/{id}")    //pasalinti knygai is listo
+    @ResponseBody
     public void deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
     }
