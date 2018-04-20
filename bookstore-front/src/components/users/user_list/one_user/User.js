@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from "axios";
+import { USERS } from "../../../../server_links/ServerLinks";
 import { Link } from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
@@ -18,9 +20,9 @@ class User extends Component {
 
   deleteUser = e => {
     e.preventDefault();
-    // axios.delete(BOOKS + this.props.singleUser.id).then(() => {
-    //     this.props.BookStore.changeState();
-    // });
+     axios.delete(USERS + this.props.singleUser.id).then(() => {
+         this.props.BookStore.changeState();
+     });
   };
 
   editUser = user => {
