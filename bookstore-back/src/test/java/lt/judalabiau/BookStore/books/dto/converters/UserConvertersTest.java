@@ -18,22 +18,14 @@ import org.omg.CORBA.DATA_CONVERSION;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import static lt.judalabiau.BookStore.constants.UserConstants.*;
 import static org.junit.Assert.*;
 
 public class UserConvertersTest {
-    private final String FIRST_NAME = "Aurimas";
-    private final String LAST_NAME = "Činčikas";
-    private final String EMAIL = "cincikas.aurimas.jp17Čgmail.com";
-    private final Long ROLE_ADMIN_DTO = 1L;
-    private final Long ROLE_SALESMAN_DTO = 2L;
-    private final Long ROLE_CUSTOMER_DTO = 3L;
+
     private final Role ROLE_ADMIN = new Role();
     private final Role ROLE_SALESMAN = new Role();
     private final Role ROLE_CUSTOMER = new Role();
-    private final Long PHONE = 862212123L;
-    private final Date BIRTH_DATA = new Date();
-    private final String ADDRESS = "Vasaros 5, Naujoji Vilnia";
-
 
     private DTOtoAdmin converterToAdmin;
     private DTOtoSalesman converterToSalesman;

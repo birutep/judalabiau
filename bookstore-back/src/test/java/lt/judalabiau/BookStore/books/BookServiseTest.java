@@ -34,15 +34,15 @@ public class BookServiseTest {
     private BookService bookService;
 
     @Autowired
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
 
     @Autowired
-    BookToDTO bookToDTOconverter;
+    private BookToDTO bookToDTOconverter;
 
     @Autowired
-    DTOtoBook dtoToBookconverter;
+    private DTOtoBook dtoToBookconverter;
 
-    BookDTO initial;
+    private BookDTO initial;
 
     @Before
     public void setUp() throws Exception {
@@ -88,6 +88,7 @@ public class BookServiseTest {
         bookService.createBook(initial);
         bookService.getBooks().iterator().forEachRemaining(found::add);
         assertNotEquals(0, found.size());
+        assertEquals(bookRepository.count(), found.size());
 
         BookDTO dto = found.stream().filter(b->b.getIsbn().equals(ISBN)).distinct().findFirst().get();
         assertEquals(TITLE, dto.getTitle());

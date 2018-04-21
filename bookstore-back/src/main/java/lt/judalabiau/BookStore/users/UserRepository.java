@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends CrudRepository<User, Long> {
 
      boolean existsByEmail(@Param("email") String email);
+     User getFirstById(Long id);
 }
