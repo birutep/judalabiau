@@ -20,7 +20,7 @@ const NavMenu = () => {
             <Link to="/user/register/3" style={{ textDecoration: "none" }}>
                 <Button label="&ensp;Registruotis" icon="fa fa-user" />
             </Link>
-            <h2>Admin/salesman menu</h2>
+            <h2>Admin/sales menu</h2>
             <Link to="/books/1">
                 <Button label="&ensp;Visos knygos" icon="fa fa-globe" />
             </Link>
