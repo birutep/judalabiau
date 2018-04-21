@@ -16,11 +16,11 @@ import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegis
 import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
 import UserList from "../components/users/user_list/UserList";
 
-@inject("BookStore")
+@inject("bookStore")
 @observer
 class Routes extends Component {
     render() {
-        const { BookStore } = this.props;
+        const { bookStore } = this.props;
         return (
             <BrowserRouter>
                 <Fragment>
@@ -35,7 +35,7 @@ class Routes extends Component {
                                 <BookList
                                     rol={3}
                                     bookStatus={book}
-                                    changed={BookStore.changed}
+                                    changed={bookStore.changed}
                                 />
                             )}
                         />
@@ -44,8 +44,8 @@ class Routes extends Component {
                             path="/books/edit"
                             render={() => (
                                 <BookEditForm
-                                    book={BookStore.bookToEdit}
-                                    changed={BookStore.changed}
+                                    book={bookStore.bookToEdit}
+                                    changed={bookStore.changed}
                                 />
                             )}
                         />
@@ -55,7 +55,7 @@ class Routes extends Component {
                                 <BookList
                                     rol={3}
                                     bookStatus={book}
-                                    changed={BookStore.changed}
+                                    changed={bookStore.changed}
                                 />
                             )}
                         />
@@ -65,7 +65,7 @@ class Routes extends Component {
                                 <BookList
                                     rol={1}
                                     bookStatus={book}
-                                    changed={BookStore.changed}
+                                    changed={bookStore.changed}
                                 />
                             )}
                         />

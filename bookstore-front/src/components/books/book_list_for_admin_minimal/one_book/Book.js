@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios";
-import { BOOKS } from "../../../../server_links/ServerLinks";
-import { inject } from "mobx-react";
-import { Link } from "react-router-dom";
+import {BOOKS} from "../../../../server_links/ServerLinks";
+import {inject, observer} from "mobx-react";
+import {Link} from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
 
-@inject("BookStore")
+@observer
+@inject("bookStore")
 class Book extends Component {
     constructor(props) {
         super(props);
@@ -30,13 +31,13 @@ class Book extends Component {
     deleteBook = e => {
         e.preventDefault();
         axios.delete(BOOKS + this.props.myBook.id).then(() => {
-            this.props.BookStore.changeState();
+            this.props.bookStore.changeState();
         });
     };
 
     editBook = book => {
-        this.props.BookStore.editBook(book);
-        this.props.BookStore.changeState();
+        this.props.bookStore.editBook(book);
+        this.props.bookStore.changeState();
     };
 
     render() {
@@ -67,7 +68,7 @@ class Book extends Component {
                     </Link>
                 </td>
                 <td className="mini">
-                    <i className="fa fa-trash-o fa-fw" onClick={this.deleteBook} />
+                    <i className="fa fa-trash-o fa-fw" onClick={this.deleteBook}/>
                     {/* <img
                         src="./img/delete.png"
                         alt="delete"

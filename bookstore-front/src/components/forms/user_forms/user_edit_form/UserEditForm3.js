@@ -58,8 +58,8 @@ class UserEditFrom3 extends Component {
                 id: this.state.id
             })
             .then(() => {
-                this.props.BookStore.changeState();
-                this.props.BookStore.editBook(this.state.emptyUser);
+                this.props.bookStore.changeState();
+                this.props.bookStore.editBook(this.state.emptyUser);
             })
             .catch(function(error) {
                 console.log("Klaida redaguojant vartotoją" + error);

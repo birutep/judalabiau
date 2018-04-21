@@ -9,7 +9,7 @@ import "./App.css";
 //custom elementai
 import Routes from "./routes/Routes.js";
 
-@inject("BookStore")
+@inject("bookStore")
 @observer
 class App extends Component {
     render() {

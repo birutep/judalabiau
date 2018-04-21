@@ -24,8 +24,8 @@ class User extends Component {
   };
 
   editUser = user => {
-    this.props.BookStore.editUser(user);
-    this.props.BookStore.changeState();
+    this.props.bookStore.editUser(user);
+    this.props.bookStore.changeState();
   };
 
   render() {

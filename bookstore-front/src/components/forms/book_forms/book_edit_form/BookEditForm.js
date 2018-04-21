@@ -4,7 +4,7 @@ import { inject, observer } from "mobx-react";
 import { BOOKS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
 
-@inject("BookStore")
+@inject("bookStore")
 @observer
 class BookRegForm extends Component {
     constructor(props) {
@@ -23,17 +23,17 @@ class BookRegForm extends Component {
                 authors: "",
                 id: ""
             },
-            title: "",
-            released: "",
-            isbn: "",
-            price: "",
-            category: "Apsakymas",
-            count: "",
-            e_available: false,
-            photopath: "",
-            description: "",
-            authors: "",
-            id: ""
+            title: this.props.bookStore.bookToEdit.title,
+            released: this.props.bookStore.bookToEdit.released,
+            isbn: this.props.bookStore.bookToEdit.isbn,
+            price: this.props.bookStore.bookToEdit.price,
+            category: this.props.bookStore.bookToEdit.category,
+            count: this.props.bookStore.bookToEdit.count,
+            e_available: this.props.bookStore.bookToEdit.e_available,
+            photopath: this.props.bookStore.bookToEdit.photopath,
+            description: this.props.bookStore.bookToEdit.description,
+            authors: this.props.bookStore.bookToEdit.authors,
+            id: this.props.bookStore.bookToEdit.id
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,17 +43,17 @@ class BookRegForm extends Component {
 
     componentWillReceiveProps() {
         this.setState({
-            title: this.props.book.title,
-            released: this.props.book.released,
-            isbn: this.props.book.isbn,
-            price: this.props.book.price,
-            category: this.props.book.category,
-            count: this.props.book.count,
-            e_available: this.props.book.e_available,
-            photopath: this.props.book.photopath,
-            description: this.props.book.description,
-            authors: this.props.book.authors,
-            id: this.props.book.id
+            title: this.props.bookStore.bookToEdit.title,
+            released: this.props.bookStore.bookToEdit.released,
+            isbn: this.props.bookStore.bookToEdit.isbn,
+            price: this.props.bookStore.bookToEdit.price,
+            category: this.props.bookStore.bookToEdit.category,
+            count: this.props.bookStore.bookToEdit.count,
+            e_available: this.props.bookStore.bookToEdit.e_available,
+            photopath: this.props.bookStore.bookToEdit.photopath,
+            description: this.props.bookStore.bookToEdit.description,
+            authors: this.props.bookStore.bookToEdit.authors,
+            id: this.props.bookStore.bookToEdit.id
         });
     }
 
@@ -102,8 +102,8 @@ class BookRegForm extends Component {
                 id: this.state.id
             })
             .then(() => {
-                this.props.BookStore.changeState();
-                this.props.BookStore.editBook(this.state.emptyBook);
+                this.props.bookStore.changeState();
+                this.props.bookStore.editBook(this.state.emptyBook);
             })
             .catch(function(error) {
                 console.log("Klaida redaguojant knygą" + error);
