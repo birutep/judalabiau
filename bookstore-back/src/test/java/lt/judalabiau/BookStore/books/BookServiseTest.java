@@ -34,15 +34,15 @@ public class BookServiseTest {
     private BookService bookService;
 
     @Autowired
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
 
     @Autowired
-    BookToDTO bookToDTOconverter;
+    private BookToDTO bookToDTOconverter;
 
     @Autowired
-    DTOtoBook dtoToBookconverter;
+    private DTOtoBook dtoToBookconverter;
 
-    BookDTO initial;
+    private BookDTO initial;
 
     @Before
     public void setUp() throws Exception {
