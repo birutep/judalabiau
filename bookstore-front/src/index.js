@@ -6,7 +6,7 @@ import BookStore from "./stores/BookStore";
 import App from "./App";
 
 const Root = (
-    <Provider BookStore={BookStore}>
+    <Provider bookStore={BookStore}>
         <App />
     </Provider>
 );
