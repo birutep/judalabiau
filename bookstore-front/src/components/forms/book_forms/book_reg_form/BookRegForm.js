@@ -241,7 +241,7 @@ class BookRegForm extends Component {
                     </label>
                     <br />
                     <Button
-                        title="Užpildykite privalomus laukus"
+                        // title="Užpildykite privalomus laukus"
                         // disabled={!isEnabled}
                         label="Registruoti"
                         onClick={this.saveBook}

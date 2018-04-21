@@ -52,30 +52,31 @@ class BookList extends Component {
         // });
 
         return (
-            <div className="books">
+            <div>
                 <SubHeader label="Visos knygos" />
                 {/* <SubSubHeader /> */}
 
                 {/* <DataTable value={this.state.books}>
                     {booksAsComponents}
                 </DataTable> */}
+                <div className="books books_for_admin_area">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ISBN</th>
+                                <th>Pavadinimas</th>
+                                <th>Autorius</th>
+                                <th>Kaina</th>
+                                <th>Likutis</th>
+                                <th>Kategorija</th>
+                                <th />
+                                <th />
+                            </tr>
+                        </thead>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ISBN</th>
-                            <th>Pavadinimas</th>
-                            <th>Autorius</th>
-                            <th>Kaina</th>
-                            <th>Likutis</th>
-                            <th>Kategorija</th>
-                            <th />
-                            <th />
-                        </tr>
-                    </thead>
-
-                    <tbody>{booksAsComponents}</tbody>
-                </table>
+                        <tbody>{booksAsComponents}</tbody>
+                    </table>
+                </div>
             </div>
         );
     }

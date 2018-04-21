@@ -34,22 +34,26 @@ class UserList extends Component {
         });
 
         return (
-            <div className="books">
+            <div>
                 <SubHeader label="Visi vartotojai" />
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Vardas</th>
-                            <th>Pavardė</th>
-                            <th>El paštas</th>
-                            <th>telefono numeris</th>
-                            <th />
-                            <th />
-                        </tr>
-                    </thead>
+                <div className="books books_for_admin_area">
+                    {/* <SubHeader label="Visi vartotojai" /> */}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Vardas</th>
+                                <th>Pavardė</th>
+                                <th>El paštas</th>
+                                <th>Telefono numeris</th>
+                                <th>Rolė</th>
+                                <th />
+                                <th />
+                            </tr>
+                        </thead>
 
-                    <tbody>{userAsComponent}</tbody>
-                </table>
+                        <tbody>{userAsComponent}</tbody>
+                    </table>
+                </div>{" "}
             </div>
         );
     }
