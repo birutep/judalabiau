@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Link } from "react-router-dom";
-import {inject, observer} from "mobx-react";
+import { inject, observer } from "mobx-react";
 
 import "font-awesome/css/font-awesome.min.css";
 
@@ -16,7 +16,8 @@ class User extends Component {
                 fName: props.singleUser.fName,
                 lName: props.singleUser.lName,
                 email: props.singleUser.email,
-                phone: props.singleUser.phone
+                phone: props.singleUser.phone,
+                role: props.singleUser.role
             }
         };
     }
@@ -45,6 +46,15 @@ class User extends Component {
                         ? this.props.singleUser.phone
                         : "-"}
                 </td>
+                <td>
+                    {this.props.singleUser.role === 1
+                        ? "Administratorius"
+                        : this.props.singleUser.role === 2
+                            ? "Pardavėjas"
+                            : this.props.singleUser.role === 3
+                                ? "Vartotojas"
+                                : "-"}
+                </td>
                 <td className="mini">
                     <Link to="users/edit">
                         <i
@@ -64,7 +74,6 @@ class User extends Component {
                         icon="fa fa-trash-o fa-fw"
                         onClick={this.deleteUser}
                     /> */}
-                   
                 </td>
             </tr>
         );

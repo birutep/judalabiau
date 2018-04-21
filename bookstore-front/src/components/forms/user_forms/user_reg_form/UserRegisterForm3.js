@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
-//kitu moduliu komponentai
-// import PasswordMask from "react-password-mask";
+import { Messages } from "primereact/components/messages/Messages";
 
 class UserRegForm extends Component {
     constructor(props) {
@@ -21,9 +20,24 @@ class UserRegForm extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.showSuccess = this.showSuccess.bind(this);
+        this.showUnsuccess = this.showUnsuccess.bind(this);
     }
     handleChange(event) {
         this.setState({ [event.target.name]: event.target.value });
+    }
+    showSuccess() {
+        this.messages.show({
+            severity: "success",
+            summary: "Vartotojas užregistruotas!"
+        });
+    }
+
+    showUnsuccess() {
+        this.messages.show({
+            severity: "error",
+            summary: "Klaida registruojant vartotją!"
+        });
     }
 
     handleSubmit() {
@@ -42,10 +56,18 @@ class UserRegForm extends Component {
                 phone: this.state.phone
             })
             .then(function(response) {
+                if (response.status === 200) {
+                    this.showSuccess();
+                } else {
+                    this.showUnsuccess();
+                }
                 console.log(response);
+                console.log(response.status);
+                console.log("User successfully added");
             })
             .catch(function(error) {
                 console.log(error);
+                // this.showUnsuccess();
             });
     }
     render() {
@@ -69,7 +91,6 @@ class UserRegForm extends Component {
                     <br />
                     <label>
                         Slaptažodis
-                        {/* <PasswordMask */}
                         <input
                             name="password"
                             placeholder="Įveskite slaptažodį"
@@ -78,9 +99,6 @@ class UserRegForm extends Component {
                             type="password"
                             value={this.state.password}
                             onChange={this.handleChange}
-                            // buttonClassName="showhidebutt"
-                            // showButtonContent="Rodyti"
-                            // hideButtonContent="Slėpti"
                         />
                     </label>
                     <br />
@@ -148,6 +166,11 @@ class UserRegForm extends Component {
                     </label>
                     <br />
                     <Button label="Registruoti" />
+                    <Messages
+                        ref={el => {
+                            this.messages = el;
+                        }}
+                    />
                 </form>
             </div>
         );
