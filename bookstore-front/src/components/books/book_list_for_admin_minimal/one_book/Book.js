@@ -19,13 +19,14 @@ class Book extends Component {
                 price: props.myBook.price,
                 category: props.myBook.category,
                 count: props.myBook.count,
-                e_available: props.myBook.e_available,
+                eAvailable: props.myBook.eAvailable,
                 photopath: props.myBook.photopath,
                 description: props.myBook.description,
                 authors: props.myBook.authors,
                 id: props.myBook.id
             }
         };
+        console.log(props.myBook);
     }
 
     deleteBook = e => {

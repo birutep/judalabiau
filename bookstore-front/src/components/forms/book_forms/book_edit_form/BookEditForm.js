@@ -260,10 +260,11 @@ class BookRegForm extends Component {
                     <label>
                         Elektroninė knyga:
                         <input
-                            name="e_available"
+                            name="eAvailable"
                             type="checkbox"
                             className="checkbox"
-                            value={this.state.e_available}
+                            checked={this.state.eAvailable}
+                            value={this.state.eAvailable}
                             onChange={this.handleCheckbox}
                         />
                     </label>

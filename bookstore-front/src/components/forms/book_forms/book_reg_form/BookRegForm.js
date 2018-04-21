@@ -62,6 +62,7 @@ class BookRegForm extends Component {
             .then(() => {
                 this.props.bookStore.changeState();
                 this.setState({
+                    eAvailable: false,
                     rating: 0,
                     ratingCount: 0,
                     title: "",
@@ -231,6 +232,7 @@ class BookRegForm extends Component {
                             name="eAvailable"
                             type="checkbox"
                             className="checkbox"
+                            checked={this.state.eAvailable}
                             value={this.state.eAvailable}
                             onChange={this.handleCheckbox}
                         />
