@@ -8,7 +8,6 @@ const Book = props => {
             <h3>{props.myBook.title}</h3>
             <p>by {props.myBook.authors}</p>
             <Stars rating={props.myBook.rating}/>
-            {console.log(props.myBook)}
         </div>
     );
 };

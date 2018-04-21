@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios/index";
-import { inject, observer } from "mobx-react";
-import { BOOKS } from "../../../../server_links/ServerLinks";
-import { Button } from "primereact/components/button/Button";
+import {inject, observer} from "mobx-react";
+import {BOOKS} from "../../../../server_links/ServerLinks";
+import {Button} from "primereact/components/button/Button";
 
 @inject("bookStore")
 @observer
@@ -11,25 +11,29 @@ class BookRegForm extends Component {
         super(props);
         this.state = {
             emptyBook: {
+                eAvailable: false,
+                rating: 0,
+                ratingCount: 0,
                 title: "",
-                released: "",
+                releaseYear: "",
                 isbn: "",
                 price: "",
                 category: "Apsakymas",
                 count: "",
-                e_available: false,
                 photopath: "",
                 description: "",
                 authors: "",
                 id: ""
             },
+            eAvailable: this.props.bookStore.bookToEdit.eAvailable,
+            rating: this.props.bookStore.bookToEdit.rating,
+            ratingCount: this.props.bookStore.bookToEdit.ratingCount,
             title: this.props.bookStore.bookToEdit.title,
-            released: this.props.bookStore.bookToEdit.released,
+            releaseYear: this.props.bookStore.bookToEdit.releaseYear,
             isbn: this.props.bookStore.bookToEdit.isbn,
             price: this.props.bookStore.bookToEdit.price,
             category: this.props.bookStore.bookToEdit.category,
             count: this.props.bookStore.bookToEdit.count,
-            e_available: this.props.bookStore.bookToEdit.e_available,
             photopath: this.props.bookStore.bookToEdit.photopath,
             description: this.props.bookStore.bookToEdit.description,
             authors: this.props.bookStore.bookToEdit.authors,
@@ -43,13 +47,15 @@ class BookRegForm extends Component {
 
     componentWillReceiveProps() {
         this.setState({
+            eAvailable: this.props.bookStore.bookToEdit.eAvailable,
+            rating: this.props.bookStore.bookToEdit.rating,
+            ratingCount: this.props.bookStore.bookToEdit.ratingCount,
             title: this.props.bookStore.bookToEdit.title,
-            released: this.props.bookStore.bookToEdit.released,
+            releaseYear: this.props.bookStore.bookToEdit.releaseYear,
             isbn: this.props.bookStore.bookToEdit.isbn,
             price: this.props.bookStore.bookToEdit.price,
             category: this.props.bookStore.bookToEdit.category,
             count: this.props.bookStore.bookToEdit.count,
-            e_available: this.props.bookStore.bookToEdit.e_available,
             photopath: this.props.bookStore.bookToEdit.photopath,
             description: this.props.bookStore.bookToEdit.description,
             authors: this.props.bookStore.bookToEdit.authors,
@@ -58,11 +64,11 @@ class BookRegForm extends Component {
     }
 
     handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({[event.target.name]: event.target.value});
     }
 
     handleCheckbox() {
-        this.setState({ e_available: !this.state.e_available });
+        this.setState({eAvailable: !this.state.eAvailable});
     }
 
     handleSubmit(event) {
@@ -82,20 +88,22 @@ class BookRegForm extends Component {
     updateBook() {
         console.log(
             "siunciam updeitui " +
-                this.state.price +
-                " tipas " +
-                typeof this.state.price
+            this.state.price +
+            " tipas " +
+            typeof this.state.price
         );
         console.log("adresu http://localhost:8080/books/" + this.state.id);
         axios
             .put(BOOKS + this.state.id, {
+                eAvailable: this.state.eAvailable,
+                rating: this.state.rating,
+                ratingCount: this.state.ratingCount,
                 title: this.state.title,
-                releaseYear: this.state.released,
+                releaseYear: this.state.releaseYear,
                 isbn: this.state.isbn,
                 price: this.state.price === "" ? "-1" : this.state.price,
                 category: this.state.category,
                 count: this.state.count,
-                e_available: this.state.e_available,
                 photopath: this.state.photopath,
                 description: this.state.description,
                 authors: this.state.authors,
@@ -105,7 +113,7 @@ class BookRegForm extends Component {
                 this.props.bookStore.changeState();
                 this.props.bookStore.editBook(this.state.emptyBook);
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.log("Klaida redaguojant knygą" + error);
             });
     }
@@ -127,7 +135,7 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Autorius:
@@ -141,7 +149,7 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Leidimo metai:
@@ -151,11 +159,11 @@ class BookRegForm extends Component {
                             className="placeholder"
                             type="text"
                             pattern="^\d{4}$"
-                            value={this.state.released}
+                            value={this.state.releaseYear}
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         ISBN:
@@ -171,7 +179,7 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Kaina:
@@ -187,7 +195,7 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Kategorija:
@@ -220,7 +228,7 @@ class BookRegForm extends Component {
                             <option value="vaikams">Vaikų literatūra</option>
                         </select>
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Likutis sandėlyje:
@@ -235,7 +243,7 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Viršelio nuotrauka:
@@ -247,7 +255,7 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Elektroninė knyga:
@@ -256,10 +264,10 @@ class BookRegForm extends Component {
                             type="checkbox"
                             className="checkbox"
                             value={this.state.e_available}
-                            onChange={this.handleChange}
+                            onChange={this.handleCheckbox}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Aprašymas:
@@ -269,8 +277,8 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
-                    <Button label="Pakeisti" onClick={this.updateBook} />
+                    <br/>
+                    <Button label="Pakeisti" onClick={this.updateBook}/>
                 </form>
             </div>
         );

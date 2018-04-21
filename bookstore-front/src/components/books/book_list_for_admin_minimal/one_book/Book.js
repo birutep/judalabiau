@@ -6,15 +6,15 @@ import {Link} from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
 
-@observer
 @inject("bookStore")
+@observer
 class Book extends Component {
     constructor(props) {
         super(props);
         this.state = {
             bookEdit: {
                 title: props.myBook.title,
-                released: props.myBook.released,
+                releaseYear: props.myBook.releaseYear,
                 isbn: props.myBook.isbn,
                 price: props.myBook.price,
                 category: props.myBook.category,

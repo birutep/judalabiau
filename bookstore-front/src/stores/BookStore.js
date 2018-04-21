@@ -22,7 +22,7 @@ class BookStore {
 
     @action editBook = (book) => {
         this.bookToEdit.title = book.title;
-        this.bookToEdit.released = book.released;
+        this.bookToEdit.releaseYear = book.releaseYear;
         this.bookToEdit.isbn = book.isbn;
         this.bookToEdit.price = book.price;
         this.bookToEdit.category = book.category;
@@ -32,7 +32,6 @@ class BookStore {
         this.bookToEdit.description = book.description;
         this.bookToEdit.authors = book.authors;
         this.bookToEdit.id = book.id;
-        console.log(this.bookToEdit.title);
     };
 
     @computed get watchChanged() {
