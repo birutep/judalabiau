@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8cc51dc-eca7-4f1b-a46f-d2b8452978cd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/stores/index.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/BookList.js" afterPath="$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/BookList.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/one_book/Book.js" afterPath="$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/one_book/Book.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/books/book_list_universal/BookListUniversal.js" afterPath="$PROJECT_DIR$/src/components/books/book_list_universal/BookListUniversal.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js" afterPath="$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/book_forms/book_reg_form/BookRegForm.js" afterPath="$PROJECT_DIR$/src/components/forms/book_forms/book_reg_form/BookRegForm.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm1.js" afterPath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm1.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm2.js" afterPath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm2.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm3.js" afterPath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm3.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/temp/books/book_list_for_admin/BookList.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/temp/books/book_list_for_admin/one_book/Book.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/temp/books/book_list_for_admin_prime/BookList.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/temp/forms/user_forms/user_reg_form/UserRegForm.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/user_list/one_user/User.js" afterPath="$PROJECT_DIR$/src/components/users/user_list/one_user/User.js" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Routes.js" afterPath="$PROJECT_DIR$/src/routes/Routes.js" />
-      <change beforePath="$PROJECT_DIR$/src/stores/BookStore.js" afterPath="$PROJECT_DIR$/src/stores/BookStore.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js" afterPath="$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,16 +25,6 @@
                 <element signature="e#0#51#0" expanded="true" />
                 <element signature="e#190#276#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookStore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stores/BookStore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -87,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1155">
-              <caret line="103" column="25" lean-forward="true" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+              <caret line="103" column="25" lean-forward="false" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -99,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/stores/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,6 +83,16 @@
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Book.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/one_book/Book.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+              <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -142,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookListUniversal.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BookListUniversal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/books/book_list_universal/BookListUniversal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="126">
+              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -209,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js" />
         <option value="$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/one_book/Book.js" />
         <option value="$PROJECT_DIR$/src/components/books/book_list_universal/BookListUniversal.js" />
+        <option value="$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js" />
       </list>
     </option>
   </component>
@@ -254,6 +235,11 @@
             <path>
               <item name="bookstore-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="bookstore-front" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -284,6 +270,23 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="books" type="462c0819:PsiDirectoryNode" />
               <item name="book_list_for_admin_minimal" type="462c0819:PsiDirectoryNode" />
+              <item name="one_book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="books" type="462c0819:PsiDirectoryNode" />
+              <item name="book_list_for_user_minimal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bookstore-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bookstore-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="books" type="462c0819:PsiDirectoryNode" />
+              <item name="book_list_for_user_minimal" type="462c0819:PsiDirectoryNode" />
               <item name="one_book" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -466,12 +469,12 @@
       <workItem from="1521480530538" duration="1800000" />
       <workItem from="1521482390580" duration="2781000" />
       <workItem from="1521630877496" duration="586000" />
-      <workItem from="1524303940742" duration="3336000" />
+      <workItem from="1524303940742" duration="4826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52621000" />
+    <option name="totallyTimeSpent" value="54111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -660,26 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/BookList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stores/BookStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -722,7 +705,7 @@
     <entry file="file://$PROJECT_DIR$/src/stores/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -730,7 +713,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
-          <caret line="103" column="25" lean-forward="true" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+          <caret line="103" column="25" lean-forward="false" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -740,7 +723,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/one_book/Book.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -758,13 +741,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/BookList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/books/book_list_universal/BookListUniversal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="126">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
