@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Link } from "react-router-dom";
+import {inject, observer} from "mobx-react";
 
 import "font-awesome/css/font-awesome.min.css";
 
+@observer
+@inject("bookStore")
 class User extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +24,9 @@ class User extends Component {
     deleteUser = e => {
         e.preventDefault();
         console.log("Vartotojas ištrintas");
-        axios.delete(USERS + this.props.singleUser.id);
+        axios.delete(USERS + this.props.singleUser.id).then(() => {
+            this.props.bookStore.changeState();
+        });
     };
 
     editUser = user => {

@@ -21,7 +21,6 @@ class BookStore {
     };
 
     @action editBook = (book) => {
-        console.log(book);
         this.bookToEdit.title = book.title;
         this.bookToEdit.released = book.released;
         this.bookToEdit.isbn = book.isbn;
