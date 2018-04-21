@@ -10,16 +10,19 @@ class BookRegForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            eAvailable: false,
+            rating: 0,
+            ratingCount: 0,
             title: "",
-            authors: "",
-            released: "",
+            releaseYear: "",
             isbn: "",
             price: "",
             category: "Apsakymas",
             count: "",
-            e_available: false,
             photopath: "",
-            description: ""
+            description: "",
+            authors: "",
+            id: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,7 +35,7 @@ class BookRegForm extends Component {
     }
 
     handleCheckbox() {
-        this.setState({e_available: !this.state.e_available});
+        this.setState({eAvailable: !this.state.eAvailable});
     }
 
     handleSubmit(event) {
@@ -40,35 +43,38 @@ class BookRegForm extends Component {
         event.preventDefault();
     }
 
-    saveBook(e) {
-        // Kažkodėl šitas preventDefault sugriauna Front validaciją :(
-        e.preventDefault();
+    saveBook() {
         axios
             .post(BOOKS, {
+                eAvailable: this.state.eAvailable,
+                rating: this.state.rating,
+                ratingCount: this.state.ratingCount,
                 title: this.state.title,
                 authors: this.state.authors,
-                releaseYear: this.state.released,
+                releaseYear: this.state.releaseYear,
                 isbn: this.state.isbn,
                 price: this.state.price === "" ? -1 : this.state.price,
                 category: this.state.category,
                 count: this.state.count,
-                e_available: this.state.e_available,
                 photopath: this.state.photopath,
                 description: this.state.description
             })
             .then(() => {
                 this.props.bookStore.changeState();
                 this.setState({
+                    eAvailable: false,
+                    rating: 0,
+                    ratingCount: 0,
                     title: "",
-                    authors: "",
-                    released: "",
+                    releaseYear: "",
                     isbn: "",
                     price: "",
                     category: "Apsakymas",
                     count: "",
-                    e_available: this.state.e_available,
                     photopath: "",
-                    description: ""
+                    description: "",
+                    authors: "",
+                    id: ""
                 });
             })
             .catch(function (error) {
@@ -119,12 +125,12 @@ class BookRegForm extends Component {
                     <label>
                         Leidimo metai:
                         <input
-                            name="released"
+                            name="releaseYear"
                             placeholder="Įveskite knygos leidimo metus"
                             className="placeholder"
                             type="text"
                             pattern="^\d{4}$"
-                            value={this.state.released}
+                            value={this.state.releaseYear}
                             onChange={this.handleChange}
                         />
                     </label>
@@ -223,11 +229,12 @@ class BookRegForm extends Component {
                     <label>
                         Elektroninė knyga:
                         <input
-                            name="e_available"
+                            name="eAvailable"
                             type="checkbox"
                             className="checkbox"
-                            value={this.state.e_available}
-                            onChange={this.handleChange}
+                            checked={this.state.eAvailable}
+                            value={this.state.eAvailable}
+                            onChange={this.handleCheckbox}
                         />
                     </label>
                     <br/>
