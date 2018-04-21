@@ -3,7 +3,6 @@ import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
 import { Messages } from "primereact/components/messages/Messages";
-//kitu moduliu komponentai
 import {
     FormWithConstraints,
     FieldFeedback
@@ -30,8 +29,9 @@ class UserRegForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.saveUser = this.saveUser.bind(this);
         this.showSuccess = this.showSuccess.bind(this);
-        this.saveUser = this.saveUser.bind(this);
+        this.showError = this.showError.bind(this);
     }
 
     handleChange(e) {
@@ -55,26 +55,29 @@ class UserRegForm extends Component {
         });
     }
 
-    clear() {
-        this.messages.clear();
+    showError() {
+        this.messages.show({
+            severity: "error",
+            summary: "Klaida registruojant pardavėją!"
+        });
     }
 
-    handleSubmit(event) {
-        // alert(
-        //     "Pardavėjas " +
-        //         this.state.fname +
-        //         " " +
-        //         this.state.lname +
-        //         " užregistruotas."
-        // );
-        event.preventDefault();
-    }
+    // handleSubmit(event) {
+    //     // alert(
+    //     //     "Pardavėjas " +
+    //     //         this.state.fname +
+    //     //         " " +
+    //     //         this.state.lname +
+    //     //         " užregistruotas."
+    //     // );
+    //     event.preventDefault();
+    // }
 
-    saveUser(e) {
+    handleSubmit(e) {
         if (this.state.password !== this.state.passwordrepeat) {
             return;
         }
-        e.preventDefault();
+        // e.preventDefault();
         this.form.validateFields();
         this.setState({ submitButtonDisabled: !this.form.isValid() });
         if (this.form.isValid()) {
@@ -90,14 +93,17 @@ class UserRegForm extends Component {
                     phone: this.state.phone
                 })
                 .then(response => {
-                    // if (response.status === 201) {
-                    this.showSuccess();
+                    if (response.status === 200) {
+                        this.showSuccess();
+                    } else {
+                        this.showUnsuccess();
+                    }
                     console.log(response.data);
                     console.log("User successfully added");
-                    // }
                 })
                 .catch(function(error) {
                     console.log(error);
+                    // this.showUnsuccess();
                 });
         }
     }
@@ -149,7 +155,6 @@ class UserRegForm extends Component {
                     noValidate
                 >
                     <h3>Registruoti pardavėją</h3>
-
                     <FormGroup for="fname">
                         <FormControlLabel htmlFor="fname">
                             Vardas <sup className="required">*</sup>
@@ -171,7 +176,6 @@ class UserRegForm extends Component {
                             <FieldFeedback
                                 // when={value => !/^[a-zA-Z\s]*$/.test(value)}
                                 when={value => !/^[a-zA-ZĀ-ž\s]*$/.test(value)}
-
                                 // warning
                             >
                                 Vardą turėtų sudaryti tik raidės
