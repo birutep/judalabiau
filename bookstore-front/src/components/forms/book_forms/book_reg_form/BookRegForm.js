@@ -20,16 +20,19 @@ class BookRegForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            eAvailable: false,
+            rating: 0,
+            ratingCount: 0,
             title: "",
-            authors: "",
-            released: "",
+            releaseYear: "",
             isbn: "",
             price: "",
             category: "Apsakymas",
             count: "",
-            e_available: false,
             photopath: "",
-            description: ""
+            description: "",
+            authors: "",
+            id: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,7 +53,7 @@ class BookRegForm extends Component {
     }
 
     handleCheckbox() {
-        this.setState({ e_available: !this.state.e_available });
+        this.setState({ eAvailable: !this.state.eAvailable });
     }
 
     showSuccess() {
@@ -73,52 +76,51 @@ class BookRegForm extends Component {
         event.preventDefault();
     }
 
-    saveBook(e) {
-        // Kažkodėl šitas preventDefault sugriauna Front validaciją :(
-        e.preventDefault();
-        this.form.validateFields();
-        this.setState({ submitButtonDisabled: !this.form.isValid() });
-        if (this.form.isValid()) {
-            axios
-                .post(BOOKS, {
-                    title: this.state.title,
-                    authors: this.state.authors,
-                    releaseYear: this.state.released,
-                    isbn: this.state.isbn,
-                    price: this.state.price === "" ? -1 : this.state.price,
-                    category: this.state.category,
-                    count: this.state.count,
-                    e_available: this.state.e_available,
-                    photopath: this.state.photopath,
-                    description: this.state.description
-                })
-                .then(response => {
-                    this.props.bookStore.changeState();
-                    this.setState({
-                        title: "",
-                        authors: "",
-                        released: "",
-                        isbn: "",
-                        price: "",
-                        category: "Apsakymas",
-                        count: "",
-                        e_available: this.state.e_available,
-                        photopath: "",
-                        description: ""
-                    });
-                    if (response.status === 200) {
-                        this.showSuccess();
-                    } else {
-                        this.showUnsuccess();
-                    }
-                    console.log(response.data);
-                    console.log("User successfully added");
-                })
-                .catch(function(error) {
-                    console.log("Klaida įvedant knygą" + error);
-                    // this.showUnsuccess();
+    saveBook() {
+        axios
+            .post(BOOKS, {
+                eAvailable: this.state.eAvailable,
+                rating: this.state.rating,
+                ratingCount: this.state.ratingCount,
+                title: this.state.title,
+                authors: this.state.authors,
+                releaseYear: this.state.releaseYear,
+                isbn: this.state.isbn,
+                price: this.state.price === "" ? -1 : this.state.price,
+                category: this.state.category,
+                count: this.state.count,
+                photopath: this.state.photopath,
+                description: this.state.description
+            })
+            .then(response => {
+                this.props.bookStore.changeState();
+                this.setState({
+                    eAvailable: false,
+                    rating: 0,
+                    ratingCount: 0,
+                    title: "",
+                    releaseYear: "",
+                    isbn: "",
+                    price: "",
+                    category: "Apsakymas",
+                    count: "",
+                    photopath: "",
+                    description: "",
+                    authors: "",
+                    id: ""
                 });
-        }
+                if (response.status === 200) {
+                    this.showSuccess();
+                } else {
+                    this.showError();
+                }
+                // console.log(response.data);
+                // console.log("book successfully added");
+            })
+            .catch(function(error) {
+                console.log("Klaida įvedant knygą" + error);
+                // this.showError();
+            });
     }
 
     render() {
@@ -178,23 +180,25 @@ class BookRegForm extends Component {
                         </FieldFeedbacks>
                     </FormGroup>
 
-                    <FormGroup for="released">
-                        <FormControlLabel htmlFor="released">
-                            Leidimo metai: <sup className="required">*</sup>
+                    <FormGroup for="releaseYear">
+                        <FormControlLabel htmlFor="releaseYear">
+                            Leidimo metai:
                         </FormControlLabel>
                         <FormControlInput
-                            type="released"
-                            id="released"
-                            name="released"
-                            value={this.state.released}
+                            type="text"
+                            id="releaseYear"
+                            name="releaseYear"
+                            value={this.state.releaseYear}
                             onChange={this.handleChange}
                             placeholder="Įveskite knygos leidimo metus"
-                            required
                             className="placeholder"
                         />
-                        <FieldFeedbacks for="released" show="all">
-                            <FieldFeedback when="valueMissing">
-                                Įveskite knygos leidimo metus
+                        <FieldFeedbacks for="releaseYear" show="all">
+                            <FieldFeedback
+                                warning
+                                when={value => !/^\d{0,4}$/.test(value)}
+                            >
+                                Įveskite tik metus, pvz. 2018
                             </FieldFeedback>
                         </FieldFeedbacks>
                     </FormGroup>
@@ -342,11 +346,12 @@ class BookRegForm extends Component {
                     <label>
                         Elektroninė knyga:
                         <input
-                            name="e_available"
+                            name="eAvailable"
                             type="checkbox"
                             className="checkbox"
-                            value={this.state.e_available}
-                            onChange={this.handleChange}
+                            checked={this.state.eAvailable}
+                            value={this.state.eAvailable}
+                            onChange={this.handleCheckbox}
                         />
                     </label>
                     <br />

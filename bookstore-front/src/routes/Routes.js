@@ -16,8 +16,8 @@ import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegis
 import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
 import UserList from "../components/users/user_list/UserList";
 
-@inject("bookStore")
 @observer
+@inject("bookStore")
 class Routes extends Component {
     render() {
         const { bookStore } = this.props;

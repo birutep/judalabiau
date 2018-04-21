@@ -5,10 +5,6 @@ import Book from "./one_book/Book";
 import { BOOKS } from "../../../server_links/ServerLinks";
 import SubHeader from "../../layout/sub_header/SubHeader";
 import { inject, observer } from "mobx-react";
-// import SubSubHeader from "../../layout/sub_header/sub_sub_header/SubSubHeader";
-// import { DataTable } from "primereact/components/datatable/DataTable";
-// import { Column } from "primereact/components/column/Column";
-// import "../../../../node_modules/primereact/resources/themes/voclain/theme.css";
 
 @inject("bookStore")
 @observer
