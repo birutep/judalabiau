@@ -18,18 +18,18 @@ class UserRegForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            fName: "",
+            lName: "",
             email: "",
-            fname: "",
-            lname: "",
+            phone: "",
             password: "",
             passwordrepeat: "",
-            role: 2,
-            phone: ""
+            role: 2
         };
         this.handleChange = this.handleChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.saveUser = this.saveUser.bind(this);
+        this.saveUser = this.saveUser.bind(this);
         this.showSuccess = this.showSuccess.bind(this);
         this.showError = this.showError.bind(this);
     }
@@ -62,30 +62,22 @@ class UserRegForm extends Component {
         });
     }
 
-    // handleSubmit(event) {
-    //     // alert(
-    //     //     "Pardavėjas " +
-    //     //         this.state.fname +
-    //     //         " " +
-    //     //         this.state.lname +
-    //     //         " užregistruotas."
-    //     // );
-    //     event.preventDefault();
-    // }
+    handleSubmit(event) {
+        event.preventDefault();
+    }
 
-    handleSubmit(e) {
+    saveUser() {
         if (this.state.password !== this.state.passwordrepeat) {
             return;
         }
-        // e.preventDefault();
         this.form.validateFields();
         this.setState({ submitButtonDisabled: !this.form.isValid() });
         if (this.form.isValid()) {
             axios
                 .post(USERS, {
                     email: this.state.email,
-                    fName: this.state.fname,
-                    lName: this.state.lname,
+                    fName: this.state.fName,
+                    lName: this.state.lName,
                     password: this.state.password,
                     address: this.state.address,
                     birthday: this.state.birthday,
@@ -96,53 +88,27 @@ class UserRegForm extends Component {
                     if (response.status === 200) {
                         this.showSuccess();
                     } else {
-                        this.showUnsuccess();
+                        this.showError();
                     }
                     console.log(response.data);
                     console.log("User successfully added");
+                    this.setState({
+                        email: "",
+                        fName: "",
+                        lName: "",
+                        password: "",
+                        passwordrepeat: "",
+                        role: 2,
+                        phone: ""
+                    });
                 })
                 .catch(function(error) {
                     console.log(error);
-                    // this.showUnsuccess();
+                    // this.showError(); // sita vieta issaukia Unhandled Rejection (TypeError): Cannot read property of undefined
+                    // Console raso: BookRegForm.js:126 Uncaught (in promise) TypeError: Cannot read property 'showError' of undefined
                 });
         }
     }
-
-    // saveUser(e) {
-    //     // ??? :(
-    //     e.preventDefault();
-    //     axios
-    //         .post(USERS, {
-    //             title: this.state.title,
-    //             authors: this.state.authors,
-    //             releaseYear: this.state.released,
-    //             isbn: this.state.isbn,
-    //             price: this.state.price === "" ? -1 : this.state.price,
-    //             category: this.state.category,
-    //             count: this.state.count,
-    //             e_available: this.state.e_available,
-    //             photopath: this.state.photopath,
-    //             description: this.state.description
-    //         })
-    //         .then(() => {
-    //             this.props.BookStore.changeState();
-    //             this.setState({
-    //                 title: "",
-    //                 authors: "",
-    //                 released: "",
-    //                 isbn: "",
-    //                 price: "",
-    //                 category: "Apsakymas",
-    //                 count: "",
-    //                 e_available: this.state.e_available,
-    //                 photopath: "",
-    //                 description: ""
-    //             });
-    //         })
-    //         .catch(function(error) {
-    //             console.log("Klaida įvedant knygą" + error);
-    //         });
-    // }
 
     render() {
         return (
@@ -152,58 +118,55 @@ class UserRegForm extends Component {
                         (this.form = formWithConstraints)
                     }
                     onSubmit={this.handleSubmit}
-                    noValidate
+                    // noValidate
                 >
                     <h3>Registruoti pardavėją</h3>
-                    <FormGroup for="fname">
-                        <FormControlLabel htmlFor="fname">
+                    <FormGroup for="fName">
+                        <FormControlLabel htmlFor="fName">
                             Vardas <sup className="required">*</sup>
                         </FormControlLabel>
                         <FormControlInput
-                            type="fname"
-                            id="fname"
-                            name="fname"
-                            value={this.state.fname}
+                            type="text"
+                            id="fName"
+                            name="fName"
+                            value={this.state.fName}
                             onChange={this.handleChange}
                             placeholder="Vardas"
                             required
                             className="placeholder"
                         />
-                        <FieldFeedbacks for="fname" show="all">
+                        <FieldFeedbacks for="fName" show="all">
                             <FieldFeedback when="valueMissing">
                                 Įveskite vardą
                             </FieldFeedback>
                             <FieldFeedback
-                                // when={value => !/^[a-zA-Z\s]*$/.test(value)}
                                 when={value => !/^[a-zA-ZĀ-ž\s]*$/.test(value)}
-                                // warning
                             >
                                 Vardą turėtų sudaryti tik raidės
                             </FieldFeedback>
                         </FieldFeedbacks>
                     </FormGroup>
 
-                    <FormGroup for="lname">
-                        <FormControlLabel htmlFor="lname">
+                    <FormGroup for="lName">
+                        <FormControlLabel htmlFor="lName">
                             Pavardė <sup className="required">*</sup>
                         </FormControlLabel>
                         <FormControlInput
-                            type="lname"
-                            id="lname"
-                            name="lname"
-                            value={this.state.lname}
+                            type="text"
+                            id="lName"
+                            name="lName"
+                            value={this.state.lName}
                             onChange={this.handleChange}
                             placeholder="Pavardė"
                             required
                             className="placeholder"
                         />
-                        <FieldFeedbacks for="lname" show="all">
+                        <FieldFeedbacks for="lName" show="all">
                             <FieldFeedback when="valueMissing">
                                 Įveskite pavardę
                             </FieldFeedback>
                             <FieldFeedback
                                 when={value => !/^[a-zA-ZĀ-ž\s]*$/.test(value)}
-                                // warning
                             >
                                 Pavardę turėtų sudaryti tik raidės
                             </FieldFeedback>
@@ -238,7 +201,7 @@ class UserRegForm extends Component {
 
                     <FormGroup for="phone">
                         <FormControlLabel htmlFor="phone">
-                            Telefonas <sup className="required">*</sup>
+                            Telefono numeris <sup className="required">*</sup>
                         </FormControlLabel>
                         <div className="ui-inputgroup">
                             <span className="ui-inputgroup-addon">370</span>
@@ -249,22 +212,17 @@ class UserRegForm extends Component {
                                 name="phone"
                                 value={this.state.phone}
                                 onChange={this.handleChange}
-                                // placeholder="370xxxxxxxx"
                                 required
                                 className="input-group"
                                 maxLength="8"
-                                // pattern="^(370)\d{8}$"
-                                // /^$|^(370)\d+$/
                             />
                         </div>
-
                         <FieldFeedbacks for="phone" show="all">
                             <FieldFeedback when="valueMissing">
                                 Įveskite telefono numerį
                             </FieldFeedback>
                             <FieldFeedback
                                 when={value => !/^\d{0,8}$/.test(value)}
-                                // warning
                             >
                                 Telefono numerį turi sudaryti tik skaičiai.
                             </FieldFeedback>
@@ -300,15 +258,11 @@ class UserRegForm extends Component {
                                 Slaptažodis turi būti ne trumpesnis nei 6
                                 simboliai
                             </FieldFeedback>
-                            <FieldFeedback
-                                when={value => !/\d/.test(value)}
-                                // warning
-                            >
+                            <FieldFeedback when={value => !/\d/.test(value)}>
                                 Slaptažodyje turi būti bent vienas skaičius
                             </FieldFeedback>
                             <FieldFeedback
                                 when={value => !/[a-zA-Z]/.test(value)}
-                                // warning
                             >
                                 Slaptažodyje turi būti bent viena raidė
                             </FieldFeedback>
@@ -337,15 +291,14 @@ class UserRegForm extends Component {
                         </FieldFeedbacks>
                     </FormGroup>
 
-                    <p className="required">
-                        <sup>*</sup> Privalomas laukas
-                    </p>
+                    {/* <p className="required">
+                        <sup>*</sup> Privalomi laukai
+                    </p> */}
 
                     <Button
                         label="Registruoti"
                         disabled={this.state.submitButtonDisabled}
-                        className="btn btn-primary"
-                        // onClick={this.saveUser}
+                        onClick={this.saveUser}
                         // onClick={this.showSuccess}
                     />
                     <Messages

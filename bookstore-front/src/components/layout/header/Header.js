@@ -12,7 +12,7 @@ const Header = () => {
                 style={{ textDecoration: "none" }}
             >
                 <Button
-                    label="&ensp;Knygų parduotuvėlė"
+                    label="&ensp;Knygų parduotuvė"
                     icon="fa fa-book"
                     cornerStyleClass="header_bookStore"
                 />
