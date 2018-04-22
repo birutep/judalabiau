@@ -6,7 +6,11 @@ import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
+<<<<<<< HEAD
 class UserEditFrom3 extends Component {
+=======
+class UserEditForm3 extends Component {
+>>>>>>> Modified UserEditForm3.js.
     constructor(props) {
         super(props);
         this.state = {
@@ -78,7 +82,7 @@ class UserEditFrom3 extends Component {
                     Administratoriaus vardas:
                         <input
                             name="fName"
-                            placeholder="Įveskite vardą"
+                            placeholder="Vardas"
                             className="placeholder"
                             required
                             type="text"
@@ -90,7 +94,11 @@ class UserEditFrom3 extends Component {
                     Administratoriaus pavardė:
                         <input
                             name="lName"
+<<<<<<< HEAD
                             placeholder="Įveskite pavrdę"
+=======
+                            placeholder="Pavardė"
+>>>>>>> Modified UserEditForm3.js.
                             className="placeholder"
                             required
                             type="text"
@@ -111,7 +119,23 @@ class UserEditFrom3 extends Component {
                         />
                     </label>
                     <label>
+<<<<<<< HEAD
                     Administratoriaus telefono numeris:
+=======
+                        Gimimo data:
+                        <input
+                            name="birthday"
+                            placeholder="mm/dd/yyyy"
+                            className="placeholder"
+                            // required
+                            type="text"
+                            value={this.state.birthday}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Telefono numeris:
+>>>>>>> Modified UserEditForm3.js.
                         <input
                             name="phone"
                             placeholder="Įveskite telefono numerį"
@@ -122,6 +146,21 @@ class UserEditFrom3 extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
+<<<<<<< HEAD
+=======
+                    <label>
+                        Adresas:
+                        <input
+                            name="address"
+                            placeholder=""
+                            className="placeholder"
+                            //required
+                            type="text"
+                            value={this.state.address}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+>>>>>>> Modified UserEditForm3.js.
                     <br />
                     <Button label="Redaguoti" onClick={this.updateUser} />
                 </form>
@@ -130,4 +169,8 @@ class UserEditFrom3 extends Component {
     }
 }
 
+<<<<<<< HEAD
 export default UserEditFrom3;
+=======
+export default UserEditForm3;
+>>>>>>> Modified UserEditForm3.js.
