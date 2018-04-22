@@ -6,6 +6,7 @@ import { Button } from "primereact/components/button/Button";
 const NavMenu = () => {
     return (
         <nav className="nav">
+            <h2>Neprisiregistraves</h2>
             <Link to="/">
                 <Button
                     label="&ensp;Pradinis puslapis"
@@ -13,14 +14,14 @@ const NavMenu = () => {
                     name="Pradinis puslapis"
                 />
             </Link>
-            <h2>User menu</h2>
-            <Link to="/books/3">
-                <Button label="&ensp;Visos knygos" icon="fa fa-globe" />
-            </Link>
             <Link to="/user/register/3" style={{ textDecoration: "none" }}>
                 <Button label="&ensp;Registruotis" icon="fa fa-user" />
             </Link>
-            <h2>Admin/sales menu</h2>
+            <h2>Pirkejas</h2>
+            <Link to="/books/3">
+                <Button label="&ensp;Visos knygos" icon="fa fa-globe" />
+            </Link>
+            <h2>Adminas/Pardavejas</h2>
             <Link to="/books/1">
                 <Button label="&ensp;Visos knygos" icon="fa fa-globe" />
             </Link>
