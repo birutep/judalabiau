@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "primereact/components/button/Button";
 import axios from "axios/index";
-import { BOOKS } from "../../../../server_links/ServerLinks";
+import { USERS } from "../../../../server_links/ServerLinks";
 
 class UserEditFrom1 extends Component {
     constructor(props) {
@@ -45,15 +45,16 @@ class UserEditFrom1 extends Component {
     }
 
     updateUser() {
-        console.log(
+        console
+            .log
             // "siunciam updeitui " +
             //     this.state.price +
             //     " tipas " +
             //     typeof this.state.price
-        );
+            ();
         // console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
-            .put(BOOKS + this.state.id, {
+            .put(USERS + this.state.id, {
                 id: this.state.id
             })
             .then(() => {

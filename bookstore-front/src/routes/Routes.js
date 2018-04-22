@@ -15,6 +15,10 @@ import UserRegForm3 from "../components/forms/user_forms/user_reg_form/UserRegis
 import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegisterForm2";
 import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
 import UserList from "../components/users/user_list/UserList";
+import UserEditFrom1 from "../components/forms/user_forms/user_edit_form/UserEditForm1";
+import UserEditFrom2 from "../components/forms/user_forms/user_edit_form/UserEditForm2";
+import UserEditFrom3 from "../components/forms/user_forms/user_edit_form/UserEditForm3";
+
 
 @observer
 @inject("bookStore")
@@ -85,6 +89,22 @@ class Routes extends Component {
                             path="/user/register/3"
                             component={UserRegForm3}
                         />
+
+                        {/* <=====User Edit=====> */}
+
+                        <Route
+                            path="/user/edit/1"
+                            component={UserEditFrom1}
+                        />
+                        <Route
+                            path="/user/edit/2"
+                            component={UserEditFrom2}
+                        />
+                        <Route
+                            path="/user/edit/3"
+                            component={UserEditFrom3}
+                        />
+
                         <Route component={NotFound} />
                     </Switch>
                     <Footer />

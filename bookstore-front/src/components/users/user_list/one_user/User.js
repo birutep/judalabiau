@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Link } from "react-router-dom";
-import { inject, observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 
 import "font-awesome/css/font-awesome.min.css";
 
@@ -20,6 +20,7 @@ class User extends Component {
                 role: props.singleUser.role
             }
         };
+        console.log(props.singleUser);
     }
 
     deleteUser = e => {
@@ -56,7 +57,7 @@ class User extends Component {
                                 : "-"}
                 </td>
                 <td className="mini">
-                    <Link to="users/edit">
+                    <Link to="user/edit/1">
                         <i
                             className="fa fa-pencil fa-fw"
                             onClick={() => this.editUser(this.props.singleUser)}
