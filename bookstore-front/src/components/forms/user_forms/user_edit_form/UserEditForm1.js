@@ -100,7 +100,7 @@ class UserEditForm1 extends Component {
                         Pavardė:
                         <input
                             name="lName"
-                            placeholder="Įveskite pavrdę"
+                            placeholder="Pavardė"
                             className="placeholder"
                             required
                             type="text"
@@ -109,7 +109,7 @@ class UserEditForm1 extends Component {
                         />
                     </label>
                     <label>
-                        El.paštas:
+                    El. paštas:
                         <input
                             name="email"
                             placeholder="elektroninis@paštas.lt"

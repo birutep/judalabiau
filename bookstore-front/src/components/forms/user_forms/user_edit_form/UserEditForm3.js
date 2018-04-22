@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 import axios from "axios/index";
 import {inject, observer} from "mobx-react";
 import { USERS } from "../../../../server_links/ServerLinks";
@@ -17,7 +17,8 @@ class UserEditForm3 extends Component {
                 lName: "",
                 email: "",
                 phone: "",
-                role:1
+                address: "",
+                role: 3
             },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
@@ -41,7 +42,7 @@ class UserEditForm3 extends Component {
     }
 
     handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({[event.target.name]: event.target.value});
     }
 
     handleSubmit(event) {
@@ -57,106 +58,107 @@ class UserEditForm3 extends Component {
                 lName: this.state.lName,
                 email: this.state.email,
                 phone: this.state.phone,
-                role:1
+                address: this.state.address,
+                role: 3
             })
             .then(() => {
                 this.props.userStore.changeState();
                 this.props.userStore.editUser(this.state.emptyUser);
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.log("Klaida redaguojant vartotoją" + error);
             });
     }
+
     render() {
         return (<Fragment>
-            <Subheader
-                label={
-                    "Vartotojo, kurio id " +
-                    this.state.id +
-                    " redagavimas"
-                }
-            />
-            <div className="reg_form">
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                    Administratoriaus vardas:
-                        <input
-                            name="fName"
-                            placeholder="Vardas"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.fName}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                    Administratoriaus pavardė:
-                        <input
-                            name="lName"
-                            placeholder="Pavardė"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.lName}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                    Administratoriaus elektronionio pašto adresas:
-                        <input
-                            name="email"
-                            placeholder="Įveskite elektronionio pašto adresą"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        Gimimo data:
-                        <input
-                            name="birthday"
-                            placeholder="mm/dd/yyyy"
-                            className="placeholder"
-                             required
-                            type="text"
-                            value={this.state.birthday}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        Telefono numeris:
-                        <input
-                            name="phone"
-                            placeholder="Įveskite telefono numerį"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.phone}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        Adresas:
-                        <input
-                            name="address"
-                            placeholder=""
-                            className="placeholder"
-                            //required
-                            type="text"
-                            value={this.state.address}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <br />
-                    <Button label="Redaguoti" onClick={this.updateUser} />
-                </form>
-            </div>
+                <Subheader
+                    label={
+                        "Vartotojo, kurio id " +
+                        this.state.id +
+                        " redagavimas"
+                    }
+                />
+                <div className="reg_form">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Vardas:
+                            <input
+                                name="fName"
+                                placeholder="Vardas"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.fName}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Pavardė:
+                            <input
+                                name="lName"
+                                placeholder="Pavardė"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.lName}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            El.paštas:
+                            <input
+                                name="email"
+                                placeholder="elektroninis@paštas.lt"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Gimimo data:
+                            <input
+                                name="birthday"
+                                placeholder="mm/dd/yyyy"
+                                className="placeholder"
+                                type="text"
+                                value={this.state.birthday}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Telefono numeris:
+                            <input
+                                name="phone"
+                                placeholder="Įveskite telefono numerį"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.phone}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Adresas:
+                            <input
+                                name="address"
+                                placeholder=""
+                                className="placeholder"
+                                //required
+                                type="text"
+                                value={this.state.address}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <br/>
+                        <Button label="Pakeisti" onClick={this.updateUser}/>
+                    </form>
+                </div>
             </Fragment>
         );
     }
 }
 
-export default UserEditForm3;
+    export default UserEditForm3;
