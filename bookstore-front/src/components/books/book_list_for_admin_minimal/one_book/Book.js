@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios";
-import { BOOKS } from "../../../../server_links/ServerLinks";
-import { inject, observer } from "mobx-react";
-import { Link } from "react-router-dom";
+import {BOOKS} from "../../../../server_links/ServerLinks";
+import {inject, observer} from "mobx-react";
+import {Link} from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
 
@@ -26,7 +26,6 @@ class Book extends Component {
                 id: props.myBook.id
             }
         };
-        console.log(props.myBook);
     }
 
     deleteBook = e => {

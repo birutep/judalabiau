@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { inject, observer } from "mobx-react";
+import React, {Component, Fragment} from "react";
+import {inject, observer} from "mobx-react";
 //primereact style
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/omega/theme.scss";
@@ -9,14 +9,14 @@ import "./App.css";
 //custom elementai
 import Routes from "./routes/Routes.js";
 
-@inject("bookStore")
+@inject("bookStore", "userStore")
 @observer
 class App extends Component {
     render() {
         return (
             <Fragment>
                 <div className="apps">
-                    <Routes />
+                    <Routes/>
                 </div>
             </Fragment>
         );

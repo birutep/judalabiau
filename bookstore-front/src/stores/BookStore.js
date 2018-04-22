@@ -1,4 +1,4 @@
-import {observable, action, computed} from 'mobx'
+import {action, computed, observable} from 'mobx'
 
 class BookStore {
     @observable changed = false;
@@ -39,6 +39,6 @@ class BookStore {
     };
 }
 
-const store = new BookStore();
+const bookStore = new BookStore();
 
-export default store;
+export default bookStore;

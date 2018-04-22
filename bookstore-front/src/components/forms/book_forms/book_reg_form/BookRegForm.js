@@ -1,19 +1,11 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios/index";
-import { inject, observer } from "mobx-react";
-import { BOOKS } from "../../../../server_links/ServerLinks";
-import { Button } from "primereact/components/button/Button";
-import { Messages } from "primereact/components/messages/Messages";
-import {
-    FormWithConstraints,
-    FieldFeedback
-} from "react-form-with-constraints";
-import {
-    FieldFeedbacks,
-    FormGroup,
-    FormControlLabel,
-    FormControlInput
-} from "react-form-with-constraints-bootstrap4";
+import {inject, observer} from "mobx-react";
+import {BOOKS} from "../../../../server_links/ServerLinks";
+import {Button} from "primereact/components/button/Button";
+import {Messages} from "primereact/components/messages/Messages";
+import {FieldFeedback, FormWithConstraints} from "react-form-with-constraints";
+import {FieldFeedbacks, FormControlInput, FormControlLabel, FormGroup} from "react-form-with-constraints-bootstrap4";
 
 @inject("bookStore")
 @observer
@@ -53,14 +45,14 @@ class BookRegForm extends Component {
     }
 
     handleCheckbox() {
-        this.setState({ eAvailable: !this.state.eAvailable });
+        this.setState({eAvailable: !this.state.eAvailable});
     }
 
     showSuccess() {
         this.messages.show({
             severity: "success",
             summary:
-                '"' + this.state.title + '" užregistruota Knygų parduotuvėje.'
+            '"' + this.state.title + '" užregistruota Knygų parduotuvėje.'
         });
     }
 
@@ -79,7 +71,7 @@ class BookRegForm extends Component {
 
     saveBook() {
         this.form.validateFields();
-        this.setState({ submitButtonDisabled: !this.form.isValid() });
+        this.setState({submitButtonDisabled: !this.form.isValid()});
         if (this.form.isValid()) {
             axios
                 .post(BOOKS, {
@@ -121,7 +113,7 @@ class BookRegForm extends Component {
                     // }
                     console.log(response.data);
                 })
-                .catch(function(error) {
+                .catch(function (error) {
                     console.log("Klaida įvedant knygą" + error);
                     // this.showError(); // sita vieta issaukia Unhandled Rejection (TypeError): Cannot read property of undefined
                     // Console raso: BookRegForm.js:126 Uncaught (in promise) TypeError: Cannot read property 'showError' of undefined
@@ -358,7 +350,7 @@ class BookRegForm extends Component {
                             onChange={this.handleCheckbox}
                         />
                     </label>
-                    <br />
+                    <br/>
 
                     <label>
                         Aprašymas:
@@ -368,7 +360,7 @@ class BookRegForm extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                    <br />
+                    <br/>
                     {/* <p className="required">
                         <sup>*</sup> Privalomi laukai
                     </p> */}

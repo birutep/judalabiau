@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios";
-import { USERS } from "../../../../server_links/ServerLinks";
-import { inject, observer } from "mobx-react";
-import { Link } from "react-router-dom";
+import {USERS} from "../../../../server_links/ServerLinks";
+import {inject, observer} from "mobx-react";
+import {Link} from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
 
@@ -20,12 +20,10 @@ class User extends Component {
                 role: props.singleUser.role
             }
         };
-        console.log(props.singleUser);
     }
 
     deleteUser = e => {
         e.preventDefault();
-        console.log("Vartotojas ištrintas");
         axios.delete(USERS + this.props.singleUser.id).then(() => {
             this.props.userStore.changeState();
         });

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import BookForAdmins from '../book_list_for_admin_minimal/BookList'
 import BookForUsers from '../book_list_for_user_minimal/BookList'
-import {observer, inject} from "mobx-react";
+import {inject, observer} from "mobx-react";
 
 @inject('bookStore')
 @observer

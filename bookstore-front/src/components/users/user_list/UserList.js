@@ -1,60 +1,62 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios";
 //custom elementai
 import User from "./one_user/User";
-import { USERS } from "../../../server_links/ServerLinks";
+import {USERS} from "../../../server_links/ServerLinks";
 import SubHeader from "../../layout/sub_header/SubHeader";
-import { inject, observer } from "mobx-react";
+import {inject, observer} from "mobx-react";
 
 @inject("userStore")
 @observer
 class UserList extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             users: []
         };
     }
 
     componentDidMount() {
-        this.getAllBooks();
+        this.getAllUsers();
     }
 
     componentWillReceiveProps() {
-        this.getAllBooks();
+        console.log('gavo props');
+        this.getAllUsers();
     }
 
-    getAllBooks() {
+    getAllUsers() {
         axios
             .get(USERS)
-            .then(response => this.setState({ users: response.data }));
+            .then(response => this.setState({users: response.data}));
     }
 
     render() {
         const userAsComponent = this.state.users.map(u => {
-            return <User key={u.id} singleUser={u} />;
+            return <User key={u.id} singleUser={u}/>;
         });
 
         return (
             <div>
-                <SubHeader label="Visi vartotojai" />
+                <SubHeader label="Visi vartotojai"/>
                 <div className="books books_for_admin_area">
                     <table>
                         <thead>
-                            <tr>
-                                <th>Vardas</th>
-                                <th>Pavardė</th>
-                                <th>El paštas</th>
-                                <th>Telefono numeris</th>
-                                <th>Rolė</th>
-                                <th />
-                                <th />
-                            </tr>
+                        <tr>
+                            <th>Vardas</th>
+                            <th>Pavardė</th>
+                            <th>El paštas</th>
+                            <th>Telefono numeris</th>
+                            <th>Rolė</th>
+                            <th/>
+                            <th/>
+                        </tr>
                         </thead>
 
                         <tbody>{userAsComponent}</tbody>
                     </table>
-                </div>{" "}
+                </div>
+                {" "}
             </div>
         );
     }
