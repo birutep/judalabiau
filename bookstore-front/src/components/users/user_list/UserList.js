@@ -21,7 +21,6 @@ class UserList extends Component {
     }
 
     componentWillReceiveProps() {
-        console.log('gavo props');
         this.getAllUsers();
     }
 
@@ -32,8 +31,8 @@ class UserList extends Component {
     }
 
     render() {
-        const userAsComponent = this.state.users.map(u => {
-            return <User key={u.id} singleUser={u}/>;
+        const usersAsComponent = this.state.users.map(u => {
+            return <User key={u.id} singleUser={u} />;
         });
 
         return (
@@ -53,10 +52,9 @@ class UserList extends Component {
                         </tr>
                         </thead>
 
-                        <tbody>{userAsComponent}</tbody>
+                        <tbody>{usersAsComponent}</tbody>
                     </table>
                 </div>
-                {" "}
             </div>
         );
     }

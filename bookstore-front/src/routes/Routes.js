@@ -100,18 +100,9 @@ class Routes extends Component {
 
                         {/* <=====User Edit=====> */}
 
-                        <Route
-                            path="/user/edit/1"
-                            component={UserEditFrom1}
-                        />
-                        <Route
-                            path="/user/edit/2"
-                            component={UserEditFrom2}
-                        />
-                        <Route
-                            path="/user/edit/3"
-                            component={UserEditFrom3}
-                        />
+                        <Route path="/user/edit/1" component={UserEditFrom1}/>
+                        <Route path="/user/edit/2" component={UserEditFrom2}/>
+                        <Route path="/user/edit/3" component={UserEditFrom3}/>
 
                         <Route component={NotFound}/>
                     </Switch>

@@ -27,12 +27,13 @@ class User extends Component {
         axios.delete(USERS + this.props.singleUser.id).then(() => {
             this.props.userStore.changeState();
         });
+        console.log("Vartotojas ištrintas");
     };
 
     editUser = user => {
-        console.log("User role: " + user.role);
         this.props.userStore.editUser(user);
         this.props.userStore.changeState();
+        console.log("User role: " + user.role);
     };
 
     render() {
