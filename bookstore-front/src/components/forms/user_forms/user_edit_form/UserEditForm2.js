@@ -53,17 +53,10 @@ class UserEditFrom2 extends Component {
             .put(USERS + this.state.id, {
                 id: this.state.id,
                 fName: this.state.fName,
-<<<<<<< HEAD
-                lName: this.state.lName,
-                email: this.state.email,
-                phone: this.state.phone,
-                role:2
-=======
                 lName: this.state.fName,
                 email: this.state.email,
                 phone: this.state.phone,
                 role: 2
->>>>>>> Mnor fixed in UserEditForm1/2/3
             })
             .then(() => {
                 this.props.userStore.changeState();

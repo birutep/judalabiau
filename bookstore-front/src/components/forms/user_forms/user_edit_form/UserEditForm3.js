@@ -6,11 +6,7 @@ import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
-<<<<<<< HEAD
-class UserEditFrom3 extends Component {
-=======
 class UserEditForm3 extends Component {
->>>>>>> Modified UserEditForm3.js.
     constructor(props) {
         super(props);
         this.state = {
@@ -94,11 +90,7 @@ class UserEditForm3 extends Component {
                     Administratoriaus pavardė:
                         <input
                             name="lName"
-<<<<<<< HEAD
-                            placeholder="Įveskite pavrdę"
-=======
                             placeholder="Pavardė"
->>>>>>> Modified UserEditForm3.js.
                             className="placeholder"
                             required
                             type="text"
@@ -119,9 +111,6 @@ class UserEditForm3 extends Component {
                         />
                     </label>
                     <label>
-<<<<<<< HEAD
-                    Administratoriaus telefono numeris:
-=======
                         Gimimo data:
                         <input
                             name="birthday"
@@ -135,7 +124,6 @@ class UserEditForm3 extends Component {
                     </label>
                     <label>
                         Telefono numeris:
->>>>>>> Modified UserEditForm3.js.
                         <input
                             name="phone"
                             placeholder="Įveskite telefono numerį"
@@ -146,8 +134,6 @@ class UserEditForm3 extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-<<<<<<< HEAD
-=======
                     <label>
                         Adresas:
                         <input
@@ -160,7 +146,6 @@ class UserEditForm3 extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
->>>>>>> Modified UserEditForm3.js.
                     <br />
                     <Button label="Redaguoti" onClick={this.updateUser} />
                 </form>
@@ -169,8 +154,4 @@ class UserEditForm3 extends Component {
     }
 }
 
-<<<<<<< HEAD
-export default UserEditFrom3;
-=======
 export default UserEditForm3;
->>>>>>> Modified UserEditForm3.js.

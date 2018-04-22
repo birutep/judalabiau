@@ -6,11 +6,7 @@ import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
-<<<<<<< HEAD
-class UserEditFrom1 extends Component {
-=======
 class UserEditForm1 extends Component {
->>>>>>> Modified UserEditForm3.js.
     constructor(props) {
         super(props);
         this.state = {
@@ -67,16 +63,10 @@ class UserEditForm1 extends Component {
                 id: this.state.id,
                 fName: this.props.fName,
                 lName: this.props.fName,
-<<<<<<< HEAD
-                dateOfBirth: this.props.email,
-                phone: this.props.phone,
-                role:1
-=======
                 email: this.props.email,
                 birthday: this.props.birthday,
                 phone: this.props.phone,
                 address: this.props.address
->>>>>>> Mnor fixed in UserEditForm1/2/3
             })
             .then(() => {
                 this.props.userStore.changeState();
@@ -107,11 +97,7 @@ class UserEditForm1 extends Component {
                         Pavardė:
                         <input
                             name="lName"
-<<<<<<< HEAD
-                            placeholder="Įveskite pavrdę"
-=======
                             placeholder="Pavardė"
->>>>>>> Modified UserEditForm3.js.
                             className="placeholder"
                             required
                             type="text"
@@ -120,11 +106,7 @@ class UserEditForm1 extends Component {
                         />
                     </label>
                     <label>
-<<<<<<< HEAD
-                        El.paštas:
-=======
                     El.paštas:
->>>>>>> Modified UserEditForm3.js.
                         <input
                             name="email"
                             placeholder="elektroninis@paštas.lt"
@@ -179,8 +161,4 @@ class UserEditForm1 extends Component {
     }
 }
 
-<<<<<<< HEAD
-export default UserEditFrom1;
-=======
 export default UserEditForm1;
->>>>>>> Modified UserEditForm3.js.
