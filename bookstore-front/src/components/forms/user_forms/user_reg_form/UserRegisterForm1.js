@@ -98,7 +98,7 @@ class UserRegForm extends Component {
                         phone: "",
                         password: "",
                         passwordrepeat: "",
-                        role: 1
+                        role: 3
                     });
                 })
                 .catch(function(error) {
