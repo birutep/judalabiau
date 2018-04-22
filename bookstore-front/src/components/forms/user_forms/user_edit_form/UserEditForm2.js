@@ -52,7 +52,12 @@ class UserEditFrom2 extends Component {
         console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
             .put(USERS + this.state.id, {
-                id: this.state.id
+                id: this.state.id,
+                fName: this.state.fName,
+                lName: this.state.fName,
+                email: this.state.email,
+                phone: this.state.phone,
+                role: 2
             })
             .then(() => {
                 this.props.userStore.changeState();
@@ -71,10 +76,10 @@ class UserEditFrom2 extends Component {
                         redagavimas
                     </h3>
                     <label>
-                        Pardavėjo vardas:
+                        Vardas:
                         <input
                             name="fName"
-                            placeholder="Įveskite vardą"
+                            placeholder="Vardas"
                             className="placeholder"
                             required
                             type="text"
@@ -83,10 +88,10 @@ class UserEditFrom2 extends Component {
                         />
                     </label>
                     <label>
-                        Pardavėjo pavardė:
+                        Pavardė:
                         <input
                             name="lName"
-                            placeholder="Įveskite pavrdę"
+                            placeholder="Pavardė"
                             className="placeholder"
                             required
                             type="text"
@@ -95,10 +100,10 @@ class UserEditFrom2 extends Component {
                         />
                     </label>
                     <label>
-                        Pardavėjo elektronionio pašto adresas:
+                        El.paštas:
                         <input
                             name="email"
-                            placeholder="Įveskite elektronionio pašto adresą"
+                            placeholder="elektronionis@paštas.lt"
                             className="placeholder"
                             required
                             type="text"
@@ -107,7 +112,7 @@ class UserEditFrom2 extends Component {
                         />
                     </label>
                     <label>
-                        Pardavėjo telefono numeris:
+                        Telefono numeris:
                         <input
                             name="phone"
                             placeholder="Įveskite telefono numerį"

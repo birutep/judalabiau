@@ -14,17 +14,19 @@ import Footer from "../components/layout/footer/Footer";
 import UserRegForm3 from "../components/forms/user_forms/user_reg_form/UserRegisterForm3";
 import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegisterForm2";
 import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
+import user from "../components/users/user_list/one_user/User";
 import UserList from "../components/users/user_list/UserList";
 import UserEditFrom1 from "../components/forms/user_forms/user_edit_form/UserEditForm1";
 import UserEditFrom2 from "../components/forms/user_forms/user_edit_form/UserEditForm2";
 import UserEditFrom3 from "../components/forms/user_forms/user_edit_form/UserEditForm3";
 
-
 @observer
 @inject("bookStore")
+@inject("userStore")
 class Routes extends Component {
     render() {
         const { bookStore } = this.props;
+        const { userStore } = this.props;
         return (
             <BrowserRouter>
                 <Fragment>
@@ -40,6 +42,17 @@ class Routes extends Component {
                                     rol={3}
                                     bookStatus={book}
                                     changed={bookStore.changed}
+                                />
+                            )}
+                        />
+                        {/* <=====Danieliaus====> */}
+                        <Route
+                            exact
+                            path="/users"
+                            render={() => (
+                                <UserList
+                                    userStatus={user}
+                                    changed={userStore.changed}
                                 />
                             )}
                         />
@@ -92,18 +105,9 @@ class Routes extends Component {
 
                         {/* <=====User Edit=====> */}
 
-                        <Route
-                            path="/user/edit/1"
-                            component={UserEditFrom1}
-                        />
-                        <Route
-                            path="/user/edit/2"
-                            component={UserEditFrom2}
-                        />
-                        <Route
-                            path="/user/edit/3"
-                            component={UserEditFrom3}
-                        />
+                        <Route path="/user/edit/1" component={UserEditFrom1} />
+                        <Route path="/user/edit/2" component={UserEditFrom2} />
+                        <Route path="/user/edit/3" component={UserEditFrom3} />
 
                         <Route component={NotFound} />
                     </Switch>

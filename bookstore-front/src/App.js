@@ -10,6 +10,7 @@ import "./App.css";
 import Routes from "./routes/Routes.js";
 
 @inject("bookStore")
+@inject("userStore")
 @observer
 class App extends Component {
     render() {
