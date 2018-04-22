@@ -5,6 +5,7 @@
 <<<<<<< HEAD
     <list default="true" id="f8cc51dc-eca7-4f1b-a46f-d2b8452978cd" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm1.js" afterPath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm1.js" />
       <change beforePath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm3.js" afterPath="$PROJECT_DIR$/src/components/forms/user_forms/user_edit_form/UserEditForm3.js" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/main/Main.js" afterPath="$PROJECT_DIR$/src/components/layout/main/Main.js" />
@@ -13,6 +14,8 @@
 =======
     <list default="true" id="f8cc51dc-eca7-4f1b-a46f-d2b8452978cd" name="Default" comment="">
 >>>>>>> user list refreshes after delete
+=======
+>>>>>>> klaidu vediams vartotojui registraciju formose
       <change beforePath="" afterPath="$PROJECT_DIR$/src/components/users/user_list_wrapper/UserListWrapper.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
@@ -21,7 +24,11 @@
       <change beforePath="$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/BookList.js" afterPath="$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/BookList.js" />
       <change beforePath="$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js" afterPath="$PROJECT_DIR$/src/components/books/book_list_for_user_minimal/one_book/Book.js" />
       <change beforePath="$PROJECT_DIR$/src/components/books/book_list_universal/BookListUniversal.js" afterPath="$PROJECT_DIR$/src/components/books/book_list_universal/BookListUniversal.js" />
+=======
+      <change beforePath="$PROJECT_DIR$/../bookstore-back/src/test/java/lt/judalabiau/BookStore/users/UserServiceTest.java" afterPath="$PROJECT_DIR$/../bookstore-back/src/test/java/lt/judalabiau/BookStore/users/UserServiceTest.java" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
       <change beforePath="$PROJECT_DIR$/src/components/forms/book_forms/book_reg_form/BookRegForm.js" afterPath="$PROJECT_DIR$/src/components/forms/book_forms/book_reg_form/BookRegForm.js" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/components/users/user_list/UserList.js" afterPath="$PROJECT_DIR$/src/components/users/user_list/UserList.js" />
       <change beforePath="$PROJECT_DIR$/src/components/users/user_list/one_user/User.js" afterPath="$PROJECT_DIR$/src/components/users/user_list/one_user/User.js" />
       <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
@@ -30,6 +37,10 @@
       <change beforePath="$PROJECT_DIR$/src/stores/UserStore.js" afterPath="$PROJECT_DIR$/src/stores/UserStore.js" />
 <<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+=======
+      <change beforePath="$PROJECT_DIR$/src/components/forms/user_forms/user_reg_form/UserRegisterForm2.js" afterPath="$PROJECT_DIR$/src/components/forms/user_forms/user_reg_form/UserRegisterForm2.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/user_forms/user_reg_form/UserRegisterForm3.js" afterPath="$PROJECT_DIR$/src/components/forms/user_forms/user_reg_form/UserRegisterForm3.js" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
     </list>
 =======
     <list default="true" id="f8cc51dc-eca7-4f1b-a46f-d2b8452978cd" name="Default" comment="" />
@@ -49,9 +60,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="BookRegForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BookRegForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/forms/book_forms/book_reg_form/BookRegForm.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             <state relative-caret-position="664">
@@ -61,11 +73,31 @@
               <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
 >>>>>>> user list refreshes after delete
 =======
+=======
+>>>>>>> klaidu vediams vartotojui registraciju formose
             <state relative-caret-position="-4922">
               <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
 >>>>>>> user list refreshes after delete
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
+=======
+            <state relative-caret-position="-4901">
+              <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookEditForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5607">
+              <caret line="267" column="29" lean-forward="false" selection-start-line="267" selection-start-column="29" selection-end-line="267" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
               </folding>
             </state>
           </provider>
@@ -129,6 +161,7 @@
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="538">
               <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
 =======
@@ -139,6 +172,14 @@
             <state relative-caret-position="538">
               <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
 >>>>>>> user list refreshes after delete
+=======
+            <state relative-caret-position="538">
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+=======
+            <state relative-caret-position="399">
+              <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
+>>>>>>> klaidu vediams vartotojui registraciju formose
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#86#121#0" expanded="true" />
@@ -339,6 +380,7 @@
         <option value="$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/one_book/Book.js" />
         <option value="$PROJECT_DIR$/src/components/books/book_list_for_admin_minimal/BookList.js" />
         <option value="$PROJECT_DIR$/src/components/forms/book_forms/book_reg_form/BookRegForm.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/components/users/user_list/UserList.js" />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -354,7 +396,12 @@
         <option value="$PROJECT_DIR$/src/routes/Routes.js" />
         <option value="$PROJECT_DIR$/src/stores/BookStore.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+=======
+=======
+>>>>>>> klaidu vediams vartotojui registraciju formose
+>>>>>>> klaidu vediams vartotojui registraciju formose
       </list>
     </option>
   </component>
@@ -393,11 +440,15 @@
       <pane id="Scope" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="Scratches" />
 =======
 >>>>>>> user list refreshes after delete
 =======
 >>>>>>> user list refreshes after delete
+=======
+      <pane id="Scratches" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -548,11 +599,14 @@
       </pane>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> user list refreshes after delete
       <pane id="Scratches" />
 >>>>>>> user list refreshes after delete
+=======
+>>>>>>> klaidu vediams vartotojui registraciju formose
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -653,12 +707,20 @@
 >>>>>>> intellij stuff. :(
 =======
       <workItem from="1524403622500" duration="8131000" />
+<<<<<<< HEAD
       <workItem from="1524424802538" duration="277000" />
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+=======
+=======
+      <workItem from="1524423930600" duration="43000" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
+>>>>>>> klaidu vediams vartotojui registraciju formose
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -675,6 +737,12 @@
 =======
     <option name="totallyTimeSpent" value="70253000" />
 >>>>>>> user list refreshes after delete
+=======
+    <option name="totallyTimeSpent" value="70253000" />
+=======
+    <option name="totallyTimeSpent" value="70019000" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
+>>>>>>> klaidu vediams vartotojui registraciju formose
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -685,6 +753,7 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22234891" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19777896" sideWeight="0.44651952" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -699,8 +768,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
 >>>>>>> user list refreshes after delete
 =======
+=======
+>>>>>>> klaidu vediams vartotojui registraciju formose
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19777896" sideWeight="0.44651952" order="2" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19777896" sideWeight="0.44651952" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
 >>>>>>> user list refreshes after delete
@@ -975,6 +1050,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#114#163#0" expanded="true" />
+          </folding>
+>>>>>>> klaidu vediams vartotojui registraciju formose
         </state>
       </provider>
     </entry>
@@ -991,6 +1080,7 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1000,6 +1090,21 @@
 >>>>>>> user list refreshes after delete
           <caret line="267" column="29" lean-forward="false" selection-start-line="267" selection-start-column="29" selection-end-line="267" selection-end-column="29" />
 =======
+=======
+=======
+    <entry file="file://$PROJECT_DIR$/src/components/users/user_list/UserList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#86#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> klaidu vediams vartotojui registraciju formose
+>>>>>>> klaidu vediams vartotojui registraciju formose
     <entry file="file://$PROJECT_DIR$/src/components/users/user_list/one_user/User.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1022,9 +1127,17 @@
 =======
     <entry file="file://$PROJECT_DIR$/src/components/forms/book_forms/book_edit_form/BookEditForm.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="5502">
           <caret line="267" column="27" lean-forward="false" selection-start-line="267" selection-start-column="27" selection-end-line="267" selection-end-column="27" />
           <folding />
+=======
+        <state relative-caret-position="5607">
+          <caret line="267" column="29" lean-forward="false" selection-start-line="267" selection-start-column="29" selection-end-line="267" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+>>>>>>> klaidu vediams vartotojui registraciju formose
         </state>
       </provider>
     </entry>
@@ -1106,6 +1219,7 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="664">
           <caret line="379" column="0" lean-forward="false" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
 =======
@@ -1113,6 +1227,8 @@
           <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
 >>>>>>> user list refreshes after delete
 =======
+=======
+>>>>>>> klaidu vediams vartotojui registraciju formose
         <state relative-caret-position="-4922">
           <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
 >>>>>>> user list refreshes after delete
@@ -1207,6 +1323,12 @@
           <folding>
             <element signature="e#0#49#0" expanded="true" />
             <element signature="e#114#163#0" expanded="true" />
+=======
+        <state relative-caret-position="-4901">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+>>>>>>> klaidu vediams vartotojui registraciju formose
           </folding>
         </state>
       </provider>
