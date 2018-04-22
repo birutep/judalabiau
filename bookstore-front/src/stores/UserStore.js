@@ -8,6 +8,7 @@ class UserStore {
         email: "",
         phone: "",
         role: "",
+        address: "",
         id: ""
     };
 

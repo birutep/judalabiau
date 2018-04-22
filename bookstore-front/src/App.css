@@ -170,7 +170,8 @@ nav button:focus {
     float: left;
     padding: 13px;
     color: #52617a;
-    font-size: 17px;
+    font-size: 22px;
+    font-weight: bolder;
 }
 
 /*---------------------------------Main-------------------------------------------*/

@@ -1,11 +1,20 @@
-import React, {Component} from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios/index";
-import {inject, observer} from "mobx-react";
-import {BOOKS} from "../../../../server_links/ServerLinks";
-import {Button} from "primereact/components/button/Button";
-import {Messages} from "primereact/components/messages/Messages";
-import {FieldFeedback, FormWithConstraints} from "react-form-with-constraints";
-import {FieldFeedbacks, FormControlInput, FormControlLabel, FormGroup} from "react-form-with-constraints-bootstrap4";
+import { inject, observer } from "mobx-react";
+import { BOOKS } from "../../../../server_links/ServerLinks";
+import { Button } from "primereact/components/button/Button";
+import { Messages } from "primereact/components/messages/Messages";
+import {
+    FormWithConstraints,
+    FieldFeedback
+} from "react-form-with-constraints";
+import {
+    FieldFeedbacks,
+    FormGroup,
+    FormControlLabel,
+    FormControlInput
+} from "react-form-with-constraints-bootstrap4";
+import SubHeader from "../../../layout/sub_header/SubHeader";
 
 @inject("bookStore")
 @observer
@@ -118,6 +127,8 @@ class BookRegForm extends Component {
 
     render() {
         return (
+            <Fragment>
+            <SubHeader label="Naujos knygos registravimas" />
             <div className="reg_form">
                 <FormWithConstraints
                     ref={formWithConstraints =>
@@ -126,8 +137,6 @@ class BookRegForm extends Component {
                     onSubmit={this.handleSubmit}
                     // noValidate
                 >
-                    <h3>Naujos knygos registravimas</h3>
-
                     <FormGroup for="title">
                         <FormControlLabel htmlFor="title">
                             Knygos pavadinimas:
@@ -372,6 +381,7 @@ class BookRegForm extends Component {
                     />
                 </FormWithConstraints>
             </div>
+            </Fragment>
         );
     }
 }

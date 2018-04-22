@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios/index";
 import { inject, observer } from "mobx-react";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
+import Subheader from "../../../layout/sub_header/SubHeader";
 
 @inject("userStore")
 @observer
@@ -68,12 +69,16 @@ class UserEditFrom2 extends Component {
     }
     render() {
         return (
+            <Fragment>
+                <Subheader
+                    label={
+                        "Pardavėjo, kurio id " +
+                        this.state.id +
+                        " redagavimas"
+                    }
+                />
             <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
-                    <h3>
-                        Pardavėjo, kurio registracijos numeris {this.state.id}{" "}
-                        redagavimas
-                    </h3>
                     <label>
                         Vardas:
                         <input
@@ -126,6 +131,7 @@ class UserEditFrom2 extends Component {
                     <Button label="Redaguoti" onClick={this.updateUser} />
                 </form>
             </div>
+            </Fragment>
         );
     }
 }
