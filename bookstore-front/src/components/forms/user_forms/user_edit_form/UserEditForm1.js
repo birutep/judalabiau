@@ -6,7 +6,7 @@ import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
-class UserEditForm3 extends Component {
+class UserEditForm1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -90,7 +90,7 @@ class UserEditForm3 extends Component {
                     Pavardė:
                         <input
                             name="lName"
-                            placeholder="Pavrdė"
+                            placeholder="Pavardė"
                             className="placeholder"
                             required
                             type="text"
@@ -99,7 +99,7 @@ class UserEditForm3 extends Component {
                         />
                     </label>
                     <label>
-                    Elektronionis paštas:
+                    El.paštas:
                         <input
                             name="email"
                             placeholder="elektronionis@paštas"
@@ -123,11 +123,11 @@ class UserEditForm3 extends Component {
                         />
                     </label>
                     <br />
-                    <Button label="Redaguoti" onClick={this.updateUser} />
+                    <Button label="Pakeisti" onClick={this.updateUser} />
                 </form>
             </div>
         );
     }
 }
 
-export default UserEditForm3;
+export default UserEditForm1;
