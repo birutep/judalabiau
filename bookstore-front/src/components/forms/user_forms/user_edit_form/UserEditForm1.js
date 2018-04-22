@@ -6,7 +6,7 @@ import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
-class UserEditFrom1 extends Component {
+class UserEditForm3 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,12 +15,13 @@ class UserEditFrom1 extends Component {
                 fName: "",
                 lName: "",
                 email: "",
-                phone: ""
+                phone: "",
+                role:1
             },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
             lName: this.props.userStore.userToEdit.lName,
-            dateOfBirth: this.props.userStore.userToEdit.email,
+            email: this.props.userStore.userToEdit.email,
             phone: this.props.userStore.userToEdit.phone
         };
         this.handleChange = this.handleChange.bind(this);
@@ -32,8 +33,8 @@ class UserEditFrom1 extends Component {
         this.setState({
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
-            lName: this.props.userStore.userToEdit.fName,
-            dateOfBirth: this.props.userStore.userToEdit.email,
+            lName: this.props.userStore.userToEdit.lName,
+            email: this.props.userStore.userToEdit.email,
             phone: this.props.userStore.userToEdit.phone
         });
     }
@@ -43,23 +44,18 @@ class UserEditFrom1 extends Component {
     }
 
     handleSubmit(event) {
-        console.log('"' + this.state.vardas + '" pakeista informacija.');
+        alert('"' + this.state.fName + '" pakeista informacija.');
         event.preventDefault();
     }
 
     updateUser() {
-        console.log(
-        "siunciam updeitui " +
-            this.state.fName );
-        
-         console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
             .put(USERS + this.state.id, {
                 id: this.state.id,
-                fName: this.props.fName,
-                lName: this.props.fName,
-                dateOfBirth: this.props.email,
-                phone: this.props.phone,
+                fName: this.state.fName,
+                lName: this.state.lName,
+                email: this.state.email,
+                phone: this.state.phone,
                 role:1
             })
             .then(() => {
@@ -75,14 +71,14 @@ class UserEditFrom1 extends Component {
             <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
                     <h3>
-                        Vartotojo, kurio registracijos numeris {this.state.id}
+                        Administratoriaus, kurio id {this.state.id}{" "} ir vardas {this.state.fName}{" "}
                         redagavimas
                     </h3>
                     <label>
-                        Vartotojo vardas:
+                    Vardas:
                         <input
                             name="fName"
-                            placeholder="Įveskite vardą"
+                            placeholder="Vardas"
                             className="placeholder"
                             required
                             type="text"
@@ -91,10 +87,10 @@ class UserEditFrom1 extends Component {
                         />
                     </label>
                     <label>
-                        Vartotojo pavardė:
+                    Pavardė:
                         <input
                             name="lName"
-                            placeholder="Įveskite pavrdę"
+                            placeholder="Pavrdė"
                             className="placeholder"
                             required
                             type="text"
@@ -103,10 +99,10 @@ class UserEditFrom1 extends Component {
                         />
                     </label>
                     <label>
-                        Vartotojo elektronionio pašto adresas:
+                    Elektronionis paštas:
                         <input
                             name="email"
-                            placeholder="Įveskite elektronionio pašto adresą"
+                            placeholder="elektronionis@paštas"
                             className="placeholder"
                             required
                             type="text"
@@ -115,7 +111,7 @@ class UserEditFrom1 extends Component {
                         />
                     </label>
                     <label>
-                        Vartotojo telefono numeris:
+                    Telefono numeris:
                         <input
                             name="phone"
                             placeholder="Įveskite telefono numerį"
@@ -127,11 +123,11 @@ class UserEditFrom1 extends Component {
                         />
                     </label>
                     <br />
-                    <Button label="Pakeisti" onClick={this.updateUser} />
+                    <Button label="Redaguoti" onClick={this.updateUser} />
                 </form>
             </div>
         );
     }
 }
 
-export default UserEditFrom1;
+export default UserEditForm3;

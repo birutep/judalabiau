@@ -1,8 +1,9 @@
-import {observable, action, computed} from 'mobx'
+import { observable, action, computed } from "mobx";
 
 class BookStore {
     @observable changed = false;
-    @observable bookToEdit = {
+    @observable
+    bookToEdit = {
         eAvailable: false,
         title: "",
         releaseYear: "",
@@ -16,11 +17,13 @@ class BookStore {
         id: ""
     };
 
-    @action changeState = () => {
+    @action
+    changeState = () => {
         this.changed = !this.changed;
     };
 
-    @action editBook = (book) => {
+    @action
+    editBook = book => {
         this.bookToEdit.title = book.title;
         this.bookToEdit.releaseYear = book.releaseYear;
         this.bookToEdit.isbn = book.isbn;
@@ -34,9 +37,10 @@ class BookStore {
         this.bookToEdit.id = book.id;
     };
 
-    @computed get watchChanged() {
+    @computed
+    get watchChanged() {
         return this.changed;
-    };
+    }
 }
 
 const store = new BookStore();

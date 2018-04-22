@@ -17,21 +17,21 @@ class UserList extends Component {
     }
 
     componentDidMount() {
-        this.getAllBooks();
+        this.getAllUsers();
     }
 
     componentWillReceiveProps() {
-        this.getAllBooks();
+        this.getAllUsers();
     }
 
-    getAllBooks() {
+    getAllUsers() {
         axios
             .get(USERS)
             .then(response => this.setState({ users: response.data }));
     }
 
     render() {
-        const userAsComponent = this.state.users.map(u => {
+        const usersAsComponent = this.state.users.map(u => {
             return <User key={u.id} singleUser={u} />;
         });
 
@@ -52,9 +52,9 @@ class UserList extends Component {
                             </tr>
                         </thead>
 
-                        <tbody>{userAsComponent}</tbody>
+                        <tbody>{usersAsComponent}</tbody>
                     </table>
-                </div>{" "}
+                </div>
             </div>
         );
     }

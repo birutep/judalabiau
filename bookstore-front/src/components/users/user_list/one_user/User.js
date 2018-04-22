@@ -25,16 +25,16 @@ class User extends Component {
 
     deleteUser = e => {
         e.preventDefault();
-        console.log("Vartotojas ištrintas");
         axios.delete(USERS + this.props.singleUser.id).then(() => {
             this.props.userStore.changeState();
         });
+        console.log("Vartotojas ištrintas");
     };
 
     editUser = user => {
-        console.log("User role: " + user.role);
         this.props.userStore.editUser(user);
         this.props.userStore.changeState();
+        console.log("User role: " + user.role);
     };
 
     render() {
@@ -59,7 +59,7 @@ class User extends Component {
                 </td>
                 <td className="mini">
                     {this.props.singleUser.role === 1 ? (
-                        <Link to="user/edit/3">
+                        <Link to="user/edit/1">
                             <i
                                 className="fa fa-pencil fa-fw"
                                 onClick={() =>
@@ -77,7 +77,7 @@ class User extends Component {
                             />
                         </Link>
                     ) : this.props.singleUser.role === 3 ? (
-                        <Link to="user/edit/1">
+                        <Link to="user/edit/3">
                             <i
                                 className="fa fa-pencil fa-fw"
                                 onClick={() =>
