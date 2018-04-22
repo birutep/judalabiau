@@ -47,6 +47,7 @@ class UserList extends Component {
                                 <th>El paštas</th>
                                 <th>Telefono numeris</th>
                                 <th>Rolė</th>
+                                <th>Gimimo metai</th>
                                 <th />
                                 <th />
                             </tr>
