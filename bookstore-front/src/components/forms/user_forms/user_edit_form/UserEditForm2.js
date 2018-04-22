@@ -15,7 +15,8 @@ class UserEditFrom2 extends Component {
                 fName: "",
                 lName: "",
                 email: "",
-                phone: ""
+                phone: "",
+                role:2
             },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
@@ -34,7 +35,7 @@ class UserEditFrom2 extends Component {
             fName: this.props.fName,
             lName: this.props.fName,
             email: this.props.email,
-            phone: this.props.phone
+            phone: this.props.phone,
         });
     }
 
@@ -48,11 +49,14 @@ class UserEditFrom2 extends Component {
     }
 
     updateUser() {
-        console.log("siunciam updeitui " + this.state.id + " ");
-        console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
             .put(USERS + this.state.id, {
-                id: this.state.id
+                id: this.state.id,
+                fName: this.state.fName,
+                lName: this.state.lName,
+                email: this.state.email,
+                phone: this.state.phone,
+                role:2
             })
             .then(() => {
                 this.props.userStore.changeState();

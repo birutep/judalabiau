@@ -59,7 +59,8 @@ class UserEditFrom1 extends Component {
                 fName: this.props.fName,
                 lName: this.props.fName,
                 dateOfBirth: this.props.email,
-                phone: this.props.phone
+                phone: this.props.phone,
+                role:1
             })
             .then(() => {
                 this.props.userStore.changeState();
