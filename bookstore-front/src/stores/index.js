@@ -1,7 +1,9 @@
-import {bookStore} from "./BookStore"
+import {bookStore} from "./BookStore";
+import {userStore} from "./UserStore"
 
 const stores = {
-    bookStore
+    bookStore,
+    userStore
 };
 
 export default stores;

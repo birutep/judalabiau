@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 //custom elementai
-import { USERS } from "../../../server_links/ServerLinks";
 import User from "./one_user/User";
-// <======>
+import { USERS } from "../../../server_links/ServerLinks";
 import SubHeader from "../../layout/sub_header/SubHeader";
+import { inject, observer } from "mobx-react";
 
+@inject("userStore")
+@observer
 class UserList extends Component {
     constructor(props) {
         super(props);
@@ -37,7 +39,6 @@ class UserList extends Component {
             <div>
                 <SubHeader label="Visi vartotojai" />
                 <div className="books books_for_admin_area">
-                    {/* <SubHeader label="Visi vartotojai" /> */}
                     <table>
                         <thead>
                             <tr>

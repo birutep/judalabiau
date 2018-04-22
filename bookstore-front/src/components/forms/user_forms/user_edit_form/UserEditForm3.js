@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { Button } from "primereact/components/button/Button";
 import axios from "axios/index";
-import { BOOKS } from "../../../../server_links/ServerLinks";
+import {inject, observer} from "mobx-react";
+import { Button } from "primereact/components/button/Button";
+import { USERS } from "../../../../server_links/ServerLinks";
 
+@inject("userStore")
+@observer
 class UserEditFrom3 extends Component {
     constructor(props) {
         super(props);
@@ -14,11 +17,11 @@ class UserEditFrom3 extends Component {
                 email: "",
                 phone: ""
             },
-            id: "",
-            fName: "",
-            lName: "",
-            email: "",
-            phone: ""
+            id: this.props.userStore.userToEdit.id,
+            fName: this.props.userStore.userToEdit.fName,
+            lName: this.props.userStore.userToEdit.lName,
+            email: this.props.userStore.userToEdit.email,
+            phone: this.props.userStore.userToEdit.phone
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,11 +30,11 @@ class UserEditFrom3 extends Component {
 
     componentWillReceiveProps() {
         this.setState({
-            id: this.props.user.id,
-            fName: this.props.fName,
-            lName: this.props.fName,
-            email: this.props.email,
-            phone: this.props.phone
+            id: this.props.userStore.userToEdit.id,
+            fName: this.props.userStore.userToEdit.fName,
+            lName: this.props.userStore.userToEdit.fName,
+            email: this.props.userStore.userToEdit.email,
+            phone: this.props.userStore.userToEdit.phone
         });
     }
 
@@ -46,20 +49,22 @@ class UserEditFrom3 extends Component {
 
     updateUser() {
         console
-            .log
-            // "siunciam updeitui " +
-            //     this.state.price +
-            //     " tipas " +
-            //     typeof this.state.price
-            ();
-        // console.log("adresu http://localhost:8080/users/" + this.state.id);
+            .log(
+            "siunciam updeitui " +
+                this.state.id 
+            );
+         console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
-            .put(BOOKS + this.state.id, {
-                id: this.state.id
+            .put(USERS + this.state.id, {
+                id: this.state.id,
+                fName: this.state.fName,
+                lName: this.state.lName,
+                email: this.state.email,
+                phone: this.state.phone
             })
             .then(() => {
-                this.props.bookStore.changeState();
-                this.props.bookStore.editBook(this.state.emptyUser);
+                this.props.userStore.changeState();
+                this.props.userStore.editUser(this.state.emptyUser);
             })
             .catch(function(error) {
                 console.log("Klaida redaguojant vartotoją" + error);
@@ -70,7 +75,7 @@ class UserEditFrom3 extends Component {
             <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
                     <h3>
-                        Administratoriaus, kurio registracijos numeris {this.state.id}{" "}
+                        Administratoriaus, kurio id {this.state.id}{" "} ir vardas {this.state.fName}{" "}
                         redagavimas
                     </h3>
                     <label>
