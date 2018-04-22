@@ -98,4 +98,19 @@ public class UserDTO {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "id=" + id +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", role=" + role +
+                ", phone=" + phone +
+                ", birthday=" + birthday +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
