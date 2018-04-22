@@ -51,11 +51,16 @@ class UserEditForm3 extends Component {
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.fName + '" pakeista informacija.');
+        console.log('"' + this.state.fName + '" pakeista informacija.');
         event.preventDefault();
     }
 
     updateUser() {
+
+        console.log("siunciam updeitui " + this.state.fName);
+        console.log("Gimimo data: " + this.state.birthday);
+        console.log("adresu http://localhost:8080/users/" + this.state.id);
+
         axios
             .put(USERS + this.state.id, {
                 id: this.state.id,
@@ -128,7 +133,7 @@ class UserEditForm3 extends Component {
                             name="birthday"
                             placeholder="mm/dd/yyyy"
                             className="placeholder"
-                            // required
+                             required
                             type="text"
                             value={this.state.birthday}
                             onChange={this.handleChange}
