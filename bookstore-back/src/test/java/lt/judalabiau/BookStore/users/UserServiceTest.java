@@ -79,26 +79,23 @@ public class UserServiceTest {
         initialCustomer.setRole(ROLE_CUSTOMER_DTO);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void notLettingExistedEmailRegTest(){
+        UserDTO savedSalesman=userService.createUser(initialSalesman);
+        UserDTO savedCustomer = userService.createUser(initialCustomer);
+    }
+
     @Test
     public void userServiceSavesCorrectly(){
         Long booksBefore = userRepository.count();
+        initialAdmin.setEmail("mailas1@mailas.lt");
+        initialSalesman.setEmail("mailas2@mailas.lt");
+        initialCustomer.setEmail("mailas3@mailas.lt");
 
         UserDTO savedAdmin = userService.createUser(initialAdmin);
-        UserDTO savedSalesman=userService.createUser(initialSalesman);
-        UserDTO savedCustomer = userService.createUser(initialCustomer);
-
+        UserDTO savedSalesman = userService.createUser(initialSalesman);
+        UserDTO savedCustomer=userService.createUser(initialCustomer);
         assertNotNull(savedAdmin);
-        //sekantys du pridejaimai turi grazint null, nes tokiu pat emailu useriai neregsitruojami
-        //todo kai toks meailass jau yra mest excepriona, testa perasyt, kad jsi tiketusi excepriono
-        //todo pagaudyt validaciju exceprionus, pvz blogas email, trumpas slaptazodis ir pan
-        assertNull(savedSalesman);
-        assertNull(savedCustomer);
-
-        initialSalesman.setEmail("mailas@mailas.lt");
-        initialCustomer.setEmail("emailiukas@mailas.lt");
-
-        savedSalesman = userService.createUser(initialSalesman);
-        savedCustomer=userService.createUser(initialCustomer);
         assertNotNull(savedSalesman);
         assertNotNull(savedCustomer);
 

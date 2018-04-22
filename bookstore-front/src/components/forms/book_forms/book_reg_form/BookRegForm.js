@@ -81,6 +81,7 @@ class BookRegForm extends Component {
         this.form.validateFields();
         this.setState({ submitButtonDisabled: !this.form.isValid() });
         if (this.form.isValid()) {
+            let self=this;
             axios
                 .post(BOOKS, {
                     eAvailable: this.state.eAvailable,
@@ -116,15 +117,9 @@ class BookRegForm extends Component {
                             id: ""
                         });
                     }
-                    //  else {
-                    //     this.showError();
-                    // }
-                    console.log(response.data);
                 })
                 .catch(function(error) {
-                    console.log("Klaida įvedant knygą" + error);
-                    // this.showError(); // sita vieta issaukia Unhandled Rejection (TypeError): Cannot read property of undefined
-                    // Console raso: BookRegForm.js:126 Uncaught (in promise) TypeError: Cannot read property 'showError' of undefined
+                    self.showError();
                 });
         }
     }
