@@ -14,9 +14,16 @@ import Footer from "../components/layout/footer/Footer";
 import UserRegForm3 from "../components/forms/user_forms/user_reg_form/UserRegisterForm3";
 import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegisterForm2";
 import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
+<<<<<<< HEAD
 import UserEditFrom1 from "../components/forms/user_forms/user_edit_form/UserEditForm1";
 import UserEditFrom2 from "../components/forms/user_forms/user_edit_form/UserEditForm2";
 import UserEditFrom3 from "../components/forms/user_forms/user_edit_form/UserEditForm3";
+=======
+import UserList from "../components/users/user_list/UserList";
+import UserEditForm1 from "../components/forms/user_forms/user_edit_form/UserEditForm1";
+import UserEditForm2 from "../components/forms/user_forms/user_edit_form/UserEditForm2";
+import UserEditForm3 from "../components/forms/user_forms/user_edit_form/UserEditForm3";
+>>>>>>> user list refreshes after delete
 import user from "../components/users/user_list/one_user/User";
 import UserWrapper from "../components/users/user_list_wrapper/UserListWrapper";
 
@@ -100,10 +107,27 @@ class Routes extends Component {
 
                         {/* <=====User Edit=====> */}
 
+<<<<<<< HEAD
                         <Route path="/user/edit/1" component={UserEditFrom1}/>
                         <Route path="/user/edit/2" component={UserEditFrom2}/>
                         <Route path="/user/edit/3" component={UserEditFrom3}/>
                         
+=======
+                        <Route path="/user/edit/1" component={UserEditForm1} />
+                        <Route path="/user/edit/2" component={UserEditForm2} />
+                        <Route path="/user/edit/3" component={UserEditForm3} />
+                        <Route
+                            exact
+                            path="/users"
+                            render={() => (
+                                <UserList
+                                    userStatus={user}
+                                    changed={userStore.changed}
+                                />
+                            )}
+                        />
+
+>>>>>>> user list refreshes after delete
                         <Route component={NotFound}/>
                     </Switch>
                     <Footer/>
