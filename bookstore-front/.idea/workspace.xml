@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> intellij stuff. :(
     <list default="true" id="f8cc51dc-eca7-4f1b-a46f-d2b8452978cd" name="Default" comment="">
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -100,7 +103,13 @@
 >>>>>>> user list refreshes after delete
 >>>>>>> user list refreshes after delete
     </list>
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+=======
+=======
+    <list default="true" id="f8cc51dc-eca7-4f1b-a46f-d2b8452978cd" name="Default" comment="" />
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -446,6 +455,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="231">
               <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
 =======
@@ -463,6 +473,8 @@
 =======
 =======
 >>>>>>> user list refreshes after delete
+=======
+>>>>>>> intellij stuff. :(
             <state relative-caret-position="231">
 <<<<<<< HEAD
               <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
@@ -476,7 +488,18 @@
             <state relative-caret-position="42">
               <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
 >>>>>>> user list refreshes after delete
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+=======
+=======
+            <state relative-caret-position="42">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+=======
+            <state relative-caret-position="651">
+              <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#86#121#0" expanded="true" />
@@ -947,6 +970,7 @@
       <workItem from="1524303940742" duration="12560000" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1524403622500" duration="8131000" />
 <<<<<<< HEAD
       <workItem from="1524423930600" duration="325000" />
@@ -956,6 +980,8 @@
       <workItem from="1524403622500" duration="8501000" />
 >>>>>>> intellij stuff. :(
 =======
+=======
+>>>>>>> intellij stuff. :(
       <workItem from="1524403622500" duration="8131000" />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -987,12 +1013,22 @@
       <workItem from="1524423930600" duration="325000" />
 =======
 >>>>>>> user list refreshes after delete
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+=======
+=======
+=======
+      <workItem from="1524403622500" duration="8501000" />
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1020,6 +1056,8 @@
 >>>>>>> Modified UserEditForm3.js.
 =======
 >>>>>>> user list refreshes after delete
+=======
+>>>>>>> intellij stuff. :(
     <option name="totallyTimeSpent" value="70253000" />
 =======
     <option name="totallyTimeSpent" value="70019000" />
@@ -1040,12 +1078,26 @@
 >>>>>>> Modified UserEditForm3.js.
 =======
 =======
+=======
+>>>>>>> intellij stuff. :(
     <option name="totallyTimeSpent" value="70301000" />
 =======
     <option name="totallyTimeSpent" value="70231000" />
 >>>>>>> user list refreshes after delete
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+<<<<<<< HEAD
 >>>>>>> user list refreshes after delete
+=======
+=======
+=======
+    <option name="totallyTimeSpent" value="70231000" />
+=======
+    <option name="totallyTimeSpent" value="70346000" />
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
+>>>>>>> intellij stuff. :(
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1596,6 +1648,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> intellij stuff. :(
         <state relative-caret-position="231">
           <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
 =======
@@ -1782,6 +1837,10 @@
 =======
         <state relative-caret-position="517">
           <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+=======
+        <state relative-caret-position="651">
+          <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+>>>>>>> intellij stuff. :(
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#86#121#0" expanded="true" />
