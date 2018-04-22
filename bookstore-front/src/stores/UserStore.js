@@ -23,7 +23,8 @@ class UserStore {
         this.userToEdit.lName = user.lName;
         this.userToEdit.email = user.email;
         this.userToEdit.phone = user.phone;
-        this.userToEdit.role = user.role
+        this.userToEdit.role = user.role;
+        this.userToEdit.dateOfBirth = user.dateOfBirth;
         this.userToEdit.id = user.id;
     };
 

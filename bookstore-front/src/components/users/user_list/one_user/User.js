@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
-import {inject, observer} from "mobx-react";
+import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
@@ -58,34 +58,36 @@ class User extends Component {
                                 : "-"}
                 </td>
                 <td className="mini">
-                {this.props.singleUser.role === 1 ? 
-                 <Link to="user/edit/3">
-                 <i
-                     className="fa fa-pencil fa-fw"
-                     onClick={() => this.editUser(this.props.singleUser)}
-                 />
-             </Link>:
-            this.props.singleUser.role === 2 ? 
-            <Link to="user/edit/2">
-            <i
-                className="fa fa-pencil fa-fw"
-                onClick={() => this.editUser(this.props.singleUser)}
-            />
-        </Link> : 
-        this.props.singleUser.role === 3 ?
-        <Link to="user/edit/1">
-        <i
-            className="fa fa-pencil fa-fw"
-            onClick={() => this.editUser(this.props.singleUser)}
-        />
-    </Link> : ""
-            }
-                    {/* <Link to="user/edit/3">
-                        <i
-                            className="fa fa-pencil fa-fw"
-                            onClick={() => this.editUser(this.props.singleUser)}
-                        />
-                    </Link> */}
+                    {this.props.singleUser.role === 1 ? (
+                        <Link to="user/edit/3">
+                            <i
+                                className="fa fa-pencil fa-fw"
+                                onClick={() =>
+                                    this.editUser(this.props.singleUser)
+                                }
+                            />
+                        </Link>
+                    ) : this.props.singleUser.role === 2 ? (
+                        <Link to="user/edit/2">
+                            <i
+                                className="fa fa-pencil fa-fw"
+                                onClick={() =>
+                                    this.editUser(this.props.singleUser)
+                                }
+                            />
+                        </Link>
+                    ) : this.props.singleUser.role === 3 ? (
+                        <Link to="user/edit/1">
+                            <i
+                                className="fa fa-pencil fa-fw"
+                                onClick={() =>
+                                    this.editUser(this.props.singleUser)
+                                }
+                            />
+                        </Link>
+                    ) : (
+                        ""
+                    )}
                 </td>
 
                 <td className="mini">

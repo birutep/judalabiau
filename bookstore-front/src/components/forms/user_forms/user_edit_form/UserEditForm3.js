@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios/index";
 import {inject, observer} from "mobx-react";
-import { Button } from "primereact/components/button/Button";
 import { USERS } from "../../../../server_links/ServerLinks";
+import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
