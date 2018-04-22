@@ -45,7 +45,7 @@ class UserEditForm3 extends Component {
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.vardas + '" pakeista informacija.');
+        console.log('"' + this.state.fName + '" pakeista informacija.');
         event.preventDefault();
     }
 
@@ -120,7 +120,7 @@ class UserEditForm3 extends Component {
                             name="birthday"
                             placeholder="mm/dd/yyyy"
                             className="placeholder"
-                            // required
+                             required
                             type="text"
                             value={this.state.birthday}
                             onChange={this.handleChange}

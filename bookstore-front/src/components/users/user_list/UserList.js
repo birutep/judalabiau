@@ -41,15 +41,16 @@ class UserList extends Component {
                 <div className="books books_for_admin_area">
                     <table>
                         <thead>
-                        <tr>
-                            <th>Vardas</th>
-                            <th>Pavardė</th>
-                            <th>El paštas</th>
-                            <th>Telefono numeris</th>
-                            <th>Rolė</th>
-                            <th/>
-                            <th/>
-                        </tr>
+                            <tr>
+                                <th>Vardas</th>
+                                <th>Pavardė</th>
+                                <th>El paštas</th>
+                                <th>Telefono numeris</th>
+                                <th>Rolė</th>
+                                <th>Gimimo metai</th>
+                                <th />
+                                <th />
+                            </tr>
                         </thead>
 
                         <tbody>{usersAsComponent}</tbody>

@@ -17,6 +17,8 @@ class User extends Component {
                 lName: props.singleUser.lName,
                 email: props.singleUser.email,
                 phone: props.singleUser.phone,
+                address: props.singleUser.address,
+                birthday: props.singleUser.birthday,
                 role: props.singleUser.role
             }
         };
@@ -56,6 +58,7 @@ class User extends Component {
                                 ? "Vartotojas"
                                 : "-"}
                 </td>
+                <td>{this.props.singleUser.birthday}</td>
                 <td className="mini">
                     {this.props.singleUser.role === 1 ? (
                         <Link to="user/edit/3">
