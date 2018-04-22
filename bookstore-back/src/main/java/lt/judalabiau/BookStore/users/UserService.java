@@ -30,9 +30,8 @@ public class UserService {
     @Transactional
     public UserDTO createUser(UserDTO userDTO){
         if(userRepository.existsByEmail(userDTO.getEmail())){
-            //veliau mesim exception
-            System.out.println("Toks useris jau yra");
-            return null;
+            //todo savo exception uskurimas
+            throw new IllegalArgumentException("toks emailas jau yra");
         }else{
             User saved = null;
             switch (userDTO.getRole().intValue()){
@@ -46,9 +45,8 @@ public class UserService {
                     saved = userRepository.save( converterToCustomer.convert(userDTO));
                     break;
                 default:
-                    //gal mesim exceptiona
-                     System.out.println("Tokios roles nera");
-                     break;
+                    //todo savo exception uskurimas
+                    throw new IllegalArgumentException("tokios roles nera");
             }
             if(saved!=null){
                 return converterToDTO.convert(saved);
@@ -75,8 +73,8 @@ public class UserService {
     public UserDTO updateUser(Long id, UserDTO dto){
         User userToUpdate = userRepository.findById(id).orElse(null);
         if(userToUpdate==null){
-            System.out.println("Tokio tokiu id nera, netuyrime ka koreguoti");
-            return null;
+            //todo savo exception uskurimas
+            throw new IllegalArgumentException("vartotojo su tokiu id duombazeje nera");
         }
         User userPassedByDTO = null;
         switch (dto.getRole().intValue()){
@@ -84,7 +82,8 @@ public class UserService {
             case 2:userPassedByDTO=converterToSalesman.convert(dto); break;
             case 3:userPassedByDTO=converterToCustomer.convert(dto); break;
             default:
-                System.out.println("Nepavyko atnaujinti vartotojo, tokiso roles nera");        return null;
+                //todo savo exception uskurimas
+                throw new IllegalArgumentException("roles galimos tik 1,2,3");
         }
         if(userPassedByDTO!=null){
             userPassedByDTO.setId(userToUpdate.getId());//id nekeiciamas, todel tiesiog perasom ta kuris buvo originalus
