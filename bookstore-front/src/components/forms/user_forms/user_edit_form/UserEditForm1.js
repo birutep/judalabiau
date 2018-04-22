@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios/index";
-import {inject, observer} from "mobx-react";
+import { inject, observer } from "mobx-react";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
+import Subheader from "../../../layout/sub_header/SubHeader";
 
 @inject("userStore")
 @observer
@@ -16,7 +17,7 @@ class UserEditForm1 extends Component {
                 lName: "",
                 email: "",
                 phone: "",
-                role:1
+                role: 1
             },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
@@ -56,7 +57,7 @@ class UserEditForm1 extends Component {
                 lName: this.state.lName,
                 email: this.state.email,
                 phone: this.state.phone,
-                role:1
+                role: 1
             })
             .then(() => {
                 this.props.userStore.changeState();
@@ -68,64 +69,69 @@ class UserEditForm1 extends Component {
     }
     render() {
         return (
-            <div className="reg_form">
-                <form onSubmit={this.handleSubmit}>
-                    <h3>
-                        Administratoriaus, kurio id {this.state.id}{" "} ir vardas {this.state.fName}{" "}
-                        redagavimas
-                    </h3>
-                    <label>
-                    Vardas:
-                        <input
-                            name="fName"
-                            placeholder="Vardas"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.fName}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                    Pavardė:
-                        <input
-                            name="lName"
-                            placeholder="Pavardė"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.lName}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                    El.paštas:
-                        <input
-                            name="email"
-                            placeholder="elektronionis@paštas"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                    Telefono numeris:
-                        <input
-                            name="phone"
-                            placeholder="Įveskite telefono numerį"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.phone}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <br />
-                    <Button label="Pakeisti" onClick={this.updateUser} />
-                </form>
-            </div>
+            <Fragment>
+                <Subheader
+                    label={
+                        "Administratoriaus, kurio id " +
+                        this.state.id +
+                        " redagavimas"
+                    }
+                />
+                <div className="reg_form">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Vardas:
+                            <input
+                                name="fName"
+                                placeholder="Vardas"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.fName}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Pavardė:
+                            <input
+                                name="lName"
+                                placeholder="Pavardė"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.lName}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            El.paštas:
+                            <input
+                                name="email"
+                                placeholder="elektronionis@paštas"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Telefono numeris:
+                            <input
+                                name="phone"
+                                placeholder="Įveskite telefono numerį"
+                                className="placeholder"
+                                required
+                                type="text"
+                                value={this.state.phone}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <br />
+                        <Button label="Pakeisti" onClick={this.updateUser} />
+                    </form>
+                </div>
+            </Fragment>
         );
     }
 }

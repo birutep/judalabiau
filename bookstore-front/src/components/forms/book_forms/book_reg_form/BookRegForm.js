@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios/index";
 import { inject, observer } from "mobx-react";
 import { BOOKS } from "../../../../server_links/ServerLinks";
@@ -14,6 +14,7 @@ import {
     FormControlLabel,
     FormControlInput
 } from "react-form-with-constraints-bootstrap4";
+import SubHeader from "../../../layout/sub_header/SubHeader";
 
 @inject("bookStore")
 @observer
@@ -126,6 +127,8 @@ class BookRegForm extends Component {
 
     render() {
         return (
+            <Fragment>
+            <SubHeader label="Naujos knygos registravimas" />
             <div className="reg_form">
                 <FormWithConstraints
                     ref={formWithConstraints =>
@@ -134,8 +137,6 @@ class BookRegForm extends Component {
                     onSubmit={this.handleSubmit}
                     // noValidate
                 >
-                    <h3>Naujos knygos registravimas</h3>
-
                     <FormGroup for="title">
                         <FormControlLabel htmlFor="title">
                             Knygos pavadinimas:
@@ -380,6 +381,7 @@ class BookRegForm extends Component {
                     />
                 </FormWithConstraints>
             </div>
+            </Fragment>
         );
     }
 }

@@ -8,6 +8,8 @@ class UserStore {
         lName: "",
         email: "",
         phone: "",
+        birthday: "",
+        address: "",
         role: "",
         id: ""
     };
@@ -24,7 +26,8 @@ class UserStore {
         this.userToEdit.email = user.email;
         this.userToEdit.phone = user.phone;
         this.userToEdit.role = user.role;
-        this.userToEdit.dateOfBirth = user.dateOfBirth;
+        this.userToEdit.birthday = user.birthday;
+        this.userToEdit.address = user.address
         this.userToEdit.id = user.id;
     };
 
