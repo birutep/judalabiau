@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
+import {inject, observer} from "mobx-react";
 import { Link } from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
 
+@inject("userStore")
+@observer
 class User extends Component {
     constructor(props) {
         super(props);
@@ -24,14 +27,14 @@ class User extends Component {
         e.preventDefault();
         console.log("Vartotojas ištrintas");
         axios.delete(USERS + this.props.singleUser.id).then(() => {
-            this.props.bookStore.changeState();
+            this.props.userStore.changeState();
         });
     };
 
     editUser = user => {
-        alert("User role: " + user.role);
-        this.props.BookStore.editUser(user);
-        this.props.BookStore.changeState();
+        console.log("User role: " + user.role);
+        this.props.userStore.editUser(user);
+        this.props.userStore.changeState();
     };
 
     render() {
