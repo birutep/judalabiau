@@ -81,69 +81,85 @@ class UserEditForm1 extends Component {
     }
     render() {
         return (
-            <Fragment>
-                <Subheader
-                    label={
-                        "Administratoriaus, kurio id " +
-                        this.state.id +
-                        " redagavimas"
-                    }
-                />
-                <div className="reg_form">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            Vardas:
-                            <input
-                                name="fName"
-                                placeholder="Vardas"
-                                className="placeholder"
-                                required
-                                type="text"
-                                value={this.state.fName}
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <label>
-                            Pavardė:
-                            <input
-                                name="lName"
-                                placeholder="Pavardė"
-                                className="placeholder"
-                                required
-                                type="text"
-                                value={this.state.lName}
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <label>
-                            El.paštas:
-                            <input
-                                name="email"
-                                placeholder="elektronionis@paštas"
-                                className="placeholder"
-                                required
-                                type="text"
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <label>
-                            Telefono numeris:
-                            <input
-                                name="phone"
-                                placeholder="Įveskite telefono numerį"
-                                className="placeholder"
-                                required
-                                type="text"
-                                value={this.state.phone}
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <br />
-                        <Button label="Pakeisti" onClick={this.updateUser} />
-                    </form>
-                </div>
-            </Fragment>
+            <div className="reg_form">
+                <form onSubmit={this.handleSubmit}>
+                    <h3>Vartotojo, kurio id {this.state.id} redagavimas</h3>
+                    <label>
+                        Vardas:
+                        <input
+                            name="fName"
+                            placeholder="Įveskite vardą"
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.fName}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Pavardė:
+                        <input
+                            name="lName"
+                            placeholder="Įveskite pavrdę"
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.lName}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        El.paštas:
+                        <input
+                            name="email"
+                            placeholder="elektroninis@paštas.lt"
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Gimimo data:
+                        <input
+                            name="birthday"
+                            placeholder="mm/dd/yyyy"
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.birthday}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Vartotojo telefono numeris:
+                        <input
+                            name="phone"
+                            placeholder="Įveskite telefono numerį"
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.phone}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Adresas:
+                        <input
+                            name="address"
+                            placeholder=""
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.address}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <br />
+                    <Button label="Pakeisti" onClick={this.updateUser} />
+                </form>
+            </div>
         );
     }
 }
