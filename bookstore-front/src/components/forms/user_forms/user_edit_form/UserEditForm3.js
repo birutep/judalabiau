@@ -6,7 +6,7 @@ import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
-class UserEditForm1 extends Component {
+class UserEditForm3 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -86,7 +86,7 @@ class UserEditForm1 extends Component {
                         Vardas:
                         <input
                             name="fName"
-                            placeholder="Įveskite vardą"
+                            placeholder="Vardas"
                             className="placeholder"
                             required
                             type="text"
@@ -98,7 +98,7 @@ class UserEditForm1 extends Component {
                         Pavardė:
                         <input
                             name="lName"
-                            placeholder="Pavrdė"
+                            placeholder="Pavardė"
                             className="placeholder"
                             required
                             type="text"
@@ -124,14 +124,14 @@ class UserEditForm1 extends Component {
                             name="birthday"
                             placeholder="mm/dd/yyyy"
                             className="placeholder"
-                            required
+                            // required
                             type="text"
                             value={this.state.birthday}
                             onChange={this.handleChange}
                         />
                     </label>
                     <label>
-                        Vartotojo telefono numeris:
+                        Telefono numeris:
                         <input
                             name="phone"
                             placeholder="Įveskite telefono numerį"
@@ -148,7 +148,7 @@ class UserEditForm1 extends Component {
                             name="address"
                             placeholder=""
                             className="placeholder"
-                            required
+                            //required
                             type="text"
                             value={this.state.address}
                             onChange={this.handleChange}
@@ -162,4 +162,4 @@ class UserEditForm1 extends Component {
     }
 }
 
-export default UserEditForm1;
+export default UserEditForm3;
