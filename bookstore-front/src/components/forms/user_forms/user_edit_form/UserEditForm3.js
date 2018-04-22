@@ -56,9 +56,11 @@ class UserEditForm3 extends Component {
     }
 
     updateUser() {
+
         console.log("siunciam updeitui " + this.state.fName);
         console.log("Gimimo data: " + this.state.birthday);
         console.log("adresu http://localhost:8080/users/" + this.state.id);
+
         axios
             .put(USERS + this.state.id, {
                 id: this.state.id,
