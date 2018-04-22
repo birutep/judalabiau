@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Link } from "react-router-dom";
-import { observer, inject } from "mobx-react";
 
 import "font-awesome/css/font-awesome.min.css";
 
-@observer
-@inject("bookStore")
+
 class User extends Component {
     constructor(props) {
         super(props);
@@ -70,11 +68,6 @@ class User extends Component {
                         className="fa fa-trash-o fa-fw"
                         onClick={this.deleteUser}
                     />
-                    {/* <Button
-                        iconPos="right"
-                        icon="fa fa-trash-o fa-fw"
-                        onClick={this.deleteUser}
-                    /> */}
                 </td>
             </tr>
         );
