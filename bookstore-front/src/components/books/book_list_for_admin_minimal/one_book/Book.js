@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import axios from "axios";
-import {BOOKS} from "../../../../server_links/ServerLinks";
-import {inject, observer} from "mobx-react";
-import {Link} from "react-router-dom";
+import { BOOKS } from "../../../../server_links/ServerLinks";
+import { inject, observer } from "mobx-react";
+import { Link } from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
 
@@ -61,20 +61,13 @@ class Book extends Component {
                             className="fa fa-pencil fa-fw"
                             onClick={() => this.editBook(this.props.myBook)}
                         />
-                        {/* <img
-                            src="./img/edit.png"
-                            alt="edit"
-                            onClick={() => this.editBook(this.props.myBook)}
-                        /> */}
                     </Link>
                 </td>
                 <td className="mini">
-                    <i className="fa fa-trash-o fa-fw" onClick={this.deleteBook}/>
-                    {/* <img
-                        src="./img/delete.png"
-                        alt="delete"
+                    <i
+                        className="fa fa-trash-o fa-fw"
                         onClick={this.deleteBook}
-                    /> */}
+                    />
                 </td>
             </tr>
         );

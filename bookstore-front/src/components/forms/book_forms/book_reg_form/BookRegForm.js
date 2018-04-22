@@ -3,6 +3,7 @@ import axios from "axios/index";
 import { inject, observer } from "mobx-react";
 import { BOOKS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
+import { Messages } from "primereact/components/messages/Messages";
 import {
     FormWithConstraints,
     FieldFeedback
@@ -49,7 +50,6 @@ class BookRegForm extends Component {
             [target.name]: target.value,
             submitButtonDisabled: !this.form.isValid()
         });
-        // this.setState({ [event.target.name]: event.target.value });
     }
 
     handleCheckbox() {
@@ -66,6 +66,7 @@ class BookRegForm extends Component {
 
     showError() {
         this.messages.show({
+            sticky: true,
             severity: "error",
             summary: "Klaida registruojant knygą!"
         });
@@ -77,50 +78,55 @@ class BookRegForm extends Component {
     }
 
     saveBook() {
-        axios
-            .post(BOOKS, {
-                eAvailable: this.state.eAvailable,
-                rating: this.state.rating,
-                ratingCount: this.state.ratingCount,
-                title: this.state.title,
-                authors: this.state.authors,
-                releaseYear: this.state.releaseYear,
-                isbn: this.state.isbn,
-                price: this.state.price === "" ? -1 : this.state.price,
-                category: this.state.category,
-                count: this.state.count,
-                photopath: this.state.photopath,
-                description: this.state.description
-            })
-            .then(response => {
-                this.props.bookStore.changeState();
-                this.setState({
-                    eAvailable: false,
-                    rating: 0,
-                    ratingCount: 0,
-                    title: "",
-                    releaseYear: "",
-                    isbn: "",
-                    price: "",
-                    category: "Apsakymas",
-                    count: "",
-                    photopath: "",
-                    description: "",
-                    authors: "",
-                    id: ""
+        this.form.validateFields();
+        this.setState({ submitButtonDisabled: !this.form.isValid() });
+        if (this.form.isValid()) {
+            axios
+                .post(BOOKS, {
+                    eAvailable: this.state.eAvailable,
+                    rating: this.state.rating,
+                    ratingCount: this.state.ratingCount,
+                    title: this.state.title,
+                    authors: this.state.authors,
+                    releaseYear: this.state.releaseYear,
+                    isbn: this.state.isbn,
+                    price: this.state.price === "" ? -1 : this.state.price,
+                    category: this.state.category,
+                    count: this.state.count,
+                    photopath: this.state.photopath,
+                    description: this.state.description
+                })
+                .then(response => {
+                    this.props.bookStore.changeState();
+                    if (response.status === 200) {
+                        this.showSuccess();
+                        this.setState({
+                            eAvailable: false,
+                            rating: 0,
+                            ratingCount: 0,
+                            title: "",
+                            releaseYear: "",
+                            isbn: "",
+                            price: "",
+                            category: "Apsakymas",
+                            count: "",
+                            photopath: "",
+                            description: "",
+                            authors: "",
+                            id: ""
+                        });
+                    }
+                    //  else {
+                    //     this.showError();
+                    // }
+                    console.log(response.data);
+                })
+                .catch(function(error) {
+                    console.log("Klaida įvedant knygą" + error);
+                    // this.showError(); // sita vieta issaukia Unhandled Rejection (TypeError): Cannot read property of undefined
+                    // Console raso: BookRegForm.js:126 Uncaught (in promise) TypeError: Cannot read property 'showError' of undefined
                 });
-                if (response.status === 200) {
-                    this.showSuccess();
-                } else {
-                    this.showError();
-                }
-                // console.log(response.data);
-                // console.log("book successfully added");
-            })
-            .catch(function(error) {
-                console.log("Klaida įvedant knygą" + error);
-                // this.showError();
-            });
+        }
     }
 
     render() {
@@ -131,9 +137,8 @@ class BookRegForm extends Component {
                         (this.form = formWithConstraints)
                     }
                     onSubmit={this.handleSubmit}
-                    noValidate
+                    // noValidate
                 >
-                    {/* <form onSubmit={this.handleSubmit}> */}
                     <h3>Naujos knygos registravimas</h3>
 
                     <FormGroup for="title">
@@ -196,7 +201,7 @@ class BookRegForm extends Component {
                         <FieldFeedbacks for="releaseYear" show="all">
                             <FieldFeedback
                                 warning
-                                when={value => !/^\d{0,4}$/.test(value)}
+                                when={value => !/^\d{4}$/.test(value)}
                             >
                                 Įveskite tik metus, pvz. 2018
                             </FieldFeedback>
@@ -222,13 +227,13 @@ class BookRegForm extends Component {
                                 Įveskite ISBN (10 arba 13 skaitmenų formatu)
                             </FieldFeedback>
                             <FieldFeedback
-                                warning
+                                // warning
                                 when={value => !/^\d{10}$|^\d{13}$/.test(value)}
                             >
                                 ISBN turi sudaryti 10 arba 13 skaitmenų.
                             </FieldFeedback>
                             <FieldFeedback
-                                warning
+                                // warning
                                 when={value => /[a-zA-ZĀ-ž\s]+/.test(value)}
                             >
                                 ISBN neturėtų būti raidžių.
@@ -319,8 +324,7 @@ class BookRegForm extends Component {
                                 Įveskite kiekį
                             </FieldFeedback>
                             <FieldFeedback
-                                // when={value => !/^\d{0,8}$/.test(value)}
-                                when={value => !/[0-9]*/.test(value)}
+                                when={value => !/^[0-9]\d*$/.test(value)}
                             >
                                 Neteisingai įvedėte kiekį. Kiekį gali sudaryti
                                 tik sveikieji skaičiai.
@@ -365,10 +369,19 @@ class BookRegForm extends Component {
                         />
                     </label>
                     <br />
+                    {/* <p className="required">
+                        <sup>*</sup> Privalomi laukai
+                    </p> */}
                     <Button
                         label="Registruoti"
                         disabled={this.state.submitButtonDisabled}
                         onClick={this.saveBook}
+                        // onClick={this.showError}
+                    />
+                    <Messages
+                        ref={el => {
+                            this.messages = el;
+                        }}
                     />
                 </FormWithConstraints>
             </div>

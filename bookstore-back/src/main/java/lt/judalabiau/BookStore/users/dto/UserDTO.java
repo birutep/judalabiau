@@ -12,12 +12,12 @@ public class UserDTO {
     //bendri laukai
     @NotNull
     @Size(min = 1, max = 254, message = "Vartotojo vardas privalo būti nuo {min} iki {max} simbolių ilgio.")
-    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Vartotojo vardo simboliais gali būti tik raidės arba skaičiai")
+    @Pattern(regexp = "^[a-zA-ZĀ-ž\\s]+$", message = "Vartotojo vardo simboliais gali būti tik raidės.")
     private String fName;
 
     @NotNull
     @Size(min = 1, max = 254, message = "Vartotojo pavardė privalo būti nuo {min} iki {max} simbolių ilgio.")
-    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Vartotojo vardo simboliais gali būti tik raidės arba skaičiai")
+    @Pattern(regexp = "^[a-zA-ZĀ-ž\\s]+$", message = "Vartotojo vardo simboliais gali būti tik raidės.")
     private String lName;
 
     @NotNull
@@ -26,7 +26,7 @@ public class UserDTO {
 
     @NotNull
     @Size(min = 3, max = 254, message = "Vartotojo elektroninis paštas privalo būti nuo {min} iki {max} simbolių ilgio.")
-    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "toks elektroninis pa6tas negalimas")
+    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "toks elektroninis paštas negalimas")
     private String email;
 
     @NotNull
