@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { Button } from "primereact/components/button/Button";
 import axios from "axios/index";
+import {inject, observer} from "mobx-react";
 import { USERS } from "../../../../server_links/ServerLinks";
+import { Button } from "primereact/components/button/Button";
 
+@inject("userStore")
+@observer
 class UserEditFrom1 extends Component {
     constructor(props) {
         super(props);
@@ -11,14 +14,14 @@ class UserEditFrom1 extends Component {
                 id: "",
                 fName: "",
                 lName: "",
-                dateOfBirth: "",
+                email: "",
                 phone: ""
             },
-            id: this.props.id,
-            fName: this.props.fName,
-            lName: this.props.lName,
-            dateOfBirth: this.props.dateOfBirth,
-            phone: this.props.phone
+            id: this.props.userStore.userToEdit.id,
+            fName: this.props.userStore.userToEdit.fName,
+            lName: this.props.userStore.userToEdit.lName,
+            dateOfBirth: this.props.userStore.userToEdit.email,
+            phone: this.props.userStore.userToEdit.phone
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,11 +30,11 @@ class UserEditFrom1 extends Component {
 
     componentWillReceiveProps() {
         this.setState({
-            id: this.props.user.id,
-            fName: this.props.fName,
-            lName: this.props.fName,
-            dateOfBirth: this.props.dateOfBirth,
-            phone: this.props.phone
+            id: this.props.userStore.userToEdit.id,
+            fName: this.props.userStore.userToEdit.fName,
+            lName: this.props.userStore.userToEdit.fName,
+            dateOfBirth: this.props.userStore.userToEdit.email,
+            phone: this.props.userStore.userToEdit.phone
         });
     }
 
@@ -40,27 +43,27 @@ class UserEditFrom1 extends Component {
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.vardas + '" pakeista informacija.');
+        console.log('"' + this.state.vardas + '" pakeista informacija.');
         event.preventDefault();
     }
 
     updateUser() {
-        alert(
+        console.log(
         "siunciam updeitui " +
             this.state.fName );
         
-         alert("adresu http://localhost:8080/users/" + this.state.id);
+         console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
             .put(USERS + this.state.id, {
                 id: this.state.id,
                 fName: this.props.fName,
                 lName: this.props.fName,
-                dateOfBirth: this.props.dateOfBirth,
+                dateOfBirth: this.props.email,
                 phone: this.props.phone
             })
             .then(() => {
-                this.props.bookStore.changeState();
-                this.props.bookStore.editBook(this.state.emptyUser);
+                this.props.userStore.changeState();
+                this.props.userStore.editUser(this.state.emptyUser);
             })
             .catch(function(error) {
                 console.log("Klaida redaguojant vartotoją" + error);
@@ -99,14 +102,14 @@ class UserEditFrom1 extends Component {
                         />
                     </label>
                     <label>
-                        Vartotojo gimimo data:
+                        Vartotojo elektronionio pašto adresas:
                         <input
-                            name="dateOfBirth"
-                            placeholder="Įveskite gimimo datą"
+                            name="email"
+                            placeholder="Įveskite elektronionio pašto adresą"
                             className="placeholder"
                             required
                             type="text"
-                            value={this.state.dateOfBirth}
+                            value={this.state.email}
                             onChange={this.handleChange}
                         />
                     </label>

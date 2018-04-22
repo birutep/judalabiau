@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { Button } from "primereact/components/button/Button";
 import axios from "axios/index";
-import { BOOKS } from "../../../../server_links/ServerLinks";
+import { inject, observer } from "mobx-react";
+import { USERS } from "../../../../server_links/ServerLinks";
+import { Button } from "primereact/components/button/Button";
 
+@inject("userStore")
+@observer
 class UserEditFrom2 extends Component {
     constructor(props) {
         super(props);
@@ -14,11 +17,11 @@ class UserEditFrom2 extends Component {
                 email: "",
                 phone: ""
             },
-            id: "",
-            fName: "",
-            lName: "",
-            email: "",
-            phone: ""
+            id: this.props.userStore.userToEdit.id,
+            fName: this.props.userStore.userToEdit.fName,
+            lName: this.props.userStore.userToEdit.lName,
+            email: this.props.userStore.userToEdit.email,
+            phone: this.props.userStore.userToEdit.phone
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,26 +43,20 @@ class UserEditFrom2 extends Component {
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.vardas + '" pakeista informacija.');
+        console.log('"' + this.state.vardas + '" pakeista informacija.');
         event.preventDefault();
     }
 
     updateUser() {
-        console
-            .log
-            // "siunciam updeitui " +
-            //     this.state.price +
-            //     " tipas " +
-            //     typeof this.state.price
-            ();
-        // console.log("adresu http://localhost:8080/users/" + this.state.id);
+        console.log("siunciam updeitui " + this.state.id + " ");
+        console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
-            .put(BOOKS + this.state.id, {
+            .put(USERS + this.state.id, {
                 id: this.state.id
             })
             .then(() => {
-                this.props.bookStore.changeState();
-                this.props.bookStore.editBook(this.state.emptyUser);
+                this.props.userStore.changeState();
+                this.props.userStore.editBook(this.state.emptyUser);
             })
             .catch(function(error) {
                 console.log("Klaida redaguojant vartotoją" + error);
