@@ -3,7 +3,6 @@ import axios from "axios";
 //custom elementai
 import { USERS } from "../../../server_links/ServerLinks";
 import User from "./one_user/User";
-// <======>
 import SubHeader from "../../layout/sub_header/SubHeader";
 
 class UserList extends Component {
@@ -37,7 +36,6 @@ class UserList extends Component {
             <div>
                 <SubHeader label="Visi vartotojai" />
                 <div className="books books_for_admin_area">
-                    {/* <SubHeader label="Visi vartotojai" /> */}
                     <table>
                         <thead>
                             <tr>
