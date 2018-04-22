@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios/index";
-import {inject, observer} from "mobx-react";
+import { inject, observer } from "mobx-react";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
-class UserEditFrom3 extends Component {
+class UserEditForm1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,13 +15,18 @@ class UserEditFrom3 extends Component {
                 fName: "",
                 lName: "",
                 email: "",
-                phone: ""
+                birthday: "",
+                phone: "",
+                address: "",
+                role:3
             },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
             lName: this.props.userStore.userToEdit.lName,
             email: this.props.userStore.userToEdit.email,
-            phone: this.props.userStore.userToEdit.phone
+            birthday: this.props.userStore.userToEdit.birthday,
+            phone: this.props.userStore.userToEdit.phone,
+            address: this.props.userStore.userToEdit.address
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,9 +37,11 @@ class UserEditFrom3 extends Component {
         this.setState({
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
-            lName: this.props.userStore.userToEdit.fName,
+            lName: this.props.userStore.userToEdit.lName,
             email: this.props.userStore.userToEdit.email,
-            phone: this.props.userStore.userToEdit.phone
+            birthday: this.props.userStore.userToEdit.birthday,
+            phone: this.props.userStore.userToEdit.phone,
+            address: this.props.userStore.userToEdit.address,
         });
     }
 
@@ -43,24 +50,24 @@ class UserEditFrom3 extends Component {
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.vardas + '" pakeista informacija.');
+        alert('"' + this.state.fName + '" pakeista informacija.');
         event.preventDefault();
     }
 
     updateUser() {
-        console
-            .log(
-            "siunciam updeitui " +
-                this.state.id 
-            );
-         console.log("adresu http://localhost:8080/users/" + this.state.id);
+        console.log("siunciam updeitui " + this.state.fName);
+
+        console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
             .put(USERS + this.state.id, {
                 id: this.state.id,
                 fName: this.state.fName,
                 lName: this.state.lName,
                 email: this.state.email,
-                phone: this.state.phone
+                birthday: this.state.birthday,
+                phone: this.state.phone,
+                address: this.state.address,
+                role:3
             })
             .then(() => {
                 this.props.userStore.changeState();
@@ -74,12 +81,9 @@ class UserEditFrom3 extends Component {
         return (
             <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
-                    <h3>
-                        Administratoriaus, kurio id {this.state.id}{" "} ir vardas {this.state.fName}{" "}
-                        redagavimas
-                    </h3>
+                    <h3>Vartotojo, kurio id {this.state.id} redagavimas</h3>
                     <label>
-                    Administratoriaus vardas:
+                        Vardas:
                         <input
                             name="fName"
                             placeholder="Įveskite vardą"
@@ -91,10 +95,10 @@ class UserEditFrom3 extends Component {
                         />
                     </label>
                     <label>
-                    Administratoriaus pavardė:
+                        Pavardė:
                         <input
                             name="lName"
-                            placeholder="Įveskite pavrdę"
+                            placeholder="Pavrdė"
                             className="placeholder"
                             required
                             type="text"
@@ -103,10 +107,10 @@ class UserEditFrom3 extends Component {
                         />
                     </label>
                     <label>
-                    Administratoriaus elektronionio pašto adresas:
+                        El.paštas:
                         <input
                             name="email"
-                            placeholder="Įveskite elektronionio pašto adresą"
+                            placeholder="elektroninis@paštas.lt"
                             className="placeholder"
                             required
                             type="text"
@@ -115,7 +119,19 @@ class UserEditFrom3 extends Component {
                         />
                     </label>
                     <label>
-                    Administratoriaus telefono numeris:
+                        Gimimo data:
+                        <input
+                            name="birthday"
+                            placeholder="mm/dd/yyyy"
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.birthday}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Vartotojo telefono numeris:
                         <input
                             name="phone"
                             placeholder="Įveskite telefono numerį"
@@ -126,12 +142,24 @@ class UserEditFrom3 extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
+                    <label>
+                        Adresas:
+                        <input
+                            name="address"
+                            placeholder=""
+                            className="placeholder"
+                            required
+                            type="text"
+                            value={this.state.address}
+                            onChange={this.handleChange}
+                        />
+                    </label>
                     <br />
-                    <Button label="Redaguoti" onClick={this.updateUser} />
+                    <Button label="Pakeisti" onClick={this.updateUser} />
                 </form>
             </div>
         );
     }
 }
 
-export default UserEditFrom3;
+export default UserEditForm1;

@@ -6,7 +6,7 @@ import { Button } from "primereact/components/button/Button";
 
 @inject("userStore")
 @observer
-class UserEditFrom2 extends Component {
+class UserEditForm2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,7 +15,8 @@ class UserEditFrom2 extends Component {
                 fName: "",
                 lName: "",
                 email: "",
-                phone: ""
+                phone: "",
+                role:2
             },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
@@ -30,11 +31,11 @@ class UserEditFrom2 extends Component {
 
     componentWillReceiveProps() {
         this.setState({
-            id: this.props.user.id,
-            fName: this.props.fName,
-            lName: this.props.fName,
-            email: this.props.email,
-            phone: this.props.phone
+            id: this.props.userStore.userToEdit.id,
+            fName: this.userStore.userToEdit.fName,
+            lName: this.userStore.userToEdit.fName,
+            email: this.userStore.userToEdit.email,
+            phone: this.userStore.userToEdit.phone,
         });
     }
 
@@ -43,25 +44,23 @@ class UserEditFrom2 extends Component {
     }
 
     handleSubmit(event) {
-        console.log('"' + this.state.vardas + '" pakeista informacija.');
+        alert('"' + this.state.vardas + '" pakeista informacija.');
         event.preventDefault();
     }
 
     updateUser() {
-        console.log("siunciam updeitui " + this.state.id + " ");
-        console.log("adresu http://localhost:8080/users/" + this.state.id);
         axios
             .put(USERS + this.state.id, {
                 id: this.state.id,
                 fName: this.state.fName,
-                lName: this.state.fName,
+                lName: this.state.lName,
                 email: this.state.email,
                 phone: this.state.phone,
-                role: 2
+                role:2
             })
             .then(() => {
                 this.props.userStore.changeState();
-                this.props.userStore.editBook(this.state.emptyUser);
+                this.props.userStore.editUser(this.state.emptyUser);
             })
             .catch(function(error) {
                 console.log("Klaida redaguojant vartotoją" + error);
@@ -131,4 +130,4 @@ class UserEditFrom2 extends Component {
     }
 }
 
-export default UserEditFrom2;
+export default UserEditForm2;
