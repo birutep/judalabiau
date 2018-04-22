@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
@@ -13,6 +13,7 @@ import {
     FormControlLabel,
     FormControlInput
 } from "react-form-with-constraints-bootstrap4";
+import Subheader from "../../../layout/sub_header/SubHeader";
 
 class UserRegForm extends Component {
     constructor(props) {
@@ -89,9 +90,6 @@ class UserRegForm extends Component {
                     } else {
                         this.showError();
                     }
-                    console.log(response);
-                    console.log(response.status);
-                    console.log("User successfully added");
                     this.setState({
                         fName: "",
                         lName: "",
@@ -112,6 +110,12 @@ class UserRegForm extends Component {
 
     render() {
         return (
+            <Fragment>
+                <Subheader
+                    label={
+                        "Registruoti vartotoją"
+                    }
+                />
             <div className="reg_form">
                 <FormWithConstraints
                     ref={formWithConstraints =>
@@ -120,8 +124,6 @@ class UserRegForm extends Component {
                     onSubmit={this.handleSubmit}
                     // noValidate
                 >
-                    <h3>Registruoti vartotoją</h3>
-
                     <FormGroup for="fName">
                         <FormControlLabel htmlFor="fName">
                             Vardas <sup className="required">*</sup>
@@ -336,6 +338,7 @@ class UserRegForm extends Component {
                     />
                 </FormWithConstraints>
             </div>
+            </Fragment>
         );
     }
 }

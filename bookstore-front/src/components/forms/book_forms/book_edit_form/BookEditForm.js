@@ -1,8 +1,9 @@
-import React, {Component} from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios/index";
 import {inject, observer} from "mobx-react";
 import {BOOKS} from "../../../../server_links/ServerLinks";
 import {Button} from "primereact/components/button/Button";
+import SubHeader from "../../../layout/sub_header/SubHeader";
 
 @inject("bookStore")
 @observer
@@ -86,13 +87,6 @@ class BookRegForm extends Component {
     }
 
     updateBook() {
-        console.log(
-            "siunciam updeitui " +
-            this.state.price +
-            " tipas " +
-            typeof this.state.price
-        );
-        console.log("adresu http://localhost:8080/books/" + this.state.id);
         axios
             .put(BOOKS + this.state.id, {
                 eAvailable: this.state.eAvailable,
@@ -120,9 +114,10 @@ class BookRegForm extends Component {
 
     render() {
         return (
+            <Fragment>
+            <SubHeader label={"Knygos su id "+this.state.id+" redagavimas"} />
             <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
-                    <h3>Knygos kurios id {this.state.id} redagavimas</h3>
                     <label>
                         Knygos pavadinimas:
                         <input
@@ -282,6 +277,7 @@ class BookRegForm extends Component {
                     <Button label="Pakeisti" onClick={this.updateBook}/>
                 </form>
             </div>
+            </Fragment>
         );
     }
 }

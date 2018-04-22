@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
@@ -13,6 +13,7 @@ import {
     FormControlLabel,
     FormControlInput
 } from "react-form-with-constraints-bootstrap4";
+import Subheader from "../../../layout/sub_header/SubHeader";
 
 class UserRegForm extends Component {
     constructor(props) {
@@ -109,6 +110,12 @@ class UserRegForm extends Component {
 
     render() {
         return (
+            <Fragment>
+                <Subheader
+                    label={
+                        "Registruoti administratorių"
+                    }
+                />
             <div className="reg_form">
                 <FormWithConstraints
                     ref={formWithConstraints =>
@@ -298,6 +305,7 @@ class UserRegForm extends Component {
                     />
                 </FormWithConstraints>
             </div>
+            </Fragment>
         );
     }
 }

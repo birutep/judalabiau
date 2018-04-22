@@ -77,7 +77,6 @@ public class UserService {
             throw new IllegalArgumentException("vartotojo su tokiu id duombazeje nera");
         }
         dto.setPassword(userToUpdate.getPassword());
-        System.out.println("================>parejo dto "+dto);
         User userPassedByDTO = null;
         switch (dto.getRole().intValue()){
             case 1:userPassedByDTO=converterToAdmin.convert(dto); break;
