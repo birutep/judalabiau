@@ -14,11 +14,11 @@ class UserEditFrom1 extends Component {
                 dateOfBirth: "",
                 phone: ""
             },
-            id: "",
-            fName: "",
-            lName: "",
-            dateOfBirth: "",
-            phone: ""
+            id: this.props.id,
+            fName: this.props.fName,
+            lName: this.props.lName,
+            dateOfBirth: this.props.dateOfBirth,
+            phone: this.props.phone
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,17 +45,18 @@ class UserEditFrom1 extends Component {
     }
 
     updateUser() {
-        console
-            .log
-            // "siunciam updeitui " +
-            //     this.state.price +
-            //     " tipas " +
-            //     typeof this.state.price
-            ();
-        // console.log("adresu http://localhost:8080/users/" + this.state.id);
+        alert(
+        "siunciam updeitui " +
+            this.state.fName );
+        
+         alert("adresu http://localhost:8080/users/" + this.state.id);
         axios
             .put(USERS + this.state.id, {
-                id: this.state.id
+                id: this.state.id,
+                fName: this.props.fName,
+                lName: this.props.fName,
+                dateOfBirth: this.props.dateOfBirth,
+                phone: this.props.phone
             })
             .then(() => {
                 this.props.bookStore.changeState();
@@ -70,7 +71,7 @@ class UserEditFrom1 extends Component {
             <div className="reg_form">
                 <form onSubmit={this.handleSubmit}>
                     <h3>
-                        Vartotojo, kurio registracijos numeris {this.state.id}{" "}
+                        Vartotojo, kurio registracijos numeris {this.state.id}
                         redagavimas
                     </h3>
                     <label>
@@ -122,7 +123,7 @@ class UserEditFrom1 extends Component {
                         />
                     </label>
                     <br />
-                    <Button label="Redaguoti" onClick={this.updateUser} />
+                    <Button label="Pakeisti" onClick={this.updateUser} />
                 </form>
             </div>
         );

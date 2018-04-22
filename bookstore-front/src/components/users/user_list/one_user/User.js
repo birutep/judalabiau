@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 import "font-awesome/css/font-awesome.min.css";
 
-
 class User extends Component {
     constructor(props) {
         super(props);
@@ -30,6 +29,7 @@ class User extends Component {
     };
 
     editUser = user => {
+        alert("User role: " + user.role);
         this.props.BookStore.editUser(user);
         this.props.BookStore.changeState();
     };
@@ -55,12 +55,34 @@ class User extends Component {
                                 : "-"}
                 </td>
                 <td className="mini">
-                    <Link to="user/edit/1">
+                {this.props.singleUser.role === 1 ? 
+                 <Link to="user/edit/3">
+                 <i
+                     className="fa fa-pencil fa-fw"
+                     onClick={() => this.editUser(this.props.singleUser)}
+                 />
+             </Link>:
+            this.props.singleUser.role === 2 ? 
+            <Link to="user/edit/2">
+            <i
+                className="fa fa-pencil fa-fw"
+                onClick={() => this.editUser(this.props.singleUser)}
+            />
+        </Link> : 
+        this.props.singleUser.role === 3 ?
+        <Link to="user/edit/1">
+        <i
+            className="fa fa-pencil fa-fw"
+            onClick={() => this.editUser(this.props.singleUser)}
+        />
+    </Link> : ""
+            }
+                    {/* <Link to="user/edit/3">
                         <i
                             className="fa fa-pencil fa-fw"
                             onClick={() => this.editUser(this.props.singleUser)}
                         />
-                    </Link>
+                    </Link> */}
                 </td>
 
                 <td className="mini">
