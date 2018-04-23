@@ -10,7 +10,6 @@ class UserStore {
         birthday: "",
         address: "",
         role: "",
-        address: "",
         id: ""
     };
 

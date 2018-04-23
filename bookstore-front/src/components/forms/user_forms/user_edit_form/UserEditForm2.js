@@ -1,20 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 import axios from "axios/index";
-import { inject, observer } from "mobx-react";
-import { USERS } from "../../../../server_links/ServerLinks";
-import { Button } from "primereact/components/button/Button";
+import {inject, observer} from "mobx-react";
+import {USERS} from "../../../../server_links/ServerLinks";
+import {Button} from "primereact/components/button/Button";
 import Subheader from "../../../layout/sub_header/SubHeader";
-import { Messages } from "primereact/components/messages/Messages";
-import {
-    FormWithConstraints,
-    FieldFeedback
-} from "react-form-with-constraints";
-import {
-    FieldFeedbacks,
-    FormGroup,
-    FormControlLabel,
-    FormControlInput
-} from "react-form-with-constraints-bootstrap4";
+import {Messages} from "primereact/components/messages/Messages";
+import {FieldFeedback, FormWithConstraints} from "react-form-with-constraints";
+import {FieldFeedbacks, FormControlInput, FormControlLabel, FormGroup} from "react-form-with-constraints-bootstrap4";
 
 @inject("userStore")
 @observer

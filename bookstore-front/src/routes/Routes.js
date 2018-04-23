@@ -15,11 +15,9 @@ import UserRegForm3 from "../components/forms/user_forms/user_reg_form/UserRegis
 import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegisterForm2";
 import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
 import user from "../components/users/user_list/one_user/User";
-import UserList from "../components/users/user_list/UserList";
 import UserEditForm1 from "../components/forms/user_forms/user_edit_form/UserEditForm1";
 import UserEditForm2 from "../components/forms/user_forms/user_edit_form/UserEditForm2";
 import UserEditForm3 from "../components/forms/user_forms/user_edit_form/UserEditForm3";
-import user from "../components/users/user_list/one_user/User";
 import UserWrapper from "../components/users/user_list_wrapper/UserListWrapper";
 
 @inject("bookStore", "userStore")
