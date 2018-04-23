@@ -4,6 +4,17 @@ import { inject, observer } from "mobx-react";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
 import Subheader from "../../../layout/sub_header/SubHeader";
+import { Messages } from "primereact/components/messages/Messages";
+import {
+    FormWithConstraints,
+    FieldFeedback
+} from "react-form-with-constraints";
+import {
+    FieldFeedbacks,
+    FormGroup,
+    FormControlLabel,
+    FormControlInput
+} from "react-form-with-constraints-bootstrap4";
 
 @inject("userStore")
 @observer
@@ -17,7 +28,7 @@ class UserEditForm2 extends Component {
                 lName: "",
                 email: "",
                 phone: "",
-                role:2
+                role: 2
             },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
@@ -28,6 +39,8 @@ class UserEditForm2 extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateUser = this.updateUser.bind(this);
+        this.showSuccess = this.showSuccess.bind(this);
+        this.showError = this.showError.bind(this);
     }
 
     componentWillReceiveProps() {
@@ -36,101 +49,206 @@ class UserEditForm2 extends Component {
             fName: this.userStore.userToEdit.fName,
             lName: this.userStore.userToEdit.fName,
             email: this.userStore.userToEdit.email,
-            phone: this.userStore.userToEdit.phone,
+            phone: this.userStore.userToEdit.phone
         });
     }
 
     handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
+        const target = event.currentTarget;
+        this.form.validateFields(target);
+        this.setState({
+            [event.target.name]: event.target.value,
+            submitButtonDisabled: !this.form.isValid()
+        });
+    }
+
+    showSuccess() {
+        this.messages.show({
+            severity: "success",
+            summary: "Informacija atnaujinta!"
+        });
+    }
+
+    showError() {
+        this.messages.show({
+            severity: "error",
+            summary: "Klaida atnaujinant duomenis!"
+        });
     }
 
     handleSubmit(event) {
-        alert('"' + this.state.vardas + '" pakeista informacija.');
         event.preventDefault();
     }
 
     updateUser() {
-        axios
-            .put(USERS + this.state.id, {
-                id: this.state.id,
-                fName: this.state.fName,
-                lName: this.state.lName,
-                email: this.state.email,
-                phone: this.state.phone,
-                role:2
-            })
-            .then(() => {
-                this.props.userStore.changeState();
-                this.props.userStore.editUser(this.state.emptyUser);
-            })
-            .catch(function(error) {
-                console.log("Klaida redaguojant vartotoją" + error);
-            });
+        this.form.validateFields();
+        this.setState({ submitButtonDisabled: !this.form.isValid() });
+        if (this.form.isValid()) {
+            let self = this;
+            axios
+                .put(USERS + this.state.id, {
+                    id: this.state.id,
+                    fName: this.state.fName,
+                    lName: this.state.lName,
+                    email: this.state.email,
+                    phone: this.state.phone,
+                    role: 2
+                })
+                .then(response => {
+                    this.props.userStore.changeState();
+                    if (response.status === 200) {
+                        this.showSuccess();
+                    }
+                    this.props.userStore.editUser(this.state.emptyUser);
+                })
+                .catch(function(error) {
+                    self.showError();
+                });
+        }
     }
+
     render() {
         return (
             <Fragment>
                 <Subheader
                     label={
-                        "Pardavėjo, kurio id " +
-                        this.state.id +
-                        " redagavimas"
+                        "Pardavėjo, kurio id " + this.state.id + " redagavimas"
                     }
                 />
-            <div className="reg_form">
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Vardas:
-                        <input
-                            name="fName"
-                            placeholder="Vardas"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.fName}
-                            onChange={this.handleChange}
+                <div className="reg_form">
+                    <FormWithConstraints
+                        ref={formWithConstraints =>
+                            (this.form = formWithConstraints)
+                        }
+                        onSubmit={this.handleSubmit}
+                    >
+                        <FormGroup for="fName">
+                            <FormControlLabel htmlFor="fName">
+                                Vardas <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="fName"
+                                name="fName"
+                                value={this.state.fName}
+                                onChange={this.handleChange}
+                                placeholder="Vardas"
+                                required
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="fName" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite vardą
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    when={value =>
+                                        !/^[a-zA-ZĀ-ž\s]*$/.test(value)
+                                    }
+                                >
+                                    Vardą turėtų sudaryti tik raidės
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
+
+                        <FormGroup for="lName">
+                            <FormControlLabel htmlFor="lName">
+                                Pavardė <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="lName"
+                                name="lName"
+                                value={this.state.lName}
+                                onChange={this.handleChange}
+                                placeholder="Pavardė"
+                                required
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="lName" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite pavardę
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    when={value =>
+                                        !/^[a-zA-ZĀ-ž\s]*$/.test(value)
+                                    }
+                                >
+                                    Pavardę turėtų sudaryti tik raidės
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
+
+                        <FormGroup for="email">
+                            <FormControlLabel htmlFor="email">
+                                El. paštas <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                placeholder="elektroninis@paštas.lt"
+                                required
+                                minLength={3}
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="email">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite el. pašto adresą
+                                </FieldFeedback>
+                                <FieldFeedback when="tooShort">
+                                    Per trumas el. pašto adresas
+                                </FieldFeedback>
+                                <FieldFeedback when="*" />
+                            </FieldFeedbacks>
+                        </FormGroup>
+
+                        <FormGroup for="phone">
+                            <FormControlLabel htmlFor="phone">
+                                Telefono numeris{" "}
+                                <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="phone"
+                                id="phone"
+                                name="phone"
+                                value={this.state.phone}
+                                onChange={this.handleChange}
+                                required
+                                className="input-group"
+                                maxLength="11"
+                            />
+                            <FieldFeedbacks for="phone" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite telefono numerį
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    when={value => !/^\d{0,11}$/.test(value)}
+                                >
+                                    Telefono numerį turi sudaryti tik skaičiai.
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    when={value => !/^\d{11}$/.test(value)}
+                                    warning
+                                >
+                                    Telefono numerį turi sudaryti 11 skaičių.
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
+
+                        <Button
+                            label="Redaguoti"
+                            disabled={this.state.submitButtonDisabled}
+                            onClick={this.updateUser}
                         />
-                    </label>
-                    <label>
-                        Pavardė:
-                        <input
-                            name="lName"
-                            placeholder="Pavardė"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.lName}
-                            onChange={this.handleChange}
+                        <Messages
+                            ref={el => {
+                                this.messages = el;
+                            }}
                         />
-                    </label>
-                    <label>
-                        El.paštas:
-                        <input
-                            name="email"
-                            placeholder="elektronionis@paštas.lt"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        Telefono numeris:
-                        <input
-                            name="phone"
-                            placeholder="Įveskite telefono numerį"
-                            className="placeholder"
-                            required
-                            type="text"
-                            value={this.state.phone}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <br />
-                    <Button label="Redaguoti" onClick={this.updateUser} />
-                </form>
-            </div>
+                    </FormWithConstraints>
+                </div>
             </Fragment>
         );
     }

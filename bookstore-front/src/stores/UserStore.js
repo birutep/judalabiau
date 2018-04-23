@@ -27,7 +27,7 @@ class UserStore {
         this.userToEdit.phone = user.phone;
         this.userToEdit.role = user.role;
         this.userToEdit.birthday = user.birthday;
-        this.userToEdit.address = user.address
+        this.userToEdit.address = user.address;
         this.userToEdit.id = user.id;
     };
 
