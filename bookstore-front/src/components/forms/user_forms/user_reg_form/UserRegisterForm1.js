@@ -1,19 +1,11 @@
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 import axios from "axios";
 import Subheader from "../../../layout/sub_header/SubHeader";
-import { USERS } from "../../../../server_links/ServerLinks";
-import { Button } from "primereact/components/button/Button";
-import { Messages } from "primereact/components/messages/Messages";
-import {
-    FormWithConstraints,
-    FieldFeedback
-} from "react-form-with-constraints";
-import {
-    FieldFeedbacks,
-    FormGroup,
-    FormControlLabel,
-    FormControlInput
-} from "react-form-with-constraints-bootstrap4";
+import {USERS} from "../../../../server_links/ServerLinks";
+import {Button} from "primereact/components/button/Button";
+import {Messages} from "primereact/components/messages/Messages";
+import {FieldFeedback, FormWithConstraints} from "react-form-with-constraints";
+import {FieldFeedbacks, FormControlInput, FormControlLabel, FormGroup} from "react-form-with-constraints-bootstrap4";
 
 class UserRegForm extends Component {
     constructor(props) {

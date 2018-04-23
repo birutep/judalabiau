@@ -1,7 +1,7 @@
-import React, { Fragment, Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, {Component, Fragment} from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 //mobx
-import { inject, observer } from "mobx-react";
+import {inject, observer} from "mobx-react";
 //custom elementai
 import BookEditForm from "../components/forms/book_forms/book_edit_form/BookEditForm";
 import book from "../components/books/book_list_for_admin_minimal/one_book/Book";
@@ -15,24 +15,22 @@ import UserRegForm3 from "../components/forms/user_forms/user_reg_form/UserRegis
 import UserRegForm2 from "../components/forms/user_forms/user_reg_form/UserRegisterForm2";
 import UserRegForm1 from "../components/forms/user_forms/user_reg_form/UserRegisterForm1";
 import user from "../components/users/user_list/one_user/User";
-import UserList from "../components/users/user_list/UserList";
 import UserEditForm1 from "../components/forms/user_forms/user_edit_form/UserEditForm1";
 import UserEditForm2 from "../components/forms/user_forms/user_edit_form/UserEditForm2";
 import UserEditForm3 from "../components/forms/user_forms/user_edit_form/UserEditForm3";
+import UserWrapper from "../components/users/user_list_wrapper/UserListWrapper";
 
+@inject("bookStore", "userStore")
 @observer
-@inject("bookStore")
-@inject("userStore")
 class Routes extends Component {
     render() {
-        const { bookStore } = this.props;
-        const { userStore } = this.props;
+        const {bookStore, userStore} = this.props;
         return (
             <BrowserRouter>
                 <Fragment>
-                    <Header />
+                    <Header/>
 
-                    <Route path="/" component={NavMenu} />
+                    <Route path="/" component={NavMenu}/>
                     <Switch>
                         <Route
                             exact
@@ -45,8 +43,7 @@ class Routes extends Component {
                                 />
                             )}
                         />
-                
-                        <Route path="/books/register" component={BookRegForm} />
+                        <Route path="/books/register" component={BookRegForm}/>
                         <Route
                             path="/books/edit"
                             render={() => (
@@ -77,7 +74,15 @@ class Routes extends Component {
                             )}
                         />
 
-                        <Route path="/users" component={UserList} />
+                        <Route path="/users"
+                               render={() => (
+                                   <UserWrapper
+                                       userStatus={user}
+                                       userToEdit={userStore.userToEdit}
+                                       changed={userStore.changed}
+                                   />
+                               )}
+                        />
 
                         {/* <===User Register===> */}
                         <Route
@@ -95,23 +100,13 @@ class Routes extends Component {
 
                         {/* <=====User Edit=====> */}
 
-                        <Route path="/user/edit/1" component={UserEditForm1} />
-                        <Route path="/user/edit/2" component={UserEditForm2} />
-                        <Route path="/user/edit/3" component={UserEditForm3} />
-                        <Route
-                            exact
-                            path="/users"
-                            render={() => (
-                                <UserList
-                                    userStatus={user}
-                                    changed={userStore.changed}
-                                />
-                            )}
-                        />
-
-                        <Route component={NotFound} />
+                        <Route path="/user/edit/1" component={UserEditForm1}/>
+                        <Route path="/user/edit/2" component={UserEditForm2}/>
+                        <Route path="/user/edit/3" component={UserEditForm3}/>
+                        
+                        <Route component={NotFound}/>
                     </Switch>
-                    <Footer />
+                    <Footer/>
                 </Fragment>
             </BrowserRouter>
         );

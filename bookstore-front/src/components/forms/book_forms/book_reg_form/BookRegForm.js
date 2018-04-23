@@ -54,14 +54,14 @@ class BookRegForm extends Component {
     }
 
     handleCheckbox() {
-        this.setState({ eAvailable: !this.state.eAvailable });
+        this.setState({eAvailable: !this.state.eAvailable});
     }
 
     showSuccess() {
         this.messages.show({
             severity: "success",
             summary:
-                '"' + this.state.title + '" užregistruota Knygų parduotuvėje.'
+            '"' + this.state.title + '" užregistruota Knygų parduotuvėje.'
         });
     }
 
@@ -80,7 +80,7 @@ class BookRegForm extends Component {
 
     saveBook() {
         this.form.validateFields();
-        this.setState({ submitButtonDisabled: !this.form.isValid() });
+        this.setState({submitButtonDisabled: !this.form.isValid()});
         if (this.form.isValid()) {
             let self = this;
             axios

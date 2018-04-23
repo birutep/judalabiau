@@ -1,20 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 import axios from "axios/index";
 import Subheader from "../../../layout/sub_header/SubHeader";
-import { inject, observer } from "mobx-react";
-import { USERS } from "../../../../server_links/ServerLinks";
-import { Button } from "primereact/components/button/Button";
-import { Messages } from "primereact/components/messages/Messages";
-import {
-    FormWithConstraints,
-    FieldFeedback
-} from "react-form-with-constraints";
-import {
-    FieldFeedbacks,
-    FormGroup,
-    FormControlLabel,
-    FormControlInput
-} from "react-form-with-constraints-bootstrap4";
+import {inject, observer} from "mobx-react";
+import {USERS} from "../../../../server_links/ServerLinks";
+import {Button} from "primereact/components/button/Button";
+import {Messages} from "primereact/components/messages/Messages";
+import {FieldFeedback, FormWithConstraints} from "react-form-with-constraints";
+import {FieldFeedbacks, FormControlInput, FormControlLabel, FormGroup} from "react-form-with-constraints-bootstrap4";
 
 @inject("userStore")
 @observer
@@ -27,14 +19,18 @@ class UserEditForm1 extends Component {
                 fName: "",
                 lName: "",
                 email: "",
+                birthday: "",
                 phone: "",
+                address: "",
                 role: 1
-            },
+           },
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
             lName: this.props.userStore.userToEdit.lName,
             email: this.props.userStore.userToEdit.email,
-            phone: this.props.userStore.userToEdit.phone
+            birthday: this.props.userStore.userToEdit.birthday,
+            phone: this.props.userStore.userToEdit.phone,
+            address: this.props.userStore.userToEdit.address
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,9 +43,12 @@ class UserEditForm1 extends Component {
         this.setState({
             id: this.props.userStore.userToEdit.id,
             fName: this.props.userStore.userToEdit.fName,
-            lName: this.props.userStore.userToEdit.lName,
+            lName: this.props.userStore.userToEdit.fName,
             email: this.props.userStore.userToEdit.email,
-            phone: this.props.userStore.userToEdit.phone
+            birthday: this.props.userStore.userToEdit.birthday,
+            phone: this.props.userStore.userToEdit.phone,
+            address: this.props.userStore.userToEdit.address,
+            role: 3
         });
     }
 

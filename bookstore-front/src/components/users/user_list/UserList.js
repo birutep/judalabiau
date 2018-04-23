@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import axios from "axios";
 //custom elementai
 import User from "./one_user/User";
-import { USERS } from "../../../server_links/ServerLinks";
+import {USERS} from "../../../server_links/ServerLinks";
 import SubHeader from "../../layout/sub_header/SubHeader";
-import { inject, observer } from "mobx-react";
+import {inject, observer} from "mobx-react";
 
 @inject("userStore")
 @observer
 class UserList extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             users: []
         };
@@ -27,7 +27,7 @@ class UserList extends Component {
     getAllUsers() {
         axios
             .get(USERS)
-            .then(response => this.setState({ users: response.data }));
+            .then(response => this.setState({users: response.data}));
     }
 
     render() {
@@ -37,7 +37,7 @@ class UserList extends Component {
 
         return (
             <div>
-                <SubHeader label="Visi vartotojai" />
+                <SubHeader label="Visi vartotojai"/>
                 <div className="books books_for_admin_area">
                     <table>
                         <thead>

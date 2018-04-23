@@ -1,9 +1,8 @@
-import { observable, action, computed } from "mobx";
+import {action, computed, observable} from "mobx";
 
 class UserStore {
     @observable changed = false;
-    @observable
-    userToEdit = {
+    @observable userToEdit = {
         fName: "",
         lName: "",
         email: "",
@@ -16,11 +15,12 @@ class UserStore {
 
     @action
     changeState = () => {
+        console.log('keiciam state');
         this.changed = !this.changed;
     };
 
     @action
-    editUser = user => {
+    editUser = (user) => {
         this.userToEdit.fName = user.fName;
         this.userToEdit.lName = user.lName;
         this.userToEdit.email = user.email;
@@ -37,6 +37,6 @@ class UserStore {
     }
 }
 
-const store = new UserStore();
+const userStore = new UserStore();
 
-export default store;
+export default userStore;
