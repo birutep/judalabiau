@@ -12,7 +12,7 @@ import {
     FieldFeedbacks,
     FormGroup,
     FormControlLabel,
-    FormControlInput
+    FormControlInput,
 } from "react-form-with-constraints-bootstrap4";
 import SubHeader from "../../../layout/sub_header/SubHeader";
 
@@ -82,7 +82,7 @@ class BookRegForm extends Component {
         this.form.validateFields();
         this.setState({submitButtonDisabled: !this.form.isValid()});
         if (this.form.isValid()) {
-            let self=this;
+            let self = this;
             axios
                 .post(BOOKS, {
                     eAvailable: this.state.eAvailable,
@@ -128,259 +128,266 @@ class BookRegForm extends Component {
     render() {
         return (
             <Fragment>
-            <SubHeader label="Naujos knygos registravimas" />
-            <div className="reg_form">
-                <FormWithConstraints
-                    ref={formWithConstraints =>
-                        (this.form = formWithConstraints)
-                    }
-                    onSubmit={this.handleSubmit}
-                    // noValidate
-                >
-                    <FormGroup for="title">
-                        <FormControlLabel htmlFor="title">
-                            Knygos pavadinimas:
-                            <sup className="required">*</sup>
-                        </FormControlLabel>
-                        <FormControlInput
-                            type="title"
-                            id="title"
-                            name="title"
-                            value={this.state.title}
-                            onChange={this.handleChange}
-                            placeholder="Įveskite knygos pavadinimą"
-                            required
-                            className="placeholder"
-                        />
-                        <FieldFeedbacks for="title" show="all">
-                            <FieldFeedback when="valueMissing">
-                                Įveskite knygos pavadinimą
-                            </FieldFeedback>
-                        </FieldFeedbacks>
-                    </FormGroup>
+                <SubHeader label="Naujos knygos registravimas" />
+                <div className="reg_form">
+                    <FormWithConstraints
+                        ref={formWithConstraints =>
+                            (this.form = formWithConstraints)
+                        }
+                        onSubmit={this.handleSubmit}
+                        // noValidate
+                    >
+                        <FormGroup for="title">
+                            <FormControlLabel htmlFor="title">
+                                Knygos pavadinimas:
+                                <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="title"
+                                name="title"
+                                value={this.state.title}
+                                onChange={this.handleChange}
+                                placeholder="Įveskite knygos pavadinimą"
+                                required
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="title" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite knygos pavadinimą
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
 
-                    <FormGroup for="authors">
-                        <FormControlLabel htmlFor="authors">
-                            Autorius: <sup className="required">*</sup>
-                        </FormControlLabel>
-                        <FormControlInput
-                            type="authors"
-                            id="authors"
-                            name="authors"
-                            value={this.state.authors}
-                            onChange={this.handleChange}
-                            placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
-                            required
-                            className="placeholder"
-                        />
-                        <FieldFeedbacks for="authors" show="all">
-                            <FieldFeedback when="valueMissing">
-                                Įveskite autoriaus vardą ir pavardę arba
-                                slapyvardį{" "}
-                            </FieldFeedback>
-                        </FieldFeedbacks>
-                    </FormGroup>
+                        <FormGroup for="authors">
+                            <FormControlLabel htmlFor="authors">
+                                Autorius: <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="authors"
+                                name="authors"
+                                value={this.state.authors}
+                                onChange={this.handleChange}
+                                placeholder="Įveskite autoriaus vardą ir pavardę arba slapyvardį"
+                                required
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="authors" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite autoriaus vardą ir pavardę arba
+                                    slapyvardį{" "}
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
 
-                    <FormGroup for="releaseYear">
-                        <FormControlLabel htmlFor="releaseYear">
-                            Leidimo metai:
-                        </FormControlLabel>
-                        <FormControlInput
-                            type="text"
-                            id="releaseYear"
-                            name="releaseYear"
-                            value={this.state.releaseYear}
-                            onChange={this.handleChange}
-                            placeholder="Įveskite knygos leidimo metus"
-                            className="placeholder"
-                        />
-                        <FieldFeedbacks for="releaseYear" show="all">
-                            <FieldFeedback
-                                warning
-                                when={value => !/^\d{4}$/.test(value)}
+                        <FormGroup for="releaseYear">
+                            <FormControlLabel htmlFor="releaseYear">
+                                Leidimo metai:
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="releaseYear"
+                                name="releaseYear"
+                                value={this.state.releaseYear}
+                                onChange={this.handleChange}
+                                placeholder="Įveskite knygos leidimo metus"
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="releaseYear" show="all">
+                                <FieldFeedback
+                                    warning
+                                    when={value => !/^\d{4}$/.test(value)}
+                                >
+                                    Įveskite tik metus, pvz. 2018
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
+
+                        <FormGroup for="isbn">
+                            <FormControlLabel htmlFor="isbn">
+                                ISBN: <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="isbn"
+                                name="isbn"
+                                value={this.state.isbn}
+                                onChange={this.handleChange}
+                                placeholder="Įveskite ISBN"
+                                required
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="isbn" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite ISBN (10 arba 13 skaitmenų formatu)
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    // warning
+                                    when={value =>
+                                        !/^\d{10}$|^\d{13}$/.test(value)
+                                    }
+                                >
+                                    ISBN turi sudaryti 10 arba 13 skaitmenų.
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    // warning
+                                    when={value => /[a-zA-ZĀ-ž\s]+/.test(value)}
+                                >
+                                    ISBN neturėtų būti raidžių.
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
+
+                        <FormGroup for="price">
+                            <FormControlLabel htmlFor="price">
+                                Kaina: <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="price"
+                                id="price"
+                                name="price"
+                                value={this.state.price}
+                                onChange={this.handleChange}
+                                placeholder="Įveskite kainą"
+                                required
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="price" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite kainą
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    when={value =>
+                                        !/\d+?\.\d{1,2}\s*?$|^[1-9]\d*$/.test(
+                                            value
+                                        )
+                                    }
+                                >
+                                    Neteisingai įvedėte kainą. Kainą gali
+                                    sudaryti tik skaičiai.
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
+
+                        <FormGroup for="category">
+                            <FormControlLabel htmlFor="category">
+                                Kategorija: <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <select
+                                name="category"
+                                required
+                                value={this.state.category}
+                                onChange={this.handleChange}
                             >
-                                Įveskite tik metus, pvz. 2018
-                            </FieldFeedback>
-                        </FieldFeedbacks>
-                    </FormGroup>
+                                <option value="apsakymai">Apsakymas</option>
+                                <option value="biografinis">
+                                    Biografija, autobiografija
+                                </option>
+                                <option value="detektyvinis">
+                                    Detektyvinis romanas
+                                </option>
+                                <option value="ese">Esė, publicistika</option>
+                                <option value="dienoraščiai">
+                                    Dienoraščiai, laiškai ir memuarai
+                                </option>
+                                <option value="fantastika">Fantastika</option>
+                                <option value="istorinis">
+                                    Istorinis romanas
+                                </option>
+                                <option value="klasika">Klasika</option>
+                                <option value="meilės">Meilės romanas</option>
+                                <option value="modernas">
+                                    Modernioji literatūra
+                                </option>
+                                <option value="poezija">Poezija</option>
+                                <option value="siaubo">Siaubo romanas</option>
+                                <option value="vaikams">
+                                    Vaikų literatūra
+                                </option>
+                            </select>
+                        </FormGroup>
 
-                    <FormGroup for="isbn">
-                        <FormControlLabel htmlFor="isbn">
-                            ISBN: <sup className="required">*</sup>
-                        </FormControlLabel>
-                        <FormControlInput
-                            type="text"
-                            id="isbn"
-                            name="isbn"
-                            value={this.state.isbn}
-                            onChange={this.handleChange}
-                            placeholder="Įveskite ISBN"
-                            required
-                            className="placeholder"
-                        />
-                        <FieldFeedbacks for="isbn" show="all">
-                            <FieldFeedback when="valueMissing">
-                                Įveskite ISBN (10 arba 13 skaitmenų formatu)
-                            </FieldFeedback>
-                            <FieldFeedback
-                                // warning
-                                when={value => !/^\d{10}$|^\d{13}$/.test(value)}
-                            >
-                                ISBN turi sudaryti 10 arba 13 skaitmenų.
-                            </FieldFeedback>
-                            <FieldFeedback
-                                // warning
-                                when={value => /[a-zA-ZĀ-ž\s]+/.test(value)}
-                            >
-                                ISBN neturėtų būti raidžių.
-                            </FieldFeedback>
-                        </FieldFeedbacks>
-                    </FormGroup>
+                        <FormGroup for="count">
+                            <FormControlLabel htmlFor="count">
+                                Likutis sandėlyje:
+                                <sup className="required">*</sup>
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="count"
+                                name="count"
+                                value={this.state.count}
+                                onChange={this.handleChange}
+                                placeholder="Įveskite kiekį"
+                                required
+                                className="placeholder"
+                            />
+                            <FieldFeedbacks for="count" show="all">
+                                <FieldFeedback when="valueMissing">
+                                    Įveskite kiekį
+                                </FieldFeedback>
+                                <FieldFeedback
+                                    when={value => !/^[0-9]\d*$/.test(value)}
+                                >
+                                    Neteisingai įvedėte kiekį. Kiekį gali
+                                    sudaryti tik sveikieji skaičiai.
+                                </FieldFeedback>
+                            </FieldFeedbacks>
+                        </FormGroup>
 
-                    <FormGroup for="price">
-                        <FormControlLabel htmlFor="price">
-                            Kaina: <sup className="required">*</sup>
-                        </FormControlLabel>
-                        <FormControlInput
-                            type="price"
-                            id="price"
-                            name="price"
-                            value={this.state.price}
-                            onChange={this.handleChange}
-                            placeholder="Įveskite kainą"
-                            required
-                            className="placeholder"
-                        />
-                        <FieldFeedbacks for="price" show="all">
-                            <FieldFeedback when="valueMissing">
-                                Įveskite kainą
-                            </FieldFeedback>
-                            <FieldFeedback
-                                when={value =>
-                                    !/\d+?\.\d{1,2}\s*?$|^[1-9]\d*$/.test(value)
-                                }
-                            >
-                                Neteisingai įvedėte kainą. Kainą gali sudaryti
-                                tik skaičiai.
-                            </FieldFeedback>
-                        </FieldFeedbacks>
-                    </FormGroup>
+                        <FormGroup for="photopath">
+                            <FormControlLabel htmlFor="photopath">
+                                Viršelio nuotrauka:
+                            </FormControlLabel>
+                            <FormControlInput
+                                type="text"
+                                id="photopath"
+                                name="photopath"
+                                value={this.state.photopath}
+                                onChange={this.handleChange}
+                                placeholder="Nurodykite kelią iki nuotraukos"
+                                className="placeholder"
+                            />
+                        </FormGroup>
 
-                    <FormGroup for="category">
-                        <FormControlLabel htmlFor="category">
-                            Kategorija: <sup className="required">*</sup>
-                        </FormControlLabel>
-                        <select
-                            name="category"
-                            required
-                            value={this.state.category}
-                            onChange={this.handleChange}
-                        >
-                            <option value="apsakymai">Apsakymas</option>
-                            <option value="biografinis">
-                                Biografija, autobiografija
-                            </option>
-                            <option value="detektyvinis">
-                                Detektyvinis romanas
-                            </option>
-                            <option value="ese">Esė, publicistika</option>
-                            <option value="dienoraščiai">
-                                Dienoraščiai, laiškai ir memuarai
-                            </option>
-                            <option value="fantastika">Fantastika</option>
-                            <option value="istorinis">Istorinis romanas</option>
-                            <option value="klasika">Klasika</option>
-                            <option value="meilės">Meilės romanas</option>
-                            <option value="modernas">
-                                Modernioji literatūra
-                            </option>
-                            <option value="poezija">Poezija</option>
-                            <option value="siaubo">Siaubo romanas</option>
-                            <option value="vaikams">Vaikų literatūra</option>
-                        </select>
-                    </FormGroup>
+                        <label>
+                            Elektroninė knyga:
+                            <input
+                                name="eAvailable"
+                                type="checkbox"
+                                className="checkbox"
+                                checked={this.state.eAvailable}
+                                value={this.state.eAvailable}
+                                onChange={this.handleCheckbox}
+                            />
+                        </label>
+                        <br />
 
-                    <FormGroup for="count">
-                        <FormControlLabel htmlFor="count">
-                            Likutis sandėlyje:
-                            <sup className="required">*</sup>
-                        </FormControlLabel>
-                        <FormControlInput
-                            type="text"
-                            id="count"
-                            name="count"
-                            value={this.state.count}
-                            onChange={this.handleChange}
-                            placeholder="Įveskite kiekį"
-                            required
-                            className="placeholder"
-                        />
-                        <FieldFeedbacks for="count" show="all">
-                            <FieldFeedback when="valueMissing">
-                                Įveskite kiekį
-                            </FieldFeedback>
-                            <FieldFeedback
-                                when={value => !/^[0-9]\d*$/.test(value)}
-                            >
-                                Neteisingai įvedėte kiekį. Kiekį gali sudaryti
-                                tik sveikieji skaičiai.
-                            </FieldFeedback>
-                        </FieldFeedbacks>
-                    </FormGroup>
-
-                    <FormGroup for="photopath">
-                        <FormControlLabel htmlFor="photopath">
-                            Viršelio nuotrauka:
-                        </FormControlLabel>
-                        <FormControlInput
-                            type="text"
-                            id="photopath"
-                            name="photopath"
-                            value={this.state.photopath}
-                            onChange={this.handleChange}
-                            placeholder="Nurodykite kelią iki nuotraukos"
-                            className="placeholder"
-                        />
-                    </FormGroup>
-
-                    <label>
-                        Elektroninė knyga:
-                        <input
-                            name="eAvailable"
-                            type="checkbox"
-                            className="checkbox"
-                            checked={this.state.eAvailable}
-                            value={this.state.eAvailable}
-                            onChange={this.handleCheckbox}
-                        />
-                    </label>
-                    <br/>
-
-                    <label>
-                        Aprašymas:
-                        <textarea
-                            name="description"
-                            value={this.state.description}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <br/>
-                    {/* <p className="required">
+                        <label>
+                            Aprašymas:
+                            <textarea
+                                name="description"
+                                value={this.state.description}
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <br />
+                        {/* <p className="required">
                         <sup>*</sup> Privalomi laukai
                     </p> */}
-                    <Button
-                        label="Registruoti"
-                        disabled={this.state.submitButtonDisabled}
-                        onClick={this.saveBook}
-                        // onClick={this.showError}
-                    />
-                    <Messages
-                        ref={el => {
-                            this.messages = el;
-                        }}
-                    />
-                </FormWithConstraints>
-            </div>
+                        <Button
+                            label="Registruoti"
+                            disabled={this.state.submitButtonDisabled}
+                            onClick={this.saveBook}
+                        />
+                        <Messages
+                            ref={el => {
+                                this.messages = el;
+                            }}
+                        />
+                    </FormWithConstraints>
+                </div>
             </Fragment>
         );
     }

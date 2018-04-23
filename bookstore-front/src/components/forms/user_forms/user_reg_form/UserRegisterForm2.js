@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
+import Subheader from "../../../layout/sub_header/SubHeader";
 import { USERS } from "../../../../server_links/ServerLinks";
 import { Button } from "primereact/components/button/Button";
 import { Messages } from "primereact/components/messages/Messages";
@@ -84,16 +85,12 @@ class UserRegForm extends Component {
                     address: this.state.address,
                     birthday: this.state.birthday,
                     role: this.state.role,
-                    phone: this.state.phone
+                    phone: 370 + this.state.phone
                 })
                 .then(response => {
                     if (response.status === 200) {
                         this.showSuccess();
-                    } else {
-                        this.showError();
                     }
-                    console.log(response.data);
-                    console.log("User successfully added");
                     this.setState({
                         email: "",
                         fName: "",
@@ -120,9 +117,7 @@ class UserRegForm extends Component {
                             (this.form = formWithConstraints)
                         }
                         onSubmit={this.handleSubmit}
-                        // noValidate
                     >
-                        <h3>Registruoti pardavėją</h3>
                         <FormGroup for="fName">
                             <FormControlLabel htmlFor="fName">
                                 Vardas <sup className="required">*</sup>
@@ -303,16 +298,10 @@ class UserRegForm extends Component {
                                 </FieldFeedback>
                             </FieldFeedbacks>
                         </FormGroup>
-
-                        {/* <p className="required">
-                        <sup>*</sup> Privalomi laukai
-                    </p> */}
-
                         <Button
                             label="Registruoti"
                             disabled={this.state.submitButtonDisabled}
                             onClick={this.saveUser}
-                            // onClick={this.showSuccess}
                         />
                         <Messages
                             ref={el => {

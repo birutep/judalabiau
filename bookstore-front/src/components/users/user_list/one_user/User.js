@@ -61,7 +61,7 @@ class User extends Component {
                 <td>{this.props.singleUser.birthday}</td>
                 <td className="mini">
                     {this.props.singleUser.role === 1 ? (
-                        <Link to="user/edit/3">
+                        <Link to="user/edit/1">
                             <i
                                 className="fa fa-pencil fa-fw"
                                 onClick={() =>
@@ -79,7 +79,7 @@ class User extends Component {
                             />
                         </Link>
                     ) : this.props.singleUser.role === 3 ? (
-                        <Link to="user/edit/1">
+                        <Link to="user/edit/3">
                             <i
                                 className="fa fa-pencil fa-fw"
                                 onClick={() =>

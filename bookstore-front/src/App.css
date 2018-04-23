@@ -117,7 +117,8 @@ header .header_bookStore {
 .nav {
     float: left;
     width: 210px;
-    height: 960px;
+    /* height: 960px; */
+    height: 1000px;
     background-color: #1f2637;
 }
 
@@ -163,22 +164,27 @@ nav button:focus {
     width: 100%;
     height: 80px;
     background-color: #eaeef2;
+    /* background-color: #15a4fa; */
     box-shadow: 0 2px 4px -2px gray;
 }
 
 .sub_header_p {
     float: left;
-    padding: 13px;
-    color: #52617a;
+    /* color: #52617a; */
+    color: #2f364a;
+    /* color: #1f2637; */
     font-size: 22px;
     font-weight: bolder;
+    margin: 0;
+    padding-top: 30px;
+    padding-left: 30px;
 }
 
 /*---------------------------------Main-------------------------------------------*/
 
 main {
     width: 1110px;
-    height: 950px;
+    height: 990px;
     margin-left: 210px;
     text-align: center;
 }
@@ -258,7 +264,7 @@ main {
 .reg_form,
 .customer_reg_form {
     width: 50%;
-    max-height: 938px;
+    max-height: 898px;
     margin-top: 20px;
     margin-left: 435px;
     border: 1px solid lightgray;
@@ -302,6 +308,7 @@ option,
     width: auto;
     margin-left: 10px;
 }
+
 /* -----------Ant checkbox paspaudus remelis atsiranda! Kodel ?!?!?!?!?!? ----------------*/
 /* .reg_form .checkbox:checked {
     border: green;
@@ -339,15 +346,6 @@ label {
     border: 1px solid #888;
     border-radius: 3px;
 }
-
-/* .reg_form button:hover,
-.customer_reg_form button:hover {
-    background-color: lightgray;
-} */
-/* .reg_form button:active,
-.customer_reg_form button:active {
-    background-color: #c8c8c8;
-} */
 
 .reg_form button:active,
 .customer_reg_form button:focus {
@@ -410,7 +408,7 @@ form > div > div > div.warning {
 
 /*----------------books / book list for admin minimal------------------------------------*/
 table {
-    margin-left: 7px;
+    margin-left: 10px;
     width: 1085px;
     border-collapse: collapse;
     border: 1px solid darkgray;
@@ -419,9 +417,6 @@ table {
 th {
     padding: 10px;
     text-align: left;
-    /* background-color: #dbdfe2; */
-    /* Subheaderio spalva: 
-    background-color: #eaeef2;*/
     background-color: #e3e8ee;
     border-block-start: 1px solid #c3c7ca;
     border-block-end: 1px solid #c3c7ca;
@@ -453,14 +448,14 @@ tr:nth-child(even) {
 }
 .books {
     width: 1110px;
-    height: 850px;
+    height: 890px;
     margin-top: 20px;
     margin-left: 210px;
     font-size: 14px;
     overflow-y: scroll;
 }
 .books_for_admin_area {
-    height: 850px;
+    height: 890px;
     margin-top: 10px;
     margin-bottom: 0px;
 }
