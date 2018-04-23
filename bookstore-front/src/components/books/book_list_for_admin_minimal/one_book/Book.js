@@ -26,7 +26,6 @@ class Book extends Component {
                 id: props.myBook.id
             }
         };
-        console.log(props.myBook);
     }
 
     deleteBook = e => {

@@ -22,7 +22,6 @@ class User extends Component {
                 role: props.singleUser.role
             }
         };
-        console.log(props.singleUser);
     }
 
     deleteUser = e => {
@@ -30,13 +29,11 @@ class User extends Component {
         axios.delete(USERS + this.props.singleUser.id).then(() => {
             this.props.userStore.changeState();
         });
-        console.log("Vartotojas ištrintas");
     };
 
     editUser = user => {
         this.props.userStore.editUser(user);
         this.props.userStore.changeState();
-        console.log("User role: " + user.role);
     };
 
     render() {

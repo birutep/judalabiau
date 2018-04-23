@@ -216,22 +216,22 @@ class UserEditForm1 extends Component {
                                 onChange={this.handleChange}
                                 required
                                 className="input-group"
-                                maxLength="8"
+                                maxLength="11"
                             />
                             <FieldFeedbacks for="phone" show="all">
                                 <FieldFeedback when="valueMissing">
                                     Įveskite telefono numerį
                                 </FieldFeedback>
                                 <FieldFeedback
-                                    when={value => !/^\d{0,8}$/.test(value)}
+                                    when={value => !/^\d{0,11}$/.test(value)}
                                 >
                                     Telefono numerį turi sudaryti tik skaičiai.
                                 </FieldFeedback>
                                 <FieldFeedback
-                                    when={value => !/^\d{8}$/.test(value)}
+                                    when={value => !/^\d{11}$/.test(value)}
                                     warning
                                 >
-                                    Telefono numerį turi sudaryti 8 skaičiai.
+                                    Telefono numerį turi sudaryti 11 skaičių.
                                 </FieldFeedback>
                             </FieldFeedbacks>
                         </FormGroup>

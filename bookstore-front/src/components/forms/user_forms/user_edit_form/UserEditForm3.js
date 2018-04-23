@@ -241,7 +241,7 @@ class UserEditForm3 extends Component {
                                 value={this.state.phone}
                                 onChange={this.handleChange}
                                 className="input-group"
-                                maxLength="8"
+                                maxLength="11"
                             />
                             <FieldFeedbacks for="phone" show="all">
                                 <FieldFeedback when="valueMissing">

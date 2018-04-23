@@ -13,7 +13,6 @@ import {
     FormGroup,
     FormControlLabel,
     FormControlInput,
-    FormControlTextArea
 } from "react-form-with-constraints-bootstrap4";
 import SubHeader from "../../../layout/sub_header/SubHeader";
 
